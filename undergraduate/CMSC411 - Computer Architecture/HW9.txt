@@ -1,0 +1,112 @@
+Patrick Trinkle
+CMSC411
+Fall 2006
+HW9
+
+
+ HW9 Cache 25 points
+
+  Given the following sequences of word addresses, in decimal,
+  1, 4, 2, 8, 23, 6, 17, 3, 5, 24, 28, 19, 57, 0, 18, 3, 11
+  (no modification needed, just convert to binary
+   1 is 000001, 56 is 111000, etc, these are memory addresses)
+
+	1	000001
+	4	000100
+	2	000010
+	8	001000
+	23	010111
+	6	000110
+	17	010001
+	3	000011
+	5	000101
+	24	011000
+	28	011100
+	19	010011
+	57	111001
+	0	000000
+	18	010010
+	3	000011
+	11	001011
+
+1) Simulate an 8 word cache with one word per block, direct mapped.
+   a) For each address, list the six bit binary and indicate
+      H for hit, M for miss.
+
+	1	000001	M
+	4	000100	M
+	2	000010	M
+	8	001000	M
+	23	010111	M
+	6	000110	M
+	17	010001	M
+	3	000011	M
+	5	000101	M
+	24	011000	M
+	28	011100	M
+	19	010011	M
+	57	111001	M
+	0	000000	M
+	18	010010	M
+	3	000011	M
+	11	001011	M
+
+   b) Draw the cache showing cache binary address and cache contents
+      after all addresses have been processed. Use (1) for the
+      contents of memory address 1, (4) for the contents of
+      memory address 4, etc.
+
+	See below
+
+2) Simulate a 16 word cache with four words per block, direct mapped.
+   a) For each address, list the six bit binary and indicate
+      H for hit, M for miss.
+
+	1	000001	M
+	4	000100	M
+	2	000010	H
+	8	001000	M
+	23	010111	M
+	6	000110	M
+	17	010001	M
+	3	000011	M
+	5	000101	H
+	24	011000	M
+	28	011100	M
+	19	010011	M
+	57	111001	M
+	0	000000	M
+	18	010010	M
+	3	000011	M
+	11	001011	M
+
+   b) Draw the cache showing cache binary address and cache contents
+      after all addresses have been processed. Use (1) for the
+      contents of memory address 1, (4) for the contents of
+      memory address 4, etc.
+
+
+   eight word cache             sixteen word cache
+   one word per block           four words per block
+                               00   01   10   11
+        +----+               +----+----+----+----+
+    000 |( 0)|            00 |( 0)|( 1)|( 2)|( 3)|
+        +----+               +----+----+----+----+
+    001 |(57)|            01 |( 4)|( 5)|( 6)|( 7)|
+        +----+               +----+----+----+----+
+    010 |(18)|            10 |( 8)|( 9)|(10)|(11)|
+        +----+               +----+----+----+----+
+    011 |(11)|            11 |(28)|(29)|(30)|(31)|
+        +----+               +----+----+----+----+
+    100 |(28)|
+        +----+
+    101 |( 5)|
+        +----+
+    110 |( 6)|
+        +----+
+    111 |(23)|
+        +----+
+
+   The last address, decimal 11, has its contents shown in the cache.
+   (You do not get points for this entry.)
+

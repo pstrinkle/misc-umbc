@@ -1,0 +1,4049 @@
+Script started on Thu 02 Mar 2006 08:29:49 PM EST
+ite240pc14[1]% make
+gcc -Wall -ansi -lm -lpthread -o pf pf.c
+gcc -Wall -ansi -o dm dm.c
+In file included from dm.h:16,
+                 from dm.c:13:
+/usr/include/sys/ipc.h:25:3: warning: #warning "Files using this header must be compiled with _SVID_SOURCE or _XOPEN_SOURCE"
+dm.c: In function `main':
+dm.c:109: warning: implicit declaration of function `srandom'
+dm.c:111: warning: implicit declaration of function `random'
+dm.c:209: warning: passing arg 1 of `sprintf' from incompatible pointer type
+dm.c:210: warning: passing arg 1 of `fopen' from incompatible pointer type
+dm.c:227: warning: implicit declaration of function `usleep'
+dm.c:308: warning: passing arg 1 of `sprintf' from incompatible pointer type
+dm.c:309: warning: passing arg 1 of `fopen' from incompatible pointer type
+ite240pc14[2]% ./pf -n 101 -p 2 -q 2
+101^1 = 101^1
+ite240pc14[3]% ./pf -n 789 -p 1 - q 10
+789^1 = 3^1 * 263^1
+ite240pc14[4]% ./pf -n 789 -p 1 -q 10[P [4h2[4l [4h5[4l 
+789^1 = 3^1 * 263^1
+ite240pc14[5]% ./pf -n 789 -p 25 -q 100[K[K1[P [P [4h1[4l [P [P [P [4h2[4l 
+2^1 = 2^1
+ite240pc14[6]% ./dm -m 5[K6 -s 100 -d 10 -z 10 -c 10 -b 12 -u 7[P [4h5[4l [36C -e 15 -h 10 -r 15 -n 105094
+ite240pc14[7]% ls
+COMMENTS.txt  dm.h	       out_baker_2.txt	out_baker_5.txt    out_student_2.txt  out_student_5.txt  pf    README.txt
+dm	      Makefile	       out_baker_3.txt	out_baker_6.txt    out_student_3.txt  out_student_6.txt  pf.c  typescript
+dm.c	      out_baker_1.txt  out_baker_4.txt	out_student_1.txt  out_student_4.txt  out_student_7.txt  pf.h  urls.txt
+ite240pc14[8]% cat out_baker_1.txt 
+Baker #1
+A donut is produced, Batch: 1; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 1; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 1; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 1; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 1; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 1; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 1; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 1; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 1; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 1; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 1; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 1; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 2; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 2; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 2; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 2; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 2; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 2; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 2; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 2; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 2; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 2; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 2; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 2; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 3; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 3; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 3; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 3; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 3; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 3; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 3; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 3; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 3; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 3; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 3; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 3; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 4; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 4; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 4; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 4; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 4; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 4; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 4; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 4; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 4; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 4; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 4; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 4; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 5; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 5; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 5; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 5; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 5; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 5; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 5; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 5; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 5; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 5; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 5; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 5; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 6; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 6; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 6; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 6; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 6; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 6; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 6; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 6; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 6; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 6; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 6; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 6; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 7; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 7; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 7; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 7; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 7; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 7; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 7; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 7; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 7; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 7; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 7; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 7; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 8; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 8; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 8; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 8; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 8; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 8; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 8; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 8; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 8; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 8; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 8; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 8; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 9; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 9; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 9; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 9; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 9; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 9; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 9; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 9; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 9; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 9; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 9; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 9; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 10; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 10; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 10; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 10; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 10; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 10; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 10; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 10; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 10; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 10; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 10; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 10; Donut: 12
+A donut is put on the shelf, id: 12
+ite240pc14[9]% cat out_baker_1.txt.txt[K2.txt
+Baker #2
+A donut is produced, Batch: 1; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 1; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 1; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 1; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 1; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 1; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 1; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 1; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 1; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 1; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 1; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 1; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 2; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 2; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 2; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 2; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 2; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 2; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 2; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 2; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 2; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 2; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 2; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 2; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 3; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 3; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 3; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 3; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 3; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 3; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 3; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 3; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 3; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 3; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 3; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 3; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 4; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 4; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 4; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 4; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 4; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 4; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 4; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 4; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 4; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 4; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 4; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 4; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 5; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 5; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 5; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 5; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 5; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 5; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 5; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 5; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 5; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 5; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 5; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 5; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 6; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 6; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 6; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 6; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 6; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 6; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 6; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 6; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 6; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 6; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 6; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 6; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 7; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 7; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 7; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 7; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 7; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 7; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 7; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 7; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 7; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 7; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 7; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 7; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 8; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 8; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 8; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 8; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 8; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 8; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 8; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 8; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 8; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 8; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 8; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 8; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 9; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 9; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 9; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 9; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 9; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 9; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 9; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 9; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 9; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 9; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 9; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 9; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 10; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 10; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 10; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 10; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 10; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 10; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 10; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 10; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 10; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 10; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 10; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 10; Donut: 12
+A donut is put on the shelf, id: 12
+ite240pc14[10]% cat out_baker_2.txt.txt[K3.txt
+Baker #3
+A donut is produced, Batch: 1; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 1; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 1; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 1; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 1; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 1; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 1; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 1; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 1; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 1; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 1; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 1; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 2; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 2; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 2; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 2; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 2; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 2; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 2; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 2; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 2; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 2; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 2; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 2; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 3; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 3; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 3; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 3; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 3; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 3; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 3; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 3; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 3; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 3; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 3; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 3; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 4; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 4; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 4; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 4; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 4; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 4; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 4; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 4; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 4; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 4; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 4; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 4; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 5; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 5; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 5; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 5; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 5; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 5; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 5; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 5; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 5; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 5; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 5; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 5; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 6; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 6; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 6; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 6; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 6; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 6; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 6; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 6; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 6; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 6; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 6; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 6; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 7; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 7; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 7; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 7; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 7; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 7; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 7; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 7; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 7; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 7; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 7; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 7; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 8; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 8; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 8; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 8; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 8; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 8; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 8; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 8; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 8; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 8; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 8; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 8; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 9; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 9; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 9; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 9; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 9; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 9; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 9; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 9; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 9; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 9; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 9; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 9; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 10; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 10; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 10; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 10; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 10; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 10; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 10; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 10; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 10; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 10; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 10; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 10; Donut: 12
+A donut is put on the shelf, id: 12
+ite240pc14[11]% cat out_baker_3.txt..txt[K4.txt
+Baker #4
+A donut is produced, Batch: 1; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 1; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 1; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 1; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 1; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 1; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 1; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 1; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 1; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 1; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 1; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 1; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 2; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 2; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 2; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 2; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 2; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 2; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 2; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 2; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 2; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 2; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 2; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 2; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 3; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 3; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 3; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 3; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 3; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 3; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 3; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 3; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 3; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 3; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 3; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 3; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 4; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 4; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 4; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 4; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 4; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 4; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 4; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 4; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 4; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 4; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 4; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 4; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 5; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 5; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 5; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 5; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 5; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 5; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 5; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 5; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 5; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 5; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 5; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 5; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 6; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 6; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 6; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 6; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 6; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 6; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 6; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 6; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 6; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 6; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 6; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 6; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 7; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 7; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 7; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 7; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 7; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 7; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 7; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 7; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 7; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 7; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 7; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 7; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 8; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 8; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 8; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 8; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 8; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 8; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 8; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 8; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 8; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 8; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 8; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 8; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 9; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 9; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 9; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 9; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 9; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 9; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 9; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 9; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 9; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 9; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 9; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 9; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 10; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 10; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 10; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 10; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 10; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 10; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 10; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 10; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 10; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 10; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 10; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 10; Donut: 12
+A donut is put on the shelf, id: 12
+ite240pc14[12]% cat out_baker_4.txt.txt[K5.txt
+Baker #5
+A donut is produced, Batch: 1; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 1; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 1; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 1; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 1; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 1; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 1; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 1; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 1; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 1; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 1; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 1; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 2; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 2; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 2; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 2; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 2; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 2; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 2; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 2; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 2; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 2; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 2; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 2; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 3; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 3; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 3; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 3; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 3; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 3; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 3; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 3; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 3; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 3; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 3; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 3; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 4; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 4; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 4; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 4; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 4; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 4; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 4; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 4; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 4; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 4; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 4; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 4; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 5; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 5; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 5; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 5; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 5; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 5; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 5; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 5; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 5; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 5; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 5; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 5; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 6; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 6; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 6; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 6; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 6; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 6; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 6; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 6; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 6; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 6; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 6; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 6; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 7; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 7; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 7; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 7; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 7; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 7; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 7; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 7; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 7; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 7; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 7; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 7; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 8; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 8; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 8; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 8; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 8; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 8; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 8; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 8; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 8; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 8; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 8; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 8; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 9; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 9; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 9; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 9; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 9; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 9; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 9; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 9; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 9; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 9; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 9; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 9; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 10; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 10; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 10; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 10; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 10; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 10; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 10; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 10; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 10; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 10; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 10; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 10; Donut: 12
+A donut is put on the shelf, id: 12
+ite240pc14[13]% cat out_baker_5.txt.txt[K6.txt
+Baker #6
+A donut is produced, Batch: 1; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 1; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 1; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 1; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 1; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 1; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 1; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 1; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 1; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 1; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 1; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 1; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 2; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 2; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 2; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 2; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 2; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 2; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 2; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 2; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 2; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 2; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 2; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 2; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 3; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 3; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 3; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 3; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 3; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 3; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 3; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 3; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 3; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 3; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 3; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 3; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 4; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 4; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 4; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 4; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 4; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 4; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 4; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 4; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 4; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 4; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 4; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 4; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 5; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 5; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 5; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 5; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 5; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 5; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 5; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 5; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 5; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 5; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 5; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 5; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 6; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 6; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 6; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 6; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 6; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 6; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 6; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 6; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 6; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 6; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 6; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 6; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 7; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 7; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 7; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 7; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 7; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 7; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 7; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 7; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 7; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 7; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 7; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 7; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 8; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 8; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 8; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 8; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 8; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 8; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 8; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 8; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 8; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 8; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 8; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 8; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 9; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 9; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 9; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 9; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 9; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 9; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 9; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 9; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 9; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 9; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 9; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 9; Donut: 12
+A donut is put on the shelf, id: 12
+A donut is produced, Batch: 10; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 10; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 10; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 10; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 10; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 10; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 10; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 10; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 10; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 10; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 10; Donut: 11
+A donut is put on the shelf, id: 11
+A donut is produced, Batch: 10; Donut: 12
+A donut is put on the shelf, id: 12
+ite240pc14[14]% ls
+COMMENTS.txt  dm.h	       out_baker_2.txt	out_baker_5.txt    out_student_2.txt  out_student_5.txt  pf    README.txt
+dm	      Makefile	       out_baker_3.txt	out_baker_6.txt    out_student_3.txt  out_student_6.txt  pf.c  typescript
+dm.c	      out_baker_1.txt  out_baker_4.txt	out_student_1.txt  out_student_4.txt  out_student_7.txt  pf.h  urls.txt
+ite240pc14[15]% cat out_student_1.txt 
+Student ID: 1
+Donut eaten: 1
+Donut eaten: 2
+Donut eaten: 3
+Donut eaten: 4
+Donut eaten: 5
+Donut eaten: 6
+Donut eaten: 7
+Donut eaten: 8
+Donut eaten: 9
+Donut eaten: 10
+Donut eaten: 11
+Donut eaten: 12
+Donut eaten: 13
+Donut eaten: 14
+Donut eaten: 15
+Donut eaten: 16
+Donut eaten: 17
+Donut eaten: 18
+Donut eaten: 19
+Donut eaten: 20
+Donut eaten: 21
+Donut eaten: 22
+Donut eaten: 23
+Donut eaten: 24
+Donut eaten: 25
+Donut eaten: 26
+Donut eaten: 27
+Donut eaten: 28
+Donut eaten: 29
+Donut eaten: 30
+Donut eaten: 31
+Donut eaten: 32
+Donut eaten: 33
+Donut eaten: 34
+Donut eaten: 35
+Donut eaten: 36
+Donut eaten: 37
+Donut eaten: 38
+Donut eaten: 39
+Donut eaten: 40
+Donut eaten: 41
+Donut eaten: 42
+Donut eaten: 43
+Donut eaten: 44
+Donut eaten: 45
+Donut eaten: 46
+Donut eaten: 47
+Donut eaten: 48
+Donut eaten: 49
+Donut eaten: 50
+Donut eaten: 51
+Donut eaten: 52
+Donut eaten: 53
+Donut eaten: 54
+Donut eaten: 55
+Donut eaten: 56
+Donut eaten: 57
+Donut eaten: 58
+Donut eaten: 59
+Donut eaten: 60
+Donut eaten: 61
+Donut eaten: 62
+Donut eaten: 63
+Donut eaten: 64
+Donut eaten: 65
+Donut eaten: 66
+Donut eaten: 67
+Donut eaten: 68
+Donut eaten: 69
+Donut eaten: 70
+Donut eaten: 71
+Donut eaten: 72
+Donut eaten: 73
+Donut eaten: 74
+Donut eaten: 75
+Donut eaten: 76
+Donut eaten: 77
+Donut eaten: 78
+Donut eaten: 79
+Donut eaten: 80
+Donut eaten: 81
+Donut eaten: 82
+Donut eaten: 83
+Donut eaten: 84
+Donut eaten: 85
+Donut eaten: 86
+Donut eaten: 87
+Donut eaten: 88
+Donut eaten: 89
+Donut eaten: 90
+Donut eaten: 91
+Donut eaten: 92
+Donut eaten: 93
+Donut eaten: 94
+Donut eaten: 95
+Donut eaten: 96
+Donut eaten: 97
+Donut eaten: 98
+Donut eaten: 99
+Donut eaten: 100
+ite240pc14[16]% cat out_student_1.txt.txt[K2.txt
+Student ID: 2
+Donut eaten: 1
+Donut eaten: 2
+Donut eaten: 3
+Donut eaten: 4
+Donut eaten: 5
+Donut eaten: 6
+Donut eaten: 7
+Donut eaten: 8
+Donut eaten: 9
+Donut eaten: 10
+Donut eaten: 11
+Donut eaten: 12
+Donut eaten: 13
+Donut eaten: 14
+Donut eaten: 15
+Donut eaten: 16
+Donut eaten: 17
+Donut eaten: 18
+Donut eaten: 19
+Donut eaten: 20
+Donut eaten: 21
+Donut eaten: 22
+Donut eaten: 23
+Donut eaten: 24
+Donut eaten: 25
+Donut eaten: 26
+Donut eaten: 27
+Donut eaten: 28
+Donut eaten: 29
+Donut eaten: 30
+Donut eaten: 31
+Donut eaten: 32
+Donut eaten: 33
+Donut eaten: 34
+Donut eaten: 35
+Donut eaten: 36
+Donut eaten: 37
+Donut eaten: 38
+Donut eaten: 39
+Donut eaten: 40
+Donut eaten: 41
+Donut eaten: 42
+Donut eaten: 43
+Donut eaten: 44
+Donut eaten: 45
+Donut eaten: 46
+Donut eaten: 47
+Donut eaten: 48
+Donut eaten: 49
+Donut eaten: 50
+Donut eaten: 51
+Donut eaten: 52
+Donut eaten: 53
+Donut eaten: 54
+Donut eaten: 55
+Donut eaten: 56
+Donut eaten: 57
+Donut eaten: 58
+Donut eaten: 59
+Donut eaten: 60
+Donut eaten: 61
+Donut eaten: 62
+Donut eaten: 63
+Donut eaten: 64
+Donut eaten: 65
+Donut eaten: 66
+Donut eaten: 67
+Donut eaten: 68
+Donut eaten: 69
+Donut eaten: 70
+Donut eaten: 71
+Donut eaten: 72
+Donut eaten: 73
+Donut eaten: 74
+Donut eaten: 75
+Donut eaten: 76
+Donut eaten: 77
+Donut eaten: 78
+Donut eaten: 79
+Donut eaten: 80
+Donut eaten: 81
+Donut eaten: 82
+Donut eaten: 83
+Donut eaten: 84
+Donut eaten: 85
+Donut eaten: 86
+Donut eaten: 87
+Donut eaten: 88
+Donut eaten: 89
+Donut eaten: 90
+Donut eaten: 91
+Donut eaten: 92
+Donut eaten: 93
+Donut eaten: 94
+Donut eaten: 95
+Donut eaten: 96
+Donut eaten: 97
+Donut eaten: 98
+Donut eaten: 99
+Donut eaten: 100
+ite240pc14[17]% cat out_student_2.txt.txt[K3.txt
+Student ID: 3
+Donut eaten: 1
+Donut eaten: 2
+Donut eaten: 3
+Donut eaten: 4
+Donut eaten: 5
+Donut eaten: 6
+Donut eaten: 7
+Donut eaten: 8
+Donut eaten: 9
+Donut eaten: 10
+Donut eaten: 11
+Donut eaten: 12
+Donut eaten: 13
+Donut eaten: 14
+Donut eaten: 15
+Donut eaten: 16
+Donut eaten: 17
+Donut eaten: 18
+Donut eaten: 19
+Donut eaten: 20
+Donut eaten: 21
+Donut eaten: 22
+Donut eaten: 23
+Donut eaten: 24
+Donut eaten: 25
+Donut eaten: 26
+Donut eaten: 27
+Donut eaten: 28
+Donut eaten: 29
+Donut eaten: 30
+Donut eaten: 31
+Donut eaten: 32
+Donut eaten: 33
+Donut eaten: 34
+Donut eaten: 35
+Donut eaten: 36
+Donut eaten: 37
+Donut eaten: 38
+Donut eaten: 39
+Donut eaten: 40
+Donut eaten: 41
+Donut eaten: 42
+Donut eaten: 43
+Donut eaten: 44
+Donut eaten: 45
+Donut eaten: 46
+Donut eaten: 47
+Donut eaten: 48
+Donut eaten: 49
+Donut eaten: 50
+Donut eaten: 51
+Donut eaten: 52
+Donut eaten: 53
+Donut eaten: 54
+Donut eaten: 55
+Donut eaten: 56
+Donut eaten: 57
+Donut eaten: 58
+Donut eaten: 59
+Donut eaten: 60
+Donut eaten: 61
+Donut eaten: 62
+Donut eaten: 63
+Donut eaten: 64
+Donut eaten: 65
+Donut eaten: 66
+Donut eaten: 67
+Donut eaten: 68
+Donut eaten: 69
+Donut eaten: 70
+Donut eaten: 71
+Donut eaten: 72
+Donut eaten: 73
+Donut eaten: 74
+Donut eaten: 75
+Donut eaten: 76
+Donut eaten: 77
+Donut eaten: 78
+Donut eaten: 79
+Donut eaten: 80
+Donut eaten: 81
+Donut eaten: 82
+Donut eaten: 83
+Donut eaten: 84
+Donut eaten: 85
+Donut eaten: 86
+Donut eaten: 87
+Donut eaten: 88
+Donut eaten: 89
+Donut eaten: 90
+Donut eaten: 91
+Donut eaten: 92
+Donut eaten: 93
+Donut eaten: 94
+Donut eaten: 95
+Donut eaten: 96
+Donut eaten: 97
+Donut eaten: 98
+Donut eaten: 99
+Donut eaten: 100
+ite240pc14[18]% cat out_student_3.txt.txt[K4.txt
+Student ID: 4
+Donut eaten: 1
+Donut eaten: 2
+Donut eaten: 3
+Donut eaten: 4
+Donut eaten: 5
+Donut eaten: 6
+Donut eaten: 7
+Donut eaten: 8
+Donut eaten: 9
+Donut eaten: 10
+Donut eaten: 11
+Donut eaten: 12
+Donut eaten: 13
+Donut eaten: 14
+Donut eaten: 15
+Donut eaten: 16
+Donut eaten: 17
+Donut eaten: 18
+Donut eaten: 19
+Donut eaten: 20
+Donut eaten: 21
+Donut eaten: 22
+Donut eaten: 23
+Donut eaten: 24
+Donut eaten: 25
+Donut eaten: 26
+Donut eaten: 27
+Donut eaten: 28
+Donut eaten: 29
+Donut eaten: 30
+Donut eaten: 31
+Donut eaten: 32
+Donut eaten: 33
+Donut eaten: 34
+Donut eaten: 35
+Donut eaten: 36
+Donut eaten: 37
+Donut eaten: 38
+Donut eaten: 39
+Donut eaten: 40
+Donut eaten: 41
+Donut eaten: 42
+Donut eaten: 43
+Donut eaten: 44
+Donut eaten: 45
+Donut eaten: 46
+Donut eaten: 47
+Donut eaten: 48
+Donut eaten: 49
+Donut eaten: 50
+Donut eaten: 51
+Donut eaten: 52
+Donut eaten: 53
+Donut eaten: 54
+Donut eaten: 55
+Donut eaten: 56
+Donut eaten: 57
+Donut eaten: 58
+Donut eaten: 59
+Donut eaten: 60
+Donut eaten: 61
+Donut eaten: 62
+Donut eaten: 63
+Donut eaten: 64
+Donut eaten: 65
+Donut eaten: 66
+Donut eaten: 67
+Donut eaten: 68
+Donut eaten: 69
+Donut eaten: 70
+Donut eaten: 71
+Donut eaten: 72
+Donut eaten: 73
+Donut eaten: 74
+Donut eaten: 75
+Donut eaten: 76
+Donut eaten: 77
+Donut eaten: 78
+Donut eaten: 79
+Donut eaten: 80
+Donut eaten: 81
+Donut eaten: 82
+Donut eaten: 83
+Donut eaten: 84
+Donut eaten: 85
+Donut eaten: 86
+Donut eaten: 87
+Donut eaten: 88
+Donut eaten: 89
+Donut eaten: 90
+Donut eaten: 91
+Donut eaten: 92
+Donut eaten: 93
+Donut eaten: 94
+Donut eaten: 95
+Donut eaten: 96
+Donut eaten: 97
+Donut eaten: 98
+Donut eaten: 99
+Donut eaten: 100
+ite240pc14[19]% cat out_student_4.txt.txt[K5.txt
+Student ID: 5
+Donut eaten: 1
+Donut eaten: 2
+Donut eaten: 3
+Donut eaten: 4
+Donut eaten: 5
+Donut eaten: 6
+Donut eaten: 7
+Donut eaten: 8
+Donut eaten: 9
+Donut eaten: 10
+Donut eaten: 11
+Donut eaten: 12
+Donut eaten: 13
+Donut eaten: 14
+Donut eaten: 15
+Donut eaten: 16
+Donut eaten: 17
+Donut eaten: 18
+Donut eaten: 19
+Donut eaten: 20
+Donut eaten: 21
+Donut eaten: 22
+Donut eaten: 23
+Donut eaten: 24
+Donut eaten: 25
+Donut eaten: 26
+Donut eaten: 27
+Donut eaten: 28
+Donut eaten: 29
+Donut eaten: 30
+Donut eaten: 31
+Donut eaten: 32
+Donut eaten: 33
+Donut eaten: 34
+Donut eaten: 35
+Donut eaten: 36
+Donut eaten: 37
+Donut eaten: 38
+Donut eaten: 39
+Donut eaten: 40
+Donut eaten: 41
+Donut eaten: 42
+Donut eaten: 43
+Donut eaten: 44
+Donut eaten: 45
+Donut eaten: 46
+Donut eaten: 47
+Donut eaten: 48
+Donut eaten: 49
+Donut eaten: 50
+Donut eaten: 51
+Donut eaten: 52
+Donut eaten: 53
+Donut eaten: 54
+Donut eaten: 55
+Donut eaten: 56
+Donut eaten: 57
+Donut eaten: 58
+Donut eaten: 59
+Donut eaten: 60
+Donut eaten: 61
+Donut eaten: 62
+Donut eaten: 63
+Donut eaten: 64
+Donut eaten: 65
+Donut eaten: 66
+Donut eaten: 67
+Donut eaten: 68
+Donut eaten: 69
+Donut eaten: 70
+Donut eaten: 71
+Donut eaten: 72
+Donut eaten: 73
+Donut eaten: 74
+Donut eaten: 75
+Donut eaten: 76
+Donut eaten: 77
+Donut eaten: 78
+Donut eaten: 79
+Donut eaten: 80
+Donut eaten: 81
+Donut eaten: 82
+Donut eaten: 83
+Donut eaten: 84
+Donut eaten: 85
+Donut eaten: 86
+Donut eaten: 87
+Donut eaten: 88
+Donut eaten: 89
+Donut eaten: 90
+Donut eaten: 91
+Donut eaten: 92
+Donut eaten: 93
+Donut eaten: 94
+Donut eaten: 95
+Donut eaten: 96
+Donut eaten: 97
+Donut eaten: 98
+Donut eaten: 99
+Donut eaten: 100
+ite240pc14[20]% cat out_student_5.txt.txt[K6.txt
+Student ID: 6
+Donut eaten: 1
+Donut eaten: 2
+Donut eaten: 3
+Donut eaten: 4
+Donut eaten: 5
+Donut eaten: 6
+Donut eaten: 7
+Donut eaten: 8
+Donut eaten: 9
+Donut eaten: 10
+Donut eaten: 11
+Donut eaten: 12
+Donut eaten: 13
+Donut eaten: 14
+Donut eaten: 15
+Donut eaten: 16
+Donut eaten: 17
+Donut eaten: 18
+Donut eaten: 19
+Donut eaten: 20
+Donut eaten: 21
+Donut eaten: 22
+Donut eaten: 23
+Donut eaten: 24
+Donut eaten: 25
+Donut eaten: 26
+Donut eaten: 27
+Donut eaten: 28
+Donut eaten: 29
+Donut eaten: 30
+Donut eaten: 31
+Donut eaten: 32
+Donut eaten: 33
+Donut eaten: 34
+Donut eaten: 35
+Donut eaten: 36
+Donut eaten: 37
+Donut eaten: 38
+Donut eaten: 39
+Donut eaten: 40
+Donut eaten: 41
+Donut eaten: 42
+Donut eaten: 43
+Donut eaten: 44
+Donut eaten: 45
+Donut eaten: 46
+Donut eaten: 47
+Donut eaten: 48
+Donut eaten: 49
+Donut eaten: 50
+Donut eaten: 51
+Donut eaten: 52
+Donut eaten: 53
+Donut eaten: 54
+Donut eaten: 55
+Donut eaten: 56
+Donut eaten: 57
+Donut eaten: 58
+Donut eaten: 59
+Donut eaten: 60
+Donut eaten: 61
+Donut eaten: 62
+Donut eaten: 63
+Donut eaten: 64
+Donut eaten: 65
+Donut eaten: 66
+Donut eaten: 67
+Donut eaten: 68
+Donut eaten: 69
+Donut eaten: 70
+Donut eaten: 71
+Donut eaten: 72
+Donut eaten: 73
+Donut eaten: 74
+Donut eaten: 75
+Donut eaten: 76
+Donut eaten: 77
+Donut eaten: 78
+Donut eaten: 79
+Donut eaten: 80
+Donut eaten: 81
+Donut eaten: 82
+Donut eaten: 83
+Donut eaten: 84
+Donut eaten: 85
+Donut eaten: 86
+Donut eaten: 87
+Donut eaten: 88
+Donut eaten: 89
+Donut eaten: 90
+Donut eaten: 91
+Donut eaten: 92
+Donut eaten: 93
+Donut eaten: 94
+Donut eaten: 95
+Donut eaten: 96
+Donut eaten: 97
+Donut eaten: 98
+Donut eaten: 99
+Donut eaten: 100
+ite240pc14[21]% cat out_student_6.txt.txt[K7.txt
+Student ID: 7
+Donut eaten: 1
+Donut eaten: 2
+Donut eaten: 3
+Donut eaten: 4
+Donut eaten: 5
+Donut eaten: 6
+Donut eaten: 7
+Donut eaten: 8
+Donut eaten: 9
+Donut eaten: 10
+Donut eaten: 11
+Donut eaten: 12
+Donut eaten: 13
+Donut eaten: 14
+Donut eaten: 15
+Donut eaten: 16
+Donut eaten: 17
+Donut eaten: 18
+Donut eaten: 19
+Donut eaten: 20
+Donut eaten: 21
+Donut eaten: 22
+Donut eaten: 23
+Donut eaten: 24
+Donut eaten: 25
+Donut eaten: 26
+Donut eaten: 27
+Donut eaten: 28
+Donut eaten: 29
+Donut eaten: 30
+Donut eaten: 31
+Donut eaten: 32
+Donut eaten: 33
+Donut eaten: 34
+Donut eaten: 35
+Donut eaten: 36
+Donut eaten: 37
+Donut eaten: 38
+Donut eaten: 39
+Donut eaten: 40
+Donut eaten: 41
+Donut eaten: 42
+Donut eaten: 43
+Donut eaten: 44
+Donut eaten: 45
+Donut eaten: 46
+Donut eaten: 47
+Donut eaten: 48
+Donut eaten: 49
+Donut eaten: 50
+Donut eaten: 51
+Donut eaten: 52
+Donut eaten: 53
+Donut eaten: 54
+Donut eaten: 55
+Donut eaten: 56
+Donut eaten: 57
+Donut eaten: 58
+Donut eaten: 59
+Donut eaten: 60
+Donut eaten: 61
+Donut eaten: 62
+Donut eaten: 63
+Donut eaten: 64
+Donut eaten: 65
+Donut eaten: 66
+Donut eaten: 67
+Donut eaten: 68
+Donut eaten: 69
+Donut eaten: 70
+Donut eaten: 71
+Donut eaten: 72
+Donut eaten: 73
+Donut eaten: 74
+Donut eaten: 75
+Donut eaten: 76
+Donut eaten: 77
+Donut eaten: 78
+Donut eaten: 79
+Donut eaten: 80
+Donut eaten: 81
+Donut eaten: 82
+Donut eaten: 83
+Donut eaten: 84
+Donut eaten: 85
+Donut eaten: 86
+Donut eaten: 87
+Donut eaten: 88
+Donut eaten: 89
+Donut eaten: 90
+Donut eaten: 91
+Donut eaten: 92
+Donut eaten: 93
+Donut eaten: 94
+Donut eaten: 95
+Donut eaten: 96
+Donut eaten: 97
+Donut eaten: 98
+Donut eaten: 99
+Donut eaten: 100
+ite240pc14[22]% rm -rf out_[K*
+ite240pc14[23]% ./dm -m 6 -s 50 -d 20 -b 10 -z 10 -c 5 -u 7 -e 6 -h 6 -r 10 -n 10000[P [4h1[4l [4h0[4l [25C
+ite240pc14[24]% ls
+COMMENTS.txt  dm.h	       out_baker_2.txt	out_baker_5.txt     out_student_1.txt  out_student_4.txt  out_student_7.txt  pf    README.txt
+dm	      Makefile	       out_baker_3.txt	out_baker_6.txt     out_student_2.txt  out_student_5.txt  out_student_8.txt  pf.c  typescript
+dm.c	      out_baker_1.txt  out_baker_4.txt	out_student_10.txt  out_student_3.txt  out_student_6.txt  out_student_9.txt  pf.h  urls.txt
+ite240pc14[25]% cat out_baker_1.txt 
+Baker #1
+A donut is produced, Batch: 1; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 1; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 1; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 1; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 1; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 1; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 1; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 1; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 1; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 1; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 2; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 2; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 2; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 2; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 2; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 2; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 2; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 2; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 2; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 2; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 3; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 3; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 3; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 3; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 3; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 3; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 3; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 3; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 3; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 3; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 4; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 4; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 4; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 4; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 4; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 4; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 4; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 4; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 4; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 4; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 5; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 5; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 5; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 5; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 5; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 5; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 5; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 5; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 5; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 5; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 6; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 6; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 6; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 6; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 6; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 6; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 6; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 6; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 6; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 6; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 7; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 7; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 7; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 7; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 7; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 7; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 7; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 7; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 7; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 7; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 8; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 8; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 8; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 8; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 8; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 8; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 8; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 8; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 8; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 8; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 9; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 9; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 9; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 9; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 9; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 9; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 9; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 9; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 9; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 9; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 10; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 10; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 10; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 10; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 10; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 10; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 10; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 10; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 10; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 10; Donut: 10
+A donut is put on the shelf, id: 10
+ite240pc14[26]% cat out_baker_1.txt.txt[K3.txt.txt[K2.txt
+Baker #2
+A donut is produced, Batch: 1; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 1; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 1; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 1; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 1; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 1; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 1; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 1; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 1; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 1; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 2; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 2; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 2; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 2; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 2; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 2; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 2; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 2; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 2; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 2; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 3; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 3; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 3; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 3; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 3; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 3; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 3; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 3; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 3; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 3; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 4; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 4; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 4; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 4; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 4; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 4; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 4; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 4; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 4; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 4; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 5; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 5; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 5; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 5; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 5; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 5; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 5; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 5; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 5; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 5; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 6; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 6; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 6; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 6; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 6; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 6; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 6; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 6; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 6; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 6; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 7; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 7; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 7; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 7; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 7; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 7; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 7; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 7; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 7; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 7; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 8; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 8; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 8; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 8; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 8; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 8; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 8; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 8; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 8; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 8; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 9; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 9; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 9; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 9; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 9; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 9; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 9; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 9; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 9; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 9; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 10; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 10; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 10; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 10; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 10; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 10; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 10; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 10; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 10; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 10; Donut: 10
+A donut is put on the shelf, id: 10
+ite240pc14[27]% cat out_baker_2.txt.txt[K3.txt
+Baker #3
+A donut is produced, Batch: 1; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 1; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 1; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 1; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 1; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 1; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 1; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 1; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 1; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 1; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 2; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 2; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 2; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 2; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 2; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 2; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 2; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 2; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 2; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 2; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 3; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 3; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 3; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 3; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 3; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 3; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 3; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 3; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 3; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 3; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 4; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 4; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 4; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 4; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 4; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 4; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 4; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 4; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 4; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 4; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 5; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 5; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 5; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 5; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 5; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 5; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 5; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 5; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 5; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 5; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 6; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 6; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 6; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 6; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 6; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 6; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 6; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 6; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 6; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 6; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 7; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 7; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 7; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 7; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 7; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 7; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 7; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 7; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 7; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 7; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 8; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 8; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 8; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 8; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 8; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 8; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 8; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 8; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 8; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 8; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 9; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 9; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 9; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 9; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 9; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 9; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 9; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 9; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 9; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 9; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 10; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 10; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 10; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 10; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 10; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 10; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 10; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 10; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 10; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 10; Donut: 10
+A donut is put on the shelf, id: 10
+ite240pc14[28]% cat out_baker_3.txt.txt[K4.txt
+Baker #4
+A donut is produced, Batch: 1; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 1; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 1; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 1; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 1; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 1; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 1; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 1; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 1; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 1; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 2; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 2; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 2; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 2; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 2; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 2; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 2; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 2; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 2; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 2; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 3; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 3; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 3; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 3; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 3; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 3; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 3; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 3; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 3; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 3; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 4; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 4; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 4; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 4; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 4; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 4; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 4; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 4; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 4; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 4; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 5; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 5; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 5; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 5; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 5; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 5; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 5; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 5; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 5; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 5; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 6; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 6; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 6; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 6; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 6; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 6; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 6; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 6; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 6; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 6; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 7; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 7; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 7; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 7; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 7; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 7; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 7; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 7; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 7; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 7; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 8; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 8; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 8; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 8; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 8; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 8; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 8; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 8; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 8; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 8; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 9; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 9; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 9; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 9; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 9; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 9; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 9; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 9; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 9; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 9; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 10; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 10; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 10; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 10; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 10; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 10; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 10; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 10; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 10; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 10; Donut: 10
+A donut is put on the shelf, id: 10
+ite240pc14[29]% cat out_baker_4.txt.txt[K5.txt
+Baker #5
+A donut is produced, Batch: 1; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 1; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 1; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 1; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 1; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 1; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 1; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 1; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 1; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 1; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 2; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 2; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 2; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 2; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 2; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 2; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 2; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 2; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 2; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 2; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 3; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 3; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 3; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 3; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 3; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 3; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 3; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 3; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 3; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 3; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 4; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 4; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 4; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 4; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 4; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 4; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 4; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 4; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 4; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 4; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 5; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 5; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 5; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 5; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 5; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 5; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 5; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 5; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 5; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 5; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 6; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 6; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 6; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 6; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 6; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 6; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 6; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 6; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 6; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 6; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 7; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 7; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 7; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 7; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 7; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 7; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 7; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 7; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 7; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 7; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 8; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 8; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 8; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 8; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 8; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 8; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 8; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 8; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 8; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 8; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 9; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 9; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 9; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 9; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 9; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 9; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 9; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 9; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 9; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 9; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 10; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 10; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 10; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 10; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 10; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 10; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 10; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 10; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 10; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 10; Donut: 10
+A donut is put on the shelf, id: 10
+ite240pc14[30]% cat out_baker_5.txt.txt[K6.txt
+Baker #6
+A donut is produced, Batch: 1; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 1; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 1; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 1; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 1; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 1; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 1; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 1; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 1; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 1; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 2; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 2; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 2; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 2; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 2; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 2; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 2; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 2; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 2; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 2; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 3; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 3; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 3; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 3; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 3; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 3; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 3; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 3; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 3; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 3; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 4; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 4; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 4; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 4; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 4; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 4; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 4; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 4; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 4; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 4; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 5; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 5; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 5; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 5; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 5; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 5; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 5; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 5; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 5; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 5; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 6; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 6; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 6; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 6; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 6; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 6; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 6; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 6; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 6; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 6; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 7; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 7; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 7; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 7; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 7; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 7; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 7; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 7; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 7; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 7; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 8; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 8; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 8; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 8; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 8; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 8; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 8; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 8; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 8; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 8; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 9; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 9; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 9; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 9; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 9; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 9; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 9; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 9; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 9; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 9; Donut: 10
+A donut is put on the shelf, id: 10
+A donut is produced, Batch: 10; Donut: 1
+A donut is put on the shelf, id: 1
+A donut is produced, Batch: 10; Donut: 2
+A donut is put on the shelf, id: 2
+A donut is produced, Batch: 10; Donut: 3
+A donut is put on the shelf, id: 3
+A donut is produced, Batch: 10; Donut: 4
+A donut is put on the shelf, id: 4
+A donut is produced, Batch: 10; Donut: 5
+A donut is put on the shelf, id: 5
+A donut is produced, Batch: 10; Donut: 6
+A donut is put on the shelf, id: 6
+A donut is produced, Batch: 10; Donut: 7
+A donut is put on the shelf, id: 7
+A donut is produced, Batch: 10; Donut: 8
+A donut is put on the shelf, id: 8
+A donut is produced, Batch: 10; Donut: 9
+A donut is put on the shelf, id: 9
+A donut is produced, Batch: 10; Donut: 10
+A donut is put on the shelf, id: 10
+ite240pc14[31]% ls
+COMMENTS.txt  dm.h	       out_baker_2.txt	out_baker_5.txt     out_student_1.txt  out_student_4.txt  out_student_7.txt  pf    README.txt
+dm	      Makefile	       out_baker_3.txt	out_baker_6.txt     out_student_2.txt  out_student_5.txt  out_student_8.txt  pf.c  typescript
+dm.c	      out_baker_1.txt  out_baker_4.txt	out_student_10.txt  out_student_3.txt  out_student_6.txt  out_student_9.txt  pf.h  urls.txt
+ite240pc14[32]% out )St[K[K[K[K[K[Kcat out_student_1.txt 
+Student ID: 1
+Donut eaten: 1
+Donut eaten: 2
+Donut eaten: 3
+Donut eaten: 4
+Donut eaten: 5
+Donut eaten: 6
+Donut eaten: 7
+Donut eaten: 8
+Donut eaten: 9
+Donut eaten: 10
+Donut eaten: 11
+Donut eaten: 12
+Donut eaten: 13
+Donut eaten: 14
+Donut eaten: 15
+Donut eaten: 16
+Donut eaten: 17
+Donut eaten: 18
+Donut eaten: 19
+Donut eaten: 20
+Donut eaten: 21
+Donut eaten: 22
+Donut eaten: 23
+Donut eaten: 24
+Donut eaten: 25
+Donut eaten: 26
+Donut eaten: 27
+Donut eaten: 28
+Donut eaten: 29
+Donut eaten: 30
+Donut eaten: 31
+Donut eaten: 32
+Donut eaten: 33
+Donut eaten: 34
+Donut eaten: 35
+Donut eaten: 36
+Donut eaten: 37
+Donut eaten: 38
+Donut eaten: 39
+Donut eaten: 40
+Donut eaten: 41
+Donut eaten: 42
+Donut eaten: 43
+Donut eaten: 44
+Donut eaten: 45
+Donut eaten: 46
+Donut eaten: 47
+Donut eaten: 48
+Donut eaten: 49
+Donut eaten: 50
+Donut eaten: 51
+Donut eaten: 52
+Donut eaten: 53
+Donut eaten: 54
+Donut eaten: 55
+Donut eaten: 56
+Donut eaten: 57
+Donut eaten: 58
+Donut eaten: 59
+Donut eaten: 60
+ite240pc14[33]% cat out_student_1.txt.txt[K2.txt
+Student ID: 2
+Donut eaten: 1
+Donut eaten: 2
+Donut eaten: 3
+Donut eaten: 4
+Donut eaten: 5
+Donut eaten: 6
+Donut eaten: 7
+Donut eaten: 8
+Donut eaten: 9
+Donut eaten: 10
+Donut eaten: 11
+Donut eaten: 12
+Donut eaten: 13
+Donut eaten: 14
+Donut eaten: 15
+Donut eaten: 16
+Donut eaten: 17
+Donut eaten: 18
+Donut eaten: 19
+Donut eaten: 20
+Donut eaten: 21
+Donut eaten: 22
+Donut eaten: 23
+Donut eaten: 24
+Donut eaten: 25
+Donut eaten: 26
+Donut eaten: 27
+Donut eaten: 28
+Donut eaten: 29
+Donut eaten: 30
+Donut eaten: 31
+Donut eaten: 32
+Donut eaten: 33
+Donut eaten: 34
+Donut eaten: 35
+Donut eaten: 36
+Donut eaten: 37
+Donut eaten: 38
+Donut eaten: 39
+Donut eaten: 40
+Donut eaten: 41
+Donut eaten: 42
+Donut eaten: 43
+Donut eaten: 44
+Donut eaten: 45
+Donut eaten: 46
+Donut eaten: 47
+Donut eaten: 48
+Donut eaten: 49
+Donut eaten: 50
+Donut eaten: 51
+Donut eaten: 52
+Donut eaten: 53
+Donut eaten: 54
+Donut eaten: 55
+Donut eaten: 56
+Donut eaten: 57
+Donut eaten: 58
+Donut eaten: 59
+Donut eaten: 60
+ite240pc14[34]% cat out_student_2.txt.txt[K3.txt
+Student ID: 3
+Donut eaten: 1
+Donut eaten: 2
+Donut eaten: 3
+Donut eaten: 4
+Donut eaten: 5
+Donut eaten: 6
+Donut eaten: 7
+Donut eaten: 8
+Donut eaten: 9
+Donut eaten: 10
+Donut eaten: 11
+Donut eaten: 12
+Donut eaten: 13
+Donut eaten: 14
+Donut eaten: 15
+Donut eaten: 16
+Donut eaten: 17
+Donut eaten: 18
+Donut eaten: 19
+Donut eaten: 20
+Donut eaten: 21
+Donut eaten: 22
+Donut eaten: 23
+Donut eaten: 24
+Donut eaten: 25
+Donut eaten: 26
+Donut eaten: 27
+Donut eaten: 28
+Donut eaten: 29
+Donut eaten: 30
+Donut eaten: 31
+Donut eaten: 32
+Donut eaten: 33
+Donut eaten: 34
+Donut eaten: 35
+Donut eaten: 36
+Donut eaten: 37
+Donut eaten: 38
+Donut eaten: 39
+Donut eaten: 40
+Donut eaten: 41
+Donut eaten: 42
+Donut eaten: 43
+Donut eaten: 44
+Donut eaten: 45
+Donut eaten: 46
+Donut eaten: 47
+Donut eaten: 48
+Donut eaten: 49
+Donut eaten: 50
+Donut eaten: 51
+Donut eaten: 52
+Donut eaten: 53
+Donut eaten: 54
+Donut eaten: 55
+Donut eaten: 56
+Donut eaten: 57
+Donut eaten: 58
+Donut eaten: 59
+Donut eaten: 60
+ite240pc14[35]% cat out_student_3.txt.txt[K4.txt
+Student ID: 4
+Donut eaten: 1
+Donut eaten: 2
+Donut eaten: 3
+Donut eaten: 4
+Donut eaten: 5
+Donut eaten: 6
+Donut eaten: 7
+Donut eaten: 8
+Donut eaten: 9
+Donut eaten: 10
+Donut eaten: 11
+Donut eaten: 12
+Donut eaten: 13
+Donut eaten: 14
+Donut eaten: 15
+Donut eaten: 16
+Donut eaten: 17
+Donut eaten: 18
+Donut eaten: 19
+Donut eaten: 20
+Donut eaten: 21
+Donut eaten: 22
+Donut eaten: 23
+Donut eaten: 24
+Donut eaten: 25
+Donut eaten: 26
+Donut eaten: 27
+Donut eaten: 28
+Donut eaten: 29
+Donut eaten: 30
+Donut eaten: 31
+Donut eaten: 32
+Donut eaten: 33
+Donut eaten: 34
+Donut eaten: 35
+Donut eaten: 36
+Donut eaten: 37
+Donut eaten: 38
+Donut eaten: 39
+Donut eaten: 40
+Donut eaten: 41
+Donut eaten: 42
+Donut eaten: 43
+Donut eaten: 44
+Donut eaten: 45
+Donut eaten: 46
+Donut eaten: 47
+Donut eaten: 48
+Donut eaten: 49
+Donut eaten: 50
+Donut eaten: 51
+Donut eaten: 52
+Donut eaten: 53
+Donut eaten: 54
+Donut eaten: 55
+Donut eaten: 56
+Donut eaten: 57
+Donut eaten: 58
+Donut eaten: 59
+Donut eaten: 60
+ite240pc14[36]% cat out_student_4.txt.txt[K5.txt
+Student ID: 5
+Donut eaten: 1
+Donut eaten: 2
+Donut eaten: 3
+Donut eaten: 4
+Donut eaten: 5
+Donut eaten: 6
+Donut eaten: 7
+Donut eaten: 8
+Donut eaten: 9
+Donut eaten: 10
+Donut eaten: 11
+Donut eaten: 12
+Donut eaten: 13
+Donut eaten: 14
+Donut eaten: 15
+Donut eaten: 16
+Donut eaten: 17
+Donut eaten: 18
+Donut eaten: 19
+Donut eaten: 20
+Donut eaten: 21
+Donut eaten: 22
+Donut eaten: 23
+Donut eaten: 24
+Donut eaten: 25
+Donut eaten: 26
+Donut eaten: 27
+Donut eaten: 28
+Donut eaten: 29
+Donut eaten: 30
+Donut eaten: 31
+Donut eaten: 32
+Donut eaten: 33
+Donut eaten: 34
+Donut eaten: 35
+Donut eaten: 36
+Donut eaten: 37
+Donut eaten: 38
+Donut eaten: 39
+Donut eaten: 40
+Donut eaten: 41
+Donut eaten: 42
+Donut eaten: 43
+Donut eaten: 44
+Donut eaten: 45
+Donut eaten: 46
+Donut eaten: 47
+Donut eaten: 48
+Donut eaten: 49
+Donut eaten: 50
+Donut eaten: 51
+Donut eaten: 52
+Donut eaten: 53
+Donut eaten: 54
+Donut eaten: 55
+Donut eaten: 56
+Donut eaten: 57
+Donut eaten: 58
+Donut eaten: 59
+Donut eaten: 60
+ite240pc14[37]% cat out_student_5.txt.txt[K6.txt
+Student ID: 6
+Donut eaten: 1
+Donut eaten: 2
+Donut eaten: 3
+Donut eaten: 4
+Donut eaten: 5
+Donut eaten: 6
+Donut eaten: 7
+Donut eaten: 8
+Donut eaten: 9
+Donut eaten: 10
+Donut eaten: 11
+Donut eaten: 12
+Donut eaten: 13
+Donut eaten: 14
+Donut eaten: 15
+Donut eaten: 16
+Donut eaten: 17
+Donut eaten: 18
+Donut eaten: 19
+Donut eaten: 20
+Donut eaten: 21
+Donut eaten: 22
+Donut eaten: 23
+Donut eaten: 24
+Donut eaten: 25
+Donut eaten: 26
+Donut eaten: 27
+Donut eaten: 28
+Donut eaten: 29
+Donut eaten: 30
+Donut eaten: 31
+Donut eaten: 32
+Donut eaten: 33
+Donut eaten: 34
+Donut eaten: 35
+Donut eaten: 36
+Donut eaten: 37
+Donut eaten: 38
+Donut eaten: 39
+Donut eaten: 40
+Donut eaten: 41
+Donut eaten: 42
+Donut eaten: 43
+Donut eaten: 44
+Donut eaten: 45
+Donut eaten: 46
+Donut eaten: 47
+Donut eaten: 48
+Donut eaten: 49
+Donut eaten: 50
+Donut eaten: 51
+Donut eaten: 52
+Donut eaten: 53
+Donut eaten: 54
+Donut eaten: 55
+Donut eaten: 56
+Donut eaten: 57
+Donut eaten: 58
+Donut eaten: 59
+Donut eaten: 60
+ite240pc14[38]% cat out_student_6.txt.txt[K7.txt
+Student ID: 7
+Donut eaten: 1
+Donut eaten: 2
+Donut eaten: 3
+Donut eaten: 4
+Donut eaten: 5
+Donut eaten: 6
+Donut eaten: 7
+Donut eaten: 8
+Donut eaten: 9
+Donut eaten: 10
+Donut eaten: 11
+Donut eaten: 12
+Donut eaten: 13
+Donut eaten: 14
+Donut eaten: 15
+Donut eaten: 16
+Donut eaten: 17
+Donut eaten: 18
+Donut eaten: 19
+Donut eaten: 20
+Donut eaten: 21
+Donut eaten: 22
+Donut eaten: 23
+Donut eaten: 24
+Donut eaten: 25
+Donut eaten: 26
+Donut eaten: 27
+Donut eaten: 28
+Donut eaten: 29
+Donut eaten: 30
+Donut eaten: 31
+Donut eaten: 32
+Donut eaten: 33
+Donut eaten: 34
+Donut eaten: 35
+Donut eaten: 36
+Donut eaten: 37
+Donut eaten: 38
+Donut eaten: 39
+Donut eaten: 40
+Donut eaten: 41
+Donut eaten: 42
+Donut eaten: 43
+Donut eaten: 44
+Donut eaten: 45
+Donut eaten: 46
+Donut eaten: 47
+Donut eaten: 48
+Donut eaten: 49
+Donut eaten: 50
+Donut eaten: 51
+Donut eaten: 52
+Donut eaten: 53
+Donut eaten: 54
+Donut eaten: 55
+Donut eaten: 56
+Donut eaten: 57
+Donut eaten: 58
+Donut eaten: 59
+Donut eaten: 60
+ite240pc14[39]% cat out_student_7.txt.txt[K8.txt
+Student ID: 8
+Donut eaten: 1
+Donut eaten: 2
+Donut eaten: 3
+Donut eaten: 4
+Donut eaten: 5
+Donut eaten: 6
+Donut eaten: 7
+Donut eaten: 8
+Donut eaten: 9
+Donut eaten: 10
+Donut eaten: 11
+Donut eaten: 12
+Donut eaten: 13
+Donut eaten: 14
+Donut eaten: 15
+Donut eaten: 16
+Donut eaten: 17
+Donut eaten: 18
+Donut eaten: 19
+Donut eaten: 20
+Donut eaten: 21
+Donut eaten: 22
+Donut eaten: 23
+Donut eaten: 24
+Donut eaten: 25
+Donut eaten: 26
+Donut eaten: 27
+Donut eaten: 28
+Donut eaten: 29
+Donut eaten: 30
+Donut eaten: 31
+Donut eaten: 32
+Donut eaten: 33
+Donut eaten: 34
+Donut eaten: 35
+Donut eaten: 36
+Donut eaten: 37
+Donut eaten: 38
+Donut eaten: 39
+Donut eaten: 40
+Donut eaten: 41
+Donut eaten: 42
+Donut eaten: 43
+Donut eaten: 44
+Donut eaten: 45
+Donut eaten: 46
+Donut eaten: 47
+Donut eaten: 48
+Donut eaten: 49
+Donut eaten: 50
+Donut eaten: 51
+Donut eaten: 52
+Donut eaten: 53
+Donut eaten: 54
+Donut eaten: 55
+Donut eaten: 56
+Donut eaten: 57
+Donut eaten: 58
+Donut eaten: 59
+Donut eaten: 60
+ite240pc14[40]% cat out_student_8.txt.txt[K9.txt
+Student ID: 9
+Donut eaten: 1
+Donut eaten: 2
+Donut eaten: 3
+Donut eaten: 4
+Donut eaten: 5
+Donut eaten: 6
+Donut eaten: 7
+Donut eaten: 8
+Donut eaten: 9
+Donut eaten: 10
+Donut eaten: 11
+Donut eaten: 12
+Donut eaten: 13
+Donut eaten: 14
+Donut eaten: 15
+Donut eaten: 16
+Donut eaten: 17
+Donut eaten: 18
+Donut eaten: 19
+Donut eaten: 20
+Donut eaten: 21
+Donut eaten: 22
+Donut eaten: 23
+Donut eaten: 24
+Donut eaten: 25
+Donut eaten: 26
+Donut eaten: 27
+Donut eaten: 28
+Donut eaten: 29
+Donut eaten: 30
+Donut eaten: 31
+Donut eaten: 32
+Donut eaten: 33
+Donut eaten: 34
+Donut eaten: 35
+Donut eaten: 36
+Donut eaten: 37
+Donut eaten: 38
+Donut eaten: 39
+Donut eaten: 40
+Donut eaten: 41
+Donut eaten: 42
+Donut eaten: 43
+Donut eaten: 44
+Donut eaten: 45
+Donut eaten: 46
+Donut eaten: 47
+Donut eaten: 48
+Donut eaten: 49
+Donut eaten: 50
+Donut eaten: 51
+Donut eaten: 52
+Donut eaten: 53
+Donut eaten: 54
+Donut eaten: 55
+Donut eaten: 56
+Donut eaten: 57
+Donut eaten: 58
+Donut eaten: 59
+Donut eaten: 60
+ite240pc14[41]% cat out_student_9.txt.txt[K1.txt0.txt
+Student ID: 10
+Donut eaten: 1
+Donut eaten: 2
+Donut eaten: 3
+Donut eaten: 4
+Donut eaten: 5
+Donut eaten: 6
+Donut eaten: 7
+Donut eaten: 8
+Donut eaten: 9
+Donut eaten: 10
+Donut eaten: 11
+Donut eaten: 12
+Donut eaten: 13
+Donut eaten: 14
+Donut eaten: 15
+Donut eaten: 16
+Donut eaten: 17
+Donut eaten: 18
+Donut eaten: 19
+Donut eaten: 20
+Donut eaten: 21
+Donut eaten: 22
+Donut eaten: 23
+Donut eaten: 24
+Donut eaten: 25
+Donut eaten: 26
+Donut eaten: 27
+Donut eaten: 28
+Donut eaten: 29
+Donut eaten: 30
+Donut eaten: 31
+Donut eaten: 32
+Donut eaten: 33
+Donut eaten: 34
+Donut eaten: 35
+Donut eaten: 36
+Donut eaten: 37
+Donut eaten: 38
+Donut eaten: 39
+Donut eaten: 40
+Donut eaten: 41
+Donut eaten: 42
+Donut eaten: 43
+Donut eaten: 44
+Donut eaten: 45
+Donut eaten: 46
+Donut eaten: 47
+Donut eaten: 48
+Donut eaten: 49
+Donut eaten: 50
+Donut eaten: 51
+Donut eaten: 52
+Donut eaten: 53
+Donut eaten: 54
+Donut eaten: 55
+Donut eaten: 56
+Donut eaten: 57
+Donut eaten: 58
+Donut eaten: 59
+Donut eaten: 60
+ite240pc14[42]% ls
+COMMENTS.txt  dm.h	       out_baker_2.txt	out_baker_5.txt     out_student_1.txt  out_student_4.txt  out_student_7.txt  pf    README.txt
+dm	      Makefile	       out_baker_3.txt	out_baker_6.txt     out_student_2.txt  out_student_5.txt  out_student_8.txt  pf.c  typescript
+dm.c	      out_baker_1.txt  out_baker_4.txt	out_student_10.txt  out_student_3.txt  out_student_6.txt  out_student_9.txt  pf.h  urls.txt
+ite240pc14[43]% rm -rf out*
+ite240pc14[44]% exit
+exit
+
+Script done on Thu 02 Mar 2006 08:34:30 PM EST

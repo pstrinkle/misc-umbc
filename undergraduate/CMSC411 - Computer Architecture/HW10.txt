@@ -1,0 +1,25 @@
+Patrick Trinkle
+CMSC411
+Fall 2006
+
+ HW10 More cache 25 points
+
+
+ a) (loads * 10) - 1 = clock cycles required
+    total to load cache is 159
+
+ b) 
+    1 address on bus
+    2 fetching W0-W3
+   11 0-3 on bus
+      fetching W4-W7
+   20 4-7 on bus
+      fetching W8-W11
+   29 8-11 on bus
+      fetching W12-W15
+   38 12-15 on bus
+
+    total to load cache is 38
+
+ c) (loads / 4) * 10 + 1 = clock cycles required
+    total to load cache is 41

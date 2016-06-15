@@ -1,0 +1,99 @@
+Patrick Trinkle
+CMSC411 Fall 2006
+HW12
+
+
+HW12 Memory bus 25 points
+
+64 bit wide bus, synchronous, 200MHz clock
+
+For this exercise the first memory access requires 50 nanoseconds
+and each additional memory access in the same transaction requires
+25 nanoseconds.
+
+Bandwidth is measured in megabytes per second.
+The address and word count are not included in the byte count
+and not included in the time.
+
+   For the I/O device to get 512 words when the I/O device uses
+   4 as the word count.
+
+cycle	action
+1	address (doesn't count)
+2-11	first access
+12	w1, w2
+13	w3, w4
+14	idle
+15	idle
+
+14 cycles = 1 transaction
+128 transactions * 14 = 1792 cycles
+1/200 = 5ns
+1792 * 5 ns = 8960 ns = 8.96 microseconds
+128/8.96 = 14.286 M transactions per second
+512 words * 4 bytes/word = 2048 bytes
+2048/8.96 = 228.57 MB/second
+
+a) Compute the total time from receipt of the address to the
+   end of the last transaction.
+
+	8.96 microseconds
+
+b) Compute the transactions per second.
+
+	14.286 M transactions/second
+
+c) Compute the bandwidth.
+
+	228.57 MBs (MB / second)
+
+
+   For the I/O device to get 512 words when the I/O device uses
+   16 as the word count.
+
+clock	action
+1	address
+2-11	access 1
+12-16	access 2
+12	w1, w2
+13	w3, w4
+14	idle
+15	idle
+17-21	access 3
+17	s5, s6
+18	w7, w8
+19	idle
+20	idle
+22-26	access 4
+22	w9, w10
+23	w11, w12
+24	idle
+25	idle
+27	w13, w14
+28	w15, w16
+29	idle
+30	idle
+
+(30-1) cycles = 1 transaction
+
+32 transactions (512/16)
+
+29 * 32 = 928 cycles
+1/200 = 5 ns
+928 * 5 ns = 4640 ns = 4.64 microseconds
+32/4.64 = 6.897 M transactions per second
+512 words * 4 bytes/word = 2048 bytes
+2048/4.64 = 441.379 MB / second
+
+d) Compute the total time from receipt of the address to the
+   end of the last transaction.
+
+	4.64 microseconds
+
+e) Compute the transactions per second.
+
+	6.897 M transactions per second
+
+f) Compute the bandwidth.
+
+	441.379 MBs (MB / second)

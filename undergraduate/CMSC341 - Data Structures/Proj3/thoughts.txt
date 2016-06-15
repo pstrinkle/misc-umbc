@@ -1,0 +1,2 @@
+I need to add a private value and a public function to retrieve it.
+I also need all insert thingy comparisons to increment it.

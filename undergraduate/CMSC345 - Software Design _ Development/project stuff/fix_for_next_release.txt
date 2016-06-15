@@ -1,0 +1,17 @@
+Stuff:
+
+movement of certain member functions from Semester.h -> Semester.cpp
+
+removal of function prototype deleteSemester() in GraduationPlan.h
+
+in preReqCheck, couldn't it just compare the Course against getRemainReqs() to see if they've taken it, or if it's still a remaining requirement?
+
+files should have file Header Comments.
+
+/* Filename.cpp
+ *
+ * Author: 
+ * Email:
+ * Last Modified
+ * Quick Grad Planner
+ */

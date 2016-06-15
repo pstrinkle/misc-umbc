@@ -1,0 +1,8 @@
+Course: CMSC481
+Date: 3/12/2006
+Author: Patrick Trinkle
+email: tri1@umbc.edu
+
+       The project lead me to research the use of sockets in c programming, which was good.  It was also cool to design a program to run based on formalized protocol standards.  Both projects run well.  I had to implement an echo client to work with the echo server, if nothing more than to test the thing.
+
+       To see script, I made two: serverside and typescript.  They were created simultaneously with two shells.  One is clearly the server side of the echo program, and the other contains the client side of the echo program, as well as two runs of the ftpclient program connecting to ftp.gl.umbc.edu

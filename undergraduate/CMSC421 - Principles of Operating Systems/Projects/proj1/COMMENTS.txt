@@ -1,0 +1,17 @@
+
+Comments regarding CMSC421 Project 1
+
+Author: Patrick Trinkle
+email: tri1@umbc.edu
+date: March 1st, 2006
+
+Files included: pf.c pf.h dm.c dm.h Makefile typescript COMMENTS.txt README.txt
+
+BEGIN COMMENTS
+
+During this project I worked mostly in the lab, but also on my laptop running knoppix.  I was in the lab early into the project, and there were about 10 of us.  We helped each other out with the theory and the algorithm ideas, but not the implementation.  As that would be difficult, and not necessary.  I implemented my dynamic memory for part 1 using a linked list and a simple pthread mutex.  For part 2 I used 3 dynamically allocated arrays of ints.  One holds the shelves, the other two hold the values for in and out.  I used that producer/consumer model.  I programmed both programs in C, whereas many people in the lab were using C++.  I saw no advantage in C++ in these tasks.  Towards the end, closer to the project's due date, many people started coming into the lab whom I'd never seen before, just starting their projects.  We were given adequate time, it's only that this project required a lot of research, especially since few of us had ever done anything like this before.  And also because shared memory is such a pain to understand at first.  Once it appeared as malloc() it made much more sense.  The "doonut maker" project was rather interesting, but some of the nuances in the systems specifications were kind of strange.  I couldn't get pf to sort before printing, but in many test cases it printed in sorted order, merely because it worked out that way.  Clearly that isn't always the case, but I spent days after finishing that part of the program, on break from working on the other one, to code up a good linked list sort function.  I kept losing nodes.  So I put that aside.  Overall it was a good project from which to learn a good bit about implementing the theories we discuss in class.
+
+Also of interest, my program gets all sorts of warnings, which turn out to be nothing, because it works fine, and I'm actually including all the proper libraries.  Very strange.
+
+END COMMENTS
+: )

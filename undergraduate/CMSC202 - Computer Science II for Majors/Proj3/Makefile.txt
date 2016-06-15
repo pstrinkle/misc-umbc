@@ -1,0 +1,58 @@
+
+
+
+# define an internal symbol for the correct C++ compiler
+COMPILER = /usr/local/bin/g++
+
+# define an internal symbol for compiler switches (flags) to be used
+COMPILERFLAGS = -ansi -Wall -g
+
+# define an internal symbol for the name of the executable for the project
+PROJECT=Proj3
+
+# define an internal symbol for the list of .o files which must be created and linked
+OBJECTS = Proj3.o Box.o RoundToy.o Truck.o DeliveryLog.o DeliveryRecord.o
+
+$(PROJECT): $(OBJECTS)
+	$(COMPILER) $(COMPILERFLAGS) -o $(PROJECT) $(OBJECTS)
+
+# define Proj2.o as a target that is dependent on Proj1.cpp
+# and Cargo.h -- if either Proj1.cpp or Cargo.cpp
+# are newer than Proj1.o, then the rule is executed
+# The rule tells the make utility to create Proj1.o by compiling Proj1.cpp
+# using the appropriate COMPILER and COMPILERFLAGS (as defined by 
+Proj3.o: Proj3.cpp Box.h RoundToy.h Truck.h DeliveryLog.h DeliveryRecord.h
+	${COMPILER} ${COMPILERFLAGS} -c Proj3.cpp
+
+# define Box.o as a target that is dependent on
+Box.o: Box.cpp Box.h
+	${COMPILER} ${COMPILERFLAGS} -c Box.cpp
+
+# define RoundToy.o
+RoundToy.o: RoundToy.cpp RoundToy.h
+	${COMPILER} ${COMPILERFLAGS} -c RoundToy.cpp
+
+# define Truck.o
+Truck.o: Truck.cpp Truck.h
+	${COMPILER} ${COMPILERFLAGS} -c Truck.cpp
+
+# define DeliveryLog.o
+DeliveryLog.o: DeliveryLog.cpp DeliveryLog.h
+	${COMPILER} ${COMPILERFLAGS} -c DeliveryLog.cpp
+
+# define DeliveryRecord.o
+DeliveryRecord.o: DeliveryRecord.cpp DeliveryRecord.h
+	${COMPILER} ${COMPILERFLAGS} -c DeliveryRecord.cpp
+
+###########################################################
+# define some targets which help with directory maintenance
+
+# 'make clean' removes all .o files, the project executable and core dump file
+clean:
+	touch foo.o
+	rm -rf foo.o $(OBJECTS) $(PROJECT) core*
+
+# 'make cleanest' removes everything that 'make clean' removes
+# plus backup files created by the editors
+cleanest: clean
+	rm -rf *~ *#

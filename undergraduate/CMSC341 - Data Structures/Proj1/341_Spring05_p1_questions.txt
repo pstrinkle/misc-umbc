@@ -1,0 +1,24 @@
+CMSC 341 -- Spring 2005 -- Project 1 Questions
+
+Copy this file into your directory and edit it to add your answers
+to the following questions about  project 1.
+
+These questions count for 10% of your project grade.
+
+
+1. (3 points) 
+   What are the best case and worst case time complexities for
+   processing BUY operation
+
+   The best case time complexity for processing the BUY operation is O(k), where k is a constant, equivalent to the iteam in queue being the first item found.
+
+   The worst case time complexity for processing the BUY operation is O(n), where n is a variable, equivalent to the number of items checked before the one in queue is found.
+
+
+2. (7 points)
+   We have discussed the advantages of using template classes and template 
+   functions. What, in your opinion, are it major disadvantages or what prices 
+   you must pay to have templates? Explain you answer using this project as an
+   example.
+
+   A major disadvantage of using templates is the use at run-time. Errors in this template are therefore unseen until run-time, and because of this the program is harder to debug, as per run-time errors are confusing in origin and cause. In Project 1 I ran into run=time errors with my template in the stresms and had an interesting time locating the issue pre-runtime when the code is not compiled. If there are many versions of a data type to be contained by a template class, the many functions written for it may never be used, therefore are a waste of memory on the v-table. With only two data types, Elctronics and Stocks, this was not an issue in Project1. Templates must also be protected, in terms of the *.cpp and *.h to prevent accidently looping and redefining of data. Another milder disadvantage to Templates in C++ is there horribly obfuscated syntax, to include, but not limited to <T>, and T&. In very large projects missing a few <T> can stall debugging of real errors for quite a while. 

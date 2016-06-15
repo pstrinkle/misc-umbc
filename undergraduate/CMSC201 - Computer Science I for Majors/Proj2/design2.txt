@@ -1,0 +1,265 @@
+/****************************************************
+** File: design2.txt
+** Author: Patrick Trinkle
+** Date: 3/2/2004
+** Section: 0103
+** Email : tri1@umbc.edu
+**
+** This program allows you to play connect4 against
+** the computer in two modes, test and play.
+****************************************************/
+
+
+
+/*****************************************
+** Function: PrintGreeting()
+** This function displays the greeting.
+**
+** Inputs: void
+** Outputs: void
+****************************************/
+void PrintGreeting (void);
+
+
+/*****************************************
+** Function: PrintInstructions()
+** This function prints the instructions.
+**
+** Inputs: void
+** Outputs: void
+****************************************/
+void PrintInstructions (void);
+
+
+/**********************************************
+** Function: InitializeBoard()
+** This function initializes the playing
+** field with blank spaces in the array.
+**
+** Inputs: the array holding the playing field
+** Outputs: void
+***********************************************/
+void InitializeBoard (char board);
+
+
+/*****************************************
+** Function: GetSeed()
+** This function gets the seed for the
+** random number generator from the time
+** function in C.
+**
+** Inputs: void 
+** Outputs: it returns the random seed
+** from the time function
+****************************************/
+int  GetSeed (void);
+
+
+/*****************************************
+** Function: TestSeed()
+** This function asks for a seed from the 
+** user to use when the computer plays.
+**
+** Inputs: void
+** Outputs: the user defined seed
+****************************************/
+int  TestSeed (void);
+
+
+/*****************************************
+** Function: PrintBoard()
+** This function prints the playing field
+** on the screen.
+**
+** Inputs: the array holding the field
+** Outputs: void
+****************************************/
+void PrintBoard (char board);
+
+
+/*****************************************
+** Function: TurnPrompt()
+** This function this function finds out
+** who needs to make a move and calls to
+** user or to the computer for a column,
+** in which to place the piece.
+**
+** Inputs: the array holding which player
+**         is currently playing
+** Outputs: the chosen column, either
+**          either from the computer or
+**          or the user
+****************************************/
+int  TurnPrompt (char player);
+
+
+/*****************************************
+** Function: CompMove()
+** This function calls the seed and then 
+** generates a random column to place its
+** piece.
+**
+** Inputs: the seed for the randomizer
+** Outputs: the computer chosen column
+****************************************/
+int  CompMove (int seed);
+
+
+/*****************************************
+** Function: PlacePiece()
+** This function places your piece in the
+** column after checking if the column is
+** full or not.
+**
+** Inputs: the chosen column number, the 
+**         array of the board and who is
+**         playing(computer or user)
+** Outputs: the column number
+****************************************/
+int  PlacePiece (int columnnum, char board, char player);
+
+
+/*****************************************
+** Function: WinCheck()
+** This function will check where the last
+** piece was placed and then check whose 
+** turn it is and check the board, this
+** function houses the actual functions
+** that do the checking. It also changes
+** whose turn it is after it checks.
+**
+** Inputs: the playing field, the player
+**         and the last column used
+** Outputs: whether someone who won, if
+**          anyone or if there was a tie
+****************************************/
+int  WinCheck (char board, char player, int columnnum);
+
+
+/*****************************************
+** Function: LCheck()
+** This function checks for a win to the
+** left of the piece.
+**
+** Inputs: the board, whose playing, and
+**         where the last piece was placed
+** Outputs: if there was a win
+****************************************/
+int  LCheck (char board, char player, int columnnum);
+
+
+/*****************************************
+** Function: RCheck()
+** This function checks for a win to the
+** right of the piece.
+**
+** Inputs: the board, whose playing, and
+**         where the last piece was placed
+** Outputs: if there was a win
+****************************************/
+int  RCheck (char board, char player, int columnnum); 
+
+
+/*****************************************
+** Function: VertCheck()
+** This function checks for a win up and
+** down.
+**
+** Inputs: the board, whose playing, and
+**         where the last piece was placed
+** Outputs: if there was a win
+****************************************/
+int  VertCheck (char board, char player, int columnnum); 
+
+
+/*****************************************
+** Function: DiagCheck()
+** This function checks for a win diagonally.
+**
+** Inputs: the board, whose playing, and
+**         where the last piece was placed
+** Outputs: if there was a win
+****************************************/
+int  DiagCheck (char board, char player, int columnnum); 
+
+
+/*****************************************
+** Function: ()
+** This function checks to see if the board
+** is full and there is a tie.
+**
+** Inputs: the board
+** Outputs: if there was a tie
+****************************************/
+int  FullBoard (char board);
+
+#define ROW 6
+#define COL 7
+
+#include <stdio.h>
+#include <time.h>
+#include "boards.h"
+#include "wincheck.h"
+#include "placement.h"
+
+
+/***********************************************************************************
+**
+** This program goes will play the game Connect 4
+** with the user going up against a computer, which places
+** pieces using a random number generator. The program will
+** greet the user and print instructions on the screen asking
+** if the user wants to play in test mode or in play mode.
+** The difference being that if the user plays in test mode
+** the seed for the randomizer will be prompted for user input
+** whereas in play mode the computer will use the time function
+** to generate the seed. After it prints instructions it'll
+** use InitializeBoard to fill the array board[][] with 
+** blank spaces. Assuming the user chose play it would then 
+** generate a seed for the randomizer. Then it'll print the
+** board on the screen. 
+**
+** The program then uses the array player[] to determine whose
+** turn it is. If it's the user then it prompts the user for a 
+** column in which to drop the piece. The user always places
+** an "O", and the computer's piece is a "X". It takes this
+** information and the funcion PlacePiece actually tests the
+** column to see if it has any more room and if so, it places 
+** the piece in the  appropriate spot based on the input. If it
+** were the computer's turn it would have just used CompMove to
+** get a column number using the randomizer.
+**
+** The program then runs checks to see if the move caused a win,
+** a tie, or nothing special whatsoever. The function WinCheck
+** mostly just houses the different checks, but it also switches
+** whose turn it is after all the checks are complete, thus sending
+** the program loop back up to PrintBoard to show where the piece
+** was placed. The WinCheck function holds the following: LCheck,
+** for checking to the left of the piece; RCheck, for checking
+** to the right of the piece; VertCheck, for checking above and
+** below the piece; DiagCheck, for checking diagonally; and FullBoard
+** to check if the board is full causing a tie. These functions will
+** return an integer, either 1, or 0: win or lose, respectively.
+** During the check the program has to be careful not to go out of
+** the range of allocated memory, so as not to cause a seg fault. 
+**
+** Main will basically have a list of the functions set up in a
+** loop as it'll change who is up to move, but what happens will
+** essentially be the same, so the functions are very modular.
+**
+** to be used:
+**
+** char board[ROW][COL];
+** char player[1];
+** 
+** as well as some ints used locally, etc...
+**
+** #include "boards.h" holds the information for the printing and initializing
+** #include "wincheck.h" holds the information for the winner checking
+** #include "placement.h" holds the information for placing the pieces, etc
+**
+**
+** Any questions, I can be reached at: tri1@umbc.edu
+**
+**
+***********************************************************************************/

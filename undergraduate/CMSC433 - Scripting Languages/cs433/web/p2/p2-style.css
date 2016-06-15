@@ -1,0 +1,111 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+td.label {
+  width: 4em;
+  text-align: right;
+  padding: .5em; 
+  font-size: 90%;
+}
+
+td.input {
+  width: 20em;
+  padding: .5em;
+  text-align: left;
+}
+
+td.input textarea, td.input input {
+  width: 100%;
+  border: 1px solid grey;
+}
+td.input textarea { 
+  height: 8em;
+}
+
+td.buttons {
+  text-align: right;
+  margin-left: .5em;
+  padding: .5em;
+}
+
+table.form {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 { 
+  text-align: center;
+}
+
+div.bar { 
+  padding: .25em;
+  border-top: 1px solid #999999;
+  border-bottom: 1px solid #999999;
+  background-color: #efefef;
+  font-size: 80%;
+  margin-bottom: 1em;
+}
+
+div.search {
+    float: right;
+}
+
+div.search input.bordered { 
+  border: 1px solid #999999;
+}
+
+div.contents { 
+  margin: 1em;
+  font-size: 90%;
+}
+
+.name { 
+  color: #0000ff;
+  font-weight: bold;
+}
+
+.notes { 
+  font-size: 90%;
+}
+
+a.tag, a.edit { 
+  color: #999999;
+  font-size: 90%;
+  text-decoration: none;
+}
+
+a.tag:hover, a.edit:hover { 
+  text-decoration: underline;
+}
+
+.url { 
+  color: #009900;
+  font-size: 90%;
+}
+
+div.bookmark { 
+  margin-bottom: 1em;
+}
+
+div.form {
+    text-align: center;
+}
+
+div.form table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.errors {
+    color: red;
+}
+
+
+
+
+
+/* ----- for demo only ------ */
+div.demo { background-color: #fad163; border-bottom: 1px solid #000000; margin-bottom: 1em; padding: .5em; text-align: center;}
+div.demo a { color: #000000; }

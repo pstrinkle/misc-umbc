@@ -1,0 +1,75 @@
+ HW2 Evaluating Benchmarks 25 points
+
+       You do not have to copy the questions, but show the
+       computation and clearly indicate the answers.
+       Be sure to label the answers with the part number.
+
+ You are the lead designer of a new processor. The processor design
+ and compiler are complete, and now you must decide whether to
+ produce the current design as it stands or spend additional time
+ to improve it. You discuss this problem with your engineering
+ team and arrive at the following options:
+
+ a) Leave the design as it stands. Call this the base machine, MBASE.
+    It has a clock rate of 1.5GHz and the following measurements have
+    been made using a simulator:
+
+   instruction class  CPI  Frequency of use
+             A         2     30%
+             B         4     30%
+             C         3     30% 
+             D         5     10%
+
+ b) Optimize the hardware. The hardware team claims they can improve
+    the processor design to give a clock rate of 2.2GHz. Call this
+    machine MOPT. The compiler team has made changes for this machine. 
+    The following measurements have been made using a simulator:
+
+   instruction class  CPI  Frequency of use
+            A          2     30%
+            B          3     40%
+            C          4     20%
+            D          5     10%
+
+Part1: What is the CPI of MBASE?
+                   CPI of MOPT? 
+
+Part2: What is the MIPS rating of MBASE?
+                   MIPS rating of MOPT?
+
+Part3: How much faster is MOPT compared to MBASE?
+       "How much faster" is a dimensionless ratio   faster/slower,
+       this is called "speed up" always greater than 1.0,
+       else "slow down" if less than 1.0
+
+Part4: Using Amdahl's law:
+       Suppose we enhance a machine to make all floating point
+       instructions run five times faster. Look at how speedup
+       behaves when we incorporate faster floating point hardware.
+       If the execution time of some benchmark before floating
+       point enhancement is 11 seconds total, what is the speedup
+       if one-fifth of the 11 seconds was spent executing
+       floating point instructions?
+
+Part5: What is the speedup if one-half of the 11 seconds was spent
+       executing floating point instructions?
+
+Part6: How many total seconds did Part5 run?
+
+Part7: Using Amdahl's law:
+       You are going to enhance a machine and there are two possible
+       improvements: Either make multiply instructions run four
+       times faster than before, or make memory access instructions
+       run two times faster than before. A program takes 100 seconds
+       to execute before enhancement. 25% of the time is used by
+       multiply instructions, 45% of the time is used by memory
+       access instructions and the remaining 30% is used by other
+       instructions.
+
+   What is the speedup from just improving multiply instructions?
+   What is the speedup from just improving memory access instructions?
+   What is the speedup from improving both?
+   (Show your work, the 100 seconds does not need to be used,
+    you may just write the numbers in Amdahl's law format.)  
+
+

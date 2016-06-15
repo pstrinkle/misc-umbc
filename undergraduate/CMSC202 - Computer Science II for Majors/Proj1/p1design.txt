@@ -1,0 +1,43 @@
+CMSC 202 FALL 2004
+Project 1 Design
+
+Name:        Patrick Trinkle
+Section:     0101
+UMBC E-Mail: tri1@umbc.edu
+Date:        9/19/2004
+
+Section I -- Structure Definitions
+
+typedef struct toy
+{
+   int    diameter;
+   string color;
+   int    holes;
+}RoundToy;
+
+typedef struct box
+{
+   int length;
+   int width;
+   int height;
+   int volume;
+   vector<RoundToy> toysinbox;
+}BOX;
+
+
+
+
+
+Section II -- Extra Functions
+
+None
+
+
+
+Section III -- Tests
+
+Test for proper Command Line Arguments.
+
+Test for input file. Make sure it opens properly.
+
+Test for validity of commands in input file.

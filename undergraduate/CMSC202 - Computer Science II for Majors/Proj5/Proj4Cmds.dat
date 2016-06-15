@@ -1,0 +1,39 @@
+45 45 45
+
+12
+Red
+White
+Blue
+Green
+Orange
+Pink
+LtBlue
+DkBlue
+LtGreen
+DkGreen
+Lime
+Yellow
+
+
+BOXES 15 5 6 7
+TOYS Round 340  DkBlue 2 3.5
+
+BOXES 1 2 3 4
+TOYS Rod 100 DkGreen 5
+
+BOXES 5 2 3 4
+TOYS Square 5 Lime 2 1
+
+PAINT 10 400 Red
+
+GLUE 5 Elmer's Nasty Ass Frickin' Glue Mother Fucker!
+
+PRINT
+
+DELIVER BOXES 5 My Assembly Plant
+DELIVER GLUE 45 Jesus's Plant
+DELIVER PAINT 500 Your Plant, mofo!
+
+DELIVER BOXES 100 Somewhere
+
+PRINT

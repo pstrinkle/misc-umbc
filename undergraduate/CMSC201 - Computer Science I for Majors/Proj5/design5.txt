@@ -1,0 +1,383 @@
+/****************************************************
+** File: design5.txt
+** Author: Patrick Trinkle
+** Date: 5/01/2004
+** Section: 0103
+** Email : tri1@umbc.edu
+**
+** This program reads in a user specified file 
+** containing information on the cars of an incoming
+** train and generates instructions for moving the 
+** cars to the appropriate outbound tracks, and 
+** generates accounting files with the information 
+** on the cars per outbound track.
+****************************************************/
+
+
+/*****************************************
+** Function: PrintGreeting()
+** This function displays the greeting.
+**
+** Inputs:  void
+**
+** Outputs: void
+*****************************************/
+void PrintGreeting (void);
+
+/*****************************************
+** Function: InitializeIncomingTrack()
+** This function creates, & initializes
+** the queue head node.
+**
+** Inputs:  void
+**
+** Outputs: TRACKPTR with location of
+**          the incoming rail queue head.
+*****************************************/
+TRACKPTR InitializeIncomingTrack (void);
+
+/*****************************************
+** Function: BuildQueue()
+** This function builds the queue for the
+** incoming train.
+**
+** Inputs:  the pointer to the pointer
+**          for the incoming train queue.
+**          it also has the filer pointer
+**
+** Outputs: TRACKPTR with location of
+**          the incoming rail queue head.
+*****************************************/
+void BuildQueue (TRACKPTR * incoming, FILE * ifp);
+
+/*****************************************
+** Function: CreateNode()
+** This function creates a new node to 
+** hold the information for the car.
+**
+** Inputs:  void
+**
+** Outputs: NODEPTR with location of
+**          the new node.
+*****************************************/
+NODEPTR CreateNode (void);
+
+/*****************************************
+** Function: CreateCar()
+** This function creates a new car to 
+** hold the information for the car.
+**
+** Inputs:  void
+**
+** Outputs: CARPTR with location of
+**          the new car structure.
+*****************************************/
+CARPTR CreateCar (void);
+
+/*****************************************
+** Function: GetInfo()
+** This function scans in the information
+** for the new car.
+**
+** Inputs:  a pointer to a temporary 
+**          car structure and the file
+**          pointer.
+**
+** Outputs: void
+*****************************************/
+void GetInfo (CARPTR tempcar, FILE * ifp);
+
+/*****************************************
+** Function: CalcCost()
+** This function calculates the freight
+** cost of the the car.
+**
+** Inputs:  a pointer to a temporary 
+**          car structure
+**
+** Outputs: void
+*****************************************/
+void CalcCost (CARPTR tempcar);
+
+/*****************************************
+** Function: SetData()
+** This function sets the data from the 
+** car into the new car node.
+**
+** Inputs:  a pointer to a temporary node
+**          & a pointer to the temp car
+**
+** Outputs: void
+*****************************************/
+void SetData (NODEPTR temp, CARPTR tempcar);
+
+/*****************************************
+** Function: Enqueue()
+** This function adds the new node to the
+** incoming rail queue.
+**
+** Inputs:  a pointer to a temporary node
+**          & a pointer to a pointer to
+**          the incoming rail
+**
+** Outputs: an int called flag that feeds
+**          if the program worked properly
+*****************************************/
+int Enqueue (TRACKPTR * incoming, NODEPTR temp);
+
+/*****************************************
+** Function: CreateTracks()
+** This function creates all the head
+** nodes for the stacks
+**
+** Inputs:  a pointer to a transfer,
+**          a pointer to track1,
+**          a pointer to track2,
+**          a pointer to track3,
+**          a pointer to track4.
+**
+** Outputs: void
+*****************************************/
+void CreateTracks (TRACKPTR * transfer, TRACKPTR * track1, TRACKPTR * track2, TRACKPTR * track3, TRACKPTR * track4);
+
+/*****************************************
+** Function: IsEmpty()
+** This function checks to see if the head
+** pointer goes to NULL.
+**
+** Inputs:  a pointer to a rail,
+**
+** Outputs: int flag which catches if it
+**          is empty or not... basically
+*****************************************/
+int IsEmpty (TRACKPTR railPtr);
+
+/*****************************************
+** Function: Peek()
+** This functions looks ahead in the 
+** queue without destroying it to see if
+** the next car's destination is the same
+** as the previous
+**
+** Inputs:  a pointer to the incoming
+**          rail.
+**
+** Outputs: int flag which catches if the
+**          next car is going to the same
+**          location as the previous
+*****************************************/
+int Peek (TRAcKPTR incoming);
+
+/*****************************************
+** Function: Dequeue()
+** This functions removes the first node
+** in the incoming queue and then feeds
+** the push function
+**
+** Inputs:  a pointer to the incoming
+**          rail, and the pointer to the
+**          transfer rail
+**
+** Outputs: void
+*****************************************/
+void Dequeue (TRACKPTR incoming, TRACKPTR * transfer);
+
+/*****************************************
+** Function: Push()
+** This functions pushes the car node onto
+** the transfer rail.
+**
+** Inputs:  a the pointer to the
+**          transfer rail, and the node
+**          car
+**
+** Outputs: void
+*****************************************/
+void Push (TRAcKPTR * transfer, NODEPTR * car);
+
+/*****************************************
+** Function: GenerateInstructions()
+** This functions generates instructions
+** for the user.
+**
+** Inputs:  a the pointer to the
+**          transfer rail, and a pointer
+**          to the incoming rail
+**
+** Outputs: void
+*****************************************/
+void GenerateInstructions (TRACKPTR transfer, TRACKPTR incoming);
+
+/*****************************************
+** Function: Pop()
+** This functions pops the node off the
+** transfer rail.
+**
+** Inputs:  a the pointer to the
+**          transfer rail, and a pointer
+**          to the destination rail, and
+**          a pointer to the car node
+**
+** Outputs: void
+*****************************************/
+void Pop (TRACKPTR * transfer, NODEPTR * car, TRACKPTR * destinationrail);
+
+/*****************************************
+** Function: PushTrack()
+** This functions puts the car onto the
+** destination rail.
+**
+** Inputs:  a pointer to the destination
+**          rail, and a pointer to the car
+**          node
+**
+** Outputs: void
+*****************************************/
+void PushTrack (NODEPTR * car, TRACKPTR * destinationrail);
+
+/*****************************************
+** Function: BuildAcctFiles()
+** This functions builds the accounting
+** file
+**
+** Inputs:  a file pointer for the output
+**          file and the track number.
+**
+** Outputs: void
+*****************************************/
+void BuildAcctFiles (FILe * ofp, TRACKPTR tracknum);
+
+/*****************************************
+** Function: PrintTotals()
+** This functions prints the totals
+**
+** Inputs:  the float for the cost, and
+**          the int for the weight
+**
+** Outputs: void
+*****************************************/
+void PrintTotals (float cost, int wt);
+
+/*****************************************
+** Function: PrintCars()
+** This functions prints the cars
+**
+** Inputs:  the pointer to the track
+**
+** Outputs: void
+*****************************************/
+void PrintCars (TRACKPTR tracknum);
+
+/*****************************************
+** Function: DestroyQueue()
+** This functions frees the queue
+**
+** Inputs:  the pointer to the incoming
+**          track
+**
+** Outputs: void
+*****************************************/
+void DestroyQueue (TRACKPTR * incoming);
+
+/*****************************************
+** Function: DestroyStack()
+** This functions frees the stack
+**
+** Inputs:  the pointer to the track
+**
+** Outputs: void
+*****************************************/
+void DestroyStack (TRACKPTR * tracknum);
+
+
+/*******************************************************************
+**
+**                Design for Project 5 : Trains2
+**              ----------------------------------
+**
+**       Okay, Trains2 simulates a switching station for a
+**  trainstation.  The program reads in a user-defined file using
+**  command-line arguments.  The file contains the information
+**  for all the cars on the incoming train.  The program calculates
+**  the price of moving the cargo per car.  The program builds a
+**  queue based on the incoming train and reads the cars and 
+**  determines, based on destination, onto which outbound track the
+**  car needs to be attached.  The program generates instructions
+**  for the screen so the user can know how to move the cars.  It
+**  also builds accounting files for the user.  
+**
+**       The program uses linked lists with queue and stack
+**  implementation.  The program buils the following pointers:
+**
+**  typedef struct node * NODEPTR;
+**  typedef struct car * CARPTR;
+**  typedef struct trackinfo * TRACKPTR;
+**
+**       The program also uses the following structures:
+**
+**  typedef struct car
+**  {
+**     int   carNum;
+**     char  cargo[LENGTH];
+**     char  origin[LENGTH];
+**     char  destination[LENGTH];
+**     int   weight;
+**     int   miles;
+**     float cost;
+**  }CAR;
+**
+**  typedef struct node
+**  {
+**     CAR     data;
+**     NODEPTR next;
+**  }NODE;
+**
+**  typedef struct trackinfo
+**  {
+**     int     numCars;
+**     char    destination[LENGTH];
+**     int     totalWeight;
+**     float   totalCost;
+**     NODEPTR head;
+**     NODEPTR tail;
+**  }TRACK;
+**
+**       The program declares the following tracks:
+**
+**  TRACKPTR transfer, track1, track2, track3, track4;
+**
+**  #define AUTOS  16.5
+**  #define COAL   29.1
+**  #define CATTLE 52.5
+**  #define HOGS   63.1
+**  #define EGGS   75.9
+**  #define LENGTH 12
+**
+**       The program first checks the command-line arguments and
+**  then allocates memory for the incoming-rail queue.  It prints a
+**  greeting for the user.  It then builds the queue (BuildQueue)
+**  which involves creating nodes (CreateNode), scans the car info
+**  and builds a blank car (GetInfor, CreateCar).  The program 
+**  calculates the cost for the car (CalcCost).  The program puts 
+**  the data into the node (SetData).  The program enqueues the node
+**  into the incoming-rail queue (Enqueue).  The program creates
+**  all the track heads (CreateTracks).  The program uses a function
+**  to view the nodes in the queue (Peek) and removes them and then
+**  places them into a transfer stack (Dequeue, Push).  The program
+**  generates pushing instructions (GenerateInstructions).  The
+**  program then moves the nodes from the transfer to the proper
+**  outbound track (Pop, PushTrack).  The program generates account-
+**  ing files, acct1.txt, acct2.txt, acct3.txt, acct4.txt.  
+**  (BuildAcctFiles)  This function uses (PrintTotals) & (PrintCars)
+**  to print out track specific information about each track.  The
+**  program ends by freeing all the memory and pointing all pointers
+**  to NULL (DestroyQueue, DestroyStack).  
+**
+**  Project3 functions used : 
+**  
+**  void PrintTotals (float cost, int wt);
+**  void PrintCars (TRACKPTR tracknum);
+**  void CalcCost (CARPTR tempcar);
+**  void GetInfo (CARPTR tempcar, FILE * ifp);
+**
+*******************************************************************/

@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+  <head>
+    <title>JSON AJAX Chat Client</title>
+    <style>
+
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+      
+      #header {
+        background-color: #990000;
+        text-align: center;
+        font-size: 2.5em;
+        font-weight: bold;
+        color: white;
+      }
+
+      #page {
+        text-align: center;
+      }
+
+      #container {
+        width: 52em;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+      }
+
+      #alias, #message {
+         width: 100%;
+         margin-top: .5em;
+         margin-bottom: 1.5em;
+      }
+
+      #messages p {
+        margin: .5em;
+      }
+      
+      #button-container {
+        text-align: right;
+      }
+
+      #clear, #send {
+        margin-top: 0em;
+        margin-left: 1em;
+        margin-bottom: 1.0em;
+      }
+
+      fieldset {
+        margin-top: 1em;
+      }
+      
+      #styles {
+        text-align: center;
+      }
+      
+      #foreground, #background {
+        text-align: right;
+        margin-top: 1em;
+      }
+      
+      .aqua { background-color: aqua; border: 1px solid black; }
+      .black { background-color: black; border: 1px solid black; }
+      .blue { background-color: blue; border: 1px solid black; }
+      .fuchsia { background-color: fuchsia; border: 1px solid black; }
+      .gray { background-color: gray; border: 1px solid black; }
+      .green { background-color: green; border: 1px solid black; }
+      .lime { background-color: lime; border: 1px solid black; }
+      .maroon { background-color: maroon; border: 1px solid black; }
+      .navy { background-color: navy; border: 1px solid black; }
+      .olive { background-color: olive; border: 1px solid black; }
+      .purple { background-color: purple; border: 1px solid black; }
+      .red { background-color: red; border: 1px solid black; }
+      .silver { background-color: silver; border: 1px solid black; }
+      .teal { background-color: teal; border: 1px solid black; }
+      .white { background-color: white; border: 1px solid black; }
+      .yellow { background-color: yellow; border: 1px solid black; }
+
+    </style>
+    <script type="text/javascript" src="http://userpages.umbc.edu/~dhood2/courses/cmsc433/spring2006/Miscellaneous/JavaScript/p3/json.js"></script>
+    <script type="text/javascript">
+
+    <!--
+
+    /* Author: Patrick Trinkle
+       Email:  tri1@umbc.edu
+       Course: CMSC433
+       
+       Functions should be named clearly
+       This webpage retrieves information with the AJAX model and utilizes the JSON library
+    */
+    
+      var alias = " ";
+
+      var request_string = "http://userpages.umbc.edu/~dhood2/courses/cmsc433/spring2006/Miscellaneous/JavaScript/p3/tri1.php";
+
+      /* creates the XMLHTTPRequestObject */
+      function createRequestObject() {
+         var ro;
+	 var browser = navigator.appName;
+	 if(browser == "Microsoft Internet Explorer"){
+            ro = new ActiveXObject("Microsoft.XMLHTTP");
+         } else {
+            ro = new XMLHttpRequest();
+         }
+         return ro;
+      }
+
+      var http;
+      
+      /* sets up the interval function call */
+      function init() {
+         getAlias();
+
+	 http = createRequestObject();
+
+	 get_messages();
+      
+         setInterval("get_messages()", 10000);
+      }
+      
+      /* gets the user alias */
+      function getAlias() {
+         alias = prompt("Please enter an alias:", "");
+      }
+
+      /* retrieves the messages */
+      function get_messages() {
+         http.open('get', request_string);
+	 http.onreadystatechange = handleResponse;
+         http.send(null);
+      }      
+
+      /* sends the message */
+      function send_message() {
+         var string = buildQuery();
+
+	 http.open('get', request_string + string);
+	 http.onreadystatechange = handleResponse;
+	 http.send(null);
+      }	 
+
+      // this function builds the query string for the server
+      function buildQuery() {
+         string = "?";
+	 var fontstuff = getDecor();
+	 var colorstuff = getColors();
+ 
+	 string += 'alias=' + escape(alias) + '&';
+	 string += 'message=' + escape(document.getElementById('message').value) + '&';
+	 string += "bold=" + escape(fontstuff['bold']) + "&";
+	 string += "underline=" + escape(fontstuff['underline']) + "&";
+	 string += "italic=" + escape(fontstuff['italic']) + "&";
+	 string += 'fg=' + colorstuff[0] + '&';
+	 string += 'bg=' + colorstuff[1] + '&';
+	 return string;
+
+	 document.getElementById('message').innerHTML = "";
+
+      }
+
+      /* handles the ajax responses */
+      function handleResponse() {
+         if(http.readyState == 4) {
+            var response = http.responseText;
+	    var session = JSON.parse(response);
+	    var chat = "";
+
+	    for ( var i = 0; i < session.length; i++ ) {
+
+	       italic = " ";
+	       bold = " ";
+	       underline = " ";	    
+
+	       if ( session[i].bold == true ) {
+		  bold = 'font-weight: bold;';
+               }
+	       if ( session[i].underline == true ) {
+		  underline = 'text-decoration: underline;';
+	       }
+	       if ( session[i].italic == true ) {
+	          italic = 'font-style: italic;';
+               }
+
+	       chat += '[' + session[i].timestamp + '] ';
+	       chat += session[i].alias + ': ';
+	       chat += '<span style="background-color: ' + session[i].bg + '; color:' 
+	            + session[i].fg + '; ' + bold + ' ' + underline + ' ' + italic + '" >' 
+		    + session[i].message + '</span>';
+	       chat += '<br />';
+	    }
+
+	    document.getElementById('messages').innerHTML = chat;
+
+         }
+      }
+      
+      /* this function gets the user settings */
+      function getDecor() {
+         var decor = new Array();
+
+	 decor['bold'] = false;
+	 decor['underline'] = false;
+	 decor['italic'] = false;
+
+	 if ( document.getElementById('bold').checked ) {
+	    decor['bold'] = true;
+	 }
+	 if ( document.getElementById('underline').checked ) {
+	    decor['underline'] = true;
+	 }
+	 if ( document.getElementById('italic').checked ) {
+	    decor['italic'] = true;
+	 }
+	 return decor;
+      }     
+
+      /* gets the user's color settings */
+      function getColors() {
+         var colors = new Array();
+	 n = document.messageform.foreground.length;
+         for ( var i = 0; i < n; i++ ) {
+            if (document.messageform.foreground[i].checked) {
+               colors[0] = document.messageform.foreground[i].value;
+            }
+         }
+	 n = document.messageform.background.length;
+	 for ( var j = 0; j < n; j++ ) {
+            if ( document.messageform.background[j].checked ) {
+	       colors[1] = document.messageform.background[j].value;
+            }
+         }      
+	 return colors;
+      }   
+
+      // -->
+
+    </script>
+  </head>
+  <body onLoad="init();">
+    <div id="header">JSON AJAX Chat Client</div>
+    <div id="page">
+      <div id="container">
+        <fieldset>
+          <legend>Message</legend>
+          <form action="#" method="get" name="messageform" id="messageform">
+
+            <!-- checkboxes for bold/underline/italic -->
+            <div id="styles">
+              <input type="checkbox" name="bold" id="bold" />
+              <label for="bold"><span style="font-weight: bold">Bold</span></label>
+
+              <input type="checkbox" name="underline" id="underline" />
+              <label for="underline"><span style="text-decoration: underline;">Underline</span></label>
+
+              <input type="checkbox" name="italic" id="italic" />
+              <label for="italic"><span style="font-style: italic">Italic</span></label>
+            </div>
+
+            <!-- radio buttons for foreground color -->
+            <div id="foreground">
+              <div style="float: left">Foreground:</div>
+              <input type="radio" name="foreground" value="aqua" /><span class="aqua">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="foreground" value="black" checked /><span class="black">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="foreground" value="blue" /><span class="blue">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="foreground" value="fuchsia" /><span class="fuchsia">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="foreground" value="gray" /><span class="gray">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="foreground" value="green" /><span class="green">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="foreground" value="lime" /><span class="lime">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="foreground" value="maroon" /><span class="maroon">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="foreground" value="navy" /><span class="navy">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="foreground" value="olive" /><span class="olive">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="foreground" value="purple" /><span class="purple">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="foreground" value="red" /><span class="red">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="foreground" value="silver" /><span class="silver">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="foreground" value="teal" /><span class="teal">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="foreground" value="white" /><span class="white">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="foreground" value="yellow" /><span class="yellow">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+            </div>
+
+            <!-- radio buttons for foreground color -->
+            <div id="background">
+              <div style="float: left">Background:</div>
+              <input type="radio" name="background" value="aqua" /><span class="aqua">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="background" value="black" /><span class="black">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="background" value="blue" /><span class="blue">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="background" value="fuchsia" /><span class="fuchsia">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="background" value="gray" /><span class="gray">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="background" value="green" /><span class="green">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="background" value="lime" /><span class="lime">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="background" value="maroon" /><span class="maroon">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="background" value="navy" /><span class="navy">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="background" value="olive" /><span class="olive">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="background" value="purple" /><span class="purple">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="background" value="red" /><span class="red">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="background" value="silver" /><span class="silver">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="background" value="teal" /><span class="teal">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="background" value="white" checked /><span class="white">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+              <input type="radio" name="background" value="yellow" /><span class="yellow">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+           </div>
+
+           <!-- where the user enters the message -->
+           <div style="margin-top: 1em;"> 
+             <label for="message">Message:</label><br />
+             <textarea name="message" id="message" rows="4"></textarea>
+           </div>
+
+           <!-- buttons for clearing and submitting the message -->
+           <div id="button-container">
+             <input type="button" name="clear" id="clear" value="Clear" onClick="document.messageform.message.value='';document.messageform.message.focus();"/>
+            <input type="button" name="send" id="send" value="Send Message" onClick="send_message()" />
+           </div>
+         </form>
+        </fieldset>
+
+        <!-- contains the div "messages" where updates are shown -->
+        <fieldset style="margin-bottom: 1em;">
+          <legend>Message Board</legend>
+          <div id="messages">
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </body>
+</html>

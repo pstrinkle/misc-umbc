@@ -1,0 +1,53 @@
+Part 1
+
+a)  How may  mul.d instructions in matmul2gcc.s ?
+        1
+b)  About how many  mul.d instructions in matmul2sgi.s ?
+        66
+
+Part 2
+
+  The file hex.out has the source listing with line numbers,
+  the hex address and hex instructions as loaded in memory and
+  the disassembly with hex address and decoded instruction.
+
+  An instruction field format is on page 207 of textbook.
+  mul.d is the MIPS=SGI double precision floating point multiply, "R"
+format.
+  Watch out for where the register values are placed.
+  (R2000 instructions differ from IRIX.GL.UMBC.EDU that are R??000.)
+
+  Most of the instruction in the loop are "housekeeping", there are
+various
+  instructions for loading and storing data, l.d and s.d are just one
+pair.
+
+a) Do all the instructions have the same names in  matmul2sgi.s  and
+hex.out ?
+	No, there are some command names in hex.out I can't find in matmul2sgi.s
+
+b) Find a  mul.d  instruction in hex.out [use this for c) and d) ]
+   Write an assembly language line, write the machine address.
+	mul.d	$f5,$f0,$f5
+	0x10000c08
+
+c) From the machine address, look up and write the  mul.d  instruction
+   from  b)  as hexadecimal
+	0x10000c08
+	0001 0000 0000 0000 0000 1100 0000 1000
+
+d) Write the hexadecimal as six decimal integers for the
+   fields 6,5,5,5,5,6 bits
+	4 0 0 1 16 8	
+
+
+
+
+[main:19, 0x10000c08] 	mul.d	$f5,$f0,$f5
+
+0x10000c08
+10		00		0c		08
+0001 0000 0000 0000 0000 1100 0000 1000
+000100 00000 00000 00001 10000 001000
+4	0	0	1	16	8
+

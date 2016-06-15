@@ -1,0 +1,26 @@
+12
+Red
+White
+Blue
+Green
+Orange
+Pink
+LtBlue
+DkBlue
+LtGreen
+DkGreen
+Lime
+Yellow
+
+
+BOXES 15 5 6 7
+TOYS Round 340  DkBlue 2 3.5
+
+BOXES 1 2 3 4
+TOYS Rod 100 DkGreen 5
+
+BOXES 5 2 3 4
+TOYS Square 5 Lime 2 1
+PRINT
+
+DELIVER 5 My Assembly Plant

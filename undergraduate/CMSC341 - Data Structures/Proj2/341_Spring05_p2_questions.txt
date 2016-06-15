@@ -1,0 +1,20 @@
+Project 2 Questions:
+
+Copy this file into your directory and edit it to include your answers.
+
+These questions are worth 10% of your project 2 grade.
+
+1) (5 points) 
+   Using the results you obtained, is there any reason to prefer one insertion 
+   strategy to another? 
+
+   According to my results, if the value of N, or the number of items to be inserted into the List, is low and not likely to get very large, over a few hundred items, the iae is as efficient as the mraf, but as N goes to infinity the mraf will prove more efficient.
+
+
+2) (5 points)
+   What would have been the advantages (or disadvantages) to implement the
+   MRAF and IAE lists using inheritance instead of modifying the Weiss list class?
+   Consider issues such as ease to implement and  maintainability of code.
+   
+   Some advantages in implementation of the MRAF and IAE lists using inheritance are its capability to inherit methods from a base class, which will not need to be recoded, such as makeEmpty(). In the adaptation method all used functions of the list class needed to be written to call the original method of the list class. With the iheritance there is more code in general, since you will need to override functions of the base class so they are more specific for the derived class, whereas through adaptation you only need to pass in altered parameters to existing list functions. Such as insertAtFront(x) which with adaptation just calls the insert function for the List class which is already in place and works well, unlike with inheritance with which you'd need to write insertAtFront(x) to handle the MRAF class as a derived class. As far as maintainability of code which is just about equivalent because once the classes are implemented there is little to maintain.
+

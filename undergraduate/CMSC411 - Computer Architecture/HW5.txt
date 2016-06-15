@@ -1,0 +1,110 @@
+Patrick Trinkle
+CMSC411
+Fall 2006
+HW5
+
+
+ HW5 Five questions 25 pts
+
+ 
+It is best if you do not minimize. The grader has only the plain answers.
+
+  1. Write two VHDL statements that implement the truth table below
+     Just use  "and"   "or"   and  "not"  with parenthesis.
+     the answer starts   x <=
+                         y <=
+
+        a b c | x y
+        ------+----
+        0 0 0 | 0 0
+        0 0 1 | 0 0
+        0 1 0 | 0 1
+        0 1 1 | 1 0
+        1 0 0 | 1 1
+        1 0 1 | 0 1
+        1 1 0 | 1 0
+        1 1 1 | 0 0
+
+
+	x <= 	(not a and b and c) or
+		(a and not b and not c) or
+		(a and b and not c);
+
+	y <=	(not a and b and not c) or
+		(a and not b and not c) or
+		(a and not b and c);
+
+
+  2. Write the VHDL statement that implements the logic diagram
+
+          +----+
+      a --|AND |____
+      b --|    |   |
+          +----+   | +----+
+                   --|OR  |
+          +----+     |    |
+      c --|OR  |_____|    |__
+      d --|    |     |    |  |
+          +----+     |    |  |
+                   --|    |  |
+          +----+   | |    |  |
+      e --|NOT |---| +----+  |  +----+
+          +----+             |--|AND |
+                                |    |-- g
+      f ------------------------|    |
+                                +----+
+
+     Be sure to include the semicolon in VHDL statements,
+     else you loose one point for each that is missing.
+
+
+	g <= f and ((a and b) or (c or d) or not e);
+
+  3. Draw the logic diagram that represents the VHDL statement
+
+       g <= ((not a or b) xor (b and d and not e)) and (e or not f);
+
+	     +----+   +---+
+	a ---|NOT |---|OR |
+	     +----+   |   |    +----+
+	              |   |----|XOR |
+	b ------------|   |    |    |
+	           |  +---+    |    |
+	           |           |    |    +----+
+	           |   +----+  |    |    |AND |
+	           |---|AND |  |    |----|    |
+	               |    |--|    |    |    |
+	d -------------|    |  +----+    |    |----- g
+	               |    |            |    |
+	      +----+   |    |         |--|    |
+	e ----|NOT |---|    |         |  +----+
+	    | +----+   +----+         |
+	    |                         |
+	    |          +----+         |
+	    |----------|OR  |         | 
+	               |    |---------|
+	      +----+   |    |
+	f ----|NOT |---|    |
+	      +----+   |    |
+	               +----+
+
+  4. For the following schematic, Ripple Carry wiring:
+     Use a, b, e and f  all as four ones. e.g. a <= "1111"   etc.
+     4a) what is the six bit result s.
+     4b) given that the time from any input to any output in the
+         full adder is  2T, how much time does the longest
+         path require?   the answer is   ____ T
+
+	4a) 111100
+	4b) 14T
+
+
+  5. For the following schematic, Carry Save wiring:
+     Use a, b, e and f  all as four ones. e.g. a <= "1111"   etc.
+     5a) what is the six bit result s.
+     5b) given that the time from any input to any output in the
+         full adder is  2T, how much time does the longest
+         path require?   the answer is   ____ T
+
+	5a) 111100
+	5b) 12T

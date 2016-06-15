@@ -1,0 +1,125 @@
+This program has gathered information
+about a train's cargo and it is presented below.
+
+There are 12 cars in the train
+There data for each car are : 
+
+ Car number : 45301
+      Cargo : coal
+     Origin : Pittsburgh
+Destination : Baltimore
+     Weight : 13000 pounds
+   Distance : 229
+       Cost : $ 433.15
+
+ Car number : 57321
+      Cargo : cattle
+     Origin : Lancaster
+Destination : Trenton
+     Weight : 5000 pounds
+   Distance : 198
+       Cost : $ 259.88
+
+ Car number : 82353
+      Cargo : hogs
+     Origin : York
+Destination : Trenton
+     Weight : 3500 pounds
+   Distance : 181
+       Cost : $ 199.87
+
+ Car number : 77443
+      Cargo : eggs
+     Origin : Lancaster
+Destination : Charlotte
+     Weight : 1500 pounds
+   Distance : 481
+       Cost : $ 273.81
+
+ Car number : 39115
+      Cargo : coal
+     Origin : Pittsburgh
+Destination : Norfolk
+     Weight : 13500 pounds
+   Distance : 451
+       Cost : $ 885.88
+
+ Car number : 27145
+      Cargo : coal
+     Origin : Pittsburgh
+Destination : Norfolk
+     Weight : 13700 pounds
+   Distance : 451
+       Cost : $ 899.00
+
+ Car number : 81123
+      Cargo : autos
+     Origin : Detroit
+Destination : Baltimore
+     Weight : 27000 pounds
+   Distance : 477
+       Cost : $ 1062.52
+
+ Car number : 32492
+      Cargo : hogs
+     Origin : Lancaster
+Destination : Trenton
+     Weight : 3750 pounds
+   Distance : 198
+       Cost : $ 234.26
+
+ Car number : 65230
+      Cargo : eggs
+     Origin : Lancaster
+Destination : Newark
+     Weight : 1600 pounds
+   Distance : 245
+       Cost : $ 148.76
+
+ Car number : 37220
+      Cargo : coal
+     Origin : Pittsburgh
+Destination : Roanoke
+     Weight : 13600 pounds
+   Distance : 495
+       Cost : $ 979.51
+
+ Car number : 72413
+      Cargo : autos
+     Origin : Detroit
+Destination : Trenton
+     Weight : 26500 pounds
+   Distance : 610
+       Cost : $ 1333.61
+
+ Car number : 49374
+      Cargo : autos
+     Origin : Detroit
+Destination : Charlotte
+     Weight : 27300 pounds
+   Distance : 893
+       Cost : $ 2011.26
+
+-------------------------------
+-------------------------------
+
+Number of Cars :       12
+  Total weight :       74.97 tons
+    Total cost : $   8721.50
+
+
+  -------------  -------------  -------------  -------------  -------------
+  | 45301     |  | 57321     |  | 82353     |  | 77443     |  | 39115     |
+<-| coal      |<-| cattle    |<-| hogs      |<-| eggs      |<-| coal      |
+  | Baltimore |  | Trenton   |  | Trenton   |  | Charlotte |  | Norfolk   |
+  --O-------O--  --O-------O--  --O-------O--  --O-------O--  --O-------O--
+  -------------  -------------  -------------  -------------  -------------
+  | 27145     |  | 81123     |  | 32492     |  | 65230     |  | 37220     |
+<-| coal      |<-| autos     |<-| hogs      |<-| eggs      |<-| coal      |
+  | Norfolk   |  | Baltimore |  | Trenton   |  | Newark    |  | Roanoke   |
+  --O-------O--  --O-------O--  --O-------O--  --O-------O--  --O-------O--
+  -------------  -------------
+  | 72413     |  | 49374     |
+<-| autos     |<-| autos     |
+  | Trenton   |  | Charlotte |
+  --O-------O--  --O-------O--

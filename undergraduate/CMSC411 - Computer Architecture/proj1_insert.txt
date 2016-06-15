@@ -1,0 +1,98 @@
+architecture schematic of alu_32 is 
+  signal cin     : std_logic := '0';
+  signal cout    : std_logic;
+
+  -- signals related to add32
+  signal aresult : std_logic;
+  signal nc : std_logic;
+
+  -- loose signal
+  signal andresult : std_logic;
+
+  -- bsh result
+  signal bresult : std_logic;
+
+  -- signals for ops
+  signal subop   : std_logic;
+  signal cmplop  : std_logic;
+  signal sllop   : std_logic;
+  signal srlop   : std_logic;
+  signal andop   : std_logic;
+
+  -- signals for mux32
+  signal srllop  : std_logic;
+  signal scop : std_logic;
+  signal scresult : std_logic;
+  signal ninB : std_logic;
+
+  -- signals for equal6s
+  signal rrop : std_logic;
+  signal subo : std_logic;
+  signal cmpo : std_logic;
+  signal sllo : std_logic;
+  signal srlo : std_logic;
+  signal ando : std_logic;
+
+begin  -- schematic
+  adder: entity WORK.add32 port map(a    => inA,
+                                    b    => scresult,
+                                    cin  => subop,
+                                    sum  => aresult,
+                                    cout => nc);
+
+  bsh: entity WORK.bshift port map(left => sllop,
+                                   logical => '1',
+                                   shift => inst(10 downto 6),
+                                   input => inB,
+                                   output => bresult);
+
+  r1: entity WORK.equal6 port map(inst => inst(31 downto 26),
+                                  test => "000000",
+                                  equal => rrop);
+
+  r2: entity WORK.equal6 port map(inst => inst(31 downto 26),
+                                  test => "100010",
+                                  equal => subo);
+
+  r3: entity WORK.equal6 port map(inst => inst(31 downto 26),
+                                  test => "000101",
+                                  equal => cmpo);
+
+  r4: entity WORK.equal6 port map(inst => inst(31 downto 26),
+                                  test => "000010",
+                                  equal => sllo);
+
+  r5: entity WORK.equal6 port map(inst => inst(31 downto 26),
+                                  test => "000011",
+                                  equal => srlo);
+
+  r6: entity WORK.equal6 port map(inst => inst(31 downto 26),
+                                  test => "100000",
+                                  equal => ando);
+
+  -- calculate ops
+  a1: subop <= rrop and subo;
+  a2: cmplop <= rrop and cmpo;
+  a3: sllop <= rrop and sllo;
+  a4: srlop <= rrop and srlo;
+  a5: andop <= rrop and ando;
+
+  m2: srllop <= sllop or srlop;
+  a6: andresult <= inB and inA;
+  a7: scop <= subop or cmplop;
+
+  mx32: entity WORK.mux_32_3 port map(in0 <= aresult,
+                                      in1 <= andresult,
+                                      in2 <= bresult,
+                                      ct1 <= andop,
+                                      ct2 <= srllop,
+                                      result <= result);
+
+  a8: ninB <= not inB;
+
+  mx321: entity WORK.mux_32 port map(in0 <= inB,
+                                     in1 <= ninB,
+                                     ct1 <= scop,
+                                     result <= scresult);
+
+end architecture schematic;  -- of alu_32

@@ -1,0 +1,7 @@
+Script started on Sun Mar 12 11:04:08 2006
+linux1[1]% ./p_echo_server -p 2525 -n 3
+Listening for 3 connections on port: 2525
+linux1[2]% exit
+exit
+
+Script done on Sun Mar 12 11:06:28 2006

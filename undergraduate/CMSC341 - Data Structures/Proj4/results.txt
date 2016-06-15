@@ -1,0 +1,77 @@
+
+Average # of probings per attempted insertion.
+current table size : 101
+# distinct words   : 25
+lambda = 0.25      : 0.16
+lambda = 0.5       : 1.84
+before rehashing   : 5.16129
+
+Average # of probings per attempted insertion.
+current table size : 211
+# distinct words   : 81
+lambda = 0.25      : 0.0980392
+lambda = 0.5       : 1.42593
+
+Average # of probings per attempted insertion.
+current table size : 101
+# distinct words   : 25
+lambda = 0.25      : 0.142857
+lambda = 0.5       : 0.5
+before rehashing   : 1.47619
+
+Average # of probings per attempted insertion.
+current table size : 211
+# distinct words   : 81
+lambda = 0.25      : 0.215686
+lambda = 0.5       : 0.479452
+before rehashing   : 1.50485
+
+Average # of probings per attempted insertion.
+current table size : 431
+# distinct words   : 169
+lambda = 0.25      : 0.169811
+lambda = 0.5       : 0.601449
+before rehashing   : 1.75789
+
+Average # of probings per attempted insertion.
+current table size : 863
+# distinct words   : 345
+lambda = 0.25      : 0.140187
+lambda = 0.5       : 0.640496
+
+After execution :
+current table size : 863
+# distinct words   : 439
+average            : 1.3
+
+
+
+Top 20 Words by Frequency:
+Word      Occurrence Frequency 
+-----------------------------------------------
+north     21        0.107692  
+korea     13        0.0666667 
+nuclear   10        0.0512821 
+nuclear   10        0.0512821 
+have      10        0.0512821 
+have      9         0.0461538 
+missile   9         0.0461538 
+bush      7         0.0358974 
+president 5         0.025641  
+president 5         0.025641  
+talks     5         0.025641  
+talks     5         0.025641  
+card      5         0.025641  
+world     5         0.025641  
+washington5         0.025641  
+sunday    5         0.025641  
+president 4         0.0205128 
+koreans   4         0.0205128 
+koreas    4         0.0205128 
+before    4         0.0205128 
+
+Total words read in from input file: 1024
+Total words excluded from input file: 390
+Total words included: 634
+Total Average Word Frequency : 0.0022779
+

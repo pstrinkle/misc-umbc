@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+  <head>
+    <title>Weather Forecast</title>
+    <style type="text/css">
+      body {
+        font-family: sans-serif;
+        margin: 0;
+      }
+
+      #header {
+        font-size: 2.5em;
+        font-weight: bold;
+        background-color: rgb(117,144,174);
+        text-align: center;
+        padding: .25em;
+        color: #fff;
+      }
+
+      #form {
+        margin-top: 1em;
+        text-align: center;
+      }
+      
+      #credits-left {
+        float: left;
+        width: 25em;
+        text-align: left;
+      }
+
+      #credits-right {
+        float: right;
+        width: 25em;
+        text-align: right;
+      }
+
+      #credits {
+        border-top: 1px solid #666;
+        border-bottom: 1px solid #666;
+        background-color: #eee;
+        padding: .25em;
+        text-align: center;
+        color: #666;
+        font-size: .75em;
+      }
+
+      #credits a {
+        color: rgb(117,144,174);
+        text-decoration: none;
+      }
+
+      #location {
+        text-align: center;
+        font-size: 1.5em;
+        margin-top: 2em;
+      }
+      
+      #results {
+       text-align: center;
+      }
+
+      table.forecast {
+        margin-top: 1em;
+        margin-bottom: 3em;
+        margin-left: auto;
+        margin-right: auto;
+        border-collapse: collapse;
+        border: 1px solid #666;
+      }
+      
+      table.forecast tr.even {
+        background-color: #eee;
+        border: 1px solid #666;
+      }
+
+      table.forecast tr.odd {
+        background-color: #fff;
+        border: 1px solid #666;
+      }
+
+      table.forecast td, th {
+        padding: .5em;
+      }
+    </style>
+    <script type="text/javascript">
+
+    <!--
+
+    /* Author: Patrick Trinkle
+       Email:  tri1@umbc.edu
+       Course: CMSC433
+
+       Functions should be named clearly
+    */
+
+       var zipcode = " ";
+       var url = "http://userpages.umbc.edu/~dhood2/courses/cmsc433/spring2006/Miscellaneous/JavaScript/p2/weather.php?zipcode=";
+       var http = createRequestObject();
+
+       /* submit action handler */
+       function Go() {
+          if ( parseZip() ) {
+	     http.open('get', url + zipcode);
+	     http.onreadystatechange = handleResponse;
+             http.send(null);
+	  }
+	  else {
+	     alert('Invalid Zip');
+	     document.getElementById('zipcode').value = "";
+	  }
+       }
+
+       /* handes ajax response */
+       function handleResponse () {
+          if(http.readyState == 4) {
+             var response = http.responseText;
+	     var data = new Array();
+	     var thedata = new Array();
+	     var text = "";
+	     var even = true;
+	     
+	     text = '<table class="forecast">';
+	     text += '<tr><th>Day</th>'
+	           + '<th colspan="2">Day</th>'
+		   + '<th colspan="2">Night</th>'
+		   + '<th>High</th>'
+		   + '<th>Low</th></tr>';
+
+	     if(response.indexOf('\n' != -1)) {
+	        data = response.split('\n');
+	        document.getElementById('location').innerHTML = data[0];
+
+		data.shift();
+		data.pop();
+
+		for ( var i = 0; i < data.length; i++ ) {
+
+		   if ( data[i].indexOf(',' != -1)) {
+		      thedata = data[i].split(',');  
+
+		      if ( even == true ) {
+		         text += '<tr class="even")';
+		         even = false;		   
+                      }
+		      else {
+		         text += '<tr class="odd">';
+		         even = true;
+                      }
+
+		      text += '<td>' + thedata[0] + '</td>';
+		      text += '<td><img src="http://userpages.umbc.edu/~dhood2/courses/cmsc433/spring2006/Miscellaneous/JavaScript/p2/icons/' + thedata[1] + '.png"></td>';
+		      text += '<td>' + thedata[2] + '</td>';
+		      text += '<td><img src="http://userpages.umbc.edu/~dhood2/courses/cmsc433/spring2006/Miscellaneous/JavaScript/p2/icons/' + thedata[3] + '.png"></td>';
+		      text += '<td>' + thedata[4] + '</td>';
+		      text += '<td>' + thedata[5] + '&deg;</td>';
+		      text += '<td>' + thedata[6] + '&deg;</td>';
+		      text += '</tr>';
+		   }
+                }
+
+		text += '</table>';
+
+		document.getElementById('results').innerHTML = text;
+
+	     }
+          }
+       }
+ 
+       /* checks the validity of a zip code */
+       function parseZip() {
+          var re = new RegExp('^[0-9]{5}$');
+          zipcode = re.exec(document.getElementById('zipcode').value);
+	  if ( zipcode ) {
+	     return true;
+	  }
+	  else {
+	     return false;
+	  }
+       }
+
+       // Thanks Prof Hood
+
+       function createRequestObject() {
+          var ro;
+	  var browser = navigator.appName;
+          if(browser == "Microsoft Internet Explorer"){
+	     ro = new ActiveXObject("Microsoft.XMLHTTP");
+          } else {
+	     ro = new XMLHttpRequest();
+          }
+          return ro;
+       }
+
+    </script>
+  </head>
+    <body>
+      <div id="header">Weather Forecast</div>
+
+      <!-- 3 links back to weather.com per web service usage agreement -->
+      <div id="credits">
+        <div id="credits-left">
+          Weather data provided by <a href="http://www.weather.com/?prod=xoap&par=1020005278">weather.com</a>
+        </div>
+        <div id="credits-right">
+          Get your own <a href="http://www.weather.com/services/xmloap.html">XML Data Feed</a>
+          from <a href="http://www.weather.com/?prod=xoap&par=1020005278">weather.com</a>
+        </div>
+        <a href="http://www.weather.com/?prod=xoap&par=1020005278">The Weather Channel</a>
+      </div>
+
+      <!-- the form the user enters the zipcode into -->
+      <div id="form">
+        <label for="zipcode">Get weather forecast for zipcode:</label>
+        <input type="text" size="5" name="zipcode" id="zipcode" />
+        <input type="button" value="Go" onClick="Go();" />
+      </div>
+
+      <!-- The location name should be inserted into this div -->
+      <div id="location"></div>
+
+      <!-- This div should be populted with the forecast in a tabular format -->
+      <div id="results">
+        <!--
+          Note that there is a provided CSS class for a table called forecast.
+          There are also classes for every other row called even and off that
+          if applied will handle coloring every other row a different color.
+        -->
+      </div>
+
+    </body>
+</html>

@@ -1,0 +1,56 @@
+CMSC313 Conversion Homework
+
+Name: Patrick Trinkle
+
+Email: tri1@umbc.edu
+
+BINARY/DECIMAL PROBLEMS
+In the following table, there are three columns. One column has a value in a specified number system. You are convert that value to the other two numer systems, i.e., if I give you a decimal value of 16, you are to give me the binary equivalent (00010000) and the hexadecimal equivalent (10).
+
+Show all binary numbers as eight digits and all hexadecimal numbers as two digits!
+
+DECIMAL		BINARY		HEXADECIMAL
+
+139 	  	10001011	8B 
+211  		11010011 	D3 
+131  	  	10000011	83
+211 	  	11010011 	D3
+23  		00010111 	17 
+141  	  	10001101	8D
+14 	  	00001110	E 
+205 		11001101 	CD 
+78  	  	01001110	4E
+111 	  	01101111 	6F
+174	  	10101110 	AE
+230		11100110  	E6
+203 	  	11001011	CB 
+103	  	01100111 	67
+12		00001100  	0C
+165 	  	10100101	A5
+50	  	00110010 	32
+127		01111111  	7F
+19 	  	00010011	13
+129	  	10000001 	81
+85		01010101  	55
+53 	  	00110101	35
+66	 	01000010 	42
+77		01001101  	4D
+222 	  	11011110	DE
+58	  	00111010 	3A
+221		11011101  	DD
+172 	  	10101100	AC
+235	  	11101011 	EB
+175		10101111  	AF
+178 	  	10110010	B2 
+232	  	11101000 	E8
+109		01001101  	6D
+47		00101111	2F 	  	 
+210	  	11010010 	D2
+216		11011000  	D8
+102 	  	01100110	66
+28	  	00011100 	1C
+254		11111110  	FE
+
+
+
+ 

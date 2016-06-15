@@ -1,0 +1,107 @@
+############################################
+#
+# CMSC 202 Fall 2004
+#
+# Project 1 Makefile
+#
+# Note that lines which begin with # are comments
+#
+#   This "makefile" is read and interpreted by the unix
+# "make" utility to automate compiling and linking
+# files in large projects.  This file must be named
+# "makefile" or "Makefile"
+#
+# The two simplest ways to use the "make" utility are
+#    1. make <target>
+# This causes the make utility to find your makefile
+# and do whatever is necessary to create the target 
+# you specified.
+#
+#    2. make
+# This causes the make utility to find your makefile
+# and build the FIRST TARGET found in the makefile
+#
+# When the appropriate target is located, make will
+# build any of the targets dependencies if needed.
+# make will continue in this recursive manner until
+# all necessary targets are up-to-date
+#
+# D. L. Frey
+# 8/16/04
+#
+#####################################################
+#
+# internal symbols are used so the makefile is easily
+# changeable to be used for other projects.
+#
+# To define an internal symbol (sort of like a #define for a string in C),
+# set it "equal" to # some string.  To used the symbol, enclose it in
+# braces or parentheses and precede the left brace 
+# (or parenthesis) with a dollar sign
+#
+#####################################################
+
+# define an internal symbol for the correct C++ compiler
+COMPILER = /usr/local/bin/g++
+
+# define an internal symbol for compiler switches (flags) to be used
+COMPILERFLAGS = -ansi -Wall -g
+
+# define an internal symbol for the name of the executable for the project
+PROJECT=Proj1
+
+# define an internal symbol for the list of .o files which must be created and linked
+OBJECTS = Proj1.o Box.o RoundToy.o
+
+# the next line defines $(PROJECT) as a target and tells the make
+# utility which files $(PROJECT) depends on.  This is called the
+# dependency list.  If any of the files in the dependency list
+# are newer than $(PROJECT), then the make utility knows that 
+# $(PROJECT) must be rebuilt.  If $(PROJECT) is newer than all of the files on which
+# it depends, then make will report that $(PROJECT) is up-to-date
+#
+# the second line below (which MUST START WITH A TAB) tells
+# the make utility how to create $(PROJECT) (this is called the "rule")
+
+# for Fall 04 Project1, this says
+# PROJ1 is dependent upon Proj1.o, ....
+# The rule says to use the COMPILER to create each .o file (OBJECTS)
+#  and them link them to create the executable named PROJ1 
+$(PROJECT): $(OBJECTS)
+	$(COMPILER) $(COMPILERFLAGS) -o $(PROJECT) $(OBJECTS)
+
+# define Proj1.o as a target that is dependent on Proj1.cpp
+# and Cargo.h -- if either Proj1.cpp or Cargo.cpp
+# are newer than Proj1.o, then the rule is executed
+# The rule tells the make utility to create Proj1.o by compiling Proj1.cpp
+# using the appropriate COMPILER and COMPILERFLAGS (as defined by 
+Proj1.o: Proj1.cpp Box.h RoundToy.h
+	${COMPILER} ${COMPILERFLAGS} -c Proj1.cpp
+
+# define Box.o as a target that is dependent on
+# Box.cpp and Box.h
+# The rule tells the make utility to create Cargo.o by compiling Cargo.cpp
+# using the appropriate COMPILER and COMPILERFLAGS
+Box.o: Box.cpp Box.h
+	${COMPILER} ${COMPILERFLAGS} -c Box.cpp
+
+# define RoundToy.o as a target that is dependent on
+# RoundToy.cpp and RoundToy.h
+# The rule tells the make utility to create Cargo.o by compiling Cargo.cpp
+# using the appropriate COMPILER and COMPILERFLAGS
+RoundToy.o: RoundToy.cpp RoundToy.h
+	${COMPILER} ${COMPILERFLAGS} -c RoundToy.cpp
+
+
+###########################################################
+# define some targets which help with directory maintenance
+
+# 'make clean' removes all .o files, the project executable and core dump file
+clean:
+	touch foo.o
+	rm -rf foo.o $(OBJECTS) $(PROJECT) core*
+
+# 'make cleanest' removes everything that 'make clean' removes
+# plus backup files created by the editors
+cleanest: clean
+	rm -rf *~ *#

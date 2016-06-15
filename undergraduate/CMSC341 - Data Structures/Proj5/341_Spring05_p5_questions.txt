@@ -1,0 +1,34 @@
+CMSC 341 -- Spring 2005 -- Project 5 Questions
+
+Copy this file into your directory and edit it to add your answers
+to the following questions about Project 5.
+
+This questions count for 10% of your project grade.
+
+In this project, both WithdrawJob and IncreasePrice involve 
+finding a job in the heap with a given ID. 
+
+1) What is the time complexity (i.e., worst case time
+   performance) of this find-by-ID operation?
+
+   The time complexity of the worst case of find-by-ID operation is O(n),
+   because in the worst case the last item is the one you're trying to find.
+   Where n is the number of items in the heap.
+
+2) If the size and unit price of the job is also available
+   (its priority becomes known), can you utilize this 
+   information to make find operation more efficient? 
+   If your answer is yes, briefly describe how it works and 
+   give the time complexity of your new method; otherwise,  
+   explain why no improvement can be made with this information.
+
+Time complexity should be given in big-Oh notation.
+
+   If the priority is known to the find() function, it can be implemented
+   using a binary search algorithm based on the unitPrice, then size.  The
+   find function would check currentSize / 2 to split the range in half, 
+   and then check the priority to know wether to check higher or lower and then 
+   divide the next piece in half and continue.  This new find() would have
+   time complexity of O(lg n), where n is the number of items.  This more
+   efficient function is only possible if the function knows the size and unitPrice
+   and id of the item it is seeking. 

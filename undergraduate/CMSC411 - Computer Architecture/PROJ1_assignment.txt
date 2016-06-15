@@ -1,0 +1,74 @@
+ Part1
+
+ PART1: Handle lw, sw, add, sub, and, addi, sll, srl, cmpl and nop
+ with no hazards.
+        (nop's are inserted in the part1.abs file to prevent hazards.)
+        See cs411_opcodes.txt for detailed instruction formats and definitions.
+        See reglist.txt for register use conventions.
+        You should use part1_start.vhdl as a start for coding your circuit.
+        You can do your own shift circuit or use the bshift.vhdl component.
+        The instruction definitions and bit patterns for this semester are in
+        cs411_opcodes.txt
+
+   Quick start steps:
+     3)  fill in VHDL for the ALU_32 architecture to implement
+         sub, and, sll, srl, cmpl.  All other instructions must do a plain add.
+         Note that EX_IR coming into ALU_32 has the instruction in "inst"
+         and a possible schematic is alu.jpg and alu.ps
+         Hints on coding the ALU.
+     4)  compute the signals   RegDst
+                               ALUSrc
+                               MEMWrite
+                               WB_write_enb (needs 'or' of more opcodes)
+          Use   MEM_lw:entity WORK.equal6(...) 
+          as an example for setting a mux control based on opcode.
+          In each stage **_IR is the instruction currently in that stage.
+          **_IR(31 downto 26) is the six bit major op code. "100011" for lw
+          **_IR(5 downto 0) is the six bit minor op code. "100000" for add.
+
+     5) Compile, analyze, run using commands in your Makefile
+
+      all:  ... part1.out  # add part1.out to the list
+
+      part1.out: part1.vhdl add32.vhdl bshift.vhdl part1.run part1.abs
+         ncvhdl -v93 add32.vhdl
+         ncvhdl -v93 bshift.vhdl
+         ncvhdl -v93 part1.vhdl  # renamed and modified part1_start.vhdl
+         ncelab -v93 part1:schematic
+	 ncsim  -batch -logfile part1.out -input part1.run part1
+
+         diff -iw part1.out part1.chk     should be no differences
+                                          no stalls, timing should be exact
+
+        The CS411 Project Part 1 uses a schematic as shown in part1.jpg and part1.ps
+
+        For grading reasons, keep the signal names that
+        are pipeline registers and the entity/memory names.
+
+
+        The resulting output should be as shown in
+         part1.chk  file based on part1.abs and  part1.run .
+
+        Check the results in part1.out to be sure the instructions
+        worked. You can follow each instruction through the pipeline
+        by following the instruction register, *_IR and check the
+        *_*  signals for correct values at each stage.
+
+        It is possible that your part1.out does not agree with
+        part1.chk but you should
+        be able to explain why. (Probably different don't care choices.)
+
+        You may want to copy part1.vhdl to another file and add more
+        'write' statements to print out more internal signal names in order
+        to help debug your circuit. debug.txt
+
+        Submit all components and your main circuit as one plain text
+        file using submit. the file must be named  "part1.vhdl". DO NOT
+        EMail. 
+
+        You submit on GL using:  submit cs411 part1 part1.vhdl
+
+        No makefiles or run files or output is to be
+        submitted. Partial credit will be given based on number of
+        instructions simulated correctly. The starter file part1_start.vhdl
+        only simulates the  lw  instruction correctly.

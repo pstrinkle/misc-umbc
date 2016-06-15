@@ -1,0 +1,35 @@
+;
+; Filename EXER-SR.TXT CREATED DEC 1, 2005
+; C:\B2LOGIC3\CIRCUITS\EXER-SR.TXT
+;
+; Simulation from a command file of a generic
+; SET-RESET flip-flop.
+;
+; The objective of the simulation is to show the
+; effect of asserting and deasserting the flip flop
+; inputs and to see how the data changes ONLY
+; on an appropriate clock edge
+;
+; initialize everything first
+;
+Reset
+Set Asyn_Set 1 0
+Set Asyn_Reset 0 0		; initialize FF to set Q to '0' (clear the flip-flop immediately)
+Set FF_SET 0 0
+Set FF_RESET 0 0
+;
+Set Asyn_Reset 1 20	; de-assert the asynchronous clear control
+;
+Set FF_SET 1 210		; set the FF to latch Q to a logic '1'
+Set FF_SET 0 290		; the FF should continue to HOLD Q to '1'
+;
+Set FF_RESET 1 310	; set the FF to latch Q to a logic '0'
+Set FF_RESET 0 335	; the FF should continue to HOLD Q to '0'
+			; ....it does not, but why?
+;
+Set FF_RESET 1 410	; set the FF to latch Q to a logic '0'
+Set FF_RESET 0 475	; the FF should continue to HOLD Q to '0'
+			; ...it works this time, but why?
+;
+Go 600			; finish point 600ns for this simulation
+

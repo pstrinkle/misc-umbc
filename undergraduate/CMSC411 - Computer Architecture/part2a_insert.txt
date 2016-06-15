@@ -1,0 +1,102 @@
+signals created not listed here, just the actual physical parts.
+
+
+
+  PCP_reg:   entity WORK.register_32 port map(clk, clear, old_PC_next, PCP);
+
+
+A
+
+  jmp6: entity WORK.equal6 port map(ID_IR(31 downto 26),jmpop,jump);
+  beq6: entity WORK.equal6 port map(ID_IR(31 downto 26),beqop,beq);
+  sw6:  entity WORK.equal6 port map(ID_IR(31 downto 26),swop,sw);
+
+
+
+
+
+B
+
+  ID_old_mux_rd: entity WORK.mux_5 port map(in0    => ID_IR(20 downto 16),
+                                        in1    => ID_IR(15 downto 11),
+                                        ctl    => RegDst,
+                                        result => old_ID_rd);
+
+  jbs <= jump or beq or sw;
+
+  ID_mux_rd:     entity WORK.mux_5 port map(in0 => old_ID_rd,
+                                        in1     => nop_5,
+                                        ctl     => jbs,
+                                        result  => ID_rd);
+
+
+Begin forwarding stuff
+
+  alias  ID_reg1 : word_5 is ID_IR(25 downto 21);
+  alias  ID_reg2 : word_5 is ID_IR(20 downto 16);
+  alias  EX_reg1 : word_5 is EX_IR(25 downto 21);
+  alias  EX_reg2 : word_5 is EX_IR(20 downto 16);
+  alias  MEM_OP  : word_6 is MEM_IR(31 downto 26);
+
+  signal AFMA, AFMA1, AFMA2, AFMA3 : std_logic;
+  signal AFWB, AFWB1, AFWB2 : std_logic;
+  signal BFMA, BFMA2, BFMA2, BFMA3 : std_logic;
+  signal BFWB, BFWB1, BFWB2 : std_logic;
+  signal F1MA, F1MA1, F1MA2, F1MA3 : std_logic;
+  signal F2MA, F2MA1, F2MA2, F2MA3 : std_logic;
+
+  -- A/B forwards
+
+  af1eq    : entity WORK.equal5 port map(EX_reg1, MEM_RD, AFMA1);
+  af2eq    : entity WORK.equal5 port map(MEM_RD, nop_5, AFMA2);
+  af3eq    : entity WORK.equal5 port map(MEM_OP, lwop, AFMA3);
+
+  AFMA <= AFMA1 and not AFMA2 and not AFMA3;
+
+  af4eq    : entity WORK.equal5 port map(EX_reg1, WB_RD, AFWB1);
+  af5eq    : entity WORK.equal5 port map(WB_RD, nop_5, AFWB2);
+
+  AFWB <= AFWB1 and AFWB2;
+
+  bf1eq    : entity WORK.equal5 port map(EX_reg2, MEM_RD, BFMA1);
+  bf2eq    : entity WORK.equal5 port map(MEM_RD, nop_5, BFMA2);
+  bf3eq    : entity WORK.equal5 port map(MEM_OP, lwop, BFMA3);
+
+  BFMA <= BFMA1 and not BFMA2 and not BFMA3;
+
+  bf4eq    : entity WORK.equal5 port map(EX_reg2, WB_RD, BFWB1);
+  bf5eq    : entity WORK.equal5 port map(WB_RD, nop_5, BFWB2);
+
+  BFWB <= BFWB1 and BFWB2;
+
+
+  -- A/B forward mux32_3s
+
+    datafwdA: entity WORK.mux32_3 port map(in0 => EX_A,
+                                      in1 => MEM_addr,
+                                      in2 => WB_result,
+                                      ct1 => AFMA,
+                                      ct2 => AFWB,
+                                      result => EX_aluA);
+
+    datafwdB: entity WORK.mux32_3 port map(in0 => EX_B,
+                                        in1 => MEM_addr,
+                                        in2 => WB_result,
+                                        ct1 => BFMA,
+                                        ct2 => BFWB,
+                                        result => EX_BB);
+
+  -- 1/2 forwards
+
+  f11eq    : entity WORK.equal5 port map(ID_reg1, MEM_rd, F1MA1);
+  f12eq    : entity WORK.equal5 port map(MEM_RD, nop_5, F1MA2);
+  f13eq    : entity WORK.equal5 port map(MEM_OP, lwop, F1MA3);
+
+  F1MA <= F1MA1 and not F1MA2 and not F1MA3;
+
+  f21eq    : entity WORK.equal5 port map(ID_reg2, MEM_rd, F2MA1);
+  f22eq    : entity WORK.equal5 port map(MEM_RD, nop_5, F2MA2);
+  f23eq    : entity WORK.equal5 port map(MEM_OP, lwop, F2MA3);
+
+  F2MA <= F2MA1 and not F2MA2 and not F2MA3;
+

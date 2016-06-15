@@ -1,0 +1,4 @@
+AuthName "tri1's Realm"
+AuthType Basic
+AuthUserFile /afs/umbc.edu/users/t/r/tri1/pub/cs433/access/htpasswd-cs433
+require valid-user

@@ -1,0 +1,71 @@
+
+CMSC 202 Fall 2004
+Project 5 Design
+
+Name: Patrick Trinkle
+Section: 3540
+UMBC E-mail: tri1@umbc.edu
+Date: 12/5/2004
+
+
+Part 1 -- Truck full exception class 
+
+template <class T>
+class TruckFull
+{
+   friend ostream& operator<<(ostream& out, const TruckFull<T>& exception);
+
+  public:
+   TruckFull(int max, const string& type, const T& item);
+
+  private:
+   int m_maxitems;
+   string m_type;
+   T m_item;
+};
+
+
+
+Part 2 -- Truck empty exception class
+
+class TruckEmpty
+{
+
+ public:
+  TruckEmpty(int miles, const string& dest, const string& type);
+  string& What() const;
+
+ private:
+  int m_mileage;
+  string m_destination;
+  string m_type;
+
+};
+
+
+Part 3 -- Can of paint class
+
+class PaintCan
+{
+   friend ostream& operator<<(ostream& out, PaintCan& can);
+
+  public:
+   PaintCan(int gallons, const string& color);
+
+  private:
+   int m_gallons;
+   string m_color;
+};
+
+Part 4 -- Bottle of Glue class
+
+class Glue
+{
+   friend ostream& operator<<(ostream& out, Glue& glue);
+
+  public:
+   Glue(const string& type);
+
+  private:
+   string m_type;
+};

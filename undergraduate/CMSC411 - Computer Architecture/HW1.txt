@@ -1,0 +1,33 @@
+Patrick Trinkle
+HW 1
+CMSC 411
+FALL 2006
+
+ HW1 Terminology 25 points
+
+    1	E
+    2	Y
+    3	U
+    4	M
+    5	X
+    6	L
+    7	T
+    8	Z
+    9	N
+    10	V
+    11	A
+    12	B
+    13	C
+    14	F
+    15	D
+    16	Q
+    17	R
+    18	P
+    19	W
+    20	G
+    21	S
+    22	J
+    23	H
+    24	I
+    25	K
+    26	O

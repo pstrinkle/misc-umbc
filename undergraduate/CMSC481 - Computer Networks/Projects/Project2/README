@@ -1,0 +1,28 @@
+Name: Patrick Trinkle
+Email: tri1@umbc.edu
+Project: 2
+Course: CMSC481
+
+Using TrinkleFTP is simple.  It utilizes port 3541 for all communication and data transfers.  The FTP Server will only handle one session at a time and after the session is complete the server exits, so this is a one-time quick server.  
+
+To compile:
+`make`
+	Ignore the warnings, it works fine.
+To run:
+`./ftpserver`
+`./ftpclient hostname`
+
+Support for the following commands:
+ls [dirname]
+	Lists directory contents
+cd dirname
+	Changes Current Working Directory
+get filename
+	Where filename is in the server's path
+put filename
+	Where filename is in the client's path
+pwd
+	Prints Current Working Directory
+quit
+	Exits Program
+

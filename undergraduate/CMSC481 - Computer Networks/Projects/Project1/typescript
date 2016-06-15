@@ -1,0 +1,95 @@
+Script started on Sun Mar 12 11:03:52 2006
+linux1[1]% make
+gcc -Wall -ansi -o echo_client echo_client.c
+gcc -Wall -ansi -lpthread -o p_echo_server p_echo_server.c
+gcc -Wall -ansi -o ftpclient ftpclient.c
+linux1[2]% ./echo_client -h localhost -p 2525
+Input message
+I you ouy I
+I you ouy I is a palindrome.
+linux1[3]% ./echo_client -h localhost -p 2525
+Input message
+Whatever
+Whatever is not a palindrome.
+linux1[4]% ./echo_client -h localhost -p 2525
+Input message
+Maryland          UMBC is way better than                         UMBC^H   C   c CBmU
+UMBc CBmU is a palindrome.
+linux1[5]% ecoh[K[K[Kcho "See file: serverside for server [K[K[K[K[K[Krunning server info"
+See file: serverside for running server info
+linux1[6]% ./ftpclient ftp.gl.umbc.edu
+Connected to ftp.gl.umbc.edu
+220 ProFTPD 1.2.9 Server (UMBC Central ftp server) [ftp1.umbc.edu]
+ftp>USER anonymous^[[D^[[D^[[D^[[D^[[D^[[D^[[D^[[D                                             S sR eR anonymous
+331 Anonymous login ok, send your complete email address as your password.
+ftp>P pass whatever@umbc.edu
+230-*******************************************************************************
+  WARNING: UNAUTHORIZED ACCESS to this computer is in violation of Article 27,
+           Sections 45A and 146 of the Annotated Code of Maryland.
+ 
+ NOTICE: This system is for the use of authorized users only.
+         Individuals using this computer system without authority, or in
+         excess of their authority, are subject to having all of their
+         activities on this system monitored and recorded by system
+         personnel.
+ 
+         In the course of monitoring individuals improperly using this
+         system, or in the course of system maintenance, the activities
+         of authorized users may also be monitored.
+ 
+         Anyone using this system expressly consents to such monitoring
+         and is advised that if such monitoring reveals possible
+         evidence of criminal activity, system personnel may provide the
+         evidence of such monitoring to campus officials or law enforcement
+         agencies.
+ ***************************************************************************
+230 Anonymous access granted, restrictions apply.
+ftp>pwd
+257 "/" is current directory.
+ftp>syst
+215 UNIX Type: L8
+ftp>noop
+200 NOOP command successful
+ftp>quit
+221 Goodbye.
+
+linux1[7]% ./ftpclient ftp.gl.umbc.edu
+Connected to ftp.gl.umbc.edu
+220 ProFTPD 1.2.9 Server (UMBC Central ftp server) [ftp1.umbc.edu]
+ftp>U user anonym           user anonymous
+331 Anonymous login ok, send your complete email address as your password.
+ftp>pass whatever
+230-*******************************************************************************
+  WARNING: UNAUTHORIZED ACCESS to this computer is in violation of Article 27,
+           Sections 45A and 146 of the Annotated Code of Maryland.
+ 
+ NOTICE: This system is for the use of authorized users only.
+         Individuals using this computer system without authority, or in
+         excess of their authority, are subject to having all of their
+         activities on this system monitored and recorded by system
+         personnel.
+ 
+         In the course of monitoring individuals improperly using this
+         system, or in the course of system maintenance, the activities
+         of authorized users may also be monitored.
+ 
+         Anyone using this system expressly consents to such monitoring
+         and is advised that if such monitoring reveals possible
+         evidence of criminal activity, system personnel may provide the
+         evidence of such monitoring to campus officials or law enforcement
+         agencies.
+ ***************************************************************************
+230 Anonymous access granted, restrictions apply.
+ftp>S [WD   PWD
+257 "/" is current directory.
+ftp>NOOP
+200 NOOP command successful
+ftp>SYST
+215 UNIX Type: L8
+ftp>QUIT
+221 Goodbye.
+
+linux1[8]% exit
+exit
+
+Script done on Sun Mar 12 11:06:24 2006

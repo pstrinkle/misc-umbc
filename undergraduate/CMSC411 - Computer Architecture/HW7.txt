@@ -1,0 +1,104 @@
+Patrick Trinkle
+CMSC411 Fall 2006
+HW7
+
+ HW7 Pipelining 25 points
+
+  
+1) From the diagram included below:
+
+  a) What is the speedup of the pipelined execution (bottom)
+     over the single cycle execution (top) for the three instructions ?
+
+        single cycle total time: 48ns
+        pipelined total time:    28ns
+
+        speedup = 48/28 = 1.7
+
+  b) For a large number of instructions we consider how often
+     an instruction can be completed, or started. From the
+     figure you can see the pipelined execution starts an
+     instruction every 4ns while the single cycle execution
+     starts an instruction every 16ns. What is the speedup
+     when a large number of instruction are executed?
+
+        speedup = 16/4 = 4
+
+  c) Make a change to both executions. Make the ALU take 8ns
+     rather that the 4ns as shown on the figure. Neatly
+     redraw the diagram with the new ALU time. Remember every
+     time block on the pipelined execution must be the same.
+
+  Single cycle execution
+   0   2   4   6      14  16  18  20  22  24  26  28  30      38  40ns
+   |   |   |   |       |   |   |   |   |   |   |   |   |       |   |
+   +-------+---+-------+---+---+---+
+   |IF     |reg| ALU   | data  |reg|
+   +-------+---+-------+---+---+---+
+                                   +-------+---+-------+-------+---+
+                                   |IF     |reg| ALU   | data  |reg|
+                                   +-------+---+-------+-------+---+
+                                                                   +---
+                                                                   |IF
+                                                                   +---
+   Pipelined Execution
+   +-------+-------+-------+-------+-------+
+   |IF     | reg   | ALU   | data  | reg   |
+   +-------+-------+-------+-------+-------+
+           +-------+-------+-------+-------+-------+
+           |IF     | reg   | ALU   | data  | reg   |
+           +-------+-------+-------+-------+-------+
+                   +-------+-------+-------+-------+-------+
+                   |IF     | reg   |  ALU  | data  | reg   |
+                   +-------+-------+-------+-------+-------+
+   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+   0   4   8  12  16  20  24  28  32  36  40  44  48  52  56ns
+
+
+  d) What is the speedup for c) when a large number of
+     instructions are executed. 
+
+        speedup = 20/8 = 2.5
+
+
+2) Show the register dependency by circling the register where a value
+   is computed and circling the register where that value is used,
+   connecting the circles by a line. (Spread the code out for clarity.)
+
+     add  $6, $3, $4
+     add  $4, $3, $6
+     add  $3, $6, $4
+     add  $3, $4, $3
+
+
+
+
+
+
+
+
+
+
+
+
+
+3) The following four lines of code can be reduced to exactly three lines
+   of code that produce the same output for all possible initial register
+   values.  Every line must be correct to get credit for this part.
+
+          Loop:  lw   $2, 72($3)
+                 addi $3, 4($3)
+                 beq  $3, $4, Loop
+                 nop
+
+  Be sure to walk through this code and your code for initial conditions:
+  $3 has 4, $4 has 8,  memory location 76 has 16,
+                       memory location 80 has 32,
+                       memory location 84 has 64.
+
+  The results must be the same.
+
+  This exercise is demonstrating that the "delayed branch slot"
+  does not have to contain a  nop. Your assembled code will not
+  have a  nop  but will reorder and change the instructions
+  to have some other instruction after the  beq.

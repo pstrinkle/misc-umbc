@@ -1,0 +1,26 @@
+;
+; Filename PTRIN201.TXT CREATED DEC 13, 2005
+; Created for CMSC313 Section 0201, FALL 2005
+; 
+;
+; Simulation from a command file of a 
+; D-Type flip-flop Counter.
+;
+; The objective of the simulation is to show the
+; effect of asserting and deasserting the flip flop
+; inputs and to see how the data changes ONLY
+; on an appropriate clock edge
+;
+; initialize everything first
+;
+
+Reset
+Set C 0 0
+Set PE 1 0
+SET C 1 3000
+
+
+Go 6000
+
+; This test runs through the count-up and then the
+; count-down.

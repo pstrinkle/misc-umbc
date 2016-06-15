@@ -1,0 +1,46 @@
+CMSC 341 -- Spring 2005 -- Project 4 Questions
+
+Copy this file into your directory and edit it to add your answers
+to the following questions about project 4.
+
+These questions count for 10% of your project grade.
+
+1. (6 points) Run your program with a sample exclusion file and a 
+   input file of your choice. The input file should contain, say 1000 
+   distinct words or more. Then answer the flowing questions based on 
+   the statistics collected from your experiment. 
+   1) How many times in the execution that a rehash occurs before 
+      lambda, the load factor, reaches 80%? 
+
+      I placed a cout flag in my function to print whenever the aforementioned condition occurs and it never occurred in the input and exclude files I was using and my input file was a few articles from cnn.com
+
+   2) Theoretical estimate of average (expected) number of probings is
+             (1/lambda)*(1 + 1/(1 - lambda))  
+      when clustering does not occur and lambda is small.    
+      Are your experiment results consistent with the theoretical 
+      result? Does the theoretical estimate hold for load factor up to
+      up to 0.25, 0.5, and 0.8?
+
+      My data was not similar to the student-correct function though this could be due to idiosyncracies in the bugs of my code:
+
+      
+   1 / lambda * ln( 1 / ( l-lambda) )
+
+lambda, 0.25 = 1.15 
+	0.5 = 1.38 
+	0.8 = 2.011 
+
+
+my data:
+
+lambda = 0.25      : 0.169811
+lambda = 0.5       : 0.601449
+before rehashing   : 1.75789
+
+
+
+2. (4 points) What data structure have you chosen for supporting 
+   pre-processing? 
+   Justify your selection with the time performance in mind. 
+   
+     I used no data structure to hold the pre-processed text. I pre-processed on-the-fly to save space in memory and code.  I believe it also saved time. I loaded a string/word at a time and parsed word and inserting into hash table without going through the entire input text and parsing it and storing it somewhere and then inserting that into the hash table as I found that to be ridiculously inefficient.

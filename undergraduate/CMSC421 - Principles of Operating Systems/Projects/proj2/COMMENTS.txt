@@ -1,0 +1,6 @@
+Author: Patrick Trinkle
+Email:  tri1@umbc.edu
+Course: CMSC421, Project2
+
+I had a few set backs and had to add a lot of additional memory checks to make sure certain situations would be handled properly even if we were assured they would not occur.  I coded this project in c++ though I utilized mostly C std functions.  I needed to use classes to simplify the implementation and it made more sense because Processes and Memory seemed more like Objects.  This program took a good bit of time to design, not as much to code, but quite a big to make sure I had covered many angles.  I think it was a good project and really helped my understanding of mapping logical to physical addresses using page tables.
+

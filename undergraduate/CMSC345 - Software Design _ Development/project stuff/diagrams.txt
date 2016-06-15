@@ -1,0 +1,27 @@
+All,
+
+Finished up the Use Cases.  Major changes came out of our friday meeting
+regarding this, as it was the main focus of discussion.  Please review
+this and know it for tommorow after class so we can make 'emergency'
+changes if needed.
+
+The breakdowns for the UML diagrams as as follows:
+
+Heather - Print and Save (should be really easy)
+Payal - Modify Plan Data
+Emmanuel - Input Plan Data
+
+
+
+Pat - View Plan Data
+
+Kinda picked topics in the system.  I suppose just follow the path like
+the user would, and thats what to diagram.  Just to keep everything
+simple, send me things in as simple a form as you can.  No pdf documents,
+because I cant edit them =/.  As soon as possible would be good, but I
+know that I'm not able to do this merging all tonight due to scheduling
+and 3 exams in the next 3 days.
+
+Thanks guys, hope your week started well!
+
+--Chris

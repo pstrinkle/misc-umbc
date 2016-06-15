@@ -1,0 +1,79 @@
+#  Sample Makefile for Project 1, CMSC341, Spring 2005
+#  You are not required to use this makefile. If you choose to use it, 
+#  you may need to modify it as needed.
+#  Thanks to Tom Anastasio for his original
+
+PROJ    = Proj4
+CC      = /usr/local/bin/g++
+CCFLAGS = -g -ansi -Wall -I . 
+
+# These are the files that students write for this project.
+# They are to be submitted.
+SOURCES = \
+QuadProbing.h\
+QuadProbing.cpp\
+HashingAux.h\
+HashingAux.cpp\
+Proj4.cpp
+
+# These are the object files resulting from provided source code
+# as well as from student-written source code
+OBJECTS = Proj4.o HashingAux.o
+
+
+# The big daddy compilation rule.  Links all the objects.
+$(PROJ): $(OBJECTS) 
+	$(CC) $(CCFLAGS) -o $(PROJ)  $(OBJECTS)
+
+# The following rules make (compile) the various object files
+################
+Proj4.o:
+	$(CC) $(CCFLAGS) -c Proj4.cpp
+
+HashingAux.o:
+	$(CC) $(CCFLAGS) -c HashingAux.cpp
+
+################
+
+# Utility for printing the code you have written for the project.  
+# Typing 'make print' produces a PostScript file named $(PROJ).ps 
+# to be printed on an appropriate PS printer such as acsps.
+PRINTPGM   = a2ps
+PRINTFLAGS = -nP
+PRINTFILE  = $(PROJ).ps
+.PHONY: print
+print: $(SOURCES)
+	- $(PRINTPGM) $(PRINTFLAGS) $(SOURCES) Makefile > $(PRINTFILE)
+
+# Utility for printing all the code -- both the code you have written 
+# and the code that was provided for the project.  
+# Typing 'make printall' produces a PostScript file named $(PROJ).ps 
+# to be printed on an appropriate PS printer such as acsps.
+.PHONY: printall
+printall: $(SOURCES) $(PROVIDED_SOURCES)
+	- $(PRINTPGM) $(PRINTFLAGS) \
+              $(SOURCES) $(PROVIDED_SOURCES) Makefile > $(PRINTFILE)
+
+# Utility for submitting your files.  Typing 'make submit'
+# submits the files for you.
+#  SUBMITCLASS should be the same for all sections of 341
+
+SUBMITCLASS  = cs341
+.PHONY: submit
+submit:
+	submit $(SUBMITCLASS) $(PROJ) $(SOURCES) Makefile
+
+# Utilities for cleaning up your directory.  
+# 'make clean' removes emacs backup files
+# 'make cleaner' also removes all object files
+# 'make cleanest' also removes core and the executable
+.PHONY: clean
+.PHONY: cleaner
+.PHONY: cleanest
+clean:
+	- rm -f *# *~ 
+cleaner: clean
+	- rm -f *.o
+cleanest: cleaner
+	- rm -f core.*; rm -f $(PROJ)
+

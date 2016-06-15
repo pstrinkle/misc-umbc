@@ -1,0 +1,47 @@
+Submit:
+
+Paper including Phases A,B,C,D,E,
+Phase B E-R Diagram as Appendix A,
+Revamped E-R Diagram as Apppendix B,
+Build.sql script as Appendix C,
+Insert.sql script as Appendix D,
+Delete.sql script as Appendix E
+
+
+
+
+Notes for Final Documentation:
+
+
+
+--Since Whenever I delete a Branch, I also delete Employees, but don't want to go through the trouble of then cascading down manually, I just set values to null.  But I do bother deleting the immediate entries.
+--Whenever the prompt has options in parentheses only these exact options may be used, also if it asks for only numbers--only numbers may be typed in.
+
+
+create table works_for
+   (assoc_num		int		not null unique,
+    super_num		int		not null,
+    primary key (assoc_num),
+    foreign key (assoc_num) references Employee(emp_num),
+    foreign key (super_num) references Employee(emp_num));
+
+create table works_at
+   (emp_num        	int 		not null unique,
+    branch_num     	int 		not null,
+    primary key (emp_num),
+    foreign key (emp_num) references Employee,
+    foreign key (branch_num) references Branch);
+
+create table manages
+   (emp_num        	int 		not null unique,
+    branch_num     	int 		not null,
+    primary key (emp_num),
+    foreign key (emp_num) references Employee,
+    foreign key (branch_num) references Branch);
+
+create table refers_to
+   (lease_num      	int 		not null unique,
+    property_num   	int 		not null unique,
+    primary key (lease_num),
+    foreign key (lease_num) references Lease,
+    foreign key (property_num) references Property);

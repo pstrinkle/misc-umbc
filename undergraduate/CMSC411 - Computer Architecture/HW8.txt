@@ -1,0 +1,55 @@
+Patrick Trinkle
+CMSC411
+Fall 2006
+HW8
+
+ HW8 More Pipelining 25 points
+
+1) Note: If a data hazard is NOT prevented by data forwarding, then
+   the pipeline stalls. 
+
+   Assume data forwarding is working, does the following code stall?
+   "stall" means it needs an extra  nop  instruction
+   inserted, If the code stalls then list the instruction(s),
+   labels of the instructions that get stalled (delayed due to extra  nop's).
+
+      L1:  lw   $3, 50($3)  IF ID EX M  WB
+      L2:  add  $2, $5, $4     IF ID EX M  WB
+      L3:  sw   $2, 20($2)        IF ID EX M  WB
+      L4:  lw   $5, 30($2)           IF ID EX M  WB
+      L5:  lw   $6, 40($5)              IF ID -- EX M  WB
+      L6:  add  $5, $5, $5                 IF ID EX M  WB
+                      time  1  2  3  4  5  6  7  8  9  10 12
+
+	L5 needs a nop, the rest line up because of data forwarding
+
+2) How many total clock cycles will the following code use from
+   start to completion in our MIPS architecture pipelined machine ?
+   (We have full data forwarding and hazard prevention that
+    automatically inserts  nop  as needed into the pipeline.)
+
+        add  $5, $6, $7  IF ID EX M  WB
+        lw   $6, 80($5)     IF ID EX M  WB
+        sub  $7, $6, $5        IF ID -- EX M  WB
+        and  $8, $7, $6           IF ID -- EX M  WB
+        sw   $8, 84($8)              IF ID -- EX M  WB
+                   time  1  2  3  4  5  6  7  8  9  10
+
+	Time: 10 Clocks
+	
+3) List all the inputs and outputs of the "forwarding unit" with
+   their respective the number of bits. You may use the books signal
+   name or any signal name that indicates what the input or output does.
+   You may have to read the text as well as reading the diagram on 
+   Page 416 in the textbook or from the lecture diagram.
+   The eight signals are required.
+
+   Inputs:
+	1 forward 5 bits
+	2 forward 6 bits
+	A forward 5 bits
+	A forward 5 bits
+	B forward 6 bits
+	B forward 6 bits
+   Outputs:
+	ID_RD

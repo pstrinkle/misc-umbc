@@ -1,0 +1,25 @@
+CMSC 341 -- Spring 2005 -- Project 3 Questions
+
+Copy this file into your directory and edit it to add your answers
+to the following questions about Project 3.
+
+These questions count for 10% of your project grade.
+
+
+1. (5 points) Consider 15 keys 1, 2, ..., 15.
+   1) Give an insertion sequence of these 15 key that generates the tallest 
+      possible BST.      
+   2) Give an insertion sequence of these 15 key that generates the shortest 
+      possible BST.
+   3) Generate s random insertion sequence of these 15 key (using any random 
+      function).
+   4) Run your program on these three sequences, compare the height of 
+      randomized BST  with the corresponding ordinary BST. Indicate whether 
+      your results are consistent with the theoretical results.
+   [NOTE: Please do not cut and paste all running results in the answer. 
+    Only list the  three sequences and the height comparisons.]
+
+2. (5 points) The function for splitting a BST given in the project 
+   description is a tail recursive function. Write in pseudo code an iterative 
+   version of  this function.
+

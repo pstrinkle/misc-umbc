@@ -1,0 +1,168 @@
+CMSC 202 Fall 2004
+Project 4 Design
+
+Name: Patrick Trinkle
+Section: 3540
+UMBC E-mail: tri1@umbc.edu
+Date: 11/14/2004
+
+Part 1 -- TinkerToy Class Definition
+
+class TinkerToy
+{
+  public:
+   TinkerToy(const string& color, int& ToyCtr);
+   TinkerToy& operator=(const TinkerToy& rhs);
+   virtual ~TinkerToy(int& ToyDtr);
+   virtual TinkerToy* Clone() const = 0;
+   virtual void Print() const = 0;
+   virtual double Volume() const = 0;
+  private:
+   string m_color;
+   string GetColor() const;
+};
+
+//---
+// TinkerToy::TinkerToy(const string& color, int& ToyCtr)
+// Preconditions: none -- has defaults
+// Postconditions: construction counter incremented
+//---
+// TinkerToy& TinkerToy::operator=(const TinkerToy& rhs)
+// Preconditions: none
+// Postconditions: none
+//---
+// virtual TinkerToy::~TinkerToy(int& ToyDtr)
+// Preconditions: none
+// Postconditions: memory returned to heap, destruction counter incremented
+//---
+// virtual TinkerToy* TinkerToy::Clone() const = 0
+// Preconditions: needs to be overridden
+// Postconditions: none
+//---
+// virtual void TinkerToy::Print() const = 0
+// Preconditions: needs to be overridden
+// Postconditions: none
+//---
+// virtual double TinkerToy::Volume() const = 0
+// Preconditions: needs to be overridden
+// Postconditions: none
+
+Part 2 -- RoundToy Class Definition
+
+class RoundToy: public TinkerToy
+{
+  public:
+   RoundToy(float diameter = 0, const string& color = "undefined_color", int nrHoles = 0, int& ToyCtr);
+   RoundToy& operator=(const RoundToy& rhs);
+   virtual ~RoundToy(int& ToyDtr);
+   virtual RoundToy* Clone() const;
+   virtual void Print() const;
+   virtual double Volume() const;
+  private:
+   float m_Diameter;
+   int m_Holes;
+};
+
+//---
+// RoundToy((float diameter = 0, const string& color = "undefined_color", int nrHoles = 0, int& ToyCtr)
+// Preconditions: default constructor
+// Postconditions: toy made, increments construction counter
+//---
+// RoundToy& RoundToy::operator=(const RoundToy& rhs)
+// Preconditions: none
+// Postconditions: none
+//---
+// virtual RoundToy::~RoundToy(int& ToyDtr)
+// Preconditions: none
+// Postconditions: memory returned to heap, destruction counter incremented
+//---
+// virtual RoundToy* RoundToy::Clone() const
+// Preconditions: none
+// Postconditions: none
+//---
+// virtual void RoundToy::Print() const
+// Preconditions: none
+// Postconditions: none
+//---
+// virtual double RoundToy::Volume() const
+// Preconditions: none
+// Postconditions: none
+//---
+
+Part 3 -- SquareToy Class Definition
+
+class SquareToy: public TinkerToy
+{
+  public:
+   SquareToy(const string& color = "undefined_color", int side = 0, int nrHoles = 0, int& ToyCtr);
+   SquareToy& operator=(const SquareToy& rhs);
+   virtual ~SquareToy(int& ToyDtr);
+   virtual SqaureToy* Clone() const;
+   virtual void Print() const;
+   virtual double Volume() const;
+  private:
+   int m_Holes, m_Side;
+};
+
+//---
+// SquareToy::SquareToy(const string& color = "undefined_color", int side = 0, int nrHoles = 0, int& ToyCtr)
+// Preconditions: default constructor
+// Postconditions: toy made, increments construction variable
+//---
+// SquareToy& SquareToy::operator=(const SquareToy& rhs)
+// Preconditions: none
+// Postconditions: none
+//---
+// virtual SquareToy::~SquareToy(int& ToyDtr)
+// Preconditions: none
+// Postconditions: returns memory to heap, increments destruction counter
+//---
+// virtual SquareToy* SquareToy::Clone() const
+// Preconditions: none
+// Postconditions: none
+//---
+// virtual void SquareToy::Print() const
+// Preconditions: none
+// Postconditions: none
+//---
+// virtual double SquareToy::Volume() const
+// Preconditions: none
+// Postconditions: none
+//---
+
+Part 4 -- RodToy Class Definition
+
+class RodToy: public TinkerToy
+{
+  public:
+   RodToy(const string& color = "undefined_color", int length = 0, int& ToyCtr);
+   RodToy& operator=(const RodToy& rhs);
+   virtual ~RodToy(int& ToyDtr);
+   virtual RodToy* Clone() const;
+   virtual void Print() const;
+   virtual double Volume() const;
+  private:
+   int m_Length;
+};
+
+//---
+// RodToy::RodToy(const string& color = "undefined_color", int length = 0, int& ToyCtr)
+// Preconditions: default constructor
+// Postconditions: toy and increments construction counter
+//---
+// RodToy& RodToy::operator=(const RodToy& rhs)
+// Preconditions: none
+// Postconditions: none
+//---
+// virtual RodToy::~RodToy(int& ToyDtr)
+// Preconditions: none
+// Postconditions: incremented destruction counter
+//---
+// virtual RodToy* RodToy::Clone() const
+// Preconditions: none
+// Postconditions: none
+//---
+// virtual double RodToy::Volume() const
+// Preconditions: none
+// Postconditions: none
+//---

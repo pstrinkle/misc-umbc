@@ -1,0 +1,67 @@
+Script started on Mon May  8 18:02:24 2006
+linux1[1]% make
+gcc -Wall -ansi -o ftpclient ftpclient.c
+ftpclient.c: In function `put':
+ftpclient.c:442: warning: implicit declaration of function `usleep'
+gcc -Wall -ansi -o ftpserver ftpserver.c
+ftpserver.c: In function `retr':
+ftpserver.c:354: warning: implicit declaration of function `usleep'
+linux1[2]% cp ftpserver temp/.
+linux1[3]% ./ftpclient [K[K[K[K[K[K[K[K[K[K[Kcat putfile.txt 
+whatever data
+data
+data
+@$
+whatever else is going on
+linux1[4]% ./ftpclient linux2.gl.umbc.edu
+Connected to linux2.gl.umbc.edu
+220 TrinkleFTP
+ftp>ls
+200 Directory Exists
+.
+..
+getfile.txt
+ftpserver
+ftp>noop
+200 Command successful.
+ftp>cd temp
+550 Requested action not taken.
+ftp>cd ../
+250 CWD Command successful, ../
+ftp>ls
+200 Directory Exists
+.
+..
+ftpclient.c
+Makefile
+temp
+ftpserver.c
+putfile.txt
+typescript
+ftpclient
+ftpserver
+ftp>cd ../   temp
+250 CWD Command successful, temp
+ftp>ls
+200 Directory Exists
+.
+..
+getfile.txt
+ftpserver
+ftp>no command
+Invalid command.
+ftp>pwd
+257 Current working directory is /afs/umbc.edu/users/t/r/tri1/home/481/Project2/temp
+ftp>get getfile.txt
+Requesting: getfile.txt
+Saving as: getfile.txt
+200 Okay getfile.txt
+Attempging to open: getfile.txt
+ftp>put putfile.txt
+200 Okay to send.
+ftp>quit
+221 Goodbye
+
+linux1[5]% c[Kexit
+
+Script done on Mon May  8 18:04:50 2006

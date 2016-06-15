@@ -1,0 +1,1 @@
+setenv CLASSPATH ".:/afs/umbc.edu/users/t/r/tri1/home/461/oracle815.jar"

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+  <head>
+    <title>Hangman</title>
+    <style type="text/css">
+      body {
+        font-family: sans-serif;
+        margin: 0;
+      }
+
+      #header {
+        font-size: 2.5em;
+        font-weight: bold;
+        background-color: #3882C7;
+        text-align: center;
+        padding: .25em;
+        color: #ffffff;
+        border-bottom: 1px solid #000000;
+      }
+
+      #hanger {
+        text-align: center;
+        margin-top: 1em;
+      }
+
+      #word {
+        margin-top: 1em;
+        font-size: 3em;
+        text-align: center;
+        font-family: monospace;
+      }
+
+      #letters {
+        text-align: center;
+        margin-top: 1em;
+      }
+      
+      #letters input {
+        margin: .2em;
+        width: 2em;
+      }
+
+      #notification {
+        margin-top: 1em;
+        text-align: center;
+      }
+
+      #options {
+        margin-top: 2em;
+        text-align: center;
+      }
+    </style>
+    <script type="text/javascript" src="http://userpages.umbc.edu/~dhood2/courses/cmsc433/spring2006/Miscellaneous/JavaScript/p1/dictionary.js"></script>
+    <script type="text/javascript">
+
+    <!-- 
+
+    /* Author: Patrick Trinkle
+       Email:  tri1@umbc.edu
+       Course: CMSC433
+
+       Functions are named to make understanding simple
+    */
+
+      var isDone = false;
+      var hangmanValue = 0;
+      var imagepath = "http://userpages.umbc.edu/~dhood2/courses/cmsc433/spring2006/Miscellaneous/JavaScript/p1/hangman";
+      var imagefiletype = ".gif";
+      var word = " ";
+      var spaces;
+
+
+      /* Builds the game */
+      function buildGame() {
+
+         isDone = false;
+	 hangmanValue = 0;
+
+	 document.getElementById('hangman').src = imagepath + hangmanValue + imagefiletype;	 
+	 document.getElementById('notification').innerHTML = "Welcome to Hangman - click a letter to begin";
+
+	 word = dictionary[Math.ceil(Math.random() * dictionary.length)].toUpperCase();
+
+	 spaces = [];
+
+	 for ( var i = 0; i < word.length; i++ ) {
+	    spaces.push("_");
+         }
+
+	 document.getElementById('word').innerHTML = spaces.join(" ");
+	 document.getElementById('guess').disabled = false;
+
+	 buildButtons();
+      }
+
+      /* sets up a new game */
+      function newGame() {
+
+         if (!isDone) {
+            var yesno = confirm("Quit Current Game?");
+
+            if (yesno) {
+                buildGame();
+            }
+            else {
+                return;
+            }
+         }
+	 
+         buildGame();
+      }
+
+      var alpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P",
+                         "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+		
+      /* builds the buttons for the letters */
+      function buildButtons() { 
+
+         var letters = "";
+
+         for (var i = 0; i < 26; i++) {
+            letters += '<input type="button" name="alpha" id="' + alpha[i] 
+                    + '" value="' + alpha[i] + '" class="input" onClick="checkLetter(\'' + alpha[i] + '\');" />';
+         }
+
+         document.getElementById('letters').innerHTML = letters;
+      } 
+
+      /* checks which letter they clicked */
+      function checkLetter(id) {
+
+         document.getElementById(id).disabled = true;
+	 
+         if ( word.indexOf(id) > -1 ) {
+	    document.getElementById('notification').innerHTML = id + " <b>is</b> in the word";
+
+	    showLetter(id);
+
+	    if ( checkWin() ) {
+               document.getElementById('notification').innerHTML = "You won";
+	       killLetters();
+	       document.getElementById('word').innerHTML = word;
+	       isDone = true;	       
+            }
+         }
+	 else {
+	    hangmanValue++;
+	    document.getElementById('hangman').src = imagepath + hangmanValue + imagefiletype;
+
+	    if ( hangmanValue == 6 ) {
+               document.getElementById('notification').innerHTML = "You Lose";
+	       isDone = true;
+	       killLetters();
+	       document.getElementById('word').innerHTML = word;
+            }
+	    else {
+               document.getElementById('notification').innerHTML = id + " is <b>not</b> in the word";
+            }
+	 }
+      }
+
+      /* puts the letter into the word */
+      function showLetter(id) {
+         
+	 for ( var i = 0; i < word.length; i++ ) {
+	    if ( word.charAt(i) == id ) {
+	       spaces[i] = id;
+            }
+         }
+	 
+	 document.getElementById('word').innerHTML = spaces.join(" ");
+      }
+      
+      /* checks to see if someone one */
+      function checkWin() {
+      
+         if ( spaces.join("") == word ) {
+	    return true;
+	 }
+	 else {
+            return false;
+         }   
+      }
+
+      /* disables all the letters */
+      function killLetters() {
+
+         for ( var i = 0; i < 26; i++ ) {
+	    document.getElementById(alpha[i]).disabled = true;
+         }
+
+	 document.getElementById('guess').disabled = true;
+      }
+
+      /* gets user's guess */
+      function guessWord() {
+      
+         var guess = prompt("Enter Guess", "Enter guess here").toUpperCase();
+
+         if ( guess == word ) {
+	    document.getElementById('notification').innerHTML = "You win";
+	    killLetters();
+	    isDone = true;
+	    document.getElementById('word').innerHTML = word;
+	 }
+	 else {
+	    document.getElementById('notification').innerHTML = "You guessed incorrectly";
+	 }	 
+      }
+      
+      // -->
+
+    </script>
+  </head>
+  <body onLoad="buildGame();">
+    <div id="header">Hangman</div>
+
+    <!-- this div contains the hangman image to be updated -->
+    <div id="hanger"><img src="http://userpages.umbc.edu/~dhood2/courses/cmsc433/spring2006/Miscellaneous/JavaScript/p1/hangman0.gif" id="hangman" /></div>
+
+    <!-- this div contains the word the user is trying to guess -->
+    <div id="word"></div>
+
+    <!-- this div is used to display messages to the user -->
+    <div id="notification"></div>
+
+    <!-- this div should programmatically be populated with letter buttons -->
+    <div id="letters"></div>
+
+    <!-- houses the new game button -->
+    <div id="options">
+      <input type="button" value="Guess Word" id="guess" onClick="guessWord();" />   
+      <input type="button" value="New Game" onClick="newGame();" />
+    </div>
+  </body>
+</html>

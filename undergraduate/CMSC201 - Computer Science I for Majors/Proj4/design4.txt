@@ -1,0 +1,209 @@
+/****************************************************
+** File: design4.txt
+** Author: Patrick Trinkle
+** Date: 4/18/2004
+** Section: 0103
+** Email : tri1@umbc.edu
+**
+** This program reads a file indicated by the user
+** and reads in the file, a list of strings and with
+** that allows the user to obtain information about
+** the different strings, if they're palindromes or
+** not.
+****************************************************/
+
+/*****************************************
+** Function: PrintGreeting()
+** This function displays the greeting.
+**
+** Inputs:  void
+** Outputs: void
+*****************************************/
+void PrintGreeting (void);
+
+/*****************************************
+** Function: FindNumStrings()
+** This function finds the number of 
+** strings in the file.
+**
+** Inputs:  the file pointer
+** Outputs: int numStrings == the number
+**          of strings in the file.
+*****************************************/
+int FindNumStrings(FILE * ifp);
+
+/*****************************************
+** Function: GetArrayMem()
+** This gets the memory for the array.
+**
+** Inputs:  the number of strings
+** Outputs: the address or whatever
+**          char * * arrayofstrings 
+*****************************************/
+char ** GetArrayMem(int numStrings);
+
+/*****************************************
+** Function: ReadStrings()
+** This reads the strings from the file
+**
+** Inputs:  the number of strings, the 
+**          file pointer, and the address
+**          of the array of strings
+** Outputs: void
+*****************************************/
+void ReadStrings(FILE * ifp, int numStrings, char * * arrayofstrings);
+
+/*****************************************
+** Function: PrintMenu()
+** Prints the list of strings in menu form
+**
+** Inputs:  the number of strings and the
+**          address of the array of strings
+** Outputs: void
+*****************************************/
+void PrintMenu(char * arrayofstrings, int numStrings);
+
+/*****************************************
+** Function: PrintString()
+** Prints the string chosen
+**
+** Inputs:  the string id and the
+**          address of the array of strings
+** Outputs: void
+*****************************************/
+void PrintString(char * arrayofstrings, int stringID);
+
+/*****************************************
+** Function: PrintSubMenu()
+** Prints the sub menu
+**
+** Inputs:  void
+** Outputs: void
+*****************************************/
+void PrintSubMenu(void);
+
+/*****************************************
+** Function: StringPurge()
+** Purges the string of whitespace and 
+** punctuation.
+**
+** Inputs:  the address of the array of 
+**          strings and the string ID.
+** Outputs: void
+*****************************************/
+void StringPurge(char * arrayofstrings, int stringID);
+
+/*****************************************
+** Function: IsPalindrome()
+** Recursive function to deteremine if it's
+** a palindrome or not.
+**
+** Inputs:  the address of the temporary
+**          string, the number to start,
+**          and the end of the string.
+** Outputs: if the string is a plaindrome
+**          or not, true or false --
+**          int isPalin.
+*****************************************/
+int IsPalindrome(tempstring[ ], int numStart, int numEnd);
+
+/*****************************************
+** Function: VowelCount()
+** Calculates the number of vowels in the
+** string.
+**
+** Inputs:  the location of the array of 
+**          strings and the string Id
+** Outputs: int numVowels--the number of
+**          vowels in the string.
+*****************************************/
+int VowelCount(char * arrayofstrings, int stringID);
+
+/*****************************************
+** Function: ConsonantCount()
+** Calculates the number of consonants in
+** the string.
+**
+** Inputs:  the location of the array of 
+**          strings and the string Id
+** Outputs: int numCons--the number of
+**          consonants in the string.
+*****************************************/
+int ConsonantCount(char * arrayofstrings, int stringID);
+
+/*****************************************
+** Function: StringLength()
+** Calculates the length of the string.
+**
+** Inputs:  the location of the array of 
+**          strings and the string Id
+** Outputs: int stringLen--the length of
+**          the string.
+*****************************************/
+int stringLen StringLength(char * arrayofstrings, int stringID);
+
+/*****************************************
+** Function: WordCount()
+** Calculates the number of words in the 
+** string.
+**
+** Inputs:  the location of the array of 
+**          strings and the string Id
+** Outputs: int numWords--the number of
+**          words in the string.
+*****************************************/
+int numWords WordCount(char * arrayofstrings, stringID);
+
+/*****************************************
+** Function: FreeMemory()
+** Frees all your allocated memory.
+**
+** Inputs:  the location of the array of 
+**          strings and the number of 
+**          strings.
+** Outputs: void
+*****************************************/
+void FreeMemory(char * arrayofstrings, int numStrings);
+
+
+/******************************************************************************
+**
+**    This program is called Palindromes.  This program reads in from a user
+** defined data file.  It uses command line arguments.  It dynamically allocates
+** memory for an array of strings and then reads in the strings and dynamically
+** allocates the memory for them individually.  It generates a menu with the
+** strings listed and you can choose one or 0 to exit.  When the user chooses
+** a string it prints the string and then the submenu.  The submenu is letter
+** based and with it the user can find certain information about the strings.
+** 'P' checks if it's a palindrome, 'V' counts the vowels, 'C' counts 
+** consonants, 'L' counts the length of the string, 'W' counts the words in the
+** string.  
+**
+**    First the program finds the number of strings (FindNumStrings), then
+** gets the required memory to hold the pointers (GetArrayMem).  It reads the 
+** strings (ReadStrings), prints the menu (PrintMenu).  When they choose a
+** string and then it prints it (PrintString).  It also prints the submenu
+** (PrintSubMenu).  If they choose palindrome it purges, also if you choose
+** count letters. (StringPurge).  It passes a true if they choose palindrome. 
+** (IsPalindrome)--it's a recursive function of sorts!  If they want the
+** number of vowels (VowelCount), the number of consonants (ConsonantCount),
+** the length (StringLength), the number of words (WordCount).  After they
+** exit the program FreeMemory clears all the allocated memory.
+**
+** Primary Variables:
+**
+** char * * arrayofstrings
+** FILE *   ifp
+** int      numStrings, stringID
+** char     tempString[100]
+**
+** arrayofstrings is a pointer to a pointer to a char
+**
+**    After the program is exited by the user via the menu, FreeMemory runs
+** which frees all the dynamically allocated memory for the strings and the
+** array of strings.
+**
+**
+**
+**
+******************************************************************************/

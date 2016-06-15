@@ -1,0 +1,158 @@
+dbx version 7.2.1.3m Dec 23 1998 01:09:37
+Executable /afs/umbc.edu/users/t/r/tri1/home/411/a.out
+(dbx) Process     0: [3] stop in main
+(dbx) Process 570582 (a.out) started
+[3] Process 570582 (a.out) stopped at [main:7 ,0x10000ae8]
+   7  double a[N][N]; /* input matrix */
+(dbx)      1  /* matmul2.c  100*100 matrix element by element multiply */
+     2  #include <stdio.h>
+     3  
+     4  int main()
+     5  {
+     6    const int N = 100;
+>*   7    double a[N][N]; /* input matrix */
+     8    double b[N][N]; /* input matrix */
+     9    double c[N][N]; /* result matrix */
+    10    int i,j;
+    11  
+    12    printf("starting multiply \n");
+    13    a[1][1] = 3.5;
+    14    b[1][1] =1.2; /* not a valid benchmark, most elements zero */
+    15  
+    16    for(i=0; i<N; i++){
+    17      for(j=0; j<N; j++){
+    18  front:
+    19          c[i][j] = a[i][j]*b[i][j]; /* most time spent here! */
+    20  back:;
+    21      }
+    22    }
+More (n if no)?    23    printf("a result %g \n", c[1][1]); /* prevent dead code elimination */
+    24    return 0;
+    25  }
+    26  
+(dbx) 10000abc:  03c03825 27bdffb0 27be0050 ffc7ffd0
+10000acc:  ffdfffe8 ffd0fff0 ffd1ffd8 ffd2ffc8
+10000adc:  3c05fffe 34a5c780 00bde821 03a09025
+10000aec:  00bde821 03a08825 00bde821 3c060002
+10000afc:  24c6955c ffdcffe0 0326e021 8f99804c
+10000b0c:  8f848030 03a08025 0320f809 24842000
+10000b1c:  8f8e804c 264a0320 02405825 00004825
+10000b2c:  00006825 d7818078 d7808070 02206025
+10000b3c:  f6210328 f6400328 d5830c80 d5600fa0
+10000b4c:  d5850fa0 d58912c8 01300821 01801025
+10000b5c:  258c15e0 d587ed40 d5660320 01601825
+10000b6c:  d588fce0 46273182 d56712c0 2544fff0
+10000b7c:  254a15e0 462839c2 10000020 2484fff0
+10000b8c:  46261a02 d4630c90 d4470970 d4610970
+10000b9c:  46221982 f4200330 f42512d0 d4430650
+10000bac:  46270882 d4610650 f4280fb0 d46012d8
+10000bbc:  462308c2 f4260c90 d44912e0 d4410010
+10000bcc:  462401c2 d4600010 f4220970 d4450fb8
+10000bdc:  46210102 d4420338 d4610338 f4230650
+10000bec:  d4600fb8 46220982 d4430c98 24210018
+10000bfc:  24420018 24630018 f424fff8 46250142
+10000c0c:  d4620c80 d4410960 d4600960 46231102
+More (n if no)?10000c1c:  f4260320 f42712c0 d4430640 46210082
+10000c2c:  d4610640 f4250fa0 d46012c8 462308c2
+10000c3c:  f4240c80 d44812d0 d4410000 462901c2
+(dbx)  [main:5, 0x10000abc] 	move	a3,s8
+ [main:5, 0x10000ac0] 	addiu	sp,sp,-80
+ [main:5, 0x10000ac4] 	addiu	s8,sp,80
+ [main:5, 0x10000ac8] 	sd	a3,-48(s8)
+ [main:5, 0x10000acc] 	sd	ra,-24(s8)
+ [main:5, 0x10000ad0] 	sd	s0,-16(s8)
+ [main:5, 0x10000ad4] 	sd	s1,-40(s8)
+ [main:5, 0x10000ad8] 	sd	s2,-56(s8)
+ [main:5, 0x10000adc] 	lui	a1,0xfffe
+ [main:5, 0x10000ae0] 	ori	a1,a1,0xc780
+ [main:5, 0x10000ae4] 	addu	sp,a1,sp
+*[main:7, 0x10000ae8] 	move	s2,sp
+ [main:7, 0x10000aec] 	addu	sp,a1,sp
+ [main:8, 0x10000af0] 	move	s1,sp
+ [main:8, 0x10000af4] 	addu	sp,a1,sp
+ [main:5, 0x10000af8] 	lui	a2,0x2
+ [main:5, 0x10000afc] 	addiu	a2,a2,-27300
+ [main:5, 0x10000b00] 	sd	gp,-32(s8)
+ [main:5, 0x10000b04] 	addu	gp,t9,a2
+ [main:5, 0x10000b08] 	lw	t9,-32692(gp)
+ [main:12, 0x10000b0c] 	lw	a0,-32720(gp)
+ [main:9, 0x10000b10] 	move	s0,sp
+More (n if no)? [main:12, 0x10000b14] 	jalr	ra,t9
+ [main:12, 0x10000b18] 	addiu	a0,a0,8192
+ [main:12, 0x10000b1c] 	lw	t2,-32692(gp)
+ [main:16, 0x10000b20] 	addiu	a6,s2,800
+ [main:16, 0x10000b24] 	move	a7,s2
+ [main:16, 0x10000b28] 	move	a5,zero
+ [main:16, 0x10000b2c] 	move	t1,zero
+ [main:14, 0x10000b30] 	ldc1	$f1,-32648(gp)
+ [main:13, 0x10000b34] 	ldc1	$f0,-32656(gp)
+ [main:16, 0x10000b38] 	move	t0,s1
+ [main:14, 0x10000b3c] 	sdc1	$f1,808(s1)
+ [main:13, 0x10000b40] 	sdc1	$f0,808(s2)
+ [main:19, 0x10000b44] 	ldc1	$f3,3200(t0)
+ [main:19, 0x10000b48] 	ldc1	$f0,4000(a7)
+ [main:19, 0x10000b4c] 	ldc1	$f5,4000(t0)
+ [main:19, 0x10000b50] 	ldc1	$f9,4808(t0)
+ [main:16, 0x10000b54] 	addu	at,a5,s0
+ [main:16, 0x10000b58] 	move	v0,t0
+ [main:16, 0x10000b5c] 	addiu	t0,t0,5600
+ [main:19, 0x10000b60] 	ldc1	$f7,-4800(t0)
+ [main:19, 0x10000b64] 	ldc1	$f6,800(a7)
+ [main:19, 0x10000b68] 	move	v1,a7
+More (n if no)? [main:19, 0x10000b6c] 	ldc1	$f8,-800(t0)
+ [main:19, 0x10000b70] 	mul.d	$f6,$f6,$f7
+ [main:19, 0x10000b74] 	ldc1	$f7,4800(a7)
+ [main:19, 0x10000b78] 	addiu	a0,a6,-16
+ [main:16, 0x10000b7c] 	addiu	a6,a6,5600
+ [main:19, 0x10000b80] 	mul.d	$f7,$f7,$f8
+ [main:19, 0x10000b84] 	b	0x10000c08
+ [main:19, 0x10000b88] 	addiu	a0,a0,-16
+ [main:19, 0x10000b8c] 	mul.d	$f8,$f3,$f6
+ [main:19, 0x10000b90] 	ldc1	$f3,3216(v1)
+ [main:19, 0x10000b94] 	ldc1	$f7,2416(v0)
+ [main:19, 0x10000b98] 	ldc1	$f1,2416(v1)
+ [main:19, 0x10000b9c] 	mul.d	$f6,$f3,$f2
+ [main:19, 0x10000ba0] 	sdc1	$f0,816(at)
+ [main:19, 0x10000ba4] 	sdc1	$f5,4816(at)
+ [main:19, 0x10000ba8] 	ldc1	$f3,1616(v0)
+ [main:19, 0x10000bac] 	mul.d	$f2,$f1,$f7
+ [main:19, 0x10000bb0] 	ldc1	$f1,1616(v1)
+ [main:19, 0x10000bb4] 	sdc1	$f8,4016(at)
+ [main:19, 0x10000bb8] 	ldc1	$f0,4824(v1)
+ [main:19, 0x10000bbc] 	mul.d	$f3,$f1,$f3
+ [main:19, 0x10000bc0] 	sdc1	$f6,3216(at)
+More (n if no)? [main:19, 0x10000bc4] 	ldc1	$f9,4832(v0)
+ [main:19, 0x10000bc8] 	ldc1	$f1,16(v0)
+ [main:19, 0x10000bcc] 	mul.d	$f7,$f0,$f4
+ [main:19, 0x10000bd0] 	ldc1	$f0,16(v1)
+ [main:19, 0x10000bd4] 	sdc1	$f2,2416(at)
+ [main:19, 0x10000bd8] 	ldc1	$f5,4024(v0)
+ [main:19, 0x10000bdc] 	mul.d	$f4,$f0,$f1
+ [main:19, 0x10000be0] 	ldc1	$f2,824(v0)
+ [main:19, 0x10000be4] 	ldc1	$f1,824(v1)
+ [main:19, 0x10000be8] 	sdc1	$f3,1616(at)
+ [main:19, 0x10000bec] 	ldc1	$f0,4024(v1)
+ [main:19, 0x10000bf0] 	mul.d	$f6,$f1,$f2
+ [main:19, 0x10000bf4] 	ldc1	$f3,3224(v0)
+ [main:17, 0x10000bf8] 	addiu	at,at,24
+ [main:17, 0x10000bfc] 	addiu	v0,v0,24
+ [main:17, 0x10000c00] 	addiu	v1,v1,24
+ [main:19, 0x10000c04] 	sdc1	$f4,-8(at)
+ [main:19, 0x10000c08] 	mul.d	$f5,$f0,$f5
+ [main:19, 0x10000c0c] 	ldc1	$f2,3200(v1)
+ [main:19, 0x10000c10] 	ldc1	$f1,2400(v0)
+ [main:19, 0x10000c14] 	ldc1	$f0,2400(v1)
+ [main:19, 0x10000c18] 	mul.d	$f4,$f2,$f3
+More (n if no)? [main:19, 0x10000c1c] 	sdc1	$f6,800(at)
+ [main:19, 0x10000c20] 	sdc1	$f7,4800(at)
+ [main:19, 0x10000c24] 	ldc1	$f3,1600(v0)
+ [main:19, 0x10000c28] 	mul.d	$f2,$f0,$f1
+ [main:19, 0x10000c2c] 	ldc1	$f1,1600(v1)
+ [main:19, 0x10000c30] 	sdc1	$f5,4000(at)
+ [main:19, 0x10000c34] 	ldc1	$f0,4808(v1)
+ [main:19, 0x10000c38] 	mul.d	$f3,$f1,$f3
+ [main:19, 0x10000c3c] 	sdc1	$f4,3200(at)
+ [main:19, 0x10000c40] 	ldc1	$f8,4816(v0)
+ [main:19, 0x10000c44] 	ldc1	$f1,0(v0)
+ [main:19, 0x10000c48] 	mul.d	$f7,$f0,$f9
+(dbx) (dbx) (dbx) (dbx) (dbx) (dbx) 

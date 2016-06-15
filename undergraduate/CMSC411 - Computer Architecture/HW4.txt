@@ -1,0 +1,87 @@
+    begin
+      a01: entity WORK.add4pg port map(a(3 downto 0),
+                                       b(3 downto 0),
+                                       cin,
+                                       sum(3 downto 0),
+                                       P0,
+                                       G0);
+
+      a02: entity WORK.add4pg port map(a(7 downto 4),
+                                       b(7 downto 4),
+                                       c1,
+                                       sum(7 downto 4),
+                                       P1,
+                                       G1);
+
+      a03: entity WORK.add4pg port map(a(11 downto 8),
+                                       b(11 downto 8),
+                                       c2,
+                                       sum(11 downto 8),
+                                       P2,
+                                       G2);
+
+      a04: entity WORK.add4pg port map(a(15 downto 12),
+                                       b(15 downto 12),
+                                       c3,
+                                       sum(15 downto 12),
+                                       P3,
+                                       G3);
+
+      a05: entity WORK.add4pg port map(a(19 downto 16),
+                                       b(19 downto 16),
+                                       c4,
+                                       sum(19 downto 16),
+                                       P4,
+                                       G4);
+
+      a06: entity WORK.add4pg port map(a(23 downto 20),
+                                       b(23 downto 20),
+                                       c5,
+                                       sum(23 downto 20),
+                                       P5,
+                                       G5);
+
+      a07: entity WORK.add4pg port map(a(27 downto 24),
+                                       b(27 downto 24),
+                                       c6,
+                                       sum(27 downto 24),
+                                       P6,
+                                       G6);
+
+      a08: entity WORK.add4pg port map(a(31 downto 28),
+                                       b(31 downto 28),
+                                       c7,
+                                       sum(31 downto 28),
+                                       P7,
+                                       G7);
+
+      pg01: entity WORK.pg4 port map(P0,
+                                       P1,
+                                       P2,
+                                       P3,
+                                       G0,
+                                       G1,
+                                       G2,
+                                       G3,
+                                       cin,
+                                       C1,
+                                       C2,
+                                       C3,
+                                       C4);
+
+      pg02: entity WORK.pg4 port map(P4,
+                                       P5,
+                                       P6,
+                                       P7,
+                                       G4,
+                                       G5,
+                                       G6,
+                                       G7,
+                                       C4,
+                                       C5,
+                                       C6,
+                                       C7,
+                                       cout);
+
+
+

@@ -1,0 +1,159 @@
+/****************************************************
+** File: design3.txt
+** Author: Patrick Trinkle
+** Date: 4/4/2004
+** Section: 0103
+** Email : tri1@umbc.edu
+**
+** This program takes data from a unix redirect and
+** feeds a database and calculates information, and
+** totals.
+****************************************************/
+
+/*****************************************
+** Function: PrintGreeting()
+** This function displays the greeting.
+**
+** Inputs: void
+** Outputs: void
+****************************************/
+void PrintGreeting (void);
+
+/*****************************************
+** Function: GetNumCars()
+** This function gets the number of cars.
+**
+** Inputs: a pointer to the number of cars
+** Outputs: void
+****************************************/
+void GetNumCars (int* numCarsptr);
+
+/*****************************************
+** Function: PrintNumCars()
+** This function prints the number of cars
+**
+** Inputs: the number of cars
+** Outputs: void
+****************************************/
+void PrintNumCars (int numCars);
+
+/*****************************************
+** Function: GetMemory()
+** This dynamically allocates memory
+**
+** Inputs: the pointer for the cars and
+**         the number of cars in the train
+** Outputs: void
+****************************************/
+void GetMemory (CAR** train, int numCars);
+
+/*****************************************
+** Function: GetInfo()
+** This gets the info for the train
+**
+** Inputs: the pointer for the cars and
+**         the number of cars in the train
+** Outputs: void
+****************************************/
+void GetInfo (CAR* train, int numCars);
+
+/*****************************************
+** Function: CalcCost()
+** Calculates the cost per car of the
+** train
+**
+** Inputs: the pointer for the cars and
+**         the number of cars in the train
+** Outputs: void
+****************************************/
+void CalcCost (CAR* train);
+
+/*****************************************
+** Function: FindTotals()
+** Calculates totals for the train
+**
+** Inputs: the pointer for the cars and
+**         the number of cars in the train
+**         and the cost pointer, and the
+**         weight pointer
+** Outputs: void
+****************************************/
+void FindTotals (CAR* train, int numCars, float* costPtr, int* wtPtr);
+
+/*****************************************
+** Function: PrintData()
+** Prints the data for the trains
+**
+** Inputs: the pointer for the cars
+**         
+** Outputs: void
+****************************************/
+void PrintData (CAR* train);
+
+/*****************************************
+** Function: PrintBreak()
+** Prints the break
+**
+** Inputs: void
+**         
+** Outputs: void
+****************************************/
+void PrintBreak (void);
+
+/*****************************************
+** Function: PrintTotals()
+** Prints the totals
+**
+** Inputs: the number of cars the coat
+**         and the weight
+**         
+** Outputs: void
+****************************************/
+Void PrintTotals (int numCars, float cost, int wt);
+
+/*****************************************
+** Function: PrintCars()
+** Prints the cars
+**
+** Inputs: the pointer for the cars
+**                  
+** Outputs: void
+****************************************/
+void PrintCars (CAR* train);
+
+#define AUTOS  16.5
+#define COAL   29.1
+#define CATTLE 52.5
+#define HOGS   63.1
+#define EGGS   75.9
+#define LENGTH 12
+
+/***********************************************************************************
+**
+**     This program takes in information from a unix redirect file about cars on a
+** train. It uses this information to calculate the costs of each car based on what
+** they contain. It then uses that information to calculate the total cost of moving
+** the contents of the train. The program then prints out all the information in a
+** list form and then prints the totals and then ascii art pictures of the cars.
+**     
+**     I #define the prices of transporting the different materials and the length
+** of a the strings. The program builds an array of structures using dynamic memory
+** allocation. Once it's done if frees up the allocated memory.
+**
+**     The struct looks like this:
+**
+**     typedef struct car
+**     {
+**        int   carNum;
+**        char  cargo[LENGTH];
+**        char  origin[LENGTH];
+**        char  destination[LENGTH];
+**        int   weight;
+**        int   miles;
+**        float cost;
+**     }CAR;
+**
+**
+**
+***********************************************************************************/
+
