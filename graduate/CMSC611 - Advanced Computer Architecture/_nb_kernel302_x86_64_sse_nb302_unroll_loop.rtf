@@ -1,0 +1,1777 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Courier New;}{\f1\fswiss\fcharset0 Arial;}}
+{\*\generator Msftedit 5.41.21.2508;}\viewkind4\uc1\pard\f0\fs20 _nb_kernel302_x86_64_sse.nb302_unroll_loop: \par
+        ## quad-unroll innerloop here \par
+        movq  nb302_innerjjnr(%rsp),%rdx       ## pointer to jjnr[k] \par
+\par
+        movl  (%rdx),%eax\par
+        movl  4(%rdx),%ebx\par
+        movl  8(%rdx),%ecx\par
+        movl  12(%rdx),%edx           ## eax-edx=jnr1-4 \par
+\par
+        addq $16,nb302_innerjjnr(%rsp)             ## advance pointer (unrolled 4) \par
+\par
+        movq nb302_pos(%rbp),%rsi        ## base of pos[] \par
+\par
+        lea  (%rax,%rax,2),%rax     ## replace jnr with j3 \par
+        lea  (%rbx,%rbx,2),%rbx\par
+        lea  (%rcx,%rcx,2),%rcx     ## replace jnr with j3 \par
+        lea  (%rdx,%rdx,2),%rdx\par
+\par
+        ## move j O coordinates to local temp variables \par
+    movlps (%rsi,%rax,4),%xmm0 ## jxOa jyOa  -   -\par
+    movlps (%rsi,%rcx,4),%xmm1 ## jxOc jyOc  -   -\par
+    movhps (%rsi,%rbx,4),%xmm0 ## jxOa jyOa jxOb jyOb \par
+    movhps (%rsi,%rdx,4),%xmm1 ## jxOc jyOc jxOd jyOd \par
+\par
+    movss  8(%rsi,%rax,4),%xmm2    ## jzOa  -  -  -\par
+    movss  8(%rsi,%rcx,4),%xmm3    ## jzOc  -  -  -\par
+    movhps 8(%rsi,%rbx,4),%xmm2    ## jzOa  -  jzOb  -\par
+    movhps 8(%rsi,%rdx,4),%xmm3    ## jzOc  -  jzOd -\par
+\par
+    movd %eax,%mm0 ## save j3 in mm0-mm3\par
+    movd %ebx,%mm1\par
+    movd %ecx,%mm2\par
+    movd %edx,%mm3\par
+\par
+    movaps %xmm0,%xmm4\par
+    unpcklps %xmm1,%xmm0 ## jxOa jxOc jyOa jyOc        \par
+    unpckhps %xmm1,%xmm4 ## jxOb jxOd jyOb jyOd\par
+    movaps %xmm0,%xmm1\par
+    unpcklps %xmm4,%xmm0 ## x\par
+    unpckhps %xmm4,%xmm1 ## y\par
+\par
+    shufps  $136,%xmm3,%xmm2  ## 10001000 => jzOa jzOb jzOc jzOd\par
+\par
+    ## xmm0 = Ox\par
+    ## xmm1 = Oy\par
+    ## xmm2 = Oz\par
+\par
+    movaps %xmm0,%xmm3\par
+    movaps %xmm1,%xmm4\par
+    movaps %xmm2,%xmm5\par
+    movaps %xmm0,%xmm6\par
+    movaps %xmm1,%xmm7\par
+    movaps %xmm2,%xmm8\par
+\par
+    subps nb302_ixO(%rsp),%xmm0\par
+    subps nb302_iyO(%rsp),%xmm1\par
+    subps nb302_izO(%rsp),%xmm2\par
+    subps nb302_ixH1(%rsp),%xmm3\par
+    subps nb302_iyH1(%rsp),%xmm4\par
+    subps nb302_izH1(%rsp),%xmm5\par
+    subps nb302_ixH2(%rsp),%xmm6\par
+    subps nb302_iyH2(%rsp),%xmm7\par
+    subps nb302_izH2(%rsp),%xmm8\par
+\par
+        movaps %xmm0,nb302_dxOO(%rsp)\par
+        movaps %xmm1,nb302_dyOO(%rsp)\par
+        movaps %xmm2,nb302_dzOO(%rsp)\par
+        mulps  %xmm0,%xmm0\par
+        mulps  %xmm1,%xmm1\par
+        mulps  %xmm2,%xmm2\par
+        movaps %xmm3,nb302_dxH1O(%rsp)\par
+        movaps %xmm4,nb302_dyH1O(%rsp)\par
+        movaps %xmm5,nb302_dzH1O(%rsp)\par
+        mulps  %xmm3,%xmm3\par
+        mulps  %xmm4,%xmm4\par
+        mulps  %xmm5,%xmm5\par
+        movaps %xmm6,nb302_dxH2O(%rsp)\par
+        movaps %xmm7,nb302_dyH2O(%rsp)\par
+        movaps %xmm8,nb302_dzH2O(%rsp)\par
+        mulps  %xmm6,%xmm6\par
+        mulps  %xmm7,%xmm7\par
+        mulps  %xmm8,%xmm8\par
+        addps  %xmm1,%xmm0\par
+        addps  %xmm2,%xmm0\par
+        addps  %xmm4,%xmm3\par
+        addps  %xmm5,%xmm3\par
+    addps  %xmm7,%xmm6\par
+    addps  %xmm8,%xmm6\par
+\par
+        ## start doing invsqrt for jO atoms\par
+        rsqrtps %xmm0,%xmm1\par
+        rsqrtps %xmm3,%xmm4\par
+    rsqrtps %xmm6,%xmm7\par
+\par
+        movaps  %xmm1,%xmm2\par
+        movaps  %xmm4,%xmm5\par
+    movaps  %xmm7,%xmm8\par
+\par
+        mulps   %xmm1,%xmm1 ## lu*lu\par
+        mulps   %xmm4,%xmm4 ## lu*lu\par
+    mulps   %xmm7,%xmm7 ## lu*lu\par
+\par
+        movaps  nb302_three(%rsp),%xmm9\par
+        movaps  %xmm9,%xmm10\par
+    movaps  %xmm9,%xmm11\par
+\par
+        mulps   %xmm0,%xmm1 ## rsq*lu*lu\par
+        mulps   %xmm3,%xmm4 ## rsq*lu*lu \par
+    mulps   %xmm6,%xmm7 ## rsq*lu*lu\par
+\par
+        subps   %xmm1,%xmm9\par
+        subps   %xmm4,%xmm10\par
+    subps   %xmm7,%xmm11 ## 3-rsq*lu*lu\par
+\par
+        mulps   %xmm2,%xmm9\par
+        mulps   %xmm5,%xmm10\par
+    mulps   %xmm8,%xmm11 ## lu*(3-rsq*lu*lu)\par
+\par
+        movaps  nb302_half(%rsp),%xmm4\par
+        mulps   %xmm4,%xmm9 ## rinvOO \par
+        mulps   %xmm4,%xmm10 ## rinvH1O\par
+    mulps   %xmm4,%xmm11 ## rinvH2O\par
+\par
+        movaps  %xmm9,nb302_rinvOO(%rsp)\par
+        movaps  %xmm10,nb302_rinvH1O(%rsp)\par
+        movaps  %xmm11,nb302_rinvH2O(%rsp)\par
+\par
+        ## O interactions \par
+    ## rsq in xmm0,xmm3,xmm6  \par
+    ## rinv in xmm9, xmm10, xmm11\par
+\par
+    movaps nb302_tsc(%rsp),%xmm1\par
+    mulps  %xmm9,%xmm0 ## r\par
+    mulps  %xmm10,%xmm3\par
+    mulps  %xmm11,%xmm6\par
+    mulps  %xmm1,%xmm0 ## rtab\par
+    mulps  %xmm1,%xmm3\par
+    mulps  %xmm1,%xmm6\par
+\par
+    ## truncate and convert to integers\par
+    cvttps2dq %xmm0,%xmm1\par
+    cvttps2dq %xmm3,%xmm4\par
+    cvttps2dq %xmm6,%xmm7\par
+\par
+    ## convert back to float\par
+    cvtdq2ps  %xmm1,%xmm2\par
+    cvtdq2ps  %xmm4,%xmm5\par
+    cvtdq2ps  %xmm7,%xmm8\par
+\par
+    ## multiply by 4\par
+    pslld   $2,%xmm1\par
+    pslld   $2,%xmm4\par
+    pslld   $2,%xmm7\par
+\par
+    ## move to integer registers\par
+    movhlps %xmm1,%xmm13\par
+    movhlps %xmm4,%xmm14\par
+    movhlps %xmm7,%xmm15\par
+    movd    %xmm1,%eax\par
+    movd    %xmm4,%r8d\par
+    movd    %xmm7,%r12d\par
+    movd    %xmm13,%ecx\par
+    movd    %xmm14,%r10d\par
+    movd    %xmm15,%r14d\par
+    pshufd $1,%xmm1,%xmm1\par
+    pshufd $1,%xmm4,%xmm4\par
+    pshufd $1,%xmm7,%xmm7\par
+    pshufd $1,%xmm13,%xmm13\par
+    pshufd $1,%xmm14,%xmm14\par
+    pshufd $1,%xmm15,%xmm15\par
+    movd    %xmm1,%ebx\par
+    movd    %xmm4,%r9d\par
+    movd    %xmm7,%r13d\par
+    movd    %xmm13,%edx\par
+    movd    %xmm14,%r11d\par
+    movd    %xmm15,%r15d\par
+\par
+    movq nb302_VFtab(%rbp),%rsi\par
+\par
+    ## calculate eps\par
+    subps     %xmm2,%xmm0\par
+    subps     %xmm5,%xmm3\par
+    subps     %xmm8,%xmm6\par
+\par
+    movaps    %xmm0,nb302_epsO(%rsp)\par
+    movaps    %xmm3,nb302_epsH1(%rsp)\par
+    movaps    %xmm6,nb302_epsH2(%rsp)\par
+\par
+    ## Load LOTS of table data\par
+        movlps (%rsi,%rax,4),%xmm1\par
+        movlps (%rsi,%r8,4),%xmm5\par
+        movlps (%rsi,%r12,4),%xmm9\par
+\par
+        movlps (%rsi,%rcx,4),%xmm3\par
+        movlps (%rsi,%r10,4),%xmm7\par
+        movlps (%rsi,%r14,4),%xmm11\par
+\par
+        movhps (%rsi,%rbx,4),%xmm1\par
+        movhps (%rsi,%r9,4),%xmm5\par
+        movhps (%rsi,%r13,4),%xmm9\par
+\par
+        movhps (%rsi,%rdx,4),%xmm3\par
+        movhps (%rsi,%r11,4),%xmm7\par
+        movhps (%rsi,%r15,4),%xmm11\par
+\par
+    movaps %xmm1,%xmm0\par
+    movaps %xmm5,%xmm4\par
+    movaps %xmm9,%xmm8\par
+        shufps $136,%xmm3,%xmm0 ## 10001000\par
+        shufps $136,%xmm7,%xmm4 ## 10001000\par
+        shufps $136,%xmm11,%xmm8 ## 10001000\par
+        shufps $221,%xmm3,%xmm1 ## 11011101\par
+        shufps $221,%xmm7,%xmm5 ## 11011101\par
+        shufps $221,%xmm11,%xmm9 ## 11011101\par
+\par
+        movlps 8(%rsi,%rax,4),%xmm3\par
+        movlps 8(%rsi,%r8,4),%xmm7\par
+        movlps 8(%rsi,%r12,4),%xmm11\par
+\par
+        movlps 8(%rsi,%rcx,4),%xmm12\par
+        movlps 8(%rsi,%r10,4),%xmm13\par
+        movlps 8(%rsi,%r14,4),%xmm14\par
+\par
+        movhps 8(%rsi,%rbx,4),%xmm3\par
+        movhps 8(%rsi,%r9,4),%xmm7\par
+        movhps 8(%rsi,%r13,4),%xmm11\par
+\par
+        movhps 8(%rsi,%rdx,4),%xmm12\par
+        movhps 8(%rsi,%r11,4),%xmm13\par
+        movhps 8(%rsi,%r15,4),%xmm14\par
+\par
+    movaps %xmm3,%xmm2\par
+    movaps %xmm7,%xmm6\par
+    movaps %xmm11,%xmm10\par
+\par
+        shufps $136,%xmm12,%xmm2 ## 10001000\par
+        shufps $136,%xmm13,%xmm6 ## 10001000\par
+        shufps $136,%xmm14,%xmm10 ## 10001000\par
+        shufps $221,%xmm12,%xmm3 ## 11011101\par
+        shufps $221,%xmm13,%xmm7 ## 11011101\par
+        shufps $221,%xmm14,%xmm11 ## 11011101\par
+    ## table data ready in xmm0-xmm3 , xmm4-xmm7 , and xmm8-xmm11\par
+\par
+    movaps nb302_epsO(%rsp),%xmm12\par
+    movaps nb302_epsH1(%rsp),%xmm13\par
+    movaps nb302_epsH2(%rsp),%xmm14\par
+\par
+    mulps  %xmm12,%xmm3  ## Heps\par
+    mulps  %xmm13,%xmm7\par
+    mulps  %xmm14,%xmm11\par
+    mulps  %xmm12,%xmm2  ## Geps\par
+    mulps  %xmm13,%xmm6\par
+    mulps  %xmm14,%xmm10\par
+    mulps  %xmm12,%xmm3  ## Heps2\par
+    mulps  %xmm13,%xmm7\par
+    mulps  %xmm14,%xmm11\par
+\par
+    addps  %xmm2,%xmm1  ## F+Geps\par
+    addps  %xmm6,%xmm5\par
+    addps  %xmm10,%xmm9\par
+    addps  %xmm3,%xmm1  ## F+Geps+Heps2 = Fp\par
+    addps  %xmm7,%xmm5\par
+    addps  %xmm11,%xmm9\par
+    addps  %xmm3,%xmm3   ## 2*Heps2\par
+    addps  %xmm7,%xmm7\par
+    addps  %xmm11,%xmm11\par
+    addps  %xmm2,%xmm3   ## 2*Heps2+Geps\par
+    addps  %xmm6,%xmm7\par
+    addps  %xmm10,%xmm11\par
+    addps  %xmm1,%xmm3  ## FF = Fp + 2*Heps2 + Geps\par
+    addps  %xmm5,%xmm7\par
+    addps  %xmm9,%xmm11\par
+    mulps  %xmm12,%xmm1  ## eps*Fp\par
+    mulps  %xmm13,%xmm5\par
+    mulps  %xmm14,%xmm9\par
+    movaps nb302_qqOO(%rsp),%xmm12\par
+    movaps nb302_qqOH(%rsp),%xmm13\par
+    addps  %xmm0,%xmm1    ## VV\par
+    addps  %xmm4,%xmm5\par
+    addps  %xmm8,%xmm9\par
+    mulps  %xmm12,%xmm1  ## VV*qq = vcoul\par
+    mulps  %xmm13,%xmm5\par
+    mulps  %xmm13,%xmm9\par
+    mulps  %xmm12,%xmm3   ## FF*qq = fij\par
+    mulps  %xmm13,%xmm7\par
+    mulps  %xmm13,%xmm11\par
+\par
+    ## accumulate vctot\par
+    addps  nb302_vctot(%rsp),%xmm1\par
+    addps  %xmm9,%xmm5\par
+    addps  %xmm5,%xmm1\par
+    movaps %xmm1,nb302_vctot(%rsp)\par
+\par
+    movaps nb302_tsc(%rsp),%xmm10\par
+    mulps  %xmm10,%xmm3 ## fscal\par
+    mulps  %xmm10,%xmm7\par
+    mulps  %xmm11,%xmm10\par
+\par
+    movd %mm0,%eax ## restore j3 from mm0-mm3\par
+    movd %mm1,%ebx\par
+    movd %mm2,%ecx\par
+    movd %mm3,%edx\par
+\par
+        ## move j O forces to local temp variables \par
+    movlps (%rdi,%rax,4),%xmm11 ## jxOa jyOa  -   -\par
+    movlps (%rdi,%rcx,4),%xmm12 ## jxOc jyOc  -   -\par
+    movhps (%rdi,%rbx,4),%xmm11 ## jxOa jyOa jxOb jyOb \par
+    movhps (%rdi,%rdx,4),%xmm12 ## jxOc jyOc jxOd jyOd \par
+\par
+    movss  8(%rdi,%rax,4),%xmm13    ## jzOa  -  -  -\par
+    movss  8(%rdi,%rcx,4),%xmm14    ## jzOc  -  -  -\par
+    movhps 8(%rdi,%rbx,4),%xmm13    ## jzOa  -  jzOb  -\par
+    movhps 8(%rdi,%rdx,4),%xmm14    ## jzOc  -  jzOd -\par
+\par
+    shufps $136,%xmm14,%xmm13 ## 10001000 => jzOa jzOb jzOc jzOd\par
+\par
+    ## xmm11: jxOa jyOa jxOb jyOb \par
+    ## xmm12: jxOc jyOc jxOd jyOd\par
+    ## xmm13: jzOa jzOb jzOc jzOd\par
+\par
+    xorps  %xmm0,%xmm0\par
+    xorps  %xmm4,%xmm4\par
+    xorps  %xmm8,%xmm8\par
+\par
+    mulps  nb302_rinvOO(%rsp),%xmm3\par
+    mulps  nb302_rinvH1O(%rsp),%xmm7\par
+    mulps  nb302_rinvH2O(%rsp),%xmm10\par
+\par
+    subps  %xmm3,%xmm0\par
+    subps  %xmm7,%xmm4\par
+    subps  %xmm10,%xmm8\par
+\par
+    movaps %xmm0,%xmm1\par
+    movaps %xmm0,%xmm2\par
+    movaps %xmm4,%xmm3\par
+    movaps %xmm4,%xmm5\par
+    movaps %xmm8,%xmm6\par
+    movaps %xmm8,%xmm7\par
+\par
+        mulps nb302_dxOO(%rsp),%xmm0\par
+        mulps nb302_dyOO(%rsp),%xmm1\par
+        mulps nb302_dzOO(%rsp),%xmm2\par
+        mulps nb302_dxH1O(%rsp),%xmm3\par
+        mulps nb302_dyH1O(%rsp),%xmm4\par
+        mulps nb302_dzH1O(%rsp),%xmm5\par
+        mulps nb302_dxH2O(%rsp),%xmm6\par
+        mulps nb302_dyH2O(%rsp),%xmm7\par
+        mulps nb302_dzH2O(%rsp),%xmm8\par
+\par
+    movaps %xmm0,%xmm14\par
+    movaps %xmm1,%xmm15\par
+    addps %xmm2,%xmm13\par
+    addps nb302_fixO(%rsp),%xmm0\par
+    addps nb302_fiyO(%rsp),%xmm1\par
+    addps nb302_fizO(%rsp),%xmm2\par
+\par
+    addps %xmm3,%xmm14\par
+    addps %xmm4,%xmm15\par
+    addps %xmm5,%xmm13\par
+    addps nb302_fixH1(%rsp),%xmm3\par
+    addps nb302_fiyH1(%rsp),%xmm4\par
+    addps nb302_fizH1(%rsp),%xmm5\par
+\par
+    addps %xmm6,%xmm14\par
+    addps %xmm7,%xmm15\par
+    addps %xmm8,%xmm13\par
+    addps nb302_fixH2(%rsp),%xmm6\par
+    addps nb302_fiyH2(%rsp),%xmm7\par
+    addps nb302_fizH2(%rsp),%xmm8\par
+\par
+    movaps %xmm0,nb302_fixO(%rsp)\par
+    movaps %xmm1,nb302_fiyO(%rsp)\par
+    movaps %xmm2,nb302_fizO(%rsp)\par
+    movaps %xmm3,nb302_fixH1(%rsp)\par
+    movaps %xmm4,nb302_fiyH1(%rsp)\par
+    movaps %xmm5,nb302_fizH1(%rsp)\par
+    movaps %xmm6,nb302_fixH2(%rsp)\par
+    movaps %xmm7,nb302_fiyH2(%rsp)\par
+    movaps %xmm8,nb302_fizH2(%rsp)\par
+\par
+    ## xmm14 = fOx\par
+    ## xmm15 = fOy\par
+    ## xmm13 = fOz\par
+    movaps %xmm14,%xmm0\par
+    unpcklps %xmm15,%xmm14\par
+    unpckhps %xmm15,%xmm0\par
+\par
+    addps  %xmm14,%xmm11\par
+    addps  %xmm0,%xmm12\par
+\par
+    movhlps  %xmm13,%xmm14 ## fOzc fOzd\par
+\par
+    movlps %xmm11,(%rdi,%rax,4)\par
+    movhps %xmm11,(%rdi,%rbx,4)\par
+    movlps %xmm12,(%rdi,%rcx,4)\par
+    movhps %xmm12,(%rdi,%rdx,4)\par
+    movss  %xmm13,8(%rdi,%rax,4)\par
+    movss  %xmm14,8(%rdi,%rcx,4)\par
+    shufps $1,%xmm13,%xmm13\par
+    shufps $1,%xmm14,%xmm14\par
+    movss  %xmm13,8(%rdi,%rbx,4)\par
+    movss  %xmm14,8(%rdi,%rdx,4)\par
+\par
+        ## move j H1 coordinates to local temp variables \par
+        movq  nb302_pos(%rbp),%rsi\par
+    movlps 12(%rsi,%rax,4),%xmm0    ## jxH1a jyH1a  -   -\par
+    movlps 12(%rsi,%rcx,4),%xmm1    ## jxH1c jyH1c  -   -\par
+    movhps 12(%rsi,%rbx,4),%xmm0    ## jxH1a jyH1a jxH1b jyH1b \par
+    movhps 12(%rsi,%rdx,4),%xmm1    ## jxH1c jyH1c jxH1d jyH1d \par
+\par
+    movss  20(%rsi,%rax,4),%xmm2    ## jzH1a  -  -  -\par
+    movss  20(%rsi,%rcx,4),%xmm3    ## jzH1c  -  -  -\par
+    movhps 20(%rsi,%rbx,4),%xmm2    ## jzH1a  -  jzH1b  -\par
+    movhps 20(%rsi,%rdx,4),%xmm3    ## jzH1c  -  jzH1d -\par
+\par
+    movaps %xmm0,%xmm4\par
+    unpcklps %xmm1,%xmm0 ## jxH1a jxH1c jyH1a jyH1c        \par
+    unpckhps %xmm1,%xmm4 ## jxH1b jxH1d jyH1b jyH1d\par
+    movaps %xmm0,%xmm1\par
+    unpcklps %xmm4,%xmm0 ## x\par
+    unpckhps %xmm4,%xmm1 ## y\par
+\par
+    shufps  $136,%xmm3,%xmm2  ## 10001000 => jzH1a jzH1b jzH1c jzH1d\par
+\par
+    ## xmm0 = H1x\par
+    ## xmm1 = H1y\par
+    ## xmm2 = H1z\par
+\par
+    movaps %xmm0,%xmm3\par
+    movaps %xmm1,%xmm4\par
+    movaps %xmm2,%xmm5\par
+    movaps %xmm0,%xmm6\par
+    movaps %xmm1,%xmm7\par
+    movaps %xmm2,%xmm8\par
+\par
+    subps nb302_ixO(%rsp),%xmm0\par
+    subps nb302_iyO(%rsp),%xmm1\par
+    subps nb302_izO(%rsp),%xmm2\par
+    subps nb302_ixH1(%rsp),%xmm3\par
+    subps nb302_iyH1(%rsp),%xmm4\par
+    subps nb302_izH1(%rsp),%xmm5\par
+    subps nb302_ixH2(%rsp),%xmm6\par
+    subps nb302_iyH2(%rsp),%xmm7\par
+    subps nb302_izH2(%rsp),%xmm8\par
+\par
+        movaps %xmm0,nb302_dxOH1(%rsp)\par
+        movaps %xmm1,nb302_dyOH1(%rsp)\par
+        movaps %xmm2,nb302_dzOH1(%rsp)\par
+        mulps  %xmm0,%xmm0\par
+        mulps  %xmm1,%xmm1\par
+        mulps  %xmm2,%xmm2\par
+        movaps %xmm3,nb302_dxH1H1(%rsp)\par
+        movaps %xmm4,nb302_dyH1H1(%rsp)\par
+        movaps %xmm5,nb302_dzH1H1(%rsp)\par
+        mulps  %xmm3,%xmm3\par
+        mulps  %xmm4,%xmm4\par
+        mulps  %xmm5,%xmm5\par
+        movaps %xmm6,nb302_dxH2H1(%rsp)\par
+        movaps %xmm7,nb302_dyH2H1(%rsp)\par
+        movaps %xmm8,nb302_dzH2H1(%rsp)\par
+        mulps  %xmm6,%xmm6\par
+        mulps  %xmm7,%xmm7\par
+        mulps  %xmm8,%xmm8\par
+        addps  %xmm1,%xmm0\par
+        addps  %xmm2,%xmm0\par
+        addps  %xmm4,%xmm3\par
+        addps  %xmm5,%xmm3\par
+    addps  %xmm7,%xmm6\par
+    addps  %xmm8,%xmm6\par
+\par
+        ## start doing invsqrt for jH1 atoms\par
+        rsqrtps %xmm0,%xmm1\par
+        rsqrtps %xmm3,%xmm4\par
+    rsqrtps %xmm6,%xmm7\par
+\par
+        movaps  %xmm1,%xmm2\par
+        movaps  %xmm4,%xmm5\par
+    movaps  %xmm7,%xmm8\par
+\par
+        mulps   %xmm1,%xmm1 ## lu*lu\par
+        mulps   %xmm4,%xmm4 ## lu*lu\par
+    mulps   %xmm7,%xmm7 ## lu*lu\par
+\par
+        movaps  nb302_three(%rsp),%xmm9\par
+        movaps  %xmm9,%xmm10\par
+    movaps  %xmm9,%xmm11\par
+\par
+        mulps   %xmm0,%xmm1 ## rsq*lu*lu\par
+        mulps   %xmm3,%xmm4 ## rsq*lu*lu \par
+    mulps   %xmm6,%xmm7 ## rsq*lu*lu\par
+\par
+        subps   %xmm1,%xmm9\par
+        subps   %xmm4,%xmm10\par
+    subps   %xmm7,%xmm11 ## 3-rsq*lu*lu\par
+\par
+        mulps   %xmm2,%xmm9\par
+        mulps   %xmm5,%xmm10\par
+    mulps   %xmm8,%xmm11 ## lu*(3-rsq*lu*lu)\par
+\par
+        movaps  nb302_half(%rsp),%xmm4\par
+        mulps   %xmm4,%xmm9 ## rinvOH1\par
+        mulps   %xmm4,%xmm10 ## rinvH1H1\par
+    mulps   %xmm4,%xmm11 ## rinvH2H1\par
+\par
+        movaps  %xmm9,nb302_rinvOH1(%rsp)\par
+        movaps  %xmm10,nb302_rinvH1H1(%rsp)\par
+        movaps  %xmm11,nb302_rinvH2H1(%rsp)\par
+\par
+        ## H1 interactions \par
+    ## rsq in xmm0,xmm3,xmm6  \par
+    ## rinv in xmm9, xmm10, xmm11\par
+\par
+    movaps nb302_tsc(%rsp),%xmm1\par
+    mulps  %xmm9,%xmm0 ## r\par
+    mulps  %xmm10,%xmm3\par
+    mulps  %xmm11,%xmm6\par
+    mulps  %xmm1,%xmm0 ## rtab\par
+    mulps  %xmm1,%xmm3\par
+    mulps  %xmm1,%xmm6\par
+\par
+    movq nb302_VFtab(%rbp),%rsi\par
+\par
+    ## truncate and convert to integers\par
+    cvttps2dq %xmm0,%xmm1\par
+    cvttps2dq %xmm3,%xmm4\par
+    cvttps2dq %xmm6,%xmm7\par
+\par
+    ## convert back to float\par
+    cvtdq2ps  %xmm1,%xmm2\par
+    cvtdq2ps  %xmm4,%xmm5\par
+    cvtdq2ps  %xmm7,%xmm8\par
+\par
+    ## multiply by 4\par
+    pslld   $2,%xmm1\par
+    pslld   $2,%xmm4\par
+    pslld   $2,%xmm7\par
+\par
+    ## move to integer registers\par
+    movhlps %xmm1,%xmm13\par
+    movhlps %xmm4,%xmm14\par
+    movhlps %xmm7,%xmm15\par
+    movd    %xmm1,%eax\par
+    movd    %xmm4,%r8d\par
+    movd    %xmm7,%r12d\par
+    movd    %xmm13,%ecx\par
+    movd    %xmm14,%r10d\par
+    movd    %xmm15,%r14d\par
+    pshufd $1,%xmm1,%xmm1\par
+    pshufd $1,%xmm4,%xmm4\par
+    pshufd $1,%xmm7,%xmm7\par
+    pshufd $1,%xmm13,%xmm13\par
+    pshufd $1,%xmm14,%xmm14\par
+    pshufd $1,%xmm15,%xmm15\par
+    movd    %xmm1,%ebx\par
+    movd    %xmm4,%r9d\par
+    movd    %xmm7,%r13d\par
+    movd    %xmm13,%edx\par
+    movd    %xmm14,%r11d\par
+    movd    %xmm15,%r15d\par
+\par
+    ## calculate eps\par
+    subps     %xmm2,%xmm0\par
+    subps     %xmm5,%xmm3\par
+    subps     %xmm8,%xmm6\par
+\par
+    movaps    %xmm0,nb302_epsO(%rsp)\par
+    movaps    %xmm3,nb302_epsH1(%rsp)\par
+    movaps    %xmm6,nb302_epsH2(%rsp)\par
+\par
+\par
+    ## Load LOTS of table data\par
+        movlps (%rsi,%rax,4),%xmm1\par
+        movlps (%rsi,%r8,4),%xmm5\par
+        movlps (%rsi,%r12,4),%xmm9\par
+\par
+        movlps (%rsi,%rcx,4),%xmm3\par
+        movlps (%rsi,%r10,4),%xmm7\par
+        movlps (%rsi,%r14,4),%xmm11\par
+\par
+        movhps (%rsi,%rbx,4),%xmm1\par
+        movhps (%rsi,%r9,4),%xmm5\par
+        movhps (%rsi,%r13,4),%xmm9\par
+\par
+        movhps (%rsi,%rdx,4),%xmm3\par
+        movhps (%rsi,%r11,4),%xmm7\par
+        movhps (%rsi,%r15,4),%xmm11\par
+\par
+    movaps %xmm1,%xmm0\par
+    movaps %xmm5,%xmm4\par
+    movaps %xmm9,%xmm8\par
+        shufps $136,%xmm3,%xmm0 ## 10001000\par
+        shufps $136,%xmm7,%xmm4 ## 10001000\par
+        shufps $136,%xmm11,%xmm8 ## 10001000\par
+        shufps $221,%xmm3,%xmm1 ## 11011101\par
+        shufps $221,%xmm7,%xmm5 ## 11011101\par
+        shufps $221,%xmm11,%xmm9 ## 11011101\par
+\par
+        movlps 8(%rsi,%rax,4),%xmm3\par
+        movlps 8(%rsi,%r8,4),%xmm7\par
+        movlps 8(%rsi,%r12,4),%xmm11\par
+\par
+        movlps 8(%rsi,%rcx,4),%xmm12\par
+        movlps 8(%rsi,%r10,4),%xmm13\par
+        movlps 8(%rsi,%r14,4),%xmm14\par
+\par
+        movhps 8(%rsi,%rbx,4),%xmm3\par
+        movhps 8(%rsi,%r9,4),%xmm7\par
+        movhps 8(%rsi,%r13,4),%xmm11\par
+\par
+        movhps 8(%rsi,%rdx,4),%xmm12\par
+        movhps 8(%rsi,%r11,4),%xmm13\par
+        movhps 8(%rsi,%r15,4),%xmm14\par
+\par
+    movaps %xmm3,%xmm2\par
+    movaps %xmm7,%xmm6\par
+    movaps %xmm11,%xmm10\par
+\par
+        shufps $136,%xmm12,%xmm2 ## 10001000\par
+        shufps $136,%xmm13,%xmm6 ## 10001000\par
+        shufps $136,%xmm14,%xmm10 ## 10001000\par
+        shufps $221,%xmm12,%xmm3 ## 11011101\par
+        shufps $221,%xmm13,%xmm7 ## 11011101\par
+        shufps $221,%xmm14,%xmm11 ## 11011101\par
+    ## table data ready in xmm0-xmm3 , xmm4-xmm7 , and xmm8-xmm11\par
+\par
+    movaps nb302_epsO(%rsp),%xmm12\par
+    movaps nb302_epsH1(%rsp),%xmm13\par
+    movaps nb302_epsH2(%rsp),%xmm14\par
+\par
+    mulps  %xmm12,%xmm3  ## Heps\par
+    mulps  %xmm13,%xmm7\par
+    mulps  %xmm14,%xmm11\par
+    mulps  %xmm12,%xmm2  ## Geps\par
+    mulps  %xmm13,%xmm6\par
+    mulps  %xmm14,%xmm10\par
+    mulps  %xmm12,%xmm3  ## Heps2\par
+    mulps  %xmm13,%xmm7\par
+    mulps  %xmm14,%xmm11\par
+\par
+    addps  %xmm2,%xmm1  ## F+Geps\par
+    addps  %xmm6,%xmm5\par
+    addps  %xmm10,%xmm9\par
+    addps  %xmm3,%xmm1  ## F+Geps+Heps2 = Fp\par
+    addps  %xmm7,%xmm5\par
+    addps  %xmm11,%xmm9\par
+    addps  %xmm3,%xmm3   ## 2*Heps2\par
+    addps  %xmm7,%xmm7\par
+    addps  %xmm11,%xmm11\par
+    addps  %xmm2,%xmm3   ## 2*Heps2+Geps\par
+    addps  %xmm6,%xmm7\par
+    addps  %xmm10,%xmm11\par
+    addps  %xmm1,%xmm3  ## FF = Fp + 2*Heps2 + Geps\par
+    addps  %xmm5,%xmm7\par
+    addps  %xmm9,%xmm11\par
+    mulps  %xmm12,%xmm1  ## eps*Fp\par
+    mulps  %xmm13,%xmm5\par
+    mulps  %xmm14,%xmm9\par
+    movaps nb302_qqOH(%rsp),%xmm12\par
+    movaps nb302_qqHH(%rsp),%xmm13\par
+    addps  %xmm0,%xmm1    ## VV\par
+    addps  %xmm4,%xmm5\par
+    addps  %xmm8,%xmm9\par
+    mulps  %xmm12,%xmm1  ## VV*qq = vcoul\par
+    mulps  %xmm13,%xmm5\par
+    mulps  %xmm13,%xmm9\par
+    mulps  %xmm12,%xmm3   ## FF*qq = fij\par
+    mulps  %xmm13,%xmm7\par
+    mulps  %xmm13,%xmm11\par
+\par
+    ## accumulate vctot\par
+    addps  nb302_vctot(%rsp),%xmm1\par
+    addps  %xmm9,%xmm5\par
+    addps  %xmm5,%xmm1\par
+    movaps %xmm1,nb302_vctot(%rsp)\par
+\par
+    movaps nb302_tsc(%rsp),%xmm10\par
+    mulps  %xmm10,%xmm3 ## fscal\par
+    mulps  %xmm10,%xmm7\par
+    mulps  %xmm11,%xmm10\par
+\par
+    movd %mm0,%eax ## restore j3 from mm0-mm3\par
+    movd %mm1,%ebx\par
+    movd %mm2,%ecx\par
+    movd %mm3,%edx\par
+\par
+        ## move j H1 forces to local temp variables \par
+    movlps 12(%rdi,%rax,4),%xmm11    ## jxH1a jyH1a  -   -\par
+    movlps 12(%rdi,%rcx,4),%xmm12    ## jxH1c jyH1c  -   -\par
+    movhps 12(%rdi,%rbx,4),%xmm11    ## jxH1a jyH1a jxH1b jyH1b \par
+    movhps 12(%rdi,%rdx,4),%xmm12    ## jxH1c jyH1c jxH1d jyH1d \par
+\par
+    movss  20(%rdi,%rax,4),%xmm13    ## jzH1a  -  -  -\par
+    movss  20(%rdi,%rcx,4),%xmm14    ## jzH1c  -  -  -\par
+    movhps 20(%rdi,%rbx,4),%xmm13    ## jzH1a  -  jzH1b  -\par
+    movhps 20(%rdi,%rdx,4),%xmm14    ## jzH1c  -  jzH1d -\par
+\par
+    shufps $136,%xmm14,%xmm13 ## 10001000 => jzH1a jzH1b jzH1c jzH1d\par
+\par
+    ## xmm11: jxH1a jyH1a jxH1b jyH1b \par
+    ## xmm12: jxH1c jyH1c jxH1d jyH1d\par
+    ## xmm13: jzH1a jzH1b jzH1c jzH1d\par
+\par
+    xorps  %xmm0,%xmm0\par
+    xorps  %xmm4,%xmm4\par
+    xorps  %xmm8,%xmm8\par
+\par
+    mulps  nb302_rinvOH1(%rsp),%xmm3\par
+    mulps  nb302_rinvH1H1(%rsp),%xmm7\par
+    mulps  nb302_rinvH2H1(%rsp),%xmm10\par
+\par
+    subps  %xmm3,%xmm0\par
+    subps  %xmm7,%xmm4\par
+    subps  %xmm10,%xmm8\par
+\par
+    movaps %xmm0,%xmm1\par
+    movaps %xmm0,%xmm2\par
+    movaps %xmm4,%xmm3\par
+    movaps %xmm4,%xmm5\par
+    movaps %xmm8,%xmm6\par
+    movaps %xmm8,%xmm7\par
+\par
+        mulps nb302_dxOH1(%rsp),%xmm0\par
+        mulps nb302_dyOH1(%rsp),%xmm1\par
+        mulps nb302_dzOH1(%rsp),%xmm2\par
+        mulps nb302_dxH1H1(%rsp),%xmm3\par
+        mulps nb302_dyH1H1(%rsp),%xmm4\par
+        mulps nb302_dzH1H1(%rsp),%xmm5\par
+        mulps nb302_dxH2H1(%rsp),%xmm6\par
+        mulps nb302_dyH2H1(%rsp),%xmm7\par
+        mulps nb302_dzH2H1(%rsp),%xmm8\par
+\par
+    movaps %xmm0,%xmm14\par
+    movaps %xmm1,%xmm15\par
+    addps %xmm2,%xmm13\par
+    addps nb302_fixO(%rsp),%xmm0\par
+    addps nb302_fiyO(%rsp),%xmm1\par
+    addps nb302_fizO(%rsp),%xmm2\par
+\par
+    addps %xmm3,%xmm14\par
+    addps %xmm4,%xmm15\par
+    addps %xmm5,%xmm13\par
+    addps nb302_fixH1(%rsp),%xmm3\par
+    addps nb302_fiyH1(%rsp),%xmm4\par
+    addps nb302_fizH1(%rsp),%xmm5\par
+\par
+    addps %xmm6,%xmm14\par
+    addps %xmm7,%xmm15\par
+    addps %xmm8,%xmm13\par
+    addps nb302_fixH2(%rsp),%xmm6\par
+    addps nb302_fiyH2(%rsp),%xmm7\par
+    addps nb302_fizH2(%rsp),%xmm8\par
+\par
+    movaps %xmm0,nb302_fixO(%rsp)\par
+    movaps %xmm1,nb302_fiyO(%rsp)\par
+    movaps %xmm2,nb302_fizO(%rsp)\par
+    movaps %xmm3,nb302_fixH1(%rsp)\par
+    movaps %xmm4,nb302_fiyH1(%rsp)\par
+    movaps %xmm5,nb302_fizH1(%rsp)\par
+    movaps %xmm6,nb302_fixH2(%rsp)\par
+    movaps %xmm7,nb302_fiyH2(%rsp)\par
+    movaps %xmm8,nb302_fizH2(%rsp)\par
+\par
+    ## xmm14 = fH1x\par
+    ## xmm15 = fH1y\par
+    ## xmm13 = fH1z\par
+    movaps %xmm14,%xmm0\par
+    unpcklps %xmm15,%xmm14\par
+    unpckhps %xmm15,%xmm0\par
+\par
+    addps  %xmm14,%xmm11\par
+    addps  %xmm0,%xmm12\par
+\par
+    movhlps  %xmm13,%xmm14 ## fH1zc fH1zd\par
+\par
+    movlps %xmm11,12(%rdi,%rax,4)\par
+    movhps %xmm11,12(%rdi,%rbx,4)\par
+    movlps %xmm12,12(%rdi,%rcx,4)\par
+    movhps %xmm12,12(%rdi,%rdx,4)\par
+    movss  %xmm13,20(%rdi,%rax,4)\par
+    movss  %xmm14,20(%rdi,%rcx,4)\par
+    shufps $1,%xmm13,%xmm13\par
+    shufps $1,%xmm14,%xmm14\par
+    movss  %xmm13,20(%rdi,%rbx,4)\par
+    movss  %xmm14,20(%rdi,%rdx,4)\par
+\par
+        movq  nb302_pos(%rbp),%rsi\par
+        ## move j H2 coordinates to local temp variables \par
+    movlps 24(%rsi,%rax,4),%xmm0    ## jxH2a jyH2a  -   -\par
+    movlps 24(%rsi,%rcx,4),%xmm1    ## jxH2c jyH2c  -   -\par
+    movhps 24(%rsi,%rbx,4),%xmm0    ## jxH2a jyH2a jxH2b jyH2b \par
+    movhps 24(%rsi,%rdx,4),%xmm1    ## jxH2c jyH2c jxH2d jyH2d \par
+\par
+    movss  32(%rsi,%rax,4),%xmm2    ## jzH2a  -  -  -\par
+    movss  32(%rsi,%rcx,4),%xmm3    ## jzH2c  -  -  -\par
+    movss  32(%rsi,%rbx,4),%xmm5    ## jzOb  -  -  -\par
+    movss  32(%rsi,%rdx,4),%xmm6    ## jzOd  -  -  -\par
+    movlhps %xmm5,%xmm2 ## jzOa  -  jzOb  -\par
+    movlhps %xmm6,%xmm3 ## jzOc  -  jzOd -\par
+\par
+    movaps %xmm0,%xmm4\par
+    unpcklps %xmm1,%xmm0 ## jxH2a jxH2c jyH2a jyH2c        \par
+    unpckhps %xmm1,%xmm4 ## jxH2b jxH2d jyH2b jyH2d\par
+    movaps %xmm0,%xmm1\par
+    unpcklps %xmm4,%xmm0 ## x\par
+    unpckhps %xmm4,%xmm1 ## y\par
+\par
+    shufps  $136,%xmm3,%xmm2  ## 10001000 => jzH2a jzH2b jzH2c jzH2d\par
+\par
+    ## xmm0 = H2x\par
+    ## xmm1 = H2y\par
+    ## xmm2 = H2z\par
+\par
+    movaps %xmm0,%xmm3\par
+    movaps %xmm1,%xmm4\par
+    movaps %xmm2,%xmm5\par
+    movaps %xmm0,%xmm6\par
+    movaps %xmm1,%xmm7\par
+    movaps %xmm2,%xmm8\par
+\par
+    subps nb302_ixO(%rsp),%xmm0\par
+    subps nb302_iyO(%rsp),%xmm1\par
+    subps nb302_izO(%rsp),%xmm2\par
+    subps nb302_ixH1(%rsp),%xmm3\par
+    subps nb302_iyH1(%rsp),%xmm4\par
+    subps nb302_izH1(%rsp),%xmm5\par
+    subps nb302_ixH2(%rsp),%xmm6\par
+    subps nb302_iyH2(%rsp),%xmm7\par
+    subps nb302_izH2(%rsp),%xmm8\par
+\par
+        movaps %xmm0,nb302_dxOH2(%rsp)\par
+        movaps %xmm1,nb302_dyOH2(%rsp)\par
+        movaps %xmm2,nb302_dzOH2(%rsp)\par
+        mulps  %xmm0,%xmm0\par
+        mulps  %xmm1,%xmm1\par
+        mulps  %xmm2,%xmm2\par
+        movaps %xmm3,nb302_dxH1H2(%rsp)\par
+        movaps %xmm4,nb302_dyH1H2(%rsp)\par
+        movaps %xmm5,nb302_dzH1H2(%rsp)\par
+        mulps  %xmm3,%xmm3\par
+        mulps  %xmm4,%xmm4\par
+        mulps  %xmm5,%xmm5\par
+        movaps %xmm6,nb302_dxH2H2(%rsp)\par
+        movaps %xmm7,nb302_dyH2H2(%rsp)\par
+        movaps %xmm8,nb302_dzH2H2(%rsp)\par
+        mulps  %xmm6,%xmm6\par
+        mulps  %xmm7,%xmm7\par
+        mulps  %xmm8,%xmm8\par
+        addps  %xmm1,%xmm0\par
+        addps  %xmm2,%xmm0\par
+        addps  %xmm4,%xmm3\par
+        addps  %xmm5,%xmm3\par
+    addps  %xmm7,%xmm6\par
+    addps  %xmm8,%xmm6\par
+\par
+        ## start doing invsqrt for jH2 atoms\par
+        rsqrtps %xmm0,%xmm1\par
+        rsqrtps %xmm3,%xmm4\par
+    rsqrtps %xmm6,%xmm7\par
+\par
+        movaps  %xmm1,%xmm2\par
+        movaps  %xmm4,%xmm5\par
+    movaps  %xmm7,%xmm8\par
+\par
+        mulps   %xmm1,%xmm1 ## lu*lu\par
+        mulps   %xmm4,%xmm4 ## lu*lu\par
+    mulps   %xmm7,%xmm7 ## lu*lu\par
+\par
+        movaps  nb302_three(%rsp),%xmm9\par
+        movaps  %xmm9,%xmm10\par
+    movaps  %xmm9,%xmm11\par
+\par
+        mulps   %xmm0,%xmm1 ## rsq*lu*lu\par
+        mulps   %xmm3,%xmm4 ## rsq*lu*lu \par
+    mulps   %xmm6,%xmm7 ## rsq*lu*lu\par
+\par
+        subps   %xmm1,%xmm9\par
+        subps   %xmm4,%xmm10\par
+    subps   %xmm7,%xmm11 ## 3-rsq*lu*lu\par
+\par
+        mulps   %xmm2,%xmm9\par
+        mulps   %xmm5,%xmm10\par
+    mulps   %xmm8,%xmm11 ## lu*(3-rsq*lu*lu)\par
+\par
+        movaps  nb302_half(%rsp),%xmm4\par
+        mulps   %xmm4,%xmm9 ## rinvOH2\par
+        mulps   %xmm4,%xmm10 ## rinvH1H2\par
+    mulps   %xmm4,%xmm11 ## rinvH2H2\par
+\par
+        movaps  %xmm9,nb302_rinvOH2(%rsp)\par
+        movaps  %xmm10,nb302_rinvH1H2(%rsp)\par
+        movaps  %xmm11,nb302_rinvH2H2(%rsp)\par
+\par
+        ## H2 interactions \par
+    ## rsq in xmm0,xmm3,xmm6  \par
+    ## rinv in xmm9, xmm10, xmm11\par
+\par
+    movaps nb302_tsc(%rsp),%xmm1\par
+    mulps  %xmm9,%xmm0 ## r\par
+    mulps  %xmm10,%xmm3\par
+    mulps  %xmm11,%xmm6\par
+    mulps  %xmm1,%xmm0 ## rtab\par
+    mulps  %xmm1,%xmm3\par
+    mulps  %xmm1,%xmm6\par
+\par
+    ## truncate and convert to integers\par
+    cvttps2dq %xmm0,%xmm1\par
+    cvttps2dq %xmm3,%xmm4\par
+    cvttps2dq %xmm6,%xmm7\par
+\par
+    ## convert back to float\par
+    cvtdq2ps  %xmm1,%xmm2\par
+    cvtdq2ps  %xmm4,%xmm5\par
+    cvtdq2ps  %xmm7,%xmm8\par
+\par
+    ## multiply by 4\par
+    pslld   $2,%xmm1\par
+    pslld   $2,%xmm4\par
+    pslld   $2,%xmm7\par
+\par
+    ## move to integer registers\par
+    movhlps %xmm1,%xmm13\par
+    movhlps %xmm4,%xmm14\par
+    movhlps %xmm7,%xmm15\par
+    movd    %xmm1,%eax\par
+    movd    %xmm4,%r8d\par
+    movd    %xmm7,%r12d\par
+    movd    %xmm13,%ecx\par
+    movd    %xmm14,%r10d\par
+    movd    %xmm15,%r14d\par
+    pshufd $1,%xmm1,%xmm1\par
+    pshufd $1,%xmm4,%xmm4\par
+    pshufd $1,%xmm7,%xmm7\par
+    pshufd $1,%xmm13,%xmm13\par
+    pshufd $1,%xmm14,%xmm14\par
+    pshufd $1,%xmm15,%xmm15\par
+    movd    %xmm1,%ebx\par
+    movd    %xmm4,%r9d\par
+    movd    %xmm7,%r13d\par
+    movd    %xmm13,%edx\par
+    movd    %xmm14,%r11d\par
+    movd    %xmm15,%r15d\par
+\par
+    movq nb302_VFtab(%rbp),%rsi\par
+\par
+    ## calculate eps\par
+    subps     %xmm2,%xmm0\par
+    subps     %xmm5,%xmm3\par
+    subps     %xmm8,%xmm6\par
+\par
+    movaps    %xmm0,nb302_epsO(%rsp)\par
+    movaps    %xmm3,nb302_epsH1(%rsp)\par
+    movaps    %xmm6,nb302_epsH2(%rsp)\par
+\par
+    ## Load LOTS of table data\par
+        movlps (%rsi,%rax,4),%xmm1\par
+        movlps (%rsi,%r8,4),%xmm5\par
+        movlps (%rsi,%r12,4),%xmm9\par
+\par
+        movlps (%rsi,%rcx,4),%xmm3\par
+        movlps (%rsi,%r10,4),%xmm7\par
+        movlps (%rsi,%r14,4),%xmm11\par
+\par
+        movhps (%rsi,%rbx,4),%xmm1\par
+        movhps (%rsi,%r9,4),%xmm5\par
+        movhps (%rsi,%r13,4),%xmm9\par
+\par
+        movhps (%rsi,%rdx,4),%xmm3\par
+        movhps (%rsi,%r11,4),%xmm7\par
+        movhps (%rsi,%r15,4),%xmm11\par
+\par
+    movaps %xmm1,%xmm0\par
+    movaps %xmm5,%xmm4\par
+    movaps %xmm9,%xmm8\par
+        shufps $136,%xmm3,%xmm0 ## 10001000\par
+        shufps $136,%xmm7,%xmm4 ## 10001000\par
+        shufps $136,%xmm11,%xmm8 ## 10001000\par
+        shufps $221,%xmm3,%xmm1 ## 11011101\par
+        shufps $221,%xmm7,%xmm5 ## 11011101\par
+        shufps $221,%xmm11,%xmm9 ## 11011101\par
+\par
+        movlps 8(%rsi,%rax,4),%xmm3\par
+        movlps 8(%rsi,%r8,4),%xmm7\par
+        movlps 8(%rsi,%r12,4),%xmm11\par
+\par
+        movlps 8(%rsi,%rcx,4),%xmm12\par
+        movlps 8(%rsi,%r10,4),%xmm13\par
+        movlps 8(%rsi,%r14,4),%xmm14\par
+\par
+        movhps 8(%rsi,%rbx,4),%xmm3\par
+        movhps 8(%rsi,%r9,4),%xmm7\par
+        movhps 8(%rsi,%r13,4),%xmm11\par
+\par
+        movhps 8(%rsi,%rdx,4),%xmm12\par
+        movhps 8(%rsi,%r11,4),%xmm13\par
+        movhps 8(%rsi,%r15,4),%xmm14\par
+\par
+    movaps %xmm3,%xmm2\par
+    movaps %xmm7,%xmm6\par
+    movaps %xmm11,%xmm10\par
+\par
+        shufps $136,%xmm12,%xmm2 ## 10001000\par
+        shufps $136,%xmm13,%xmm6 ## 10001000\par
+        shufps $136,%xmm14,%xmm10 ## 10001000\par
+        shufps $221,%xmm12,%xmm3 ## 11011101\par
+        shufps $221,%xmm13,%xmm7 ## 11011101\par
+        shufps $221,%xmm14,%xmm11 ## 11011101\par
+    ## table data ready in xmm0-xmm3 , xmm4-xmm7 , and xmm8-xmm11\par
+\par
+    movaps nb302_epsO(%rsp),%xmm12\par
+    movaps nb302_epsH1(%rsp),%xmm13\par
+    movaps nb302_epsH2(%rsp),%xmm14\par
+\par
+    mulps  %xmm12,%xmm3  ## Heps\par
+    mulps  %xmm13,%xmm7\par
+    mulps  %xmm14,%xmm11\par
+    mulps  %xmm12,%xmm2  ## Geps\par
+    mulps  %xmm13,%xmm6\par
+    mulps  %xmm14,%xmm10\par
+    mulps  %xmm12,%xmm3  ## Heps2\par
+    mulps  %xmm13,%xmm7\par
+    mulps  %xmm14,%xmm11\par
+\par
+    addps  %xmm2,%xmm1  ## F+Geps\par
+    addps  %xmm6,%xmm5\par
+    addps  %xmm10,%xmm9\par
+    addps  %xmm3,%xmm1  ## F+Geps+Heps2 = Fp\par
+    addps  %xmm7,%xmm5\par
+    addps  %xmm11,%xmm9\par
+    addps  %xmm3,%xmm3   ## 2*Heps2\par
+    addps  %xmm7,%xmm7\par
+    addps  %xmm11,%xmm11\par
+    addps  %xmm2,%xmm3   ## 2*Heps2+Geps\par
+    addps  %xmm6,%xmm7\par
+    addps  %xmm10,%xmm11\par
+    addps  %xmm1,%xmm3  ## FF = Fp + 2*Heps2 + Geps\par
+    addps  %xmm5,%xmm7\par
+    addps  %xmm9,%xmm11\par
+    mulps  %xmm12,%xmm1  ## eps*Fp\par
+    mulps  %xmm13,%xmm5\par
+    mulps  %xmm14,%xmm9\par
+    movaps nb302_qqOH(%rsp),%xmm12\par
+    movaps nb302_qqHH(%rsp),%xmm13\par
+    addps  %xmm0,%xmm1    ## VV\par
+    addps  %xmm4,%xmm5\par
+    addps  %xmm8,%xmm9\par
+    mulps  %xmm12,%xmm1  ## VV*qq = vcoul\par
+    mulps  %xmm13,%xmm5\par
+    mulps  %xmm13,%xmm9\par
+    mulps  %xmm12,%xmm3   ## FF*qq = fij\par
+    mulps  %xmm13,%xmm7\par
+    mulps  %xmm13,%xmm11\par
+\par
+    ## accumulate vctot\par
+    addps  nb302_vctot(%rsp),%xmm1\par
+    addps  %xmm9,%xmm5\par
+    addps  %xmm5,%xmm1\par
+    movaps %xmm1,nb302_vctot(%rsp)\par
+\par
+    movaps nb302_tsc(%rsp),%xmm10\par
+    mulps  %xmm10,%xmm3 ## fscal\par
+    mulps  %xmm10,%xmm7\par
+    mulps  %xmm11,%xmm10\par
+\par
+    movd %mm0,%eax ## restore j3 from mm0-mm3\par
+    movd %mm1,%ebx\par
+    movd %mm2,%ecx\par
+    movd %mm3,%edx\par
+\par
+        ## move j H2 forces to local temp variables \par
+    movlps 24(%rdi,%rax,4),%xmm11    ## jxH2a jyH2a  -   -\par
+    movlps 24(%rdi,%rcx,4),%xmm12    ## jxH2c jyH2c  -   -\par
+    movhps 24(%rdi,%rbx,4),%xmm11    ## jxH2a jyH2a jxH2b jyH2b \par
+    movhps 24(%rdi,%rdx,4),%xmm12    ## jxH2c jyH2c jxH2d jyH2d \par
+\par
+    movss  32(%rdi,%rax,4),%xmm13    ## jzH2a  -  -  -\par
+    movss  32(%rdi,%rcx,4),%xmm14    ## jzH2c  -  -  -\par
+    movss  32(%rdi,%rbx,4),%xmm1    ## jzH2b  -  -  -\par
+    movss  32(%rdi,%rdx,4),%xmm2    ## jzH2d  -  -  -\par
+    movlhps %xmm1,%xmm13 ## jzH2a  -  jzH2b  -\par
+    movlhps %xmm2,%xmm14 ## jzH2c  -  jzH2d -\par
+\par
+    shufps $136,%xmm14,%xmm13 ## 10001000 => jzH2a jzH2b jzH2c jzH2d\par
+\par
+    ## xmm11: jxH2a jyH2a jxH2b jyH2b \par
+    ## xmm12: jxH2c jyH2c jxH2d jyH2d\par
+    ## xmm13: jzH2a jzH2b jzH2c jzH2d\par
+\par
+    xorps  %xmm0,%xmm0\par
+    xorps  %xmm4,%xmm4\par
+    xorps  %xmm8,%xmm8\par
+\par
+    mulps  nb302_rinvOH2(%rsp),%xmm3\par
+    mulps  nb302_rinvH1H2(%rsp),%xmm7\par
+    mulps  nb302_rinvH2H2(%rsp),%xmm10\par
+\par
+    subps  %xmm3,%xmm0\par
+    subps  %xmm7,%xmm4\par
+    subps  %xmm10,%xmm8\par
+\par
+    movaps %xmm0,%xmm1\par
+    movaps %xmm0,%xmm2\par
+    movaps %xmm4,%xmm3\par
+    movaps %xmm4,%xmm5\par
+    movaps %xmm8,%xmm6\par
+    movaps %xmm8,%xmm7\par
+\par
+        mulps nb302_dxOH2(%rsp),%xmm0\par
+        mulps nb302_dyOH2(%rsp),%xmm1\par
+        mulps nb302_dzOH2(%rsp),%xmm2\par
+        mulps nb302_dxH1H2(%rsp),%xmm3\par
+        mulps nb302_dyH1H2(%rsp),%xmm4\par
+        mulps nb302_dzH1H2(%rsp),%xmm5\par
+        mulps nb302_dxH2H2(%rsp),%xmm6\par
+        mulps nb302_dyH2H2(%rsp),%xmm7\par
+        mulps nb302_dzH2H2(%rsp),%xmm8\par
+\par
+    movaps %xmm0,%xmm14\par
+    movaps %xmm1,%xmm15\par
+    addps %xmm2,%xmm13\par
+    addps nb302_fixO(%rsp),%xmm0\par
+    addps nb302_fiyO(%rsp),%xmm1\par
+    addps nb302_fizO(%rsp),%xmm2\par
+\par
+    addps %xmm3,%xmm14\par
+    addps %xmm4,%xmm15\par
+    addps %xmm5,%xmm13\par
+    addps nb302_fixH1(%rsp),%xmm3\par
+    addps nb302_fiyH1(%rsp),%xmm4\par
+    addps nb302_fizH1(%rsp),%xmm5\par
+\par
+    addps %xmm6,%xmm14\par
+    addps %xmm7,%xmm15\par
+    addps %xmm8,%xmm13\par
+    addps nb302_fixH2(%rsp),%xmm6\par
+    addps nb302_fiyH2(%rsp),%xmm7\par
+    addps nb302_fizH2(%rsp),%xmm8\par
+\par
+    movaps %xmm0,nb302_fixO(%rsp)\par
+    movaps %xmm1,nb302_fiyO(%rsp)\par
+    movaps %xmm2,nb302_fizO(%rsp)\par
+    movaps %xmm3,nb302_fixH1(%rsp)\par
+    movaps %xmm4,nb302_fiyH1(%rsp)\par
+    movaps %xmm5,nb302_fizH1(%rsp)\par
+    movaps %xmm6,nb302_fixH2(%rsp)\par
+    movaps %xmm7,nb302_fiyH2(%rsp)\par
+    movaps %xmm8,nb302_fizH2(%rsp)\par
+\par
+    ## xmm14 = fH2x\par
+    ## xmm15 = fH2y\par
+    ## xmm13 = fH2z\par
+    movaps %xmm14,%xmm0\par
+    unpcklps %xmm15,%xmm14\par
+    unpckhps %xmm15,%xmm0\par
+\par
+    addps  %xmm14,%xmm11\par
+    addps  %xmm0,%xmm12\par
+\par
+    movhlps  %xmm13,%xmm14 ## fH2zc fH2zd\par
+\par
+    movlps %xmm11,24(%rdi,%rax,4)\par
+    movhps %xmm11,24(%rdi,%rbx,4)\par
+    movlps %xmm12,24(%rdi,%rcx,4)\par
+    movhps %xmm12,24(%rdi,%rdx,4)\par
+    movss  %xmm13,32(%rdi,%rax,4)\par
+    movss  %xmm14,32(%rdi,%rcx,4)\par
+    shufps $1,%xmm13,%xmm13\par
+    shufps $1,%xmm14,%xmm14\par
+    movss  %xmm13,32(%rdi,%rbx,4)\par
+    movss  %xmm14,32(%rdi,%rdx,4)\par
+\par
+        ## should we do one more iteration? \par
+        subl $4,nb302_innerk(%rsp)\par
+        jl    _nb_kernel302_x86_64_sse.nb302_single_check\par
+        jmp   _nb_kernel302_x86_64_sse.nb302_unroll_loop\par
+_nb_kernel302_x86_64_sse.nb302_single_check: \par
+        addl $4,nb302_innerk(%rsp)\par
+        jnz   _nb_kernel302_x86_64_sse.nb302_single_loop\par
+        jmp   _nb_kernel302_x86_64_sse.nb302_updateouterdata\par
+_nb_kernel302_x86_64_sse.nb302_single_loop: \par
+        movq  nb302_innerjjnr(%rsp),%rdx        ## pointer to jjnr[k] \par
+        movl  (%rdx),%eax\par
+        addq $4,nb302_innerjjnr(%rsp)\par
+\par
+        movq nb302_pos(%rbp),%rsi\par
+        lea  (%rax,%rax,2),%rax\par
+\par
+        ## fetch j coordinates \par
+        xorps %xmm0,%xmm0\par
+        xorps %xmm1,%xmm1\par
+        xorps %xmm2,%xmm2\par
+\par
+        movss (%rsi,%rax,4),%xmm0               ## jxO  -  -  -\par
+        movss 4(%rsi,%rax,4),%xmm1              ## jyO  -  -  -\par
+        movss 8(%rsi,%rax,4),%xmm2              ## jzO  -  -  -  \par
+\par
+        movlps 12(%rsi,%rax,4),%xmm6            ## xmm6 = jxH1 jyH1   -    -\par
+        movss  20(%rsi,%rax,4),%xmm7            ## xmm7 = jzH1   -    -    - \par
+        movhps 24(%rsi,%rax,4),%xmm6            ## xmm6 = jxH1 jyH1 jxH2 jyH2\par
+        movss  32(%rsi,%rax,4),%xmm5            ## xmm5 = jzH2   -    -    -\par
+\par
+        ## have all coords, time for some shuffling.\par
+\par
+        shufps $216,%xmm6,%xmm6 ## 11011000      ;# xmm6 = jxH1 jxH2 jyH1 jyH2 \par
+        unpcklps %xmm5,%xmm7                    ## xmm7 = jzH1 jzH2   -    -\par
+\par
+        movlhps %xmm6,%xmm0                     ## xmm0 = jxO   0   jxH1 jxH2 \par
+        shufps $228,%xmm6,%xmm1 ## 11100100     ;# xmm1 = jyO   0   jyH1 jyH2 \par
+        shufps $68,%xmm7,%xmm2 ## 01000100     ;# xmm2 = jzO   0   jzH1 jzH2\par
+\par
+        ## store all j coordinates in jO  \par
+        movaps %xmm0,nb302_jxO(%rsp)\par
+        movaps %xmm1,nb302_jyO(%rsp)\par
+        movaps %xmm2,nb302_jzO(%rsp)\par
+        subps  nb302_ixO(%rsp),%xmm0\par
+        subps  nb302_iyO(%rsp),%xmm1\par
+        subps  nb302_izO(%rsp),%xmm2\par
+        movaps %xmm0,nb302_dxOO(%rsp)\par
+        movaps %xmm1,nb302_dyOO(%rsp)\par
+        movaps %xmm2,nb302_dzOO(%rsp)\par
+        mulps %xmm0,%xmm0\par
+        mulps %xmm1,%xmm1\par
+        mulps %xmm2,%xmm2\par
+        addps %xmm1,%xmm0\par
+        addps %xmm2,%xmm0       ## have rsq in xmm0 \par
+\par
+        ## do invsqrt \par
+        rsqrtps %xmm0,%xmm1\par
+        movaps  %xmm1,%xmm2\par
+        mulps   %xmm1,%xmm1\par
+        movaps  nb302_three(%rsp),%xmm3\par
+        mulps   %xmm0,%xmm1\par
+        subps   %xmm1,%xmm3\par
+        mulps   %xmm2,%xmm3\par
+        mulps   nb302_half(%rsp),%xmm3   ## rinv iO - j water \par
+\par
+        movaps  %xmm3,%xmm1\par
+        mulps   %xmm0,%xmm1     ## xmm1=r \par
+        movaps  %xmm3,%xmm0     ## xmm0=rinv \par
+        mulps  nb302_tsc(%rsp),%xmm1\par
+\par
+        movhlps %xmm1,%xmm2\par
+        cvttps2pi %xmm1,%mm6\par
+        cvttps2pi %xmm2,%mm7    ## mm6/mm7 contain lu indices \par
+        cvtpi2ps %mm6,%xmm3\par
+        cvtpi2ps %mm7,%xmm2\par
+        movlhps  %xmm2,%xmm3\par
+        subps    %xmm3,%xmm1    ## xmm1=eps \par
+        movaps %xmm1,%xmm2\par
+        mulps  %xmm2,%xmm2      ## xmm2=eps2 \par
+        pslld   $2,%mm6\par
+        pslld   $2,%mm7\par
+\par
+        movd %mm6,%ebx\par
+        movd %mm7,%ecx\par
+        psrlq $32,%mm7\par
+        movd %mm7,%edx          ## table indices in ebx,ecx,edx \par
+\par
+        movq nb302_VFtab(%rbp),%rsi\par
+\par
+        movlps (%rsi,%rbx,4),%xmm5\par
+        movlps (%rsi,%rcx,4),%xmm7\par
+        movhps (%rsi,%rdx,4),%xmm7 ## got half coulomb table \par
+        movaps %xmm5,%xmm4\par
+        shufps $136,%xmm7,%xmm4 ## 10001000\par
+        shufps $221,%xmm7,%xmm5 ## 11011101\par
+\par
+        movlps 8(%rsi,%rbx,4),%xmm7\par
+        movlps 8(%rsi,%rcx,4),%xmm3\par
+        movhps 8(%rsi,%rdx,4),%xmm3    ## other half of coulomb table  \par
+        movaps %xmm7,%xmm6\par
+        shufps $136,%xmm3,%xmm6 ## 10001000\par
+        shufps $221,%xmm3,%xmm7 ## 11011101\par
+        ## coulomb table ready, in xmm4-xmm7  \par
+        mulps  %xmm1,%xmm6      ## xmm6=Geps \par
+        mulps  %xmm2,%xmm7      ## xmm7=Heps2 \par
+        addps  %xmm6,%xmm5\par
+        addps  %xmm7,%xmm5      ## xmm5=Fp \par
+        mulps  nb302_two(%rsp),%xmm7            ## two*Heps2 \par
+\par
+        xorps  %xmm3,%xmm3\par
+        ## fetch charges to xmm3 (temporary) \par
+        movss   nb302_qqOO(%rsp),%xmm3\par
+        movhps  nb302_qqOH(%rsp),%xmm3\par
+\par
+        addps  %xmm6,%xmm7\par
+        addps  %xmm5,%xmm7 ## xmm7=FF \par
+        mulps  %xmm1,%xmm5 ## xmm5=eps*Fp \par
+        addps  %xmm4,%xmm5 ## xmm5=VV \par
+        mulps  %xmm3,%xmm5 ## vcoul=qq*VV  \par
+        mulps  %xmm7,%xmm3 ## fijC=FF*qq \par
+        ## at this point xmm5 contains vcoul and xmm3 fijC \par
+\par
+        addps  nb302_vctot(%rsp),%xmm5\par
+        movaps %xmm5,nb302_vctot(%rsp)\par
+        xorps  %xmm2,%xmm2\par
+        mulps  nb302_tsc(%rsp),%xmm3\par
+\par
+        subps  %xmm3,%xmm2\par
+        mulps  %xmm2,%xmm0\par
+\par
+        movaps %xmm0,%xmm1\par
+        movaps %xmm0,%xmm2\par
+\par
+        mulps   nb302_dxOO(%rsp),%xmm0\par
+        mulps   nb302_dyOO(%rsp),%xmm1\par
+        mulps   nb302_dzOO(%rsp),%xmm2\par
+        ## initial update for j forces \par
+        xorps   %xmm3,%xmm3\par
+        xorps   %xmm4,%xmm4\par
+        xorps   %xmm5,%xmm5\par
+        addps   %xmm0,%xmm3\par
+        addps   %xmm1,%xmm4\par
+        addps   %xmm2,%xmm5\par
+        movaps  %xmm3,nb302_fjxO(%rsp)\par
+        movaps  %xmm4,nb302_fjyO(%rsp)\par
+        movaps  %xmm5,nb302_fjzO(%rsp)\par
+        addps   nb302_fixO(%rsp),%xmm0\par
+        addps   nb302_fiyO(%rsp),%xmm1\par
+        addps   nb302_fizO(%rsp),%xmm2\par
+        movaps  %xmm0,nb302_fixO(%rsp)\par
+        movaps  %xmm1,nb302_fiyO(%rsp)\par
+        movaps  %xmm2,nb302_fizO(%rsp)\par
+\par
+\par
+        ## done with i O Now do i H1 & H2 simultaneously first get i particle coords: \par
+    movaps  nb302_jxO(%rsp),%xmm0\par
+    movaps  nb302_jyO(%rsp),%xmm1\par
+    movaps  nb302_jzO(%rsp),%xmm2\par
+    movaps  %xmm0,%xmm3\par
+    movaps  %xmm1,%xmm4\par
+    movaps  %xmm2,%xmm5\par
+        subps  nb302_ixH1(%rsp),%xmm0\par
+        subps  nb302_iyH1(%rsp),%xmm1\par
+        subps  nb302_izH1(%rsp),%xmm2\par
+        subps  nb302_ixH2(%rsp),%xmm3\par
+        subps  nb302_iyH2(%rsp),%xmm4\par
+        subps  nb302_izH2(%rsp),%xmm5\par
+        movaps %xmm0,nb302_dxH1O(%rsp)\par
+        movaps %xmm1,nb302_dyH1O(%rsp)\par
+        movaps %xmm2,nb302_dzH1O(%rsp)\par
+        movaps %xmm3,nb302_dxH2O(%rsp)\par
+        movaps %xmm4,nb302_dyH2O(%rsp)\par
+        movaps %xmm5,nb302_dzH2O(%rsp)\par
+        mulps %xmm0,%xmm0\par
+        mulps %xmm1,%xmm1\par
+        mulps %xmm2,%xmm2\par
+        mulps %xmm3,%xmm3\par
+        mulps %xmm4,%xmm4\par
+        mulps %xmm5,%xmm5\par
+        addps %xmm1,%xmm0\par
+        addps %xmm3,%xmm4\par
+        addps %xmm2,%xmm0       ## have rsqH1 in xmm0 \par
+        addps %xmm5,%xmm4       ## have rsqH2 in xmm4 \par
+\par
+        ## start with H1, save H2 data \par
+        movaps %xmm4,nb302_rsqH2O(%rsp)\par
+\par
+        ## do invsqrt \par
+        rsqrtps %xmm0,%xmm1\par
+        rsqrtps %xmm4,%xmm5\par
+        movaps  %xmm1,%xmm2\par
+        movaps  %xmm5,%xmm6\par
+        mulps   %xmm1,%xmm1\par
+        mulps   %xmm5,%xmm5\par
+        movaps  nb302_three(%rsp),%xmm3\par
+        movaps  %xmm3,%xmm7\par
+        mulps   %xmm0,%xmm1\par
+        mulps   %xmm4,%xmm5\par
+        subps   %xmm1,%xmm3\par
+        subps   %xmm5,%xmm7\par
+        mulps   %xmm2,%xmm3\par
+        mulps   %xmm6,%xmm7\par
+        mulps   nb302_half(%rsp),%xmm3   ## rinv H1 - j water \par
+        mulps   nb302_half(%rsp),%xmm7   ## rinv H2 - j water  \par
+\par
+        ## start with H1, save H2 data \par
+        movaps %xmm7,nb302_rinvH2O(%rsp)\par
+\par
+        movaps %xmm3,%xmm1\par
+        mulps  %xmm0,%xmm1      ## xmm1=r \par
+        movaps %xmm3,%xmm0      ## xmm0=rinv \par
+        mulps  nb302_tsc(%rsp),%xmm1\par
+\par
+        movhlps %xmm1,%xmm2\par
+        cvttps2pi %xmm1,%mm6\par
+        cvttps2pi %xmm2,%mm7    ## mm6/mm7 contain lu indices \par
+        cvtpi2ps %mm6,%xmm3\par
+        cvtpi2ps %mm7,%xmm2\par
+        movlhps  %xmm2,%xmm3\par
+        subps    %xmm3,%xmm1    ## xmm1=eps \par
+        movaps %xmm1,%xmm2\par
+        mulps  %xmm2,%xmm2      ## xmm2=eps2 \par
+        pslld   $2,%mm6\par
+        pslld   $2,%mm7\par
+\par
+        movd %mm6,%ebx\par
+        movd %mm7,%ecx\par
+        psrlq $32,%mm7\par
+        movd %mm7,%edx          ## table indices in ebx,ecx,edx \par
+\par
+        movlps (%rsi,%rbx,4),%xmm5\par
+        movlps (%rsi,%rcx,4),%xmm7\par
+        movhps (%rsi,%rdx,4),%xmm7 ## got half coulomb table \par
+        movaps %xmm5,%xmm4\par
+        shufps $136,%xmm7,%xmm4 ## 10001000\par
+        shufps $221,%xmm7,%xmm5 ## 11011101\par
+\par
+        movlps 8(%rsi,%rbx,4),%xmm7\par
+        movlps 8(%rsi,%rcx,4),%xmm3\par
+        movhps 8(%rsi,%rdx,4),%xmm3    ## other half of coulomb table  \par
+        movaps %xmm7,%xmm6\par
+        shufps $136,%xmm3,%xmm6 ## 10001000\par
+        shufps $221,%xmm3,%xmm7 ## 11011101\par
+        ## coulomb table ready, in xmm4-xmm7  \par
+        mulps  %xmm1,%xmm6      ## xmm6=Geps \par
+        mulps  %xmm2,%xmm7      ## xmm7=Heps2 \par
+        addps  %xmm6,%xmm5\par
+        addps  %xmm7,%xmm5      ## xmm5=Fp \par
+        mulps  nb302_two(%rsp),%xmm7            ## two*Heps2 \par
+\par
+        xorps  %xmm3,%xmm3\par
+        ## fetch charges to xmm3 (temporary) \par
+        movss   nb302_qqOH(%rsp),%xmm3\par
+        movhps  nb302_qqHH(%rsp),%xmm3\par
+\par
+        addps  %xmm6,%xmm7\par
+        addps  %xmm5,%xmm7 ## xmm7=FF \par
+        mulps  %xmm1,%xmm5 ## xmm5=eps*Fp \par
+        addps  %xmm4,%xmm5 ## xmm5=VV \par
+        mulps  %xmm3,%xmm5 ## vcoul=qq*VV  \par
+        mulps  %xmm7,%xmm3 ## fijC=FF*qq \par
+        ## at this point xmm5 contains vcoul and xmm3 fijC \par
+        addps  nb302_vctot(%rsp),%xmm5\par
+        movaps %xmm5,nb302_vctot(%rsp)\par
+\par
+    xorps  %xmm1,%xmm1\par
+\par
+        mulps nb302_tsc(%rsp),%xmm3\par
+        mulps %xmm0,%xmm3\par
+        subps  %xmm3,%xmm1\par
+\par
+        movaps  %xmm1,%xmm0\par
+        movaps  %xmm1,%xmm2\par
+        mulps   nb302_dxH1O(%rsp),%xmm0\par
+        mulps   nb302_dyH1O(%rsp),%xmm1\par
+        mulps   nb302_dzH1O(%rsp),%xmm2\par
+        ## update forces H1 - j water \par
+        movaps  nb302_fjxO(%rsp),%xmm3\par
+        movaps  nb302_fjyO(%rsp),%xmm4\par
+        movaps  nb302_fjzO(%rsp),%xmm5\par
+        addps   %xmm0,%xmm3\par
+        addps   %xmm1,%xmm4\par
+        addps   %xmm2,%xmm5\par
+        movaps  %xmm3,nb302_fjxO(%rsp)\par
+        movaps  %xmm4,nb302_fjyO(%rsp)\par
+        movaps  %xmm5,nb302_fjzO(%rsp)\par
+        addps   nb302_fixH1(%rsp),%xmm0\par
+        addps   nb302_fiyH1(%rsp),%xmm1\par
+        addps   nb302_fizH1(%rsp),%xmm2\par
+        movaps  %xmm0,nb302_fixH1(%rsp)\par
+        movaps  %xmm1,nb302_fiyH1(%rsp)\par
+        movaps  %xmm2,nb302_fizH1(%rsp)\par
+        ## do table for H2 - j water interaction \par
+        movaps nb302_rinvH2O(%rsp),%xmm0\par
+        movaps nb302_rsqH2O(%rsp),%xmm1\par
+        mulps  %xmm0,%xmm1      ## xmm0=rinv, xmm1=r \par
+        mulps  nb302_tsc(%rsp),%xmm1\par
+\par
+        movhlps %xmm1,%xmm2\par
+        cvttps2pi %xmm1,%mm6\par
+        cvttps2pi %xmm2,%mm7    ## mm6/mm7 contain lu indices \par
+        cvtpi2ps %mm6,%xmm3\par
+        cvtpi2ps %mm7,%xmm2\par
+        movlhps  %xmm2,%xmm3\par
+        subps    %xmm3,%xmm1    ## xmm1=eps \par
+        movaps %xmm1,%xmm2\par
+        mulps  %xmm2,%xmm2      ## xmm2=eps2 \par
+        pslld   $2,%mm6\par
+        pslld   $2,%mm7\par
+\par
+        movd %mm6,%ebx\par
+        movd %mm7,%ecx\par
+        psrlq $32,%mm7\par
+        movd %mm7,%edx          ## table indices in ebx,ecx,edx \par
+\par
+        movlps (%rsi,%rbx,4),%xmm5\par
+        movlps (%rsi,%rcx,4),%xmm7\par
+        movhps (%rsi,%rdx,4),%xmm7 ## got half coulomb table \par
+        movaps %xmm5,%xmm4\par
+        shufps $136,%xmm7,%xmm4 ## 10001000\par
+        shufps $221,%xmm7,%xmm5 ## 11011101\par
+\par
+        movlps 8(%rsi,%rbx,4),%xmm7\par
+        movlps 8(%rsi,%rcx,4),%xmm3\par
+        movhps 8(%rsi,%rdx,4),%xmm3    ## other half of coulomb table  \par
+        movaps %xmm7,%xmm6\par
+        shufps $136,%xmm3,%xmm6 ## 10001000\par
+        shufps $221,%xmm3,%xmm7 ## 11011101\par
+        ## coulomb table ready, in xmm4-xmm7  \par
+        mulps  %xmm1,%xmm6      ## xmm6=Geps \par
+        mulps  %xmm2,%xmm7      ## xmm7=Heps2 \par
+        addps  %xmm6,%xmm5\par
+        addps  %xmm7,%xmm5      ## xmm5=Fp \par
+        mulps  nb302_two(%rsp),%xmm7            ## two*Heps2 \par
+\par
+        xorps  %xmm3,%xmm3\par
+        ## fetch charges to xmm3 (temporary) \par
+        movss   nb302_qqOH(%rsp),%xmm3\par
+        movhps  nb302_qqHH(%rsp),%xmm3\par
+\par
+        addps  %xmm6,%xmm7\par
+        addps  %xmm5,%xmm7 ## xmm7=FF \par
+        mulps  %xmm1,%xmm5 ## xmm5=eps*Fp \par
+        addps  %xmm4,%xmm5 ## xmm5=VV \par
+        mulps  %xmm3,%xmm5 ## vcoul=qq*VV  \par
+        mulps  %xmm7,%xmm3 ## fijC=FF*qq \par
+        ## at this point xmm5 contains vcoul and xmm3 fijC \par
+        addps  nb302_vctot(%rsp),%xmm5\par
+        movaps %xmm5,nb302_vctot(%rsp)\par
+\par
+    xorps  %xmm1,%xmm1\par
+\par
+        mulps nb302_tsc(%rsp),%xmm3\par
+        mulps %xmm0,%xmm3\par
+        subps  %xmm3,%xmm1\par
+\par
+        movaps  %xmm1,%xmm0\par
+        movaps  %xmm1,%xmm2\par
+\par
+        mulps   nb302_dxH2O(%rsp),%xmm0\par
+        mulps   nb302_dyH2O(%rsp),%xmm1\par
+        mulps   nb302_dzH2O(%rsp),%xmm2\par
+        movaps  nb302_fjxO(%rsp),%xmm3\par
+        movaps  nb302_fjyO(%rsp),%xmm4\par
+        movaps  nb302_fjzO(%rsp),%xmm5\par
+        addps   %xmm0,%xmm3\par
+        addps   %xmm1,%xmm4\par
+        addps   %xmm2,%xmm5\par
+        movq    nb302_faction(%rbp),%rsi\par
+        movaps  %xmm3,nb302_fjxO(%rsp)\par
+        movaps  %xmm4,nb302_fjyO(%rsp)\par
+        movaps  %xmm5,nb302_fjzO(%rsp)\par
+        addps   nb302_fixH2(%rsp),%xmm0\par
+        addps   nb302_fiyH2(%rsp),%xmm1\par
+        addps   nb302_fizH2(%rsp),%xmm2\par
+        movaps  %xmm0,nb302_fixH2(%rsp)\par
+        movaps  %xmm1,nb302_fiyH2(%rsp)\par
+        movaps  %xmm2,nb302_fizH2(%rsp)\par
+\par
+        ## update j water forces from local variables \par
+        movlps  (%rsi,%rax,4),%xmm0\par
+        movlps  12(%rsi,%rax,4),%xmm1\par
+        movhps  24(%rsi,%rax,4),%xmm1\par
+        movaps  nb302_fjxO(%rsp),%xmm3\par
+        movaps  nb302_fjyO(%rsp),%xmm4\par
+        movaps  nb302_fjzO(%rsp),%xmm5\par
+        movaps  %xmm5,%xmm6\par
+        movaps  %xmm5,%xmm7\par
+        shufps $2,%xmm6,%xmm6 ## 00000010\par
+        shufps $3,%xmm7,%xmm7 ## 00000011\par
+        addss   8(%rsi,%rax,4),%xmm5\par
+        addss   20(%rsi,%rax,4),%xmm6\par
+        addss   32(%rsi,%rax,4),%xmm7\par
+        movss   %xmm5,8(%rsi,%rax,4)\par
+        movss   %xmm6,20(%rsi,%rax,4)\par
+        movss   %xmm7,32(%rsi,%rax,4)\par
+        movaps   %xmm3,%xmm5\par
+        unpcklps %xmm4,%xmm3\par
+        unpckhps %xmm4,%xmm5\par
+        addps    %xmm3,%xmm0\par
+        addps    %xmm5,%xmm1\par
+        movlps  %xmm0,(%rsi,%rax,4)\par
+        movlps  %xmm1,12(%rsi,%rax,4)\par
+        movhps  %xmm1,24(%rsi,%rax,4)\par
+\par
+        decl nb302_innerk(%rsp)\par
+        jz    _nb_kernel302_x86_64_sse.nb302_updateouterdata\par
+        jmp   _nb_kernel302_x86_64_sse.nb302_single_loop\par
+_nb_kernel302_x86_64_sse.nb302_updateouterdata: \par
+        movl  nb302_ii3(%rsp),%ecx\par
+        movq  nb302_faction(%rbp),%rdi\par
+        movq  nb302_fshift(%rbp),%rsi\par
+        movl  nb302_is3(%rsp),%edx\par
+\par
+        ## accumulate  Oi forces in xmm0, xmm1, xmm2 \par
+        movaps nb302_fixO(%rsp),%xmm0\par
+        movaps nb302_fiyO(%rsp),%xmm1\par
+        movaps nb302_fizO(%rsp),%xmm2\par
+\par
+        movhlps %xmm0,%xmm3\par
+        movhlps %xmm1,%xmm4\par
+        movhlps %xmm2,%xmm5\par
+        addps  %xmm3,%xmm0\par
+        addps  %xmm4,%xmm1\par
+        addps  %xmm5,%xmm2 ## sum is in 1/2 in xmm0-xmm2 \par
+\par
+        movaps %xmm0,%xmm3\par
+        movaps %xmm1,%xmm4\par
+        movaps %xmm2,%xmm5\par
+\par
+        shufps $1,%xmm3,%xmm3\par
+        shufps $1,%xmm4,%xmm4\par
+        shufps $1,%xmm5,%xmm5\par
+        addss  %xmm3,%xmm0\par
+        addss  %xmm4,%xmm1\par
+        addss  %xmm5,%xmm2      ## xmm0-xmm2 has single force in pos0 \par
+\par
+        ## increment i force \par
+        movss  (%rdi,%rcx,4),%xmm3\par
+        movss  4(%rdi,%rcx,4),%xmm4\par
+        movss  8(%rdi,%rcx,4),%xmm5\par
+        subss  %xmm0,%xmm3\par
+        subss  %xmm1,%xmm4\par
+        subss  %xmm2,%xmm5\par
+        movss  %xmm3,(%rdi,%rcx,4)\par
+        movss  %xmm4,4(%rdi,%rcx,4)\par
+        movss  %xmm5,8(%rdi,%rcx,4)\par
+\par
+        ## accumulate force in xmm6/xmm7 for fshift \par
+        movaps %xmm0,%xmm6\par
+        movss %xmm2,%xmm7\par
+        movlhps %xmm1,%xmm6\par
+        shufps $8,%xmm6,%xmm6 ## 00001000       \par
+\par
+        ## accumulate H1i forces in xmm0, xmm1, xmm2 \par
+        movaps nb302_fixH1(%rsp),%xmm0\par
+        movaps nb302_fiyH1(%rsp),%xmm1\par
+        movaps nb302_fizH1(%rsp),%xmm2\par
+\par
+        movhlps %xmm0,%xmm3\par
+        movhlps %xmm1,%xmm4\par
+        movhlps %xmm2,%xmm5\par
+        addps  %xmm3,%xmm0\par
+        addps  %xmm4,%xmm1\par
+        addps  %xmm5,%xmm2 ## sum is in 1/2 in xmm0-xmm2 \par
+\par
+        movaps %xmm0,%xmm3\par
+        movaps %xmm1,%xmm4\par
+        movaps %xmm2,%xmm5\par
+\par
+        shufps $1,%xmm3,%xmm3\par
+        shufps $1,%xmm4,%xmm4\par
+        shufps $1,%xmm5,%xmm5\par
+        addss  %xmm3,%xmm0\par
+        addss  %xmm4,%xmm1\par
+        addss  %xmm5,%xmm2      ## xmm0-xmm2 has single force in pos0 \par
+\par
+        ## increment i force \par
+        movss  12(%rdi,%rcx,4),%xmm3\par
+        movss  16(%rdi,%rcx,4),%xmm4\par
+        movss  20(%rdi,%rcx,4),%xmm5\par
+        subss  %xmm0,%xmm3\par
+        subss  %xmm1,%xmm4\par
+        subss  %xmm2,%xmm5\par
+        movss  %xmm3,12(%rdi,%rcx,4)\par
+        movss  %xmm4,16(%rdi,%rcx,4)\par
+        movss  %xmm5,20(%rdi,%rcx,4)\par
+\par
+        ## accumulate force in xmm6/xmm7 for fshift \par
+        addss %xmm2,%xmm7\par
+        movlhps %xmm1,%xmm0\par
+        shufps $8,%xmm0,%xmm0 ## 00001000       \par
+        addps   %xmm0,%xmm6\par
+\par
+        ## accumulate H2i forces in xmm0, xmm1, xmm2 \par
+        movaps nb302_fixH2(%rsp),%xmm0\par
+        movaps nb302_fiyH2(%rsp),%xmm1\par
+        movaps nb302_fizH2(%rsp),%xmm2\par
+\par
+        movhlps %xmm0,%xmm3\par
+        movhlps %xmm1,%xmm4\par
+        movhlps %xmm2,%xmm5\par
+        addps  %xmm3,%xmm0\par
+        addps  %xmm4,%xmm1\par
+        addps  %xmm5,%xmm2 ## sum is in 1/2 in xmm0-xmm2 \par
+\par
+        movaps %xmm0,%xmm3\par
+        movaps %xmm1,%xmm4\par
+        movaps %xmm2,%xmm5\par
+\par
+        shufps $1,%xmm3,%xmm3\par
+        shufps $1,%xmm4,%xmm4\par
+        shufps $1,%xmm5,%xmm5\par
+        addss  %xmm3,%xmm0\par
+        addss  %xmm4,%xmm1\par
+        addss  %xmm5,%xmm2      ## xmm0-xmm2 has single force in pos0 \par
+\par
+        ## increment i force \par
+        movss  24(%rdi,%rcx,4),%xmm3\par
+        movss  28(%rdi,%rcx,4),%xmm4\par
+        movss  32(%rdi,%rcx,4),%xmm5\par
+        subss  %xmm0,%xmm3\par
+        subss  %xmm1,%xmm4\par
+        subss  %xmm2,%xmm5\par
+        movss  %xmm3,24(%rdi,%rcx,4)\par
+        movss  %xmm4,28(%rdi,%rcx,4)\par
+        movss  %xmm5,32(%rdi,%rcx,4)\par
+\par
+        ## accumulate force in xmm6/xmm7 for fshift \par
+        addss %xmm2,%xmm7\par
+        movlhps %xmm1,%xmm0\par
+        shufps $8,%xmm0,%xmm0 ## 00001000       \par
+        addps   %xmm0,%xmm6\par
+\par
+        ## increment fshift force  \par
+        movlps  (%rsi,%rdx,4),%xmm3\par
+        movss  8(%rsi,%rdx,4),%xmm4\par
+        subps  %xmm6,%xmm3\par
+        subss  %xmm7,%xmm4\par
+        movlps  %xmm3,(%rsi,%rdx,4)\par
+        movss  %xmm4,8(%rsi,%rdx,4)\par
+\par
+        ## get n from stack\par
+        movl nb302_n(%rsp),%esi\par
+        ## get group index for i particle \par
+        movq  nb302_gid(%rbp),%rdx              ## base of gid[]\par
+        movl  (%rdx,%rsi,4),%edx                ## ggid=gid[n]\par
+\par
+        ## accumulate total potential energy and update it \par
+        movaps nb302_vctot(%rsp),%xmm7\par
+        ## accumulate \par
+        movhlps %xmm7,%xmm6\par
+        addps  %xmm6,%xmm7      ## pos 0-1 in xmm7 have the sum now \par
+        movaps %xmm7,%xmm6\par
+        shufps $1,%xmm6,%xmm6\par
+        addss  %xmm6,%xmm7\par
+\par
+        ## add earlier value from mem \par
+        movq  nb302_Vc(%rbp),%rax\par
+        addss (%rax,%rdx,4),%xmm7\par
+        ## move back to mem \par
+        movss %xmm7,(%rax,%rdx,4)\par
+\par
+        ## finish if last \par
+        movl nb302_nn1(%rsp),%ecx\par
+        ## esi already loaded with n\par
+        incl %esi\par
+        subl %esi,%ecx\par
+        jz _nb_kernel302_x86_64_sse.nb302_outerend\par
+\par
+        ## not last, iterate outer loop once more!  \par
+        movl %esi,nb302_n(%rsp)\par
+        jmp _nb_kernel302_x86_64_sse.nb302_outer\par
+_nb_kernel302_x86_64_sse.nb302_outerend: \par
+        ## check if more outer neighborlists remain\par
+        movl  nb302_nri(%rsp),%ecx\par
+        ## esi already loaded with n above\par
+        subl  %esi,%ecx\par
+        jz _nb_kernel302_x86_64_sse.nb302_end\par
+        ## non-zero, do one more workunit\par
+        jmp   _nb_kernel302_x86_64_sse.nb302_threadloop\par
+_nb_kernel302_x86_64_sse.nb302_end: \par
+\par
+        movl nb302_nouter(%rsp),%eax\par
+        movl nb302_ninner(%rsp),%ebx\par
+        movq nb302_outeriter(%rbp),%rcx\par
+        movq nb302_inneriter(%rbp),%rdx\par
+        movl %eax,(%rcx)\par
+        movl %ebx,(%rdx)\par
+\par
+        addq $1528,%rsp\par
+        emms\par
+\par
+        pop %r15\par
+        pop %r14\par
+        pop %r13\par
+        pop %r12\par
+\par
+        pop %rbx\par
+        pop    %rbp\par
+        ret\par
+\par
+\par
+\f1\par
+}
+ 

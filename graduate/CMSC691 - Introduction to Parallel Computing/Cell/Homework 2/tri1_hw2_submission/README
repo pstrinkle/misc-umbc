@@ -1,0 +1,10 @@
+
+example-5
+   Solves the matrix multiple on multiple blocks with multiple SPEs.
+example-6
+   Solves the matrix multiple on multiple blocks with multiple SPEs using vectors.
+
+Notes:
+   Starting with the example code was useful; however it is often time-consuming to read through someone else's design and logic.  In this case it wasn't a problem, but just a general note on approaching the problem.  Clues presented in class that were useful: mentioning of systolic arrays; and the slides related to initially shifting the data.  The code doesn't look like it would be faster than doing it the systematic looping way; however, it is a lot faster with the vectors.
+
+-Patrick Trinkle <tri1@umbc.edu>

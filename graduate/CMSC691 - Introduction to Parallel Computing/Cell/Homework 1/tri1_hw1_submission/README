@@ -1,0 +1,42 @@
+
+Patrick Trinkle
+tri1@umbc.edu
+CMSC691 - Cell
+Homework 1
+
+Notes:
+The multi-thread version of the matrix transpose is default configured to run with 8 SPUs.  Other options are 2, and 4 (theoretically 1, I hadn't tested that).  If this is the case, the pu_threads.h must be modified to indicate this.  There is a defined constant: THREADCNT, set to either 2, 4, or 8.
+
+Also, because the block used is 64x64, the minimum matrix size is correlated with the threads used.  Therefore, the minimum N for 8 threads is 512.  The minimum N for the single mode is 64.
+
+Both the multi-thread and the single SPU versions of the program use double buffering for both the input and output.  The buffers in the SPU are actually buffers of vectors, therefore allowing for easy use of spu_shuffle to transpose the matrix.  It takes two steps to tranpose a 4x4 sub-block (4 vectors).  First they are shuffled into a temporary vector, then shuffled again into the output buffer in the opposite possition.
+
+I timed the actual computation as best possible using ticks and the conversion for the cell blade processors and got the following results:
+
+All computed on the Cell Processor Blade (N = 2048)
+Single SPU:  0.162193s
+Multi 8 SPU: 0.054772s
+PPU Only:    0.954288s
+
+For the Speeds, I was more interested on finding an upper bound on my implementation with 8 cores; so I only ran the other versions through 2048.
+
+Speed:
+N 2048
+PPU Only: 35161745 bytes/sec => 33 MB/sec
+SPU 1:    206879017 bytes/sec => 197 MB/sec
+SPU 8:    612620170 bytes/sec => 584.24 MB/sec
+
+N 4096
+SPU 8:    779393106 bytes/sec => 743.29 MB/sec
+
+N 8192
+SPU 8:    824575037 bytes/sec => 786.38 MB/sec
+
+N 16384
+SPU 8:    836606211 bytes/sec => 797 MB/sec
+
+It appears as though my upper bound is around 800MB/sec.  I can probably do some more tricks and take a look at the assembly and getting going a bit faster if there are any wasted cycles (I might not be getting dual-issue everywhere).  But, I think 800MB/sec is fairly good for the matrix transpose.  On a more personal note, this was really frustrating but fun.
+
+
+
+

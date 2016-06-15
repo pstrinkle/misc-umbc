@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/103/trunk/erlang
+END
+test.erl
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/89/trunk/erlang/test.erl
+END
+span.erl
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/67/trunk/erlang/span.erl
+END
+print_code.txt
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/74/trunk/erlang/print_code.txt
+END
+bully_avg.erl
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/99/trunk/erlang/bully_avg.erl
+END
+perfect.txt
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/86/trunk/erlang/perfect.txt
+END
+prj_avg.erl
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/84/trunk/erlang/prj_avg.erl
+END
+span_children.erl
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/76/trunk/erlang/span_children.erl
+END
+span_parent.erl
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/69/trunk/erlang/span_parent.erl
+END
+prj_avg2.erl
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/103/trunk/erlang/prj_avg2.erl
+END
+prj.erl
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/77/trunk/erlang/prj.erl
+END
+ttt.erl
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/98/trunk/erlang/ttt.erl
+END
+avg_behaviors.txt
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/102/trunk/erlang/avg_behaviors.txt
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/55/trunk/config
+END
+hdfs-site.xml
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/55/trunk/config/hdfs-site.xml
+END
+core-site.xml
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/55/trunk/config/core-site.xml
+END
+hadoop-env.sh
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/55/trunk/config/hadoop-env.sh
+END
+mapred-site.xml
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/55/trunk/config/mapred-site.xml
+END

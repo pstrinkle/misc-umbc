@@ -1,0 +1,378 @@
+{VERSION 5 0 "IBM INTEL NT" "5.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 1 }{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "Times" 1 12 0 
+0 0 1 2 2 2 2 2 2 1 1 1 1 }1 1 0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Warni
+ng" -1 7 1 {CSTYLE "" -1 -1 "Courier" 1 10 0 0 255 1 2 2 2 2 2 1 1 1 
+3 1 }1 1 0 0 0 0 1 0 1 0 2 2 0 1 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 27 "with(linalg):  with(
+group):" }}{PARA 7 "" 1 "" {TEXT -1 80 "Warning, the protected names n
+orm and trace have been redefined and unprotected\n" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 331 "kr:=proc(A,B)\n   # This procedure compu
+tes the Kronecker product of two matrices\n   local mm,nn,ans,ans1;\n \+
+  ans:=[];\n   for mm from 1 to rowdim(A) do\n      for nn from 1 to c
+oldim(A) do\n         ans:=[op(ans), scalarmul(B, A[mm,nn] )];\n      \+
+od;\n   od;\n   ans1:=blockmatrix(rowdim(A),coldim(A), ans );\n   RETU
+RN(evalm(ans1));\nend:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 123 "
+sigma||0:=diag(1,1):\nsigma||1:=matrix(2,2,[0,1,1,0]):\nsigma||2:=matr
+ix(2,2,[0,-I,I,0]):\nsigma||3:=matrix(2,2,[1,0,0,-1]):\n#" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 92 "for i from 0 to 3 do   for j from 0
+ to 3 do\n   SS||(i+4*j):=kr(sigma||i, sigma||j)\nod; od;\n#" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 54 "for i from 0 to 3 do\n   SSS
+||i:=evalm(sigma||i);\nod:\n#" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 87 "for i from 0 to 3 do   for j from 0 to 3 do\n   SSS||i||j:=evalm
+(SS||(i+4*j));\nod;   od;" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+134 "for i from 0 to 3 do   for j from 0 to 3 do \n   for k from 0 to \+
+3 do\n      SSS||i||j||k:=kr(SS||(i+4*j), sigma||k):\n   od;\nod;   od
+;\n#" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 178 "for i from 0 to 3 \+
+do   for j from 0 to 3 do\n   ij:=i+4*j; \n   for k from 0 to 3 do  fo
+r m from 0 to 3 do\n      SSS||i||j||k||m:=kr(SS||(ij), SS||(k+4*m)):
+\n   od;   od;\nod;   od;\n" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+339 "L3x3||0:=matrix(3,3,[1,0,0,   0,1,0,   0,0,1]):\nL3x3||1:=matrix(
+3,3, [0,0,0,   0,0,1,   0,-1,0]):\nL3x3||2:=matrix(3,3, [0,0,-1,   0,0
+,0,   1,0,0]):\nL3x3||3:=matrix(3,3, [0,1,0,   -1,0,0,   0,0,0]):\nfor
+ i from 0 to 3 do\n   LLL||i:=evalm(L3x3||i);\nod:\nfor i from 0 to 3 \+
+do   for j from 0 to 3 do\n   LLL||i||j:=kr(LLL||i, LLL||j);\nod;   od
+;\n#" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 379 "LL||1:=matrix(4,4,
+[0,1,0,0,  -1,0,0,0,   0,0,0,0,   0,0,0,0]):\nLL||2:=matrix(4,4,[0,0,1
+,0,  0,0,0,0,   -1,0,0,0,   0,0,0,0]):\nLL||3:=matrix(4,4,[0,0,0,1,  0
+,0,0,0,   0,0,0,0,   -1,0,0,0]):\nLL||4:=matrix(4,4,[0,0,0,0,  0,0,1,0
+,   0,-1,0,0,   0,0,0,0]):\nLL||5:=matrix(4,4,[0,0,0,0,  0,0,0,1,   0,
+0,0,0,   0,-1,0,0]):\nLL||6:=matrix(4,4,[0,0,0,0,  0,0,0,0,   0,0,0,1,
+   0,0,-1,0]):\n#" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 439 "ket||
+0:=matrix(2,1,[1,0]):\nket||1:=matrix(2,1,[0,1]):\n#\nfor i from 0 to \+
+1 do   for j from 0 to 1 do\n   ket||i||j:=kr(ket||i,ket||j);\nod;   o
+d;\n#\nfor i from 0 to 1 do   for j from 0 to 1 do\n   for k from 0 to
+ 1 do\n      ket||i||j||k:=kr(ket||i||j, ket||k);\n   od;\nod;   od;\n
+#\nfor i from 0 to 1 do   for j from 0 to 1 do   for k from 0 to 1 do \+
+  \n   for m from 0 to 1 do\n      ket||i||j||k||m:=kr(ket||i||j||k, k
+et||m);\n   od;\nod;   od;  od;" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 56 "Ket_To_Rho:=v->evalm(v &* map(conjugate, transpose(v))):" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 1641 "Bell||0||0:=evalm( 1/sqrt(
+2) * evalm( ket||0||0 + ket||1||1 ) ):\nBell||0||1:=evalm( 1/sqrt(2) *
+ evalm( ket||0||1 + ket||1||0 ) ):\nBell||1||0:=evalm( 1/sqrt(2) * eva
+lm( ket||0||1 - ket||1||0 ) ):\nBell||1||1:=evalm( 1/sqrt(2) * evalm( \+
+ket||0||0 - ket||1||1 ) ):\n#\nBell||0||0||0:=evalm( 1/sqrt(2) * evalm
+( ket||0||0||0 + ket||1||1||1 ) ):\nBell||0||0||1:=evalm( 1/sqrt(2) * \+
+evalm( ket||0||0||1 + ket||1||1||0 ) ):\nBell||0||1||0:=evalm( 1/sqrt(
+2) * evalm( ket||0||1||0 + ket||1||0||1 ) ):\nBell||0||1||1:=evalm( 1/
+sqrt(2) * evalm( ket||1||0||0 - ket||0||1||1 ) ):\n\nBell||1||0||0:=ev
+alm( 1/sqrt(2) * evalm( ket||1||0||0 + ket||0||1||1 ) ):\nBell||1||0||
+1:=evalm( 1/sqrt(2) * evalm( ket||0||1||0 - ket||1||0||1 ) ):\nBell||1
+||1||0:=evalm( 1/sqrt(2) * evalm( ket||0||0||1 - ket||1||1||0 ) ):\nBe
+ll||1||1||1:=evalm( 1/sqrt(2) * evalm( ket||0||0||0 - ket||1||1||1 ) )
+:\n#\nSam||0||0||0:=evalm( 1/2 * evalm(  ket||1||1||0 + ket||1||0||1 +
+ ket||0||1||1 - ket||0||0||0 ) ):\nSam||0||0||1:=evalm( 1/2 * evalm(  \+
+ket||1||0||0 + ket||0||1||0 - ket||0||0||1 + ket||1||1||1 ) ):\nSam||0
+||1||0:=evalm( 1/2 * evalm(  ket||1||0||0 - ket||0||1||0 + ket||0||0||
+1 + ket||1||1||1 ) ):\nSam||0||1||1:=evalm( 1/2 * evalm(  ket||1||1||0
+ + ket||1||0||1 - ket||0||1||1 + ket||0||0||0 ) ):\n\nSam||1||0||0:=ev
+alm( 1/2 * evalm( -ket||1||0||0 + ket||0||1||0 + ket||0||0||1 + ket||1
+||1||1 ) ):\nSam||1||0||1:=evalm( 1/2 * evalm(  ket||1||1||0 - ket||1|
+|0||1 + ket||0||1||1 + ket||0||0||0 ) ):\nSam||1||1||0:=evalm( 1/2 * e
+valm( -ket||1||1||0 + ket||1||0||1 + ket||0||1||1 + ket||0||0||0 ) ):
+\nSam||1||1||1:=evalm( 1/2 * evalm(  ket||1||0||0 + ket||0||1||0 + ket
+||0||0||1 - ket||1||1||1 ) ):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 629 "Bell4:=proc(a,b,c,d)\n   # Bell4(a,b,c,d) = ( ket.(1-a).(1-b).(
+1-c).(1-d) + ((-1)^a)*ket.a.b.c.d)/sqrt(2)\n   # where a,b,c,d are elt
+s of \{0,1\}\n   #\n   local  BellKet;\n   #\n   BellKet:=evalm( ket||
+(1-a)||(1-b)||(1-c)||(1-d)  );\n   if (a=0) then\n      BellKet:=evalm
+( BellKet + ket||a||b||c||d );\n   else\n      BellKet:=evalm( BellKet
+ - ket||a||b||c||d );\n   fi;\n   BellKet:=evalm( (1/sqrt(2)) * BellKe
+t );\n   RETURN(evalm(BellKet));\nend:\nfor a from 0 to 1 do    for b \+
+from 0 to 1 do\n   for c from 0 to 1 do    for d from 0 to 1 do\n     \+
+ Bell||a||b||c||d:=Bell4(a,b,c,d);\n   od;   od;\n      od;   od;\na:=
+'a':b:='b':c:='c':d:='d':   " }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 785 "QF:=proc(U)\n   # This procedure computes a unitary matrix Q wh
+ose rows are\n   # are the unit eigenvectors of a unitary matrix  U\n \+
+  local  Dim_U,List,n,nu,Q,j,temp_j,n_j,List_j,List_jj,i,Vec_i,Norm_Ve
+c_i,k;\n    \n   Dim_U:=rowdim(U):\n   List:=[eigenvects(U)];   \n   n
+:=nops(List);\n   nu:=1;\n \n   Q:=matrix(Dim_U,Dim_U);\n   for j from
+ 1 to n do\n      temp_j:=op(j,List); \n      n_j:=op(2,temp_j); \n   \+
+   List_j:= convert(op(3,temp_j), list);\n      List_jj:=GramSchmidt(L
+ist_j);\n\n      for i from 1 to n_j do\n         Vec_i:=convert( op(i
+, List_jj), vector );\n            Norm_Vec_i:=norm(eval(Vec_i),2);\n \+
+ \n         for k from 1 to Dim_U do  \n            Q[nu,k]:=Vec_i[k]/
+Norm_Vec_i; \n         od; \n         nu:=nu+1;\n      od;\n   od; \n \+
+  Q:=map(radnormal, Q); \n   RETURN(evalm(Q))\nend:" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 177 "Logz:=proc(z)\n   local  zpolar;   \n   \+
+if (z=0) then\n      RETURN(0);\n   else\n      zpolar:=convert(z,pola
+r);\n      RETURN( (I*op(2,zpolar)) + ln(op(1,zpolar))   );\n   fi;\ne
+nd:  " }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 295 "LogU:=proc(U)\n  \+
+ # This procedure computes the natural log of a unitary matrix\n   loc
+al  Q,IQ,DU,LDU,LU;\n\n   Q:=QF(U);\n   IQ:=map(conjugate,transpose(Q)
+);\n   DU:=map(radnormal,evalm( Q &* U &* IQ));\n   LDU:=map(Logz, DU)
+;\n   LU:=map(radnormal, evalm( IQ &* LDU &* Q));\n   RETURN(evalm(LU)
+);\nend:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 265 "Singer2Log:=pr
+oc(W)\n   # Computes multiple valued log of matrix W\n   local LW,UQ,I
+UQ,DD,n1,n2,n3,n4;\n\n   LW:=LogU(W):\n   UQ:=QF(W):\n   IUQ:=map(conj
+ugate,transpose(UQ)):\n   DD:=map(radnormal, evalm( IUQ &* diag(n1,n2,
+n3,n4) &* UQ)):\n   RETURN(evalm(LW + DD));\nend:\n" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 362 "Pauli1:=proc(LU)\n   # This procedure ex
+presses a 2x2 skew-Hermitian matrix as \n   # the sum of Pauli matrice
+s.\n   # LU:= Sum(i=0..3, R[i+1]*sigma.i  )\n   # Please note that the
+ index of the matrix R runs from 1 to 4\n   local  A, i;\n\n   A:=matr
+ix(1,4);\n   for i from 0 to 3 do\n      A[1,i+1]:=trace(  evalm( sigm
+a||i &* LU)   )/2;\n   od;\n   RETURN(evalm(A));\nend:" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 230 "RPauli1:=proc(LU)\n   local R,RSUM
+,i;\n   #\n   # Expresses density operator rho as a formal sum of sigm
+a.i's\n   R:=Pauli1(LU);\n   RSUM:=0;\n   for i from 0 to 3 do    \n  \+
+    RSUM:=RSUM + R[1,i+1]*S||i;\n   od;   \n   RETURN(RSUM);\nend:" }}
+}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 467 "Pauli2:=proc(LU)\n   # Thi
+s procedure expresses a 4x4 skew-Hermitian matrix as \n   # the sum of
+ the tensor product of Pauli matrices.\n   # LU:= Sum( i=0..3, j=0..3,
+ R[i+1,j+1]*SS.(i+4*j)  )\n   # Please note that the indices of the ma
+trix R run from 1 to 4\n   local  A, i, j;\n\n   A:=matrix(rowdim(LU),
+coldim(LU));\n   for i from 0 to 3 do\n      for j from 0 to 3 do\n   \+
+      A[i+1,j+1]:=trace(  evalm( SS||(i+4*j) &* LU)   )/4;\n      od;
+\n   od;\n   RETURN(evalm(A));\nend:" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 277 "RPauli2:=proc(rho)\n   local R,RSUM,i,j;\n   #\n   #
+ Expresses density operator rho as a formal sum of sigma.i(X)sigma.j's
+\n   #\n   R:=Pauli2(rho);\n   RSUM:=0;\n   for i from 0 to 3 do   for
+ j from 0 to 3 do \n      RSUM:=RSUM + R[i+1,j+1]*S||i||j;\n   od;   o
+d;\n   RETURN(RSUM);\nend:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+346 "Inv_Pauli2:=proc(R)\n   # Given a 4x4 matrix R over the reals, th
+is procedure\n   # computes  rho = Sum(p=0..3, q=0..3) R[p+1,q+q]*sigm
+a.p(X)sigma.q\n   #\n   local p,q,rho;\n   #\n   rho:=diag(0,0,0,0):\n
+   for p from 0 to 3 do   for q from 0 to 3 do\n      rho:= evalm( rho
+ + evalm( R[p+1,q+1]*SS||(p+4*q) )  );\n   od;   od;\n   RETURN(evalm(
+rho));\nend:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 511 "Pauli3:=pr
+oc(LU)\n   # This procedure expresses a 8x8 skew-Hermitian matrix as \+
+\n   # the sum of the tensor product of Pauli matrices.\n   # LU:= Sum
+( i=0..3, j=0..3, k=0..3, R[i,j,k]*SSS.i.j.k  )\n   # Please note that
+ the indices of the matrix R run from 0 to 3\n   local  A, i, j, k;\n
+\n   A:=array(0..3,0..3,0..3);\n   for i from 0 to 3 do\n      for j f
+rom 0 to 3 do\n         for k from 0 to 3 do\n            A[i,j,k]:=tr
+ace(  evalm( SSS||i||j||k &* LU)   )/8;\n         od;\n      od;\n   o
+d;\n   RETURN(eval(A));\nend:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 318 "RPauli3:=proc(rho)\n   local R,RSUM,i,j,k;\n   #\n   # Expresse
+s density operator rho as a formal sum of sigma.i(X)sigma.j(X)sigma.k'
+s\n   #\n   R:=Pauli3(rho);\n   RSUM:=0;\n   for i from 0 to 3 do   fo
+r j from 0 to 3 do   for k from 0 to 3 do\n      RSUM:=RSUM + R[i,j,k]
+*S||i||j||k;\n   od;   od;   od;\n   RETURN(RSUM);\nend:" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 554 "Pauli4:=proc(LU)\n   # This proced
+ure expresses a 16x16 skew-Hermitian matrix as \n   # the sum of the t
+ensor product of Pauli matrices.\n   # LU:= Sum( i=0..3, j=0..3, k=0..
+3, m=0..3, R[i,j,k,m]*SSS.i.j.k.m  )\n   # Please note that the indice
+s of the matrix R run from 0 to 3\n   local  A, i, j, k, m;\n\n   A:=a
+rray(0..3,0..3,0..3,0..3);\n   for i from 0 to 3 do   for j from 0 to \+
+3 do\n      for k from 0 to 3 do   for m from 0 to 3 do\n            A
+[i,j,k,m]:=trace(  evalm( SSS||i||j||k||m &* LU)   )/16;\n      od;   \+
+od;\n   od;   od;\n   RETURN(eval(A));\nend:" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 406 "RPauli4:=proc(rho)\n   local R,RSUM,i,j,k,m;\n \+
+  #\n   # Expresses density operator rho as a formal sum of \n   #    \+
+                                sigma.i(X)sigma.j(X)sigma.k'(X)sigma.m
+'s\n   #\n   R:=Pauli4(rho);\n   RSUM:=0;\n   for i from 0 to 3 do   f
+or j from 0 to 3 do   for k from 0 to 3 do   for m from 0 to 3 do\n   \+
+   RSUM:=RSUM + R[i,j,k,m]*S||i||j||k||m;\n   od;   od;   od;   od;\n \+
+  RETURN(RSUM);\nend:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 304 "F
+LL4:=proc(LU)\n   # This procedure expresses a 4x4 skew-smmetric matri
+x as \n   # the sum a linear combination of LL.i's .\n   # LU:= Sum( i
+=1..6, A[1,i]*LL.i  )\n   local  A, i;\n\n   A:=matrix(1,6);\n   for i
+ from 1 to 6 do\n      A[1,i]:=trace(  evalm( LL||i &* LU)   )/(-2);\n
+   od;\n   RETURN(evalm(A));\nend:" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 687 "Matrep:=proc(P, P_Deg)\n   # This procedure converts
+ a permutation represented as\n   # a product of (not necessarily disj
+oint) cycles to\n   # a permutation matrix\n   local  f,Pmat,n,j,Cycle
+_j,n_j,a_j,i,b_j;\n   \n   f:=(ii,jj)->if(ii=jj) then 1 else 0 fi;\n  \+
+ Pmat:=matrix(P_Deg, P_Deg, f);\n   n:=nops(P);\n   if (n<1) then \n  \+
+    RETURN(evalm(Pmat));\n   else\n      for j from 1 to n do\n       \+
+  Cycle_j:=op(j,P);\n         n_j:=nops(Cycle_j);\n         if (n_j>1)
+ then\n            a_j:=op(1,Cycle_j);\n            for i from 2 to n_
+j do\n               b_j:=op(i,Cycle_j);\n               Pmat:=swaprow
+(Pmat,a_j+1,b_j+1);\n            od;\n         fi;\n      od;\n   fi;
+\n   RETURN(evalm(Pmat));\nend:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 166 "RemoveIPi:=proc(A)\n   local  ff, M;  \n\n   ff:=(i,j)-> if (
+i=j) then 1/(Pi*I) else  0  fi;\n   M:=evalm( matrix(rowdim(A),coldim(
+A),ff) &* A);\n   RETURN(evalm(M));\nend:" }}}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 228 "f||0:=x->2*x:\nf||1:=x->irem(x,2  ) + ( iquo(x,2  \+
+)*2^2):\nf||2:=x->irem(x,2^2) + ( iquo(x,2^2)*2^3):\nf||3:=x->irem(x,2
+^3) + ( iquo(x,2^3)*2^4):\nf||4:=x->irem(x,2^4) + ( iquo(x,2^4)*2^5):
+\nf||5:=x->irem(x,2^5) + ( iquo(x,2^5)*2^6):" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 1793 "Trace1:=proc(A)\n   local ans, ii, jj;\n   #\n
+   ans:=matrix(rowdim(A)/2, coldim(A)/2  );\n   for ii from 1 to rowdi
+m(A)/2 do;\n      for jj from 1 to coldim(A)/2 do;\n         ans[ii,jj
+]:=A[1+f||0(ii-1),1+f||0(jj-1)] +A[1+f||0(ii-1)+1,1+f||0(jj-1)+1];  \n
+      od;\n   od;\nRETURN(evalm(ans))\nend:\n#\nTrace2:=proc(A)\n   lo
+cal ans, ii, jj;\n   #\n   ans:=matrix(rowdim(A)/2, coldim(A)/2  );\n \+
+  for ii from 1 to rowdim(A)/2 do;\n      for jj from 1 to coldim(A)/2
+ do;\n         ans[ii,jj]:=A[1+f||1(ii-1),1+f||1(jj-1)] +A[1+f||1(ii-1
+)+2,1+f||1(jj-1)+2];  \n      od;\n   od;\nRETURN(evalm(ans))\nend:\n#
+\nTrace3:=proc(A)\n   local ans, ii, jj;\n   #\n   ans:=matrix(rowdim(
+A)/2, coldim(A)/2  );\n   for ii from 1 to rowdim(A)/2 do;\n      for \+
+jj from 1 to coldim(A)/2 do;\n         ans[ii,jj]:=A[1+f||2(ii-1),1+f|
+|2(jj-1)] +A[1+f||2(ii-1)+4,1+f||2(jj-1)+4];  \n      od;\n   od;\nRET
+URN(evalm(ans))\nend:\n#\nTrace4:=proc(A)\n   local ans, ii, jj;\n   #
+\n   ans:=matrix(rowdim(A)/2, coldim(A)/2  );\n   for ii from 1 to row
+dim(A)/2 do;\n      for jj from 1 to coldim(A)/2 do;\n         ans[ii,
+jj]:=A[1+f||3(ii-1),1+f||3(jj-1)] +A[1+f||3(ii-1)+8,1+f||3(jj-1)+8];  \+
+\n      od;\n   od;\nRETURN(evalm(ans))\nend:\n#\nTrace5:=proc(A)\n   \+
+local ans, ii, jj;\n   #\n   ans:=matrix(rowdim(A)/2, coldim(A)/2  );
+\n   for ii from 1 to rowdim(A)/2 do;\n      for jj from 1 to coldim(A
+)/2 do;\n         ans[ii,jj]:=A[1+f||4(ii-1),1+f||4(jj-1)] +A[1+f||4(i
+i-1)+16,1+f||4(jj-1)+16];  \n      od;\n   od;\nRETURN(evalm(ans))\nen
+d:\n#\nTrace6:=proc(A)\n   local ans, ii, jj;\n   #\n   ans:=matrix(ro
+wdim(A)/2, coldim(A)/2  );\n   for ii from 1 to rowdim(A)/2 do;\n     \+
+ for jj from 1 to coldim(A)/2 do;\n         ans[ii,jj]:=A[1+f||5(ii-1)
+,1+f||5(jj-1)] +A[1+f||5(ii-1)+32,1+f||5(jj-1)+32];  \n      od;\n   o
+d;\nRETURN(evalm(ans))\nend:\n#\nPTrace:=(n,rho)->(Trace||(n+1))(rho):
+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 383 "Fourier:=proc(n)\n   l
+ocal omega,A,i,j;\n   # This program computes the nxn matrix ( omega^i
+j )/sqrt(n), where\n   # omega is the primitive n-th root of unity giv
+en by omega=exp(2PiI/n)\n   omega:=exp(2*Pi*I/n);\n   A:=matrix(n,n);
+\n   for i from 0 to n-1 do   for j from 0 to n-1 do\n      A[i+1,j+1]
+:=evalc(omega^(i*j));\n   od;   od;\n   A:=evalm( 1/sqrt(n) * A);\n   \+
+RETURN(evalm(A));\nend:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 682 
+"Vec:=proc(A)\n   local m,n,V_Dim,V,i,j;\n   # Vec transforms an mxn m
+atrix A into an m*n column vector V, column by column   \n   m:=rowdim
+(A); n:=coldim(A); V_Dim:=m*n;\n   V:=vector(V_Dim);\n   for j from 0 \+
+to n-1 do   for i from 0 to m-1 do\n      V[i+m*j +1]:=A[i+1,j+1];\n  \+
+ od;   od;\n   RETURN(evalm(V));\nend:\n#\n#Vec:=proc(M)\n   # Vec(M) \+
+= Matrix( Dim,1, [col1(M),col2(M), ... , col.CD(M)]),\n   # where Dim \+
+= rowdim(M)*coldim(M), and CD = coldim(M)\n   #\n#   local  RD,CD,Dim,
+V,i,j;   \n   #\n#   RD:=rowdim(M);   CD:=coldim(M); Dim:=RD*CD;\n#   \+
+V:=matrix(Dim,1);\n#   for j from 1 to CD do   for i from 1 to RD do\n
+#      V[i+(j-1)*RD,1]:=M[i,j];\n#   od;   od;\n#   RETURN(evalm(V));
+\n#end:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 491 "Ad:=proc(Q)\n  \+
+ local  M,p,q,Apq,R_pq,Vpq,i;\n   # Computes Ad_Q as a 16x16 matrix; Q
+ is assumed to be a 4x4 unitary\n   #\n   M:=matrix(16,16); \n   for q
+ from 0 to 3 do   print([`q=`||q]); for p from 0 to 3 do       \n     \+
+ #print([p,q]);\n      Apq:=evalm( Q &* SS||(p+4*q) &* My_Adjoint(Q) )
+;\n      R_pq:=Pauli2(Apq);\n      Vpq:=Vec(R_pq);\n      for i from 0
+ to 15 do\n         #print([i]);\n         M[i+1,p+4*q +1]:=Vpq[i+1];
+\n         #print([i]);\n      od;\n   od; od;\n   RETURN(evalm(M));\n
+end:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 635 "Small_ad:=proc(Q)
+\n   local  M,p,q,Apq,R_pq,Vpq,i;\n   # Computes Small ad_Q as a 16x16
+ matrix; Q is assumed to be a 4x4 skew Hermitian\n   #   Small_ad(Q) (
+M) = ad_iQ(M), where M is assumed to be skew Hermitian\n   #\n   M:=ma
+trix(16,16); \n   for q from 0 to 3 do   print([`q=`||q]); for p from \+
+0 to 3 do       \n      #print([p,q]);\n      Apq:=evalm(  evalm( eval
+m( Q &* SS||(p+4*q) )  -  evalm( SS||(p+4*q) &* Q ) )   );\n      Apq:
+=evalm( I * Apq);\n      R_pq:=evalm(-I*Pauli2(Apq));\n      Vpq:=Vec(
+R_pq);\n      for i from 0 to 15 do\n         #print([i]);\n         M
+[i+1,p+4*q +1]:=Vpq[i+1];\n      od;\n   od; od;\n   RETURN(evalm(M));
+\nend:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 169 "FCom:=proc(A,B)
+\n   local X;\n   # FCom(A,B) is the commutator [A,B] of matrices A an
+d B\n   #\n   X:=evalm(  evalm( A &* B ) - evalm( B &* A )  );\n   RET
+URN(evalm(X));\nend:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 449 "Tr
+aceRL:=proc(A)\n   local B;\n   # B[i1,j0] = Sum(a=0..1, A[a+2*i1,j0+2
+*a] )\n\n   B:=matrix(2,2);\n   B[1,1]:=A[1,1]+A[2,3];   B[1,2]:=A[1,2
+]+A[2,4];\n   B[2,1]:=A[3,1]+A[4,3];   B[2,2]:=A[3,2]+A[4,4];\n   RETU
+RN(evalm(B));\nend:\n#\nTraceLR:=proc(A)\n   local B;\n   # B[i0,j1] =
+ Sum(a=0..1, A[i0+2*a,a+2*j1] )\n\n   B:=matrix(2,2);\n   B[1,1]:=A[1,
+1]+A[3,2];   B[1,2]:=A[1,3]+A[3,4];\n   B[2,1]:=A[2,1]+A[4,2];   B[2,2
+]:=A[2,3]+A[4,4];\n   RETURN(evalm(B));\nend:" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 136 "My_Conj:=x->eval(subs( I=-I,x)):\nMy_Adjoint:=A
+->map( My_Conj, transpose(A)):\nKet:=(a,b)->matrix(2,1,[cos(a),expand(
+(exp(I*b)*sin(a)))]):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 159 "I
+d:=proc(n)\n   # Id(n) = nxn identity matrix\n   #\n   local  f,i,j, A
+;   \n   f:=(i,j)->if (i=j) then 1 else 0 fi:\n   A:=matrix(n,n,f);\n \+
+  RETURN(evalm(A));\nend:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+127 "CNOT12:=matrix(4,4,[1,0,0,0,   0,1,0,0,   0,0,0,1,   0,0,1,0]):\n
+CNOT21:=matrix(4,4,[1,0,0,0,   0,0,0,1,   0,0,1,0,   0,1,0,0]):" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 311 "Hadamard:=proc(n)\n   # Had
+amard(n) = (X)_(i=1..n) H, where H is the 2x2 Hadarmard matrix\n   loc
+al IR2,H,Ans,i;\n\n   IR2:=1/sqrt(2);\n   H:=matrix(2,2,[IR2,IR2,IR2,-
+IR2]);\n   Ans:=evalm(H);\n   if (n<>1) then\n      for i from 1 to n-
+1 do\n         Ans:=evalm( kr(Ans,H));\n      od;\n   fi;\n   RETURN(e
+valm(Ans));\nend:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 266 "Int_T
+o_Bin:=proc(n,lgth)\n   # Int_To_Bin(n) = postive integer n written as
+ a binary number of length lgth\n   local nn,s,i,nx;\n\n   nn:=n;   \n
+   s:=``;\n   for i from 1 to lgth do\n      nx:=irem(nn,2);\n      s:
+=cat(nx,s);\n      nn:=iquo(nn,2);\n   od;\n   RETURN(s);\nend:" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 288 "RKet:=proc(ket)\n   # RKet(
+ket) = column vector in symbolic ket form\n   local r,S,i,logr,bbb;\n \+
+  #\n   r:=rowdim(ket);\n   logr:=ceil(  evalf(  log[2](r) )  ); \n   \+
+S:=0;\n   for i from 1 to r do\n      bbb:=Int_To_Bin(i-1,logr);\n    \+
+  S:=S + ket[i,1]*(`|`||bbb||`>`);\n   od;\n   RETURN(S);\nend:" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 538 "CNOT:=proc(T,C,W)\n   # CNO
+T(T,C,W) = permutation (written as a product of disjoint cyles) which \+
+represents\n   # a CNOT wit target bit T, control bit C, and with W wi
+res labeled 0..(W-1).\n   # Convention:  First=Bottom =Right  and  Las
+t=Top=Left\n   local  ET,EC,SETEC,EW,L,k,BITC,BITT; \n\n   ET:=2^T;   \+
+EC:=2^C;   SETEC:=ET+EC; EW:=2^W;\n   L:=[];\n   for k from 0 to (EW-1
+) do\n      BITC:=irem(floor(k/EC),2);   BITT:=irem(floor(k/ET),2);\n \+
+     if (BITC+BITT=0) then\n         L:=[op(L), [EC+k, SETEC+k] ];\n  \+
+    fi;\n   od;\n   RETURN(L);\nend:" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 580 "Entropy:=proc(A)\n   local EV,nEV,Ans,n;\n# Entropy \+
+of a Hermitian operator\n# This procedure has not been completed\n# Th
+e problem is that the eigenvalues, although\n# real, are not always no
+n-negative.  A second\n# problem is how to normalize the Hermitian mat
+rix\n# before computing the entropy.  Should one make it\n# of 2-norm \+
+one?  Should one make it of trace one?\n#\n   EV:=vector([eigenvals(ev
+alm((-I)*A))]);\n   nEV:=1/norm(EV,2);\n   EV:=evalm( nEV * EV);\n   p
+rint(`EV=`,EV);\n   Ans:=0;\n   for n from 1 to nops(EV) do\n      Ans
+:=Ans - EV[n]*Logz(EV[n]);\n   od;\n   RETURN(Ans):\nend:" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 217 "# norm2(X) = the square root of th
+e spectral radius\n#            of   evalm( X &* map(conjugate, transp
+ose(X)))\nnorm2:=X-> sqrt(max(op(map(abs,[eigenvals(\n      evalm( X &
+* map(conjugate,transpose(X))  )\n      )])))):" }}}{EXCHG {PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 4605 "# List of functions included above:\n# QF:=p
+roc(U) ... Computes a unitary matrix QF such that QF &* U &* is a diag
+onal matrix\n# Logz(Z) computes the natural log of z\n# LogU:=proc(U) \+
+... Computes natural log of the square matrix U\n# kr:=proc(A,B) ... C
+omputes the tensor product A(X)B of matrices A and B\n# Pauli1:=proc(U
+)... Expresses a 2x2 Hermitian matrix as a linear sum of sigma.i's\n# \+
+RPauli1:=proc(LU)... Expresses a 2x2 Hermitian matrix as a linear form
+al sum of sigma.i's\n# Pauli2:=proc(LU)... Expresses a 4x4 Hermitian m
+atrix as a linear sum of sigma.i(X)sigma.j's\n# RPauli2:=proc(rho)... \+
+Expresses density operator rho as a formal sum of sigma.i(X)sigma.j's
+\n# Inv_Pauli2:=proc(R)...For a given a 4x4 matrix R over the reals, t
+his procedure\n#                       computes  rho = Sum(p=0..3, q=0
+..3) R[p+1,q+q]*sigma.p(X)sigma.q\n# Pauli3:=proc(LU)... Expresses a 8
+x8 Hermitian matrix as a linear sum of\n#                             \+
+                     sigma.i (X) sigma.j (X) sigma.k's\n# RPauli3(rho)
+ ... Expresses density operator rho as a formal sum of sigma.i(X)sigma
+.j(X)sigma.k's\n# Pauli4:=proc(LU)... Expresses a 16x16 Hermitian matr
+ix as a linear sum of\n#                                          sigm
+a.i (X) sigma.j (X) sigma.k (X) sigma.m's\n# RPauli4(rho) ... Expresse
+s density operator rho as a formal sum of \n#                        s
+igma.i(X)sigma.j(X)sigma.k(X)sigma.m's\n# FLL4:=proc(LU) ... Expresses
+ a skew symmetric 4x4 matrix as a linear combination of LL.i's\n# Matr
+ep:=proc(P, P_Deg) ... Converts the degree P_Deg permutation P (repres
+ented as\n#                            a list of lists) into a P_Deg x
+ P_Deg permutation matrix\n# RemoveIPi:=proc(A) = A/(I*Pi), where A is
+ a square matrix\n# f.0, f.1, f.2, f.3, f.4, f.5 are functions called \+
+by Trace1, Trace2, Trace3\n# Trace1, Trace2, Trace3, Trace4, Trace5, T
+race6 are partial trace functions\n# PTrace(n,rho) = partial trace of \+
+the n-th qubit = (Trace.(n+1))(rho)  \n#       Qubits are listed right
+ to left, and labeled 0,1, ...\n#       n = 0,1,2,3,4,5\n# sigma.0, si
+gma.1, sigma.2, sigma.3 are predefined as the Pauli matrices\n# SSS.i=
+sigma.i\n# SS.(i+4*j) = kr(sigma.i,sigma.j) are predefined\n# SSS.i.j=
+SS.i.j = kr(sigma.i,sigma.j) are predefined\n# SSS.i.j.k  = kr( SS.(i+
+4*j), sigma.k ) are predefined\n# SSS.i.j.k.m  = kr( SS.(i+4*j), SS(k+
+4*m) ) are predefined\n# L3x3.j ... j=1..3 ... are predefined infinite
+simal generators of SO(3) \n# LL.j ... j=1..6 ... are predefined infin
+itesimal generators of SO(4)\n# ket.0 = |0> = (1.0)^Transpose   ket.1 \+
+=|1> = (0,1)^Transpose\n# ket.i.j = ket.i (X) ket.j   \n# ket.i.j.k = \+
+ket.i (X) ket.j (X) ket.k\n# ket.i.j.k.m = ket.i (X) ket.j (X) ket.k (
+X) ket.m\n# Ket_To_Rho(ket) = density operator corresponding to ket\n#
+ Bell.i.j ..... Bell basis kets, i = 0..1, j = 0..1\n# Bell.i.j.k ... \+
+Bell basis kets, i = 0..1, j = 0..1, k = 0..1\n# Bell.i.j.k.m ... Bell
+ basis kets, i = 0..1, j = 0..1, k = 0..1, m = 0..1\n# Bell4(a,b,c,d) \+
+= ( ket.(1-a).(1-b).(1-c).(1-d) + ((-1)^a)*ket.a.b.c.d)/sqrt(2)\n#    \+
+                                          where a,b,c,d are elts of \{
+0,1\}\n# Sam.i.j.k .... Sam basis kets, i = 0..1, j = 0..1, k = 0..1\n
+# Fourier:=proc(n) computes the nxn matrix ( omega^ij )/sqrt(n), where
+ omega=exp(2PiI/n)\n# Vec:=proc(A) ... transforms an mxn matrix A into
+ an m*n column vector V, column by column\n# Ad:=proc(Q) ... Computes \+
+Ad_Q as a 16x16 matrix; Q is assumed to be a 4x4 unitary matrix\n# FCo
+m(A,B)  is the commutator [A,B] of matrices A and B\n# (Small_ad:=proc
+(Q))(M) = Small_Ad_iQ(M), where Q is Hermitian and M is skew-Hermitian
+\n# TraceRL(A) = Sum(a=0..1, A[a+2*i1,j0+2*a] )\n# TraceLR(A) = Sum(a=
+0..1, A[i0+2*a,a+2*j1] )\n# My_Conj(z) = the conjugate of the comple n
+umber z\n# My_Adjoint(A) = the adjoint of the complex square matrix  A
+\n# Ket:=(a,b)->matrix(2,1,[cos(a),(exp(I*b)*sin(a))]):\n# Vec:=proc(M
+), Vec(M) = Matrix( Dim,1, [col1(M),col2(M), ... , col.CD(M)]),\n#    \+
+                    where Dim = rowdim(M)*coldim(M), and CD = coldim(M
+)\n# Id(n) = nxn identity matrix\n# CNOT12:= (i,j)->(i,i+j)   ....  CN
+OT(21):=(i,j)->(i+j,j)\n# Hadamard(n) = (X)_(i=1..n) H, where H is the
+ 2x2 Hadarmard matrix\n# Int_To_Bin(n) = postive integer n written as \+
+a binary number of length lgth\n# RKet(ket) = column vector in symboli
+c ket form\n# CNOT(T,C,W) = permutation (written as a product of disjo
+int cyles) which represents\n#       a CNOT wit target bit T, control \+
+bit C, and with W wires labeled 0..(W-1).\n#       Convention:  First=
+Bottom =Right  and  Last=Top=Left\n# norm2(X) = the square root of the
+ spectral radius\n#            of   evalm( X &* map(conjugate, transpo
+se(X)))    " }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{MARK "18 0 0" 0 }{VIEWOPTS 1 
+1 0 1 1 1803 1 1 1 1 }{PAGENUMBERS 0 1 2 33 1 1 }

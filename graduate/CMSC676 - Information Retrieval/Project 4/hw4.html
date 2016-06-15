@@ -1,0 +1,58 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+<title>CMSC 476/676 -IR - Programming Assignment 3</title>
+</head><body>
+
+<center>
+  <h3> CMSC 476/676 Information Retrieval<br>
+Programming Assignment 4 - Due April 9<br>
+Do this assignment <b>individually</b> <br>
+</h3></center>
+
+<p>
+The objectives of this assignment are to build a command line
+retrieval engine on top of the inverted files created in
+Assignment 3.  The retrieval engine should take
+in queries which are lists of words, run them through
+the same preprocessing as the collection (i.e., downcase,
+optionally remove stopwords) and then match the query words against the
+inverted file to come up with document weights (the sum of
+the term weights in the document).  The top-ranking
+ten document identifiers or filenames should be displayed to the user.  
+</p>
+<p>
+You may use any algorithm you choose to locate the postings, but your report 
+should discuss your choices (i.e., do binary search on index file on
+disk versus load entire index into memory and search there). If you store the whole postings file (or TDM) in memory, without doing anything to manage it, there will be a 5% penalty.</p>
+<p>
+You must use something other than a simple array to tabulate the document-query similarity
+scores.  A hashtable, heap, BST, or whatever. You may design your own query syntax, however you only need to handle queries that are lists of words.
+</p>
+<p>The query must run in a single command from the linux command
+line, i.e., not be an interactive menu-based system. For example
+"retrieve dog cat bird" would be a fine query.</p>
+<p>You are welcome to add query
+  term weights, e.g., retrieve 0.3 dog 0.4 cat 0.3 bird. This implies, for example, that documents on cats will score higher than documents on dogs or birds, other things being equal.<b> If you add query term weights, there is a 5% bonus.</b></p>
+<p><b>Hand In</b><br>
+Sample queries and what they return (i.e., the top ten document identifiers,
+and the top two documents in full).  
+Test your system with the following queries:
+</p><menu>
+<li>Nicholas</li><br>
+<li>elephants</li><br>
+<li>CSEE</li><br>
+<li>Maryland</li><br>
+<li>gift</li><br>
+<li>abcdef</li><br>
+<li>20</li><br>
+<li>20.07</li><br>
+<li>123-456-7890</li><br>
+<li>your email address</li><br>
+<li>Other queries showing multiple terms, effect of weights (if implemented)</li>
+</menu>
+Also, hand in listings of your code and
+a project report which outlines your algorithms, your data structures,
+and any files created.
+Discuss the complexity (roughly) of your algorithms.
+</body></html>

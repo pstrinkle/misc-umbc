@@ -1,0 +1,110 @@
+Computed 503 input files
+Query: Nicholas=1
+Document Id: 192 Score: 0.004387
+Document Id: 279 Score: 0.000434
+Document Id: 377 Score: 0.000352
+Query: elephants=1
+Found no documents matching your query.
+Query: CSEE=1
+Found no documents matching your query.
+Query: Maryland=1
+Document Id: 399 Score: 0.004694
+Document Id: 411 Score: 0.004618
+Document Id: 430 Score: 0.004618
+Document Id: 400 Score: 0.004599
+Document Id: 406 Score: 0.004581
+Document Id: 402 Score: 0.004545
+Document Id: 413 Score: 0.004527
+Document Id: 404 Score: 0.004509
+Document Id: 422 Score: 0.004509
+Document Id: 409 Score: 0.004474
+Query: gift=1
+Document Id: 149 Score: 0.013293
+Document Id: 324 Score: 0.011735
+Document Id: 180 Score: 0.011575
+Document Id: 051 Score: 0.005653
+Document Id: 397 Score: 0.002214
+Document Id: 074 Score: 0.001923
+Document Id: 026 Score: 0.001649
+Document Id: 383 Score: 0.000502
+Document Id: 298 Score: 0.000273
+Document Id: 043 Score: 0.000205
+Query: abcdef=1
+Found no documents matching your query.
+Query: 20=1
+Document Id: 035 Score: 0.073872
+Document Id: 080 Score: 0.015634
+Document Id: 412 Score: 0.014021
+Document Id: 231 Score: 0.010017
+Document Id: 399 Score: 0.009688
+Document Id: 429 Score: 0.008031
+Document Id: 413 Score: 0.007008
+Document Id: 432 Score: 0.00578
+Document Id: 113 Score: 0.005738
+Document Id: 431 Score: 0.005586
+Query: 20.07=1
+Found no documents matching your query.
+Query: 123-456-7890=1
+Document Id: 216 Score: 0.001845
+Document Id: 122 Score: 0.00152866666666667
+Document Id: 044 Score: 0.000766333333333333
+Document Id: 213 Score: 0.000691333333333333
+Document Id: 207 Score: 0.000634333333333333
+Document Id: 459 Score: 0.000398
+Document Id: 396 Score: 0.000397333333333333
+Document Id: 222 Score: 0.000346333333333333
+Document Id: 005 Score: 0.000293333333333333
+Document Id: 461 Score: 0.000241
+Query: pstrink@gmail.com=1
+Found no documents matching your query.
+Query: taxes=.5 federal=.5
+Document Id: 388 Score: 0.0059955
+Document Id: 393 Score: 0.005459
+Document Id: 408 Score: 0.00524
+Document Id: 427 Score: 0.004379
+Document Id: 419 Score: 0.0041995
+Document Id: 426 Score: 0.0032895
+Document Id: 246 Score: 0.003237
+Document Id: 253 Score: 0.003201
+Document Id: 324 Score: 0.002997
+Document Id: 464 Score: 0.0029515
+Query: state=.5 scholarship=.5
+Document Id: 199 Score: 0.002384
+Document Id: 232 Score: 0.001129
+Document Id: 323 Score: 0.000766
+Document Id: 118 Score: 0.000603
+Document Id: 249 Score: 0.0001475
+Query: college=.33 essays=.33 science=.33
+Document Id: 114 Score: 0.05484506
+Document Id: 155 Score: 0.01420826
+Document Id: 071 Score: 0.01037816
+Document Id: 259 Score: 0.00968442
+Document Id: 055 Score: 0.00521908
+Document Id: 063 Score: 0.00510034
+Document Id: 132 Score: 0.00320824
+Document Id: 226 Score: 0.00287247
+Document Id: 048 Score: 0.00274758
+Document Id: 257 Score: 0.00215557
+Query: zyuganov=.5 zzzzzzz=.5
+Document Id: 338 Score: 0.052881
+Document Id: 364 Score: 0.052881
+Document Id: 365 Score: 0.052881
+Document Id: 344 Score: 0.0067715
+Document Id: 036 Score: 0.0026185
+Document Id: 363 Score: 0.0022335
+Document Id: 377 Score: 0.0021445
+Document Id: 350 Score: 0.001706
+Document Id: 366 Score: 0.0013125
+Document Id: 336 Score: 0.0011345
+Query: time=.33 timeliness=.33 timely=.33
+Document Id: 217 Score: 0.00553443
+Document Id: 200 Score: 0.00435369
+Document Id: 059 Score: 0.00377817
+Document Id: 145 Score: 0.00285417
+Document Id: 003 Score: 0.00283932
+Document Id: 135 Score: 0.00283932
+Document Id: 190 Score: 0.0019437
+Document Id: 116 Score: 0.00187671
+Document Id: 128 Score: 0.00155496
+Document Id: 122 Score: 0.00132033
+Total time: 00:00:30.6900000

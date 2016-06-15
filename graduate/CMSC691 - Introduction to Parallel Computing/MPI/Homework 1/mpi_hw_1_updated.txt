@@ -1,0 +1,113 @@
+               MPI homework #1
+
+ A particle-system simulation using numerical integration techniques
+ to animate a large set of particles. Numerical integration is implemented
+ using Euler's method of integration. It computes the next value of 
+ a function of time, F(t), by incrementing the current value of the 
+ function by the product of the time 
+ step and the derivative of the function: F(t + dt) = F(t) + dt*F'(t);
+
+ Our simple particle system consists of:
+  1) An array of 3-D positions for each particle	pos[]
+  2) An array of 3-D velocities for each particle	vel[]
+  3) An array of masses for each particle		mass[]
+  4) A force vector that varies over time		force
+
+ This programming example is intended to illustrate programming concepts
+ for parallel programming, and is not meant to be a physically realistic
+ simulation. For example, it does not consider: 
+  (1) How the time-variant force function and the time step, dt, is computed
+        (instead, the example treats them as constants)
+  (2) Particle collisions.
+
+ In addition, we assume that all 3-D vectors (x,y,z) are expressed as 
+ 4-D homogeneous coordinates (x,y,z,1).
+
+ We may turn on the interaction among particles in the future home works
+
+//this is a serial code
+
+//get the value of END_OF_TIME from a terminal
+//#define END_OF_TIME 10
+#define PARTICLES 1000000 
+
+typedef struct
+{
+  float x, y, z, w;
+} vec4D;
+
+// particle positions
+vec4D pos[PARTICLES];
+
+// particle velocities
+vec4D vel[PARTICLES]; 
+
+// current force being applied to the particles
+vec4D force;
+
+// inverse mass of the particles
+float inv_mass[PARTICLES];
+
+// step in time
+float dt = 0.01f;
+
+float temperature;  
+
+int main() 
+{
+  int   i;
+  float time;
+  float dt_inv_mass; 
+
+  // For each step in time 
+  for (time = 0; time < END_OF_TIME; time += dt) 
+  { 
+    // For each particle 
+   
+    temperature = 0; 
+
+    for (i = 0; i < PARTICLES; i++) 
+    {
+      // Compute the new position and velocity 
+      // as acted upon by the force f. 
+      pos[i].x = vel[i].x * dt + pos[i].x; 
+      pos[i].y = vel[i].y * dt + pos[i].y; 
+      pos[i].z = vel[i].z * dt + pos[i].z; 
+      
+      dt_inv_mass = dt * inv_mass[i]; 
+
+      vel[i].x = dt_inv_mass * force.x + vel[i].x; 
+      vel[i].y = dt_inv_mass * force.y + vel[i].y; 
+      vel[i].z = dt_inv_mass * force.z + vel[i].z;
+ 
+      //updated line
+      temperature += (1.0/PARTICLES)*(vel[i].x * vel[i].x + vel[i].y*vel[i].y + vel[i].z*vel[i].z);
+    } 
+  }
+
+  return (0); 
+}
+
+Due date:  Feb. 23
+
+* Parallelize it with MPI and run with 4 mpi processes and compare
+    the results with the original serial code
+* Read in the value of END_OF_TIME from a terminal
+* Initialize velocities with the random numbers between 0 and 1
+* Initialize the x, y, z force components of each particle with 0.01
+* Initialize positions with
+
+for (i = 0; i < 100; i++) {
+  for (j = 0; j < 100; j++) {
+    for (k = 0; k < 100; k++)  {
+
+      pos[i*(100*100) + j*100 +k].x=i*0.1;
+      pos[i*(100*100) + j*100 +k].y=j*0.1;
+      pos[i*(100*100) + j*100 +k].z=k*0.1;
+    }
+  }
+}
+
+for (i = 0; i < PARTICLES; ++i) {
+  inv_mass[i] = 1.0;
+}

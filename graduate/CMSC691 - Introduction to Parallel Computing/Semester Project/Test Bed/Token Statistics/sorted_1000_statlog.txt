@@ -1,0 +1,33 @@
+User: carol.clair@enron.com 9272 tokens found
+User: chris.dorland@enron.com 9959 tokens found
+User: chris.germany@enron.com 18988 tokens found
+User: d..steffes@enron.com 18264 tokens found
+User: debra.perlingiere@enron.com 8349 tokens found
+User: drew.fossum@enron.com 13168 tokens found
+User: elizabeth.sager@enron.com 14573 tokens found
+User: eric.bass@enron.com 16600 tokens found
+User: gerald.nemec@enron.com 17858 tokens found
+User: j.kaminski@enron.com 20136 tokens found
+User: jeff.dasovich@enron.com 32780 tokens found
+User: jeffrey.shankman@enron.com 13245 tokens found
+User: john.arnold@enron.com 15913 tokens found
+User: kate.symes@enron.com 10437 tokens found
+User: kay.mann@enron.com 20227 tokens found
+User: kimberly.watson@enron.com 11394 tokens found
+User: louise.kitchen@enron.com 13877 tokens found
+User: mark.taylor@enron.com 24380 tokens found
+User: matthew.lenhart@enron.com 14929 tokens found
+User: michelle.cash@enron.com 14522 tokens found
+User: outlook.team@enron.com 1981 tokens found
+User: pete.davis@enron.com 3619 tokens found
+User: richard.sanders@enron.com 16262 tokens found
+User: sally.beck@enron.com 13971 tokens found
+User: sara.shackleton@enron.com 22354 tokens found
+User: steven.kean@enron.com 22726 tokens found
+User: susan.scott@enron.com 16048 tokens found
+User: tana.jones@enron.com 17554 tokens found
+User: vince.kaminski@enron.com 31930 tokens found
+Maximum Keys: 32780
+Minimum Keys: 1981
+Average Keys: 16045
+Total Number of Terms: 144360

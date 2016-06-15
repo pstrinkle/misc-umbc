@@ -1,0 +1,18 @@
+
+Project 5 Design
+
+Read in Dictionary and Postings files
+Make document vectors for each document
+
+Then make a centroid for each document vector
+The centroid has the current vector and the sum vector and the length of the current vector
+
+Each Centroid's Document Vector will be represented as a dictionary keyed on the term.
+
+So compare two matrices you just grab the keys from one and dot product against the other.
+
+This stuff needs to go into a table or a list...
+
+Whenever two things are merged they are both pulled from the table and a new entry is made...
+Then all comparisons against either of the two involved must be recalculated.
+

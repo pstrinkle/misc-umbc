@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/!svn/ver/58/trunk/src/proj
+END
+MultiLineTextInputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/28/trunk/src/proj/MultiLineTextInputFormat.java
+END
+MaxMinAvgReducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/58/trunk/src/proj/MaxMinAvgReducer.java
+END
+AvgMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/28/trunk/src/proj/AvgMapper.java
+END
+MedianMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/32/trunk/src/proj/MedianMapper.java
+END
+MaxMinReducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/28/trunk/src/proj/MaxMinReducer.java
+END
+MultiLineRecordReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/28/trunk/src/proj/MultiLineRecordReader.java
+END
+AvgReducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/28/trunk/src/proj/AvgReducer.java
+END
+MedianReducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/32/trunk/src/proj/MedianReducer.java
+END
+MedianCalculator.java
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/32/trunk/src/proj/MedianCalculator.java
+END
+MinMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/28/trunk/src/proj/MinMapper.java
+END
+ProjectOne.java
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/50/trunk/src/proj/ProjectOne.java
+END
+MaxMinAvgMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/57/trunk/src/proj/MaxMinAvgMapper.java
+END
+MinReducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/28/trunk/src/proj/MinReducer.java
+END
+MaxMinMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/28/trunk/src/proj/MaxMinMapper.java
+END

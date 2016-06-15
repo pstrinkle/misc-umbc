@@ -1,0 +1,5 @@
+ssh bluegrit.cs.umbc.edu
+ssh b34 (34-41)
+(shell 1)compile at one shell  mpicc -o Hello Hello.c
+(shell 2)run: Mpd --ncpus=4
+(shell 1)mpirun -np 4 Hello

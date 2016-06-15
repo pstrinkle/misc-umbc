@@ -1,0 +1,164 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fcharset0 Arial;}{\f1\fswiss\fcharset0 Helvetica;}}
+{\*\generator Msftedit 5.41.21.2508;}\viewkind4\uc1\pard\f0\fs20 Intel IA32 SSE.\par
+\par
+\f1\fs24 There is a quad unroll loop.\par
+\par
+Here is a breakdown of the triples in the single loop and their counts.\par
+.nb302_single_loop: (36)\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab addss\tab 1\par
+\pard\tab xorps\tab 2\par
+\tab movss\tab 2\par
+\tab addps\tab 3\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab mulps 6\par
+\tab subps 6\par
+\pard\tab movaps 16\f0\fs20\par
+\par
+\f1\fs24 .nb302_single_loop:\par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab xorps xmm3, xmm3\par
+\tab xorps xmm4, xmm4\par
+\pard\tab xorps xmm5, xmm5\par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab movss xmm3, [esi + eax*4]\tab\tab ;# jxO  -  -  -\par
+\tab movss xmm4, [esi + eax*4 + 4]\tab\tab ;# jyO  -  -  -\par
+\pard\tab movss xmm5, [esi +eax*4 + 8]\tab\tab ;# jzO  -  -  -  \par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab movaps  xmm0, [esp + nb302_ixO]     \par
+\tab movaps  xmm1, [esp + nb302_iyO]\par
+\pard\tab movaps  xmm2, [esp + nb302_izO]\tab\par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab movaps [esp + nb302_jxO], xmm3\par
+\tab movaps [esp + nb302_jyO], xmm4\par
+\pard\tab movaps [esp + nb302_jzO], xmm5\par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab subps  xmm0, xmm3\par
+\tab subps  xmm1, xmm4\par
+\pard\tab subps  xmm2, xmm5\par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab movaps [esp + nb302_dxOO], xmm0\par
+\tab movaps [esp + nb302_dyOO], xmm1\par
+\pard\tab movaps [esp + nb302_dzOO], xmm2\par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab mulps xmm0, xmm0\par
+\tab mulps xmm1, xmm1\par
+\pard\tab mulps xmm2, xmm2\par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab mulps   xmm0, [esp + nb302_dxOO]\par
+\tab mulps   xmm1, [esp + nb302_dyOO]\par
+\pard\tab mulps   xmm2, [esp + nb302_dzOO]\par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab xorps   xmm3, xmm3\par
+\tab xorps   xmm4, xmm4\par
+\pard\tab xorps   xmm5, xmm5\par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab subps   xmm3, xmm0\par
+\tab subps   xmm4, xmm1\par
+\pard\tab subps   xmm5, xmm2\par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab movaps  [esp + nb302_fjxO], xmm3\par
+\tab movaps  [esp + nb302_fjyO], xmm4\par
+\pard\tab movaps  [esp + nb302_fjzO], xmm5\par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab addps   xmm0, [esp + nb302_fixO]\par
+\tab addps   xmm1, [esp + nb302_fiyO]\par
+\pard\tab addps   xmm2, [esp + nb302_fizO]\par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab movaps  [esp + nb302_fixO], xmm0\par
+\tab movaps  [esp + nb302_fiyO], xmm1\par
+\pard\tab movaps  [esp + nb302_fizO], xmm2\par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab movaps  xmm0, [esp + nb302_ixH1]\par
+\tab movaps  xmm1, [esp + nb302_iyH1]\par
+\pard\tab movaps  xmm2, [esp + nb302_izH1]\tab\par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab movaps  xmm3, [esp + nb302_ixH2] \par
+\tab movaps  xmm4, [esp + nb302_iyH2] \par
+\pard\tab movaps  xmm5, [esp + nb302_izH2] \par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab subps   xmm0, [esp + nb302_jxO]\par
+\tab subps   xmm1, [esp + nb302_jyO]\par
+\tab subps   xmm2, [esp + nb302_jzO]\par
+\par
+\tab subps   xmm3, [esp + nb302_jxO]\par
+\tab subps   xmm4, [esp + nb302_jyO]\par
+\tab subps   xmm5, [esp + nb302_jzO]\par
+\par
+\tab movaps [esp + nb302_dxH1O], xmm0\par
+\tab movaps [esp + nb302_dyH1O], xmm1\par
+\tab movaps [esp + nb302_dzH1O], xmm2\par
+\par
+\tab movaps [esp + nb302_dxH2O], xmm3\par
+\tab movaps [esp + nb302_dyH2O], xmm4\par
+\pard\tab movaps [esp + nb302_dzH2O], xmm5\par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab mulps xmm0, xmm0\par
+\tab mulps xmm1, xmm1\par
+\pard\tab mulps xmm2, xmm2\par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab mulps xmm3, xmm3\par
+\tab mulps xmm4, xmm4\par
+\pard\tab mulps xmm5, xmm5\par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab mulps   xmm0, [esp + nb302_dxH1O]\par
+\tab mulps   xmm1, [esp + nb302_dyH1O]\par
+\pard\tab mulps   xmm2, [esp + nb302_dzH1O]\par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab movaps  xmm3, [esp + nb302_fjxO]\par
+\tab movaps  xmm4, [esp + nb302_fjyO]\par
+\pard\tab movaps  xmm5, [esp + nb302_fjzO]\par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab subps   xmm3, xmm0\par
+\tab subps   xmm4, xmm1\par
+\pard\tab subps   xmm5, xmm2\par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab movaps  [esp + nb302_fjxO], xmm3\par
+\tab movaps  [esp + nb302_fjyO], xmm4\par
+\pard\tab movaps  [esp + nb302_fjzO], xmm5\par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab addps   xmm0, [esp + nb302_fixH1]\par
+\tab addps   xmm1, [esp + nb302_fiyH1]\par
+\pard\tab addps   xmm2, [esp + nb302_fizH1]\par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab movaps  [esp + nb302_fixH1], xmm0\par
+\tab movaps  [esp + nb302_fiyH1], xmm1\par
+\pard\tab movaps  [esp + nb302_fizH1], xmm2\par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab mulps   xmm0, [esp + nb302_dxH2O]\par
+\tab mulps   xmm1, [esp + nb302_dyH2O]\par
+\tab mulps   xmm2, [esp + nb302_dzH2O]\par
+\par
+\tab movaps  xmm3, [esp + nb302_fjxO]\par
+\tab movaps  xmm4, [esp + nb302_fjyO]\par
+\pard\tab movaps  xmm5, [esp + nb302_fjzO]\par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab subps   xmm3, xmm0\par
+\tab subps   xmm4, xmm1\par
+\pard\tab subps   xmm5, xmm2\par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab movaps  [esp + nb302_fjxO], xmm3\par
+\tab movaps  [esp + nb302_fjyO], xmm4\par
+\tab movaps  [esp + nb302_fjzO], xmm5\par
+\par
+\tab addps   xmm0, [esp + nb302_fixH2]\par
+\tab addps   xmm1, [esp + nb302_fiyH2]\par
+\tab addps   xmm2, [esp + nb302_fizH2]\par
+\par
+\tab movaps  [esp + nb302_fixH2], xmm0\par
+\tab movaps  [esp + nb302_fiyH2], xmm1\par
+\pard\tab movaps  [esp + nb302_fizH2], xmm2\par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab movaps  xmm3, [esp + nb302_fjxO]\par
+\tab movaps  xmm4, [esp + nb302_fjyO]\par
+\pard\tab movaps  xmm5, [esp + nb302_fjzO]\par
+\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tab addss   xmm5, [esi + eax*4 + 8]\par
+\tab addss   xmm6, [esi + eax*4 + 20]\par
+\tab addss   xmm7, [esi + eax*4 + 32]\par
+\par
+\tab movss   [esi + eax*4 + 8], xmm5\par
+\tab movss   [esi + eax*4 + 20], xmm6\par
+\pard\tab movss   [esi + eax*4 + 32], xmm7\f0\fs20\par
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\f1\fs24\par
+\pard\f0\fs20\par
+}
+ 

@@ -1,0 +1,914 @@
+{VERSION 5 0 "Linux" "5.0" }
+{USTYLETAB {PSTYLE "Heading 4" -1 20 1 {CSTYLE "" -1 -1 "Times" 1 10 
+0 0 0 1 1 1 2 2 2 2 1 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "Or
+dered List 5" -1 200 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2
+ 2 1 0 0 1 }1 1 0 0 3 3 2 144 2 0 2 2 -1 1 }{PSTYLE "Ordered List 1" 
+-1 201 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 0 0 1 }1 
+1 0 0 3 3 2 0 2 0 2 2 -1 1 }{PSTYLE "Text Output" -1 2 1 {CSTYLE "" -1
+ -1 "Courier" 1 10 0 0 255 1 2 2 2 2 2 1 1 0 0 1 }1 1 0 0 0 0 2 0 2 0 
+2 2 -1 1 }{PSTYLE "Bullet Item" -1 15 1 {CSTYLE "" -1 -1 "Times" 1 12 
+0 0 0 1 2 2 2 2 2 2 1 0 0 1 }1 1 0 0 3 3 2 0 2 0 2 2 -1 1 }{PSTYLE "Le
+ft Justified Maple Output" -1 12 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0
+ 1 2 2 2 2 2 2 1 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "Help" 
+-1 10 1 {CSTYLE "" -1 -1 "Courier" 1 9 0 0 255 1 2 2 2 2 2 1 1 0 0 1 }
+1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "Author" -1 19 1 {CSTYLE "" -1 
+-1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 0 0 1 }3 1 0 0 8 8 2 0 2 0 2 2 
+-1 1 }{PSTYLE "Diagnostic" -1 9 1 {CSTYLE "" -1 -1 "Courier" 1 10 64 
+128 64 1 2 2 2 2 2 1 1 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "H
+eading 2" -1 4 1 {CSTYLE "" -1 -1 "Times" 1 14 0 0 0 1 2 1 2 2 2 2 1 0
+ 0 1 }1 1 0 0 8 2 2 0 2 0 2 2 -1 1 }{PSTYLE "Ordered List 3" -1 202 1 
+{CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 0 0 1 }1 1 0 0 3 3
+ 2 72 2 0 2 2 -1 1 }{PSTYLE "Maple Plot" -1 13 1 {CSTYLE "" -1 -1 "Tim
+es" 1 12 0 0 0 1 2 2 2 2 2 2 1 0 0 1 }3 1 0 0 0 0 2 0 2 0 2 2 -1 1 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 
+2 2 1 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "Annotation Title" 
+-1 203 1 {CSTYLE "" -1 -1 "Times" 1 18 0 0 0 1 2 1 2 2 2 2 1 0 0 1 }3 
+1 0 0 12 12 2 0 2 0 2 2 -1 1 }{PSTYLE "Dash Item" -1 16 1 {CSTYLE "" 
+-1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 0 0 1 }1 1 0 0 3 3 2 0 2 0 2 
+2 -1 1 }{PSTYLE "Heading 3" -1 5 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0
+ 1 1 1 2 2 2 2 1 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "Ordered
+ List 4" -1 204 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 
+0 0 1 }1 1 0 0 3 3 2 108 2 0 2 2 -1 1 }{PSTYLE "Maple Output" -1 11 1 
+{CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 0 0 1 }3 1 0 0 0 0
+ 2 0 2 0 2 2 -1 1 }{PSTYLE "List Item" -1 14 1 {CSTYLE "" -1 -1 "Times
+" 1 12 0 0 0 1 2 2 2 2 2 2 1 0 0 1 }1 1 0 0 3 3 2 0 2 0 2 2 -1 1 }
+{PSTYLE "Line Printed Output" -1 6 1 {CSTYLE "" -1 -1 "Courier" 1 10 0
+ 0 255 1 2 2 2 2 2 1 1 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "F
+ixed Width" -1 17 1 {CSTYLE "" -1 -1 "Courier" 1 10 0 0 0 1 2 2 2 2 2 
+2 1 0 0 1 }3 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "Warning" -1 7 1 
+{CSTYLE "" -1 -1 "Courier" 1 10 0 0 255 1 2 2 2 2 2 1 1 0 0 1 }1 1 0 0
+ 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "Error" -1 8 1 {CSTYLE "" -1 -1 "Courie
+r" 1 10 255 0 255 1 2 2 2 2 2 1 1 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 
+}{PSTYLE "Heading 1" -1 3 1 {CSTYLE "" -1 -1 "Times" 1 18 0 0 0 1 2 1 
+2 2 2 2 1 0 0 1 }1 1 0 0 8 4 2 0 2 0 2 2 -1 1 }{PSTYLE "Title" -1 18 1
+ {CSTYLE "" -1 -1 "Times" 1 18 0 0 0 1 2 1 1 2 2 2 1 0 0 1 }3 1 0 0 12
+ 12 2 0 2 0 2 2 -1 1 }{PSTYLE "Ordered List 2" -1 205 1 {CSTYLE "" -1 
+-1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 0 0 1 }1 1 0 0 3 3 2 36 2 0 2 2 
+-1 1 }{CSTYLE "Help Variable" -1 25 "Courier" 1 12 0 0 0 1 2 2 2 2 2 2
+ 0 0 0 1 }{CSTYLE "Text" -1 200 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 0 0
+ 1 }{CSTYLE "Help Bold" -1 39 "Times" 1 12 0 0 0 1 2 1 2 2 2 2 0 0 0 1
+ }{CSTYLE "Page Number" -1 33 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 0 0 1
+ }{CSTYLE "2D Math Italic Small" -1 201 "Times" 1 1 0 0 0 1 1 2 2 2 2 
+2 0 0 0 1 }{CSTYLE "Help Nonterminal" -1 24 "Courier" 1 12 0 0 0 1 2 1
+ 2 2 2 2 0 0 0 1 }{CSTYLE "Default" -1 38 "Times" 1 12 0 0 0 1 2 2 2 2
+ 2 2 0 0 0 1 }{CSTYLE "Maple Comment" -1 21 "Courier" 1 12 0 0 0 1 2 1
+ 2 2 2 2 0 0 0 1 }{CSTYLE "Maple Input" -1 0 "Courier" 1 12 255 0 0 1 
+2 1 2 2 1 2 0 0 0 1 }{CSTYLE "2D Math Small" -1 7 "Times" 1 1 0 0 0 1 
+2 2 2 2 2 2 0 0 0 1 }{CSTYLE "2D Inert Output" -1 202 "Times" 1 12 144
+ 144 144 1 2 2 2 2 1 2 0 0 0 1 }{CSTYLE "Help Fixed" -1 23 "Courier" 1
+ 10 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }{CSTYLE "Popup" -1 31 "Times" 1 12 0 
+128 128 1 1 2 1 2 2 2 0 0 0 1 }{CSTYLE "Plot Title" -1 27 "Times" 1 10
+ 0 0 0 1 2 1 2 2 2 2 0 0 0 1 }{CSTYLE "2D Input" -1 19 "Times" 1 12 
+255 0 0 1 2 2 2 2 1 2 0 0 0 1 }{CSTYLE "Copyright" -1 34 "Times" 1 10 
+0 0 0 1 2 2 2 2 2 2 0 0 0 1 }{CSTYLE "Maple Input Placeholder" -1 203 
+"Courier" 1 12 200 0 200 1 2 1 2 2 1 2 0 0 0 1 }{CSTYLE "2D Math Bold \+
+Small" -1 10 "Times" 1 1 0 0 0 1 2 1 2 2 2 2 0 0 0 1 }{CSTYLE "2D Math
+" -1 2 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }{CSTYLE "Annotation T
+ext" -1 204 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }{CSTYLE "Help No
+tes" -1 37 "Times" 1 12 0 0 0 1 2 1 2 2 2 2 0 0 0 1 }{CSTYLE "Help Und
+erlined Bold" -1 41 "Times" 1 12 0 0 0 1 1 1 2 2 2 2 0 0 0 1 }{CSTYLE 
+"Hyperlink" -1 17 "Times" 1 12 0 128 128 1 2 2 1 2 2 2 0 0 0 1 }
+{CSTYLE "2D Math Symbol 2" -1 16 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 0 
+0 1 }{CSTYLE "Equation Label" -1 205 "Times" 1 12 0 0 0 1 2 1 2 2 2 2 
+0 0 0 1 }{CSTYLE "Plot Text" -1 28 "Times" 1 8 0 0 0 1 2 2 2 2 2 2 0 0
+ 0 1 }{CSTYLE "2D Math Italic Small201" -1 206 "Times" 1 1 0 0 0 1 1 2
+ 2 2 2 2 0 0 0 1 }{CSTYLE "Help Italic" -1 42 "Times" 1 12 0 0 0 1 1 2
+ 2 2 2 2 0 0 0 1 }{CSTYLE "Help Heading" -1 26 "Times" 1 14 0 0 0 1 2 
+1 2 2 2 2 0 0 0 1 }{CSTYLE "Output Labels" -1 29 "Times" 1 8 0 0 0 1 2
+ 2 2 2 2 2 0 0 0 1 }{CSTYLE "Help Normal" -1 30 "Times" 1 12 0 0 0 1 2
+ 2 2 2 2 2 0 0 0 1 }{CSTYLE "2D Comment" -1 18 "Times" 1 12 0 0 0 1 2 
+2 2 2 2 2 0 0 0 1 }{CSTYLE "Help Maple Name" -1 35 "Times" 1 12 104 64
+ 92 1 2 1 2 2 2 2 0 0 0 1 }{CSTYLE "2D Output" -1 20 "Times" 1 12 0 0 
+255 1 2 2 2 2 2 2 0 0 0 1 }{CSTYLE "Dictionary Hyperlink" -1 45 "Times
+" 1 12 147 0 15 1 2 2 1 2 2 2 0 0 0 1 }{CSTYLE "Help Emphasized" -1 22
+ "Times" 1 12 0 0 0 1 1 2 2 2 2 2 0 0 0 1 }{CSTYLE "Help Italic Bold" 
+-1 40 "Times" 1 12 0 0 0 1 1 2 2 2 2 2 0 0 0 1 }{CSTYLE "LaTeX" -1 32 
+"Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }{CSTYLE "Help Menus" -1 36 "
+Times" 1 12 0 0 0 1 2 1 2 2 2 2 0 0 0 1 }{CSTYLE "Prompt" -1 1 "Courie
+r" 1 12 0 0 0 1 2 1 2 2 2 2 0 0 0 1 }{CSTYLE "Help Underlined" -1 44 "
+Times" 1 12 0 0 0 1 2 2 1 2 2 2 0 0 0 1 }{CSTYLE "Help Underlined Ital
+ic" -1 43 "Times" 1 12 0 0 0 1 1 2 1 2 2 2 0 0 0 1 }{CSTYLE "2D Math B
+old" -1 5 "Times" 1 12 0 0 0 1 2 1 2 2 2 2 0 0 0 1 }{CSTYLE "2D Math I
+talic" -1 3 "Times" 1 12 0 0 0 1 1 2 2 2 2 2 0 0 0 1 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 27 "with(linalg):  with
+(group):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 14 "kr:=proc(A,B)\n
+" }{MPLTEXT 1 0 67 "   # This procedure computes the Kronecker product
+ of two matrices\n" }{MPLTEXT 1 0 25 "   local mm,nn,ans,ans1;\n" }
+{MPLTEXT 1 0 12 "   ans:=[];\n" }{MPLTEXT 1 0 33 "   for mm from 1 to \+
+rowdim(A) do\n" }{MPLTEXT 1 0 36 "      for nn from 1 to coldim(A) do
+\n" }{MPLTEXT 1 0 50 "         ans:=[op(ans), scalarmul(B, A[mm,nn] )]
+;\n" }{MPLTEXT 1 0 10 "      od;\n" }{MPLTEXT 1 0 7 "   od;\n" }
+{MPLTEXT 1 0 49 "   ans1:=blockmatrix(rowdim(A),coldim(A), ans );\n" }
+{MPLTEXT 1 0 24 "   RETURN(evalm(ans1));\n" }{MPLTEXT 1 0 4 "end:" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 21 "sigma||0:=diag(1,1):\n" }
+{MPLTEXT 1 0 33 "sigma||1:=matrix(2,2,[0,1,1,0]):\n" }{MPLTEXT 1 0 34 
+"sigma||2:=matrix(2,2,[0,-I,I,0]):\n" }{MPLTEXT 1 0 34 "sigma||3:=matr
+ix(2,2,[1,0,0,-1]):\n" }{MPLTEXT 1 0 1 "#" }}}{EXCHG {PARA 0 "> " 0 ""
+ {MPLTEXT 1 0 44 "for i from 0 to 3 do   for j from 0 to 3 do\n" }
+{MPLTEXT 1 0 39 "   SS||(i+4*j):=kr(sigma||i, sigma||j)\n" }{MPLTEXT 
+1 0 8 "od; od;\n" }{MPLTEXT 1 0 1 "#" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 21 "for i from 0 to 3 do\n" }{MPLTEXT 1 0 28 "   SSS||i:=
+evalm(sigma||i);\n" }{MPLTEXT 1 0 4 "od:\n" }{MPLTEXT 1 0 1 "#" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 44 "for i from 0 to 3 do   for j
+ from 0 to 3 do\n" }{MPLTEXT 1 0 34 "   SSS||i||j:=evalm(SS||(i+4*j));
+\n" }{MPLTEXT 1 0 9 "od;   od;" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 45 "for i from 0 to 3 do   for j from 0 to 3 do \n" }{MPLTEXT 1 0 
+24 "   for k from 0 to 3 do\n" }{MPLTEXT 1 0 47 "      SSS||i||j||k:=k
+r(SS||(i+4*j), sigma||k):\n" }{MPLTEXT 1 0 7 "   od;\n" }{MPLTEXT 1 0 
+10 "od;   od;\n" }{MPLTEXT 1 0 1 "#" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 44 "for i from 0 to 3 do   for j from 0 to 3 do\n" }
+{MPLTEXT 1 0 15 "   ij:=i+4*j; \n" }{MPLTEXT 1 0 46 "   for k from 0 t
+o 3 do  for m from 0 to 3 do\n" }{MPLTEXT 1 0 50 "      SSS||i||j||k||
+m:=kr(SS||(ij), SS||(k+4*m)):\n" }{MPLTEXT 1 0 13 "   od;   od;\n" }
+{MPLTEXT 1 0 10 "od;   od;\n" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 48 "L3x3||0:=matrix(3,3,[1,0,0,   0,1,0,   0,0,1]):\n" }{MPLTEXT 1 
+0 50 "L3x3||1:=matrix(3,3, [0,0,0,   0,0,1,   0,-1,0]):\n" }{MPLTEXT 
+1 0 50 "L3x3||2:=matrix(3,3, [0,0,-1,   0,0,0,   1,0,0]):\n" }{MPLTEXT
+ 1 0 50 "L3x3||3:=matrix(3,3, [0,1,0,   -1,0,0,   0,0,0]):\n" }
+{MPLTEXT 1 0 21 "for i from 0 to 3 do\n" }{MPLTEXT 1 0 27 "   LLL||i:=
+evalm(L3x3||i);\n" }{MPLTEXT 1 0 4 "od:\n" }{MPLTEXT 1 0 44 "for i fro
+m 0 to 3 do   for j from 0 to 3 do\n" }{MPLTEXT 1 0 34 "   LLL||i||j:=
+kr(LLL||i, LLL||j);\n" }{MPLTEXT 1 0 10 "od;   od;\n" }{MPLTEXT 1 0 1 
+"#" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 63 "LL||1:=matrix(4,4,[0,
+1,0,0,  -1,0,0,0,   0,0,0,0,   0,0,0,0]):\n" }{MPLTEXT 1 0 63 "LL||2:=
+matrix(4,4,[0,0,1,0,  0,0,0,0,   -1,0,0,0,   0,0,0,0]):\n" }{MPLTEXT 
+1 0 63 "LL||3:=matrix(4,4,[0,0,0,1,  0,0,0,0,   0,0,0,0,   -1,0,0,0]):
+\n" }{MPLTEXT 1 0 63 "LL||4:=matrix(4,4,[0,0,0,0,  0,0,1,0,   0,-1,0,0
+,   0,0,0,0]):\n" }{MPLTEXT 1 0 63 "LL||5:=matrix(4,4,[0,0,0,0,  0,0,0
+,1,   0,0,0,0,   0,-1,0,0]):\n" }{MPLTEXT 1 0 63 "LL||6:=matrix(4,4,[0
+,0,0,0,  0,0,0,0,   0,0,0,1,   0,0,-1,0]):\n" }{MPLTEXT 1 0 1 "#" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 27 "ket||0:=matrix(2,1,[1,0]):\n
+" }{MPLTEXT 1 0 27 "ket||1:=matrix(2,1,[0,1]):\n" }{MPLTEXT 1 0 2 "#\n
+" }{MPLTEXT 1 0 44 "for i from 0 to 1 do   for j from 0 to 1 do\n" }
+{MPLTEXT 1 0 33 "   ket||i||j:=kr(ket||i,ket||j);\n" }{MPLTEXT 1 0 10 
+"od;   od;\n" }{MPLTEXT 1 0 2 "#\n" }{MPLTEXT 1 0 44 "for i from 0 to \+
+1 do   for j from 0 to 1 do\n" }{MPLTEXT 1 0 24 "   for k from 0 to 1 \+
+do\n" }{MPLTEXT 1 0 43 "      ket||i||j||k:=kr(ket||i||j, ket||k);\n" 
+}{MPLTEXT 1 0 7 "   od;\n" }{MPLTEXT 1 0 10 "od;   od;\n" }{MPLTEXT 1 
+0 2 "#\n" }{MPLTEXT 1 0 70 "for i from 0 to 1 do   for j from 0 to 1 d
+o   for k from 0 to 1 do   \n" }{MPLTEXT 1 0 24 "   for m from 0 to 1 \+
+do\n" }{MPLTEXT 1 0 49 "      ket||i||j||k||m:=kr(ket||i||j||k, ket||m
+);\n" }{MPLTEXT 1 0 7 "   od;\n" }{MPLTEXT 1 0 14 "od;   od;  od;" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 56 "Ket_To_Rho:=v->evalm(v &* ma
+p(conjugate, transpose(v))):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 65 "Bell||0||0:=evalm( 1/sqrt(2) * evalm( ket||0||0 + ket||1||1 ) ):
+\n" }{MPLTEXT 1 0 65 "Bell||0||1:=evalm( 1/sqrt(2) * evalm( ket||0||1 \+
++ ket||1||0 ) ):\n" }{MPLTEXT 1 0 65 "Bell||1||0:=evalm( 1/sqrt(2) * e
+valm( ket||0||1 - ket||1||0 ) ):\n" }{MPLTEXT 1 0 65 "Bell||1||1:=eval
+m( 1/sqrt(2) * evalm( ket||0||0 - ket||1||1 ) ):\n" }{MPLTEXT 1 0 2 "#
+\n" }{MPLTEXT 1 0 74 "Bell||0||0||0:=evalm( 1/sqrt(2) * evalm( ket||0|
+|0||0 + ket||1||1||1 ) ):\n" }{MPLTEXT 1 0 74 "Bell||0||0||1:=evalm( 1
+/sqrt(2) * evalm( ket||0||0||1 + ket||1||1||0 ) ):\n" }{MPLTEXT 1 0 
+74 "Bell||0||1||0:=evalm( 1/sqrt(2) * evalm( ket||0||1||0 + ket||1||0|
+|1 ) ):\n" }{MPLTEXT 1 0 74 "Bell||0||1||1:=evalm( 1/sqrt(2) * evalm( \+
+ket||1||0||0 - ket||0||1||1 ) ):\n" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 
+0 74 "Bell||1||0||0:=evalm( 1/sqrt(2) * evalm( ket||1||0||0 + ket||0||
+1||1 ) ):\n" }{MPLTEXT 1 0 74 "Bell||1||0||1:=evalm( 1/sqrt(2) * evalm
+( ket||0||1||0 - ket||1||0||1 ) ):\n" }{MPLTEXT 1 0 74 "Bell||1||1||0:
+=evalm( 1/sqrt(2) * evalm( ket||0||0||1 - ket||1||1||0 ) ):\n" }
+{MPLTEXT 1 0 74 "Bell||1||1||1:=evalm( 1/sqrt(2) * evalm( ket||0||0||0
+ - ket||1||1||1 ) ):\n" }{MPLTEXT 1 0 2 "#\n" }{MPLTEXT 1 0 98 "Sam||0
+||0||0:=evalm( 1/2 * evalm(  ket||1||1||0 + ket||1||0||1 + ket||0||1||
+1 - ket||0||0||0 ) ):\n" }{MPLTEXT 1 0 98 "Sam||0||0||1:=evalm( 1/2 * \+
+evalm(  ket||1||0||0 + ket||0||1||0 - ket||0||0||1 + ket||1||1||1 ) ):
+\n" }{MPLTEXT 1 0 98 "Sam||0||1||0:=evalm( 1/2 * evalm(  ket||1||0||0 \+
+- ket||0||1||0 + ket||0||0||1 + ket||1||1||1 ) ):\n" }{MPLTEXT 1 0 98 
+"Sam||0||1||1:=evalm( 1/2 * evalm(  ket||1||1||0 + ket||1||0||1 - ket|
+|0||1||1 + ket||0||0||0 ) ):\n" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 0 98 
+"Sam||1||0||0:=evalm( 1/2 * evalm( -ket||1||0||0 + ket||0||1||0 + ket|
+|0||0||1 + ket||1||1||1 ) ):\n" }{MPLTEXT 1 0 98 "Sam||1||0||1:=evalm(
+ 1/2 * evalm(  ket||1||1||0 - ket||1||0||1 + ket||0||1||1 + ket||0||0|
+|0 ) ):\n" }{MPLTEXT 1 0 98 "Sam||1||1||0:=evalm( 1/2 * evalm( -ket||1
+||1||0 + ket||1||0||1 + ket||0||1||1 + ket||0||0||0 ) ):\n" }{MPLTEXT 
+1 0 97 "Sam||1||1||1:=evalm( 1/2 * evalm(  ket||1||0||0 + ket||0||1||0
+ + ket||0||0||1 - ket||1||1||1 ) ):" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 21 "Bell4:=proc(a,b,c,d)\n" }{MPLTEXT 1 0 84 "   # Bell4(
+a,b,c,d) = ( ket.(1-a).(1-b).(1-c).(1-d) + ((-1)^a)*ket.a.b.c.d)/sqrt(
+2)\n" }{MPLTEXT 1 0 37 "   # where a,b,c,d are elts of \{0,1\}\n" }
+{MPLTEXT 1 0 5 "   #\n" }{MPLTEXT 1 0 19 "   local  BellKet;\n" }
+{MPLTEXT 1 0 5 "   #\n" }{MPLTEXT 1 0 55 "   BellKet:=evalm( ket||(1-a
+)||(1-b)||(1-c)||(1-d)  );\n" }{MPLTEXT 1 0 17 "   if (a=0) then\n" }
+{MPLTEXT 1 0 51 "      BellKet:=evalm( BellKet + ket||a||b||c||d );\n"
+ }{MPLTEXT 1 0 8 "   else\n" }{MPLTEXT 1 0 51 "      BellKet:=evalm( B
+ellKet - ket||a||b||c||d );\n" }{MPLTEXT 1 0 7 "   fi;\n" }{MPLTEXT 1 
+0 44 "   BellKet:=evalm( (1/sqrt(2)) * BellKet );\n" }{MPLTEXT 1 0 27 
+"   RETURN(evalm(BellKet));\n" }{MPLTEXT 1 0 5 "end:\n" }{MPLTEXT 1 0 
+45 "for a from 0 to 1 do    for b from 0 to 1 do\n" }{MPLTEXT 1 0 48 "
+   for c from 0 to 1 do    for d from 0 to 1 do\n" }{MPLTEXT 1 0 40 " \+
+     Bell||a||b||c||d:=Bell4(a,b,c,d);\n" }{MPLTEXT 1 0 13 "   od;   o
+d;\n" }{MPLTEXT 1 0 16 "      od;   od;\n" }{MPLTEXT 1 0 31 "a:='a':b:
+='b':c:='c':d:='d':   " }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 12 "Q
+F:=proc(U)\n" }{MPLTEXT 1 0 63 "   # This procedure computes a unitary
+ matrix Q whose rows are\n" }{MPLTEXT 1 0 54 "   # are the unit eigenv
+ectors of a unitary matrix  U\n" }{MPLTEXT 1 0 78 "   local  Dim_U,Lis
+t,n,nu,Q,j,temp_j,n_j,List_j,List_jj,i,Vec_i,Norm_Vec_i,k;\n" }
+{MPLTEXT 1 0 5 "    \n" }{MPLTEXT 1 0 21 "   Dim_U:=rowdim(U):\n" }
+{MPLTEXT 1 0 29 "   List:=[eigenvects(U)];   \n" }{MPLTEXT 1 0 18 "   \+
+n:=nops(List);\n" }{MPLTEXT 1 0 10 "   nu:=1;\n" }{MPLTEXT 1 0 2 " \n"
+ }{MPLTEXT 1 0 27 "   Q:=matrix(Dim_U,Dim_U);\n" }{MPLTEXT 1 0 24 "   \+
+for j from 1 to n do\n" }{MPLTEXT 1 0 27 "      temp_j:=op(j,List); \n
+" }{MPLTEXT 1 0 26 "      n_j:=op(2,temp_j); \n" }{MPLTEXT 1 0 44 "   \+
+   List_j:= convert(op(3,temp_j), list);\n" }{MPLTEXT 1 0 36 "      Li
+st_jj:=GramSchmidt(List_j);\n" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 0 29 "
+      for i from 1 to n_j do\n" }{MPLTEXT 1 0 51 "         Vec_i:=conv
+ert( op(i, List_jj), vector );\n" }{MPLTEXT 1 0 45 "            Norm_V
+ec_i:=norm(eval(Vec_i),2);\n" }{MPLTEXT 1 0 3 "  \n" }{MPLTEXT 1 0 36 
+"         for k from 1 to Dim_U do  \n" }{MPLTEXT 1 0 43 "            \+
+Q[nu,k]:=Vec_i[k]/Norm_Vec_i; \n" }{MPLTEXT 1 0 14 "         od; \n" }
+{MPLTEXT 1 0 19 "         nu:=nu+1;\n" }{MPLTEXT 1 0 10 "      od;\n" 
+}{MPLTEXT 1 0 8 "   od; \n" }{MPLTEXT 1 0 26 "   Q:=map(radnormal, Q);
+ \n" }{MPLTEXT 1 0 20 "   RETURN(evalm(Q))\n" }{MPLTEXT 1 0 4 "end:" }
+}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 14 "Logz:=proc(z)\n" }{MPLTEXT
+ 1 0 21 "   local  zpolar;   \n" }{MPLTEXT 1 0 17 "   if (z=0) then\n"
+ }{MPLTEXT 1 0 17 "      RETURN(0);\n" }{MPLTEXT 1 0 8 "   else\n" }
+{MPLTEXT 1 0 32 "      zpolar:=convert(z,polar);\n" }{MPLTEXT 1 0 55 "
+      RETURN( (I*op(2,zpolar)) + ln(op(1,zpolar))   );\n" }{MPLTEXT 1 
+0 7 "   fi;\n" }{MPLTEXT 1 0 6 "end:  " }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 14 "LogU:=proc(U)\n" }{MPLTEXT 1 0 65 "   # This procedur
+e computes the natural log of a unitary matrix\n" }{MPLTEXT 1 0 26 "  \+
+ local  Q,IQ,DU,LDU,LU;\n" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 0 13 "   Q
+:=QF(U);\n" }{MPLTEXT 1 0 36 "   IQ:=map(conjugate,transpose(Q));\n" }
+{MPLTEXT 1 0 44 "   DU:=map(radnormal,evalm( Q &* U &* IQ));\n" }
+{MPLTEXT 1 0 23 "   LDU:=map(Logz, DU);\n" }{MPLTEXT 1 0 47 "   LU:=ma
+p(radnormal, evalm( IQ &* LDU &* Q));\n" }{MPLTEXT 1 0 22 "   RETURN(e
+valm(LU));\n" }{MPLTEXT 1 0 4 "end:" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 20 "Singer2Log:=proc(W)\n" }{MPLTEXT 1 0 46 "   # Compute
+s multiple valued log of matrix W\n" }{MPLTEXT 1 0 35 "   local LW,UQ,
+IUQ,DD,n1,n2,n3,n4;\n" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 0 16 "   LW:=L
+ogU(W):\n" }{MPLTEXT 1 0 14 "   UQ:=QF(W):\n" }{MPLTEXT 1 0 38 "   IUQ
+:=map(conjugate,transpose(UQ)):\n" }{MPLTEXT 1 0 63 "   DD:=map(radnor
+mal, evalm( IUQ &* diag(n1,n2,n3,n4) &* UQ)):\n" }{MPLTEXT 1 0 27 "   \+
+RETURN(evalm(LW + DD));\n" }{MPLTEXT 1 0 5 "end:\n" }}}{EXCHG {PARA 0 
+"> " 0 "" {MPLTEXT 1 0 17 "Pauli1:=proc(LU)\n" }{MPLTEXT 1 0 62 "   # \+
+This procedure expresses a 2x2 skew-Hermitian matrix as \n" }{MPLTEXT 
+1 0 32 "   # the sum of Pauli matrices.\n" }{MPLTEXT 1 0 40 "   # LU:=
+ Sum(i=0..3, R[i+1]*sigma.i  )\n" }{MPLTEXT 1 0 65 "   # Please note t
+hat the index of the matrix R runs from 1 to 4\n" }{MPLTEXT 1 0 16 "  \+
+ local  A, i;\n" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 0 19 "   A:=matrix(1
+,4);\n" }{MPLTEXT 1 0 24 "   for i from 0 to 3 do\n" }{MPLTEXT 1 0 54 
+"      A[1,i+1]:=trace(  evalm( sigma||i &* LU)   )/2;\n" }{MPLTEXT 1 
+0 7 "   od;\n" }{MPLTEXT 1 0 21 "   RETURN(evalm(A));\n" }{MPLTEXT 1 
+0 4 "end:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "RPauli1:=proc(
+LU)\n" }{MPLTEXT 1 0 19 "   local R,RSUM,i;\n" }{MPLTEXT 1 0 5 "   #\n
+" }{MPLTEXT 1 0 65 "   # Expresses density operator rho as a formal su
+m of sigma.i's\n" }{MPLTEXT 1 0 18 "   R:=Pauli1(LU);\n" }{MPLTEXT 1 
+0 12 "   RSUM:=0;\n" }{MPLTEXT 1 0 28 "   for i from 0 to 3 do    \n" 
+}{MPLTEXT 1 0 34 "      RSUM:=RSUM + R[1,i+1]*S||i;\n" }{MPLTEXT 1 0 
+10 "   od;   \n" }{MPLTEXT 1 0 17 "   RETURN(RSUM);\n" }{MPLTEXT 1 0 
+4 "end:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 17 "Pauli2:=proc(LU)
+\n" }{MPLTEXT 1 0 62 "   # This procedure expresses a 4x4 skew-Hermiti
+an matrix as \n" }{MPLTEXT 1 0 54 "   # the sum of the tensor product \+
+of Pauli matrices.\n" }{MPLTEXT 1 0 56 "   # LU:= Sum( i=0..3, j=0..3,
+ R[i+1,j+1]*SS.(i+4*j)  )\n" }{MPLTEXT 1 0 66 "   # Please note that t
+he indices of the matrix R run from 1 to 4\n" }{MPLTEXT 1 0 19 "   loc
+al  A, i, j;\n" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 0 37 "   A:=matrix(ro
+wdim(LU),coldim(LU));\n" }{MPLTEXT 1 0 24 "   for i from 0 to 3 do\n" 
+}{MPLTEXT 1 0 27 "      for j from 0 to 3 do\n" }{MPLTEXT 1 0 62 "    \+
+     A[i+1,j+1]:=trace(  evalm( SS||(i+4*j) &* LU)   )/4;\n" }{MPLTEXT
+ 1 0 10 "      od;\n" }{MPLTEXT 1 0 7 "   od;\n" }{MPLTEXT 1 0 21 "   \+
+RETURN(evalm(A));\n" }{MPLTEXT 1 0 4 "end:" }}}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 19 "RPauli2:=proc(rho)\n" }{MPLTEXT 1 0 21 "   local R,
+RSUM,i,j;\n" }{MPLTEXT 1 0 5 "   #\n" }{MPLTEXT 1 0 75 "   # Expresses
+ density operator rho as a formal sum of sigma.i(X)sigma.j's\n" }
+{MPLTEXT 1 0 5 "   #\n" }{MPLTEXT 1 0 19 "   R:=Pauli2(rho);\n" }
+{MPLTEXT 1 0 12 "   RSUM:=0;\n" }{MPLTEXT 1 0 48 "   for i from 0 to 3
+ do   for j from 0 to 3 do \n" }{MPLTEXT 1 0 39 "      RSUM:=RSUM + R[
+i+1,j+1]*S||i||j;\n" }{MPLTEXT 1 0 13 "   od;   od;\n" }{MPLTEXT 1 0 
+17 "   RETURN(RSUM);\n" }{MPLTEXT 1 0 4 "end:" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 20 "Inv_Pauli2:=proc(R)\n" }{MPLTEXT 1 0 57 "   # Gi
+ven a 4x4 matrix R over the reals, this procedure\n" }{MPLTEXT 1 0 70 
+"   # computes  rho = Sum(p=0..3, q=0..3) R[p+1,q+q]*sigma.p(X)sigma.q
+\n" }{MPLTEXT 1 0 5 "   #\n" }{MPLTEXT 1 0 18 "   local p,q,rho;\n" }
+{MPLTEXT 1 0 5 "   #\n" }{MPLTEXT 1 0 23 "   rho:=diag(0,0,0,0):\n" }
+{MPLTEXT 1 0 47 "   for p from 0 to 3 do   for q from 0 to 3 do\n" }
+{MPLTEXT 1 0 61 "      rho:= evalm( rho + evalm( R[p+1,q+1]*SS||(p+4*q
+) )  );\n" }{MPLTEXT 1 0 13 "   od;   od;\n" }{MPLTEXT 1 0 23 "   RETU
+RN(evalm(rho));\n" }{MPLTEXT 1 0 4 "end:" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 17 "Pauli3:=proc(LU)\n" }{MPLTEXT 1 0 62 "   # This proce
+dure expresses a 8x8 skew-Hermitian matrix as \n" }{MPLTEXT 1 0 54 "  \+
+ # the sum of the tensor product of Pauli matrices.\n" }{MPLTEXT 1 0 
+61 "   # LU:= Sum( i=0..3, j=0..3, k=0..3, R[i,j,k]*SSS.i.j.k  )\n" }
+{MPLTEXT 1 0 66 "   # Please note that the indices of the matrix R run
+ from 0 to 3\n" }{MPLTEXT 1 0 22 "   local  A, i, j, k;\n" }{MPLTEXT 
+1 0 1 "\n" }{MPLTEXT 1 0 29 "   A:=array(0..3,0..3,0..3);\n" }{MPLTEXT
+ 1 0 24 "   for i from 0 to 3 do\n" }{MPLTEXT 1 0 27 "      for j from
+ 0 to 3 do\n" }{MPLTEXT 1 0 30 "         for k from 0 to 3 do\n" }
+{MPLTEXT 1 0 64 "            A[i,j,k]:=trace(  evalm( SSS||i||j||k &* \+
+LU)   )/8;\n" }{MPLTEXT 1 0 13 "         od;\n" }{MPLTEXT 1 0 10 "    \+
+  od;\n" }{MPLTEXT 1 0 7 "   od;\n" }{MPLTEXT 1 0 20 "   RETURN(eval(A
+));\n" }{MPLTEXT 1 0 4 "end:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 19 "RPauli3:=proc(rho)\n" }{MPLTEXT 1 0 23 "   local R,RSUM,i,j,k;\n
+" }{MPLTEXT 1 0 5 "   #\n" }{MPLTEXT 1 0 85 "   # Expresses density op
+erator rho as a formal sum of sigma.i(X)sigma.j(X)sigma.k's\n" }
+{MPLTEXT 1 0 5 "   #\n" }{MPLTEXT 1 0 19 "   R:=Pauli3(rho);\n" }
+{MPLTEXT 1 0 12 "   RSUM:=0;\n" }{MPLTEXT 1 0 70 "   for i from 0 to 3
+ do   for j from 0 to 3 do   for k from 0 to 3 do\n" }{MPLTEXT 1 0 40 
+"      RSUM:=RSUM + R[i,j,k]*S||i||j||k;\n" }{MPLTEXT 1 0 19 "   od;  \+
+ od;   od;\n" }{MPLTEXT 1 0 17 "   RETURN(RSUM);\n" }{MPLTEXT 1 0 4 "e
+nd:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 17 "Pauli4:=proc(LU)\n" 
+}{MPLTEXT 1 0 64 "   # This procedure expresses a 16x16 skew-Hermitian
+ matrix as \n" }{MPLTEXT 1 0 54 "   # the sum of the tensor product of
+ Pauli matrices.\n" }{MPLTEXT 1 0 73 "   # LU:= Sum( i=0..3, j=0..3, k
+=0..3, m=0..3, R[i,j,k,m]*SSS.i.j.k.m  )\n" }{MPLTEXT 1 0 66 "   # Ple
+ase note that the indices of the matrix R run from 0 to 3\n" }{MPLTEXT
+ 1 0 25 "   local  A, i, j, k, m;\n" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 
+0 34 "   A:=array(0..3,0..3,0..3,0..3);\n" }{MPLTEXT 1 0 47 "   for i \+
+from 0 to 3 do   for j from 0 to 3 do\n" }{MPLTEXT 1 0 50 "      for k
+ from 0 to 3 do   for m from 0 to 3 do\n" }{MPLTEXT 1 0 70 "          \+
+  A[i,j,k,m]:=trace(  evalm( SSS||i||j||k||m &* LU)   )/16;\n" }
+{MPLTEXT 1 0 16 "      od;   od;\n" }{MPLTEXT 1 0 13 "   od;   od;\n" 
+}{MPLTEXT 1 0 20 "   RETURN(eval(A));\n" }{MPLTEXT 1 0 4 "end:" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "RPauli4:=proc(rho)\n" }
+{MPLTEXT 1 0 25 "   local R,RSUM,i,j,k,m;\n" }{MPLTEXT 1 0 5 "   #\n" 
+}{MPLTEXT 1 0 56 "   # Expresses density operator rho as a formal sum \+
+of \n" }{MPLTEXT 1 0 81 "   #                                    sigma
+.i(X)sigma.j(X)sigma.k'(X)sigma.m's\n" }{MPLTEXT 1 0 5 "   #\n" }
+{MPLTEXT 1 0 19 "   R:=Pauli4(rho);\n" }{MPLTEXT 1 0 12 "   RSUM:=0;\n
+" }{MPLTEXT 1 0 93 "   for i from 0 to 3 do   for j from 0 to 3 do   f
+or k from 0 to 3 do   for m from 0 to 3 do\n" }{MPLTEXT 1 0 45 "      \+
+RSUM:=RSUM + R[i,j,k,m]*S||i||j||k||m;\n" }{MPLTEXT 1 0 25 "   od;   o
+d;   od;   od;\n" }{MPLTEXT 1 0 17 "   RETURN(RSUM);\n" }{MPLTEXT 1 0 
+4 "end:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "FLL4:=proc(LU)\n
+" }{MPLTEXT 1 0 61 "   # This procedure expresses a 4x4 skew-smmetric \+
+matrix as \n" }{MPLTEXT 1 0 46 "   # the sum a linear combination of L
+L.i's .\n" }{MPLTEXT 1 0 38 "   # LU:= Sum( i=1..6, A[1,i]*LL.i  )\n" 
+}{MPLTEXT 1 0 16 "   local  A, i;\n" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 
+0 19 "   A:=matrix(1,6);\n" }{MPLTEXT 1 0 24 "   for i from 1 to 6 do
+\n" }{MPLTEXT 1 0 52 "      A[1,i]:=trace(  evalm( LL||i &* LU)   )/(-
+2);\n" }{MPLTEXT 1 0 7 "   od;\n" }{MPLTEXT 1 0 21 "   RETURN(evalm(A)
+);\n" }{MPLTEXT 1 0 4 "end:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+23 "Matrep:=proc(P, P_Deg)\n" }{MPLTEXT 1 0 58 "   # This procedure co
+nverts a permutation represented as\n" }{MPLTEXT 1 0 55 "   # a produc
+t of (not necessarily disjoint) cycles to\n" }{MPLTEXT 1 0 26 "   # a \+
+permutation matrix\n" }{MPLTEXT 1 0 44 "   local  f,Pmat,n,j,Cycle_j,n
+_j,a_j,i,b_j;\n" }{MPLTEXT 1 0 4 "   \n" }{MPLTEXT 1 0 43 "   f:=(ii,j
+j)->if(ii=jj) then 1 else 0 fi;\n" }{MPLTEXT 1 0 34 "   Pmat:=matrix(P
+_Deg, P_Deg, f);\n" }{MPLTEXT 1 0 15 "   n:=nops(P);\n" }{MPLTEXT 1 0 
+18 "   if (n<1) then \n" }{MPLTEXT 1 0 27 "      RETURN(evalm(Pmat));
+\n" }{MPLTEXT 1 0 8 "   else\n" }{MPLTEXT 1 0 27 "      for j from 1 t
+o n do\n" }{MPLTEXT 1 0 27 "         Cycle_j:=op(j,P);\n" }{MPLTEXT 1 
+0 29 "         n_j:=nops(Cycle_j);\n" }{MPLTEXT 1 0 25 "         if (n
+_j>1) then\n" }{MPLTEXT 1 0 32 "            a_j:=op(1,Cycle_j);\n" }
+{MPLTEXT 1 0 35 "            for i from 2 to n_j do\n" }{MPLTEXT 1 0 
+35 "               b_j:=op(i,Cycle_j);\n" }{MPLTEXT 1 0 48 "          \+
+     Pmat:=swaprow(Pmat,a_j+1,b_j+1);\n" }{MPLTEXT 1 0 16 "           \+
+ od;\n" }{MPLTEXT 1 0 13 "         fi;\n" }{MPLTEXT 1 0 10 "      od;
+\n" }{MPLTEXT 1 0 7 "   fi;\n" }{MPLTEXT 1 0 24 "   RETURN(evalm(Pmat)
+);\n" }{MPLTEXT 1 0 4 "end:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+19 "RemoveIPi:=proc(A)\n" }{MPLTEXT 1 0 19 "   local  ff, M;  \n" }
+{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 0 51 "   ff:=(i,j)-> if (i=j) then 1/(
+Pi*I) else  0  fi;\n" }{MPLTEXT 1 0 51 "   M:=evalm( matrix(rowdim(A),
+coldim(A),ff) &* A);\n" }{MPLTEXT 1 0 21 "   RETURN(evalm(M));\n" }
+{MPLTEXT 1 0 4 "end:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 14 "f||
+0:=x->2*x:\n" }{MPLTEXT 1 0 43 "f||1:=x->irem(x,2  ) + ( iquo(x,2  )*2
+^2):\n" }{MPLTEXT 1 0 43 "f||2:=x->irem(x,2^2) + ( iquo(x,2^2)*2^3):\n
+" }{MPLTEXT 1 0 43 "f||3:=x->irem(x,2^3) + ( iquo(x,2^3)*2^4):\n" }
+{MPLTEXT 1 0 43 "f||4:=x->irem(x,2^4) + ( iquo(x,2^4)*2^5):\n" }
+{MPLTEXT 1 0 42 "f||5:=x->irem(x,2^5) + ( iquo(x,2^5)*2^6):" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 16 "Trace1:=proc(A)\n" }{MPLTEXT
+ 1 0 22 "   local ans, ii, jj;\n" }{MPLTEXT 1 0 5 "   #\n" }{MPLTEXT 
+1 0 44 "   ans:=matrix(rowdim(A)/2, coldim(A)/2  );\n" }{MPLTEXT 1 0 
+36 "   for ii from 1 to rowdim(A)/2 do;\n" }{MPLTEXT 1 0 39 "      for
+ jj from 1 to coldim(A)/2 do;\n" }{MPLTEXT 1 0 87 "         ans[ii,jj]
+:=A[1+f||0(ii-1),1+f||0(jj-1)] +A[1+f||0(ii-1)+1,1+f||0(jj-1)+1];  \n"
+ }{MPLTEXT 1 0 10 "      od;\n" }{MPLTEXT 1 0 7 "   od;\n" }{MPLTEXT 
+1 0 19 "RETURN(evalm(ans))\n" }{MPLTEXT 1 0 5 "end:\n" }{MPLTEXT 1 0 
+2 "#\n" }{MPLTEXT 1 0 16 "Trace2:=proc(A)\n" }{MPLTEXT 1 0 22 "   loca
+l ans, ii, jj;\n" }{MPLTEXT 1 0 5 "   #\n" }{MPLTEXT 1 0 44 "   ans:=m
+atrix(rowdim(A)/2, coldim(A)/2  );\n" }{MPLTEXT 1 0 36 "   for ii from
+ 1 to rowdim(A)/2 do;\n" }{MPLTEXT 1 0 39 "      for jj from 1 to cold
+im(A)/2 do;\n" }{MPLTEXT 1 0 87 "         ans[ii,jj]:=A[1+f||1(ii-1),1
++f||1(jj-1)] +A[1+f||1(ii-1)+2,1+f||1(jj-1)+2];  \n" }{MPLTEXT 1 0 10 
+"      od;\n" }{MPLTEXT 1 0 7 "   od;\n" }{MPLTEXT 1 0 19 "RETURN(eval
+m(ans))\n" }{MPLTEXT 1 0 5 "end:\n" }{MPLTEXT 1 0 2 "#\n" }{MPLTEXT 1 
+0 16 "Trace3:=proc(A)\n" }{MPLTEXT 1 0 22 "   local ans, ii, jj;\n" }
+{MPLTEXT 1 0 5 "   #\n" }{MPLTEXT 1 0 44 "   ans:=matrix(rowdim(A)/2, \+
+coldim(A)/2  );\n" }{MPLTEXT 1 0 36 "   for ii from 1 to rowdim(A)/2 d
+o;\n" }{MPLTEXT 1 0 39 "      for jj from 1 to coldim(A)/2 do;\n" }
+{MPLTEXT 1 0 87 "         ans[ii,jj]:=A[1+f||2(ii-1),1+f||2(jj-1)] +A[
+1+f||2(ii-1)+4,1+f||2(jj-1)+4];  \n" }{MPLTEXT 1 0 10 "      od;\n" }
+{MPLTEXT 1 0 7 "   od;\n" }{MPLTEXT 1 0 19 "RETURN(evalm(ans))\n" }
+{MPLTEXT 1 0 5 "end:\n" }{MPLTEXT 1 0 2 "#\n" }{MPLTEXT 1 0 16 "Trace4
+:=proc(A)\n" }{MPLTEXT 1 0 22 "   local ans, ii, jj;\n" }{MPLTEXT 1 0 
+5 "   #\n" }{MPLTEXT 1 0 44 "   ans:=matrix(rowdim(A)/2, coldim(A)/2  \+
+);\n" }{MPLTEXT 1 0 36 "   for ii from 1 to rowdim(A)/2 do;\n" }
+{MPLTEXT 1 0 39 "      for jj from 1 to coldim(A)/2 do;\n" }{MPLTEXT 
+1 0 87 "         ans[ii,jj]:=A[1+f||3(ii-1),1+f||3(jj-1)] +A[1+f||3(ii
+-1)+8,1+f||3(jj-1)+8];  \n" }{MPLTEXT 1 0 10 "      od;\n" }{MPLTEXT 
+1 0 7 "   od;\n" }{MPLTEXT 1 0 19 "RETURN(evalm(ans))\n" }{MPLTEXT 1 
+0 5 "end:\n" }{MPLTEXT 1 0 2 "#\n" }{MPLTEXT 1 0 16 "Trace5:=proc(A)\n
+" }{MPLTEXT 1 0 22 "   local ans, ii, jj;\n" }{MPLTEXT 1 0 5 "   #\n" 
+}{MPLTEXT 1 0 44 "   ans:=matrix(rowdim(A)/2, coldim(A)/2  );\n" }
+{MPLTEXT 1 0 36 "   for ii from 1 to rowdim(A)/2 do;\n" }{MPLTEXT 1 0 
+39 "      for jj from 1 to coldim(A)/2 do;\n" }{MPLTEXT 1 0 89 "      \+
+   ans[ii,jj]:=A[1+f||4(ii-1),1+f||4(jj-1)] +A[1+f||4(ii-1)+16,1+f||4(
+jj-1)+16];  \n" }{MPLTEXT 1 0 10 "      od;\n" }{MPLTEXT 1 0 7 "   od;
+\n" }{MPLTEXT 1 0 19 "RETURN(evalm(ans))\n" }{MPLTEXT 1 0 5 "end:\n" }
+{MPLTEXT 1 0 2 "#\n" }{MPLTEXT 1 0 16 "Trace6:=proc(A)\n" }{MPLTEXT 1 
+0 22 "   local ans, ii, jj;\n" }{MPLTEXT 1 0 5 "   #\n" }{MPLTEXT 1 0 
+44 "   ans:=matrix(rowdim(A)/2, coldim(A)/2  );\n" }{MPLTEXT 1 0 36 " \+
+  for ii from 1 to rowdim(A)/2 do;\n" }{MPLTEXT 1 0 39 "      for jj f
+rom 1 to coldim(A)/2 do;\n" }{MPLTEXT 1 0 89 "         ans[ii,jj]:=A[1
++f||5(ii-1),1+f||5(jj-1)] +A[1+f||5(ii-1)+32,1+f||5(jj-1)+32];  \n" }
+{MPLTEXT 1 0 10 "      od;\n" }{MPLTEXT 1 0 7 "   od;\n" }{MPLTEXT 1 
+0 19 "RETURN(evalm(ans))\n" }{MPLTEXT 1 0 5 "end:\n" }{MPLTEXT 1 0 2 "
+#\n" }{MPLTEXT 1 0 37 "PTrace:=(n,rho)->(Trace||(n+1))(rho):" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 17 "Fourier:=proc(n)\n" }
+{MPLTEXT 1 0 22 "   local omega,A,i,j;\n" }{MPLTEXT 1 0 70 "   # This \+
+program computes the nxn matrix ( omega^ij )/sqrt(n), where\n" }
+{MPLTEXT 1 0 74 "   # omega is the primitive n-th root of unity given \+
+by omega=exp(2PiI/n)\n" }{MPLTEXT 1 0 25 "   omega:=exp(2*Pi*I/n);\n" 
+}{MPLTEXT 1 0 19 "   A:=matrix(n,n);\n" }{MPLTEXT 1 0 51 "   for i fro
+m 0 to n-1 do   for j from 0 to n-1 do\n" }{MPLTEXT 1 0 38 "      A[i+
+1,j+1]:=evalc(omega^(i*j));\n" }{MPLTEXT 1 0 13 "   od;   od;\n" }
+{MPLTEXT 1 0 29 "   A:=evalm( 1/sqrt(n) * A);\n" }{MPLTEXT 1 0 21 "   \+
+RETURN(evalm(A));\n" }{MPLTEXT 1 0 4 "end:" }}}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 13 "Vec:=proc(A)\n" }{MPLTEXT 1 0 26 "   local m,n,V_Di
+m,V,i,j;\n" }{MPLTEXT 1 0 85 "   # Vec transforms an mxn matrix A into
+ an m*n column vector V, column by column   \n" }{MPLTEXT 1 0 43 "   m
+:=rowdim(A); n:=coldim(A); V_Dim:=m*n;\n" }{MPLTEXT 1 0 21 "   V:=vect
+or(V_Dim);\n" }{MPLTEXT 1 0 51 "   for j from 0 to n-1 do   for i from
+ 0 to m-1 do\n" }{MPLTEXT 1 0 31 "      V[i+m*j +1]:=A[i+1,j+1];\n" }
+{MPLTEXT 1 0 13 "   od;   od;\n" }{MPLTEXT 1 0 21 "   RETURN(evalm(V))
+;\n" }{MPLTEXT 1 0 5 "end:\n" }{MPLTEXT 1 0 2 "#\n" }{MPLTEXT 1 0 14 "
+#Vec:=proc(M)\n" }{MPLTEXT 1 0 66 "   # Vec(M) = Matrix( Dim,1, [col1(
+M),col2(M), ... , col.CD(M)]),\n" }{MPLTEXT 1 0 57 "   # where Dim = r
+owdim(M)*coldim(M), and CD = coldim(M)\n" }{MPLTEXT 1 0 5 "   #\n" }
+{MPLTEXT 1 0 31 "#   local  RD,CD,Dim,V,i,j;   \n" }{MPLTEXT 1 0 5 "  \+
+ #\n" }{MPLTEXT 1 0 48 "#   RD:=rowdim(M);   CD:=coldim(M); Dim:=RD*CD
+;\n" }{MPLTEXT 1 0 22 "#   V:=matrix(Dim,1);\n" }{MPLTEXT 1 0 50 "#   \+
+for j from 1 to CD do   for i from 1 to RD do\n" }{MPLTEXT 1 0 32 "#  \+
+    V[i+(j-1)*RD,1]:=M[i,j];\n" }{MPLTEXT 1 0 14 "#   od;   od;\n" }
+{MPLTEXT 1 0 22 "#   RETURN(evalm(V));\n" }{MPLTEXT 1 0 5 "#end:" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 12 "Ad:=proc(Q)\n" }{MPLTEXT 1 
+0 32 "   local  M,p,q,Apq,R_pq,Vpq,i;\n" }{MPLTEXT 1 0 71 "   # Comput
+es Ad_Q as a 16x16 matrix; Q is assumed to be a 4x4 unitary\n" }
+{MPLTEXT 1 0 5 "   #\n" }{MPLTEXT 1 0 22 "   M:=matrix(16,16); \n" }
+{MPLTEXT 1 0 72 "   for q from 0 to 3 do   print([`q=`||q]); for p fro
+m 0 to 3 do       \n" }{MPLTEXT 1 0 21 "      #print([p,q]);\n" }
+{MPLTEXT 1 0 55 "      Apq:=evalm( Q &* SS||(p+4*q) &* My_Adjoint(Q) )
+;\n" }{MPLTEXT 1 0 25 "      R_pq:=Pauli2(Apq);\n" }{MPLTEXT 1 0 22 " \+
+     Vpq:=Vec(R_pq);\n" }{MPLTEXT 1 0 28 "      for i from 0 to 15 do
+\n" }{MPLTEXT 1 0 22 "         #print([i]);\n" }{MPLTEXT 1 0 36 "     \+
+    M[i+1,p+4*q +1]:=Vpq[i+1];\n" }{MPLTEXT 1 0 22 "         #print([i
+]);\n" }{MPLTEXT 1 0 10 "      od;\n" }{MPLTEXT 1 0 11 "   od; od;\n" 
+}{MPLTEXT 1 0 21 "   RETURN(evalm(M));\n" }{MPLTEXT 1 0 4 "end:" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "Small_ad:=proc(Q)\n" }
+{MPLTEXT 1 0 32 "   local  M,p,q,Apq,R_pq,Vpq,i;\n" }{MPLTEXT 1 0 84 "
+   # Computes Small ad_Q as a 16x16 matrix; Q is assumed to be a 4x4 s
+kew Hermitian\n" }{MPLTEXT 1 0 75 "   #   Small_ad(Q) (M) = ad_iQ(M), \+
+where M is assumed to be skew Hermitian\n" }{MPLTEXT 1 0 5 "   #\n" }
+{MPLTEXT 1 0 22 "   M:=matrix(16,16); \n" }{MPLTEXT 1 0 72 "   for q f
+rom 0 to 3 do   print([`q=`||q]); for p from 0 to 3 do       \n" }
+{MPLTEXT 1 0 21 "      #print([p,q]);\n" }{MPLTEXT 1 0 89 "      Apq:=
+evalm(  evalm( evalm( Q &* SS||(p+4*q) )  -  evalm( SS||(p+4*q) &* Q )
+ )   );\n" }{MPLTEXT 1 0 28 "      Apq:=evalm( I * Apq);\n" }{MPLTEXT 
+1 0 35 "      R_pq:=evalm(-I*Pauli2(Apq));\n" }{MPLTEXT 1 0 22 "      \+
+Vpq:=Vec(R_pq);\n" }{MPLTEXT 1 0 28 "      for i from 0 to 15 do\n" }
+{MPLTEXT 1 0 22 "         #print([i]);\n" }{MPLTEXT 1 0 36 "         M
+[i+1,p+4*q +1]:=Vpq[i+1];\n" }{MPLTEXT 1 0 10 "      od;\n" }{MPLTEXT 
+1 0 11 "   od; od;\n" }{MPLTEXT 1 0 21 "   RETURN(evalm(M));\n" }
+{MPLTEXT 1 0 4 "end:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 16 "FCo
+m:=proc(A,B)\n" }{MPLTEXT 1 0 12 "   local X;\n" }{MPLTEXT 1 0 59 "   \+
+# FCom(A,B) is the commutator [A,B] of matrices A and B\n" }{MPLTEXT 
+1 0 5 "   #\n" }{MPLTEXT 1 0 52 "   X:=evalm(  evalm( A &* B ) - evalm
+( B &* A )  );\n" }{MPLTEXT 1 0 21 "   RETURN(evalm(X));\n" }{MPLTEXT 
+1 0 4 "end:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 17 "TraceRL:=pro
+c(A)\n" }{MPLTEXT 1 0 12 "   local B;\n" }{MPLTEXT 1 0 47 "   # B[i1,j
+0] = Sum(a=0..1, A[a+2*i1,j0+2*a] )\n" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 
+1 0 19 "   B:=matrix(2,2);\n" }{MPLTEXT 1 0 51 "   B[1,1]:=A[1,1]+A[2,
+3];   B[1,2]:=A[1,2]+A[2,4];\n" }{MPLTEXT 1 0 51 "   B[2,1]:=A[3,1]+A[
+4,3];   B[2,2]:=A[3,2]+A[4,4];\n" }{MPLTEXT 1 0 21 "   RETURN(evalm(B)
+);\n" }{MPLTEXT 1 0 5 "end:\n" }{MPLTEXT 1 0 2 "#\n" }{MPLTEXT 1 0 17 
+"TraceLR:=proc(A)\n" }{MPLTEXT 1 0 12 "   local B;\n" }{MPLTEXT 1 0 
+47 "   # B[i0,j1] = Sum(a=0..1, A[i0+2*a,a+2*j1] )\n" }{MPLTEXT 1 0 1 
+"\n" }{MPLTEXT 1 0 19 "   B:=matrix(2,2);\n" }{MPLTEXT 1 0 51 "   B[1,
+1]:=A[1,1]+A[3,2];   B[1,2]:=A[1,3]+A[3,4];\n" }{MPLTEXT 1 0 51 "   B[
+2,1]:=A[2,1]+A[4,2];   B[2,2]:=A[2,3]+A[4,4];\n" }{MPLTEXT 1 0 21 "   \+
+RETURN(evalm(B));\n" }{MPLTEXT 1 0 4 "end:" }}}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 33 "My_Conj:=x->eval(subs( I=-I,x)):\n" }{MPLTEXT 1 0 
+44 "My_Adjoint:=A->map( My_Conj, transpose(A)):\n" }{MPLTEXT 1 0 59 "K
+et:=(a,b)->matrix(2,1,[cos(a),expand((exp(I*b)*sin(a)))]):" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 12 "Id:=proc(n)\n" }{MPLTEXT 1 0 33 "  \+
+ # Id(n) = nxn identity matrix\n" }{MPLTEXT 1 0 5 "   #\n" }{MPLTEXT 
+1 0 23 "   local  f,i,j, A;   \n" }{MPLTEXT 1 0 40 "   f:=(i,j)->if (i
+=j) then 1 else 0 fi:\n" }{MPLTEXT 1 0 21 "   A:=matrix(n,n,f);\n" }
+{MPLTEXT 1 0 21 "   RETURN(evalm(A));\n" }{MPLTEXT 1 0 4 "end:" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 64 "CNOT12:=matrix(4,4,[1,0,0,0,
+   0,1,0,0,   0,0,0,1,   0,0,1,0]):\n" }{MPLTEXT 1 0 63 "CNOT21:=matri
+x(4,4,[1,0,0,0,   0,0,0,1,   0,0,1,0,   0,1,0,0]):" }}}{EXCHG {PARA 0 
+"> " 0 "" {MPLTEXT 1 0 18 "Hadamard:=proc(n)\n" }{MPLTEXT 1 0 71 "   #
+ Hadamard(n) = (X)_(i=1..n) H, where H is the 2x2 Hadarmard matrix\n" 
+}{MPLTEXT 1 0 22 "   local IR2,H,Ans,i;\n" }{MPLTEXT 1 0 1 "\n" }
+{MPLTEXT 1 0 19 "   IR2:=1/sqrt(2);\n" }{MPLTEXT 1 0 38 "   H:=matrix(
+2,2,[IR2,IR2,IR2,-IR2]);\n" }{MPLTEXT 1 0 18 "   Ans:=evalm(H);\n" }
+{MPLTEXT 1 0 18 "   if (n<>1) then\n" }{MPLTEXT 1 0 29 "      for i fr
+om 1 to n-1 do\n" }{MPLTEXT 1 0 33 "         Ans:=evalm( kr(Ans,H));\n
+" }{MPLTEXT 1 0 10 "      od;\n" }{MPLTEXT 1 0 7 "   fi;\n" }{MPLTEXT 
+1 0 23 "   RETURN(evalm(Ans));\n" }{MPLTEXT 1 0 4 "end:" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "Int_To_Bin:=proc(n,lgth)\n" }
+{MPLTEXT 1 0 81 "   # Int_To_Bin(n) = postive integer n written as a b
+inary number of length lgth\n" }{MPLTEXT 1 0 20 "   local nn,s,i,nx;\n
+" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 0 13 "   nn:=n;   \n" }{MPLTEXT 1 
+0 10 "   s:=``;\n" }{MPLTEXT 1 0 27 "   for i from 1 to lgth do\n" }
+{MPLTEXT 1 0 22 "      nx:=irem(nn,2);\n" }{MPLTEXT 1 0 20 "      s:=c
+at(nx,s);\n" }{MPLTEXT 1 0 22 "      nn:=iquo(nn,2);\n" }{MPLTEXT 1 0 
+7 "   od;\n" }{MPLTEXT 1 0 14 "   RETURN(s);\n" }{MPLTEXT 1 0 4 "end:"
+ }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 16 "RKet:=proc(ket)\n" }
+{MPLTEXT 1 0 52 "   # RKet(ket) = column vector in symbolic ket form\n
+" }{MPLTEXT 1 0 25 "   local r,S,i,logr,bbb;\n" }{MPLTEXT 1 0 5 "   #
+\n" }{MPLTEXT 1 0 19 "   r:=rowdim(ket);\n" }{MPLTEXT 1 0 41 "   logr:
+=ceil(  evalf(  log[2](r) )  ); \n" }{MPLTEXT 1 0 9 "   S:=0;\n" }
+{MPLTEXT 1 0 24 "   for i from 1 to r do\n" }{MPLTEXT 1 0 33 "      bb
+b:=Int_To_Bin(i-1,logr);\n" }{MPLTEXT 1 0 39 "      S:=S + ket[i,1]*(`
+|`||bbb||`>`);\n" }{MPLTEXT 1 0 7 "   od;\n" }{MPLTEXT 1 0 14 "   RETU
+RN(S);\n" }{MPLTEXT 1 0 4 "end:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 18 "CNOT:=proc(T,C,W)\n" }{MPLTEXT 1 0 89 "   # CNOT(T,C,W) = perm
+utation (written as a product of disjoint cyles) which represents\n" }
+{MPLTEXT 1 0 80 "   # a CNOT wit target bit T, control bit C, and with
+ W wires labeled 0..(W-1).\n" }{MPLTEXT 1 0 58 "   # Convention:  Firs
+t=Bottom =Right  and  Last=Top=Left\n" }{MPLTEXT 1 0 41 "   local  ET,
+EC,SETEC,EW,L,k,BITC,BITT; \n" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 0 48 "
+   ET:=2^T;   EC:=2^C;   SETEC:=ET+EC; EW:=2^W;\n" }{MPLTEXT 1 0 10 " \+
+  L:=[];\n" }{MPLTEXT 1 0 29 "   for k from 0 to (EW-1) do\n" }
+{MPLTEXT 1 0 62 "      BITC:=irem(floor(k/EC),2);   BITT:=irem(floor(k
+/ET),2);\n" }{MPLTEXT 1 0 28 "      if (BITC+BITT=0) then\n" }{MPLTEXT
+ 1 0 39 "         L:=[op(L), [EC+k, SETEC+k] ];\n" }{MPLTEXT 1 0 10 " \+
+     fi;\n" }{MPLTEXT 1 0 7 "   od;\n" }{MPLTEXT 1 0 14 "   RETURN(L);
+\n" }{MPLTEXT 1 0 4 "end:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+17 "Entropy:=proc(A)\n" }{MPLTEXT 1 0 23 "   local EV,nEV,Ans,n;\n" }
+{MPLTEXT 1 0 34 "# Entropy of a Hermitian operator\n" }{MPLTEXT 1 0 
+40 "# This procedure has not been completed\n" }{MPLTEXT 1 0 48 "# The
+ problem is that the eigenvalues, although\n" }{MPLTEXT 1 0 47 "# real
+, are not always non-negative.  A second\n" }{MPLTEXT 1 0 51 "# proble
+m is how to normalize the Hermitian matrix\n" }{MPLTEXT 1 0 52 "# befo
+re computing the entropy.  Should one make it\n" }{MPLTEXT 1 0 51 "# o
+f 2-norm one?  Should one make it of trace one?\n" }{MPLTEXT 1 0 2 "#
+\n" }{MPLTEXT 1 0 43 "   EV:=vector([eigenvals(evalm((-I)*A))]);\n" }
+{MPLTEXT 1 0 22 "   nEV:=1/norm(EV,2);\n" }{MPLTEXT 1 0 25 "   EV:=eva
+lm( nEV * EV);\n" }{MPLTEXT 1 0 20 "   print(`EV=`,EV);\n" }{MPLTEXT 
+1 0 11 "   Ans:=0;\n" }{MPLTEXT 1 0 31 "   for n from 1 to nops(EV) do
+\n" }{MPLTEXT 1 0 36 "      Ans:=Ans - EV[n]*Logz(EV[n]);\n" }{MPLTEXT
+ 1 0 7 "   od;\n" }{MPLTEXT 1 0 16 "   RETURN(Ans):\n" }{MPLTEXT 1 0 
+4 "end:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 52 "# norm2(X) = the
+ square root of the spectral radius\n" }{MPLTEXT 1 0 60 "#            \+
+of   evalm( X &* map(conjugate, transpose(X)))\n" }{MPLTEXT 1 0 43 "no
+rm2:=X-> sqrt(max(op(map(abs,[eigenvals(\n" }{MPLTEXT 1 0 49 "      ev
+alm( X &* map(conjugate,transpose(X))  )\n" }{MPLTEXT 1 0 13 "      )]
+)))):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 36 "# List of function
+s included above:\n" }{MPLTEXT 1 0 89 "# QF:=proc(U) ... Computes a un
+itary matrix QF such that QF &* U &* is a diagonal matrix\n" }{MPLTEXT
+ 1 0 40 "# Logz(Z) computes the natural log of z\n" }{MPLTEXT 1 0 64 "
+# LogU:=proc(U) ... Computes natural log of the square matrix U\n" }
+{MPLTEXT 1 0 74 "# kr:=proc(A,B) ... Computes the tensor product A(X)B
+ of matrices A and B\n" }{MPLTEXT 1 0 83 "# Pauli1:=proc(U)... Express
+es a 2x2 Hermitian matrix as a linear sum of sigma.i's\n" }{MPLTEXT 1 
+0 92 "# RPauli1:=proc(LU)... Expresses a 2x2 Hermitian matrix as a lin
+ear formal sum of sigma.i's\n" }{MPLTEXT 1 0 94 "# Pauli2:=proc(LU)...
+ Expresses a 4x4 Hermitian matrix as a linear sum of sigma.i(X)sigma.j
+'s\n" }{MPLTEXT 1 0 94 "# RPauli2:=proc(rho)... Expresses density oper
+ator rho as a formal sum of sigma.i(X)sigma.j's\n" }{MPLTEXT 1 0 82 "#
+ Inv_Pauli2:=proc(R)...For a given a 4x4 matrix R over the reals, this
+ procedure\n" }{MPLTEXT 1 0 89 "#                       computes  rho \+
+= Sum(p=0..3, q=0..3) R[p+1,q+q]*sigma.p(X)sigma.q\n" }{MPLTEXT 1 0 
+74 "# Pauli3:=proc(LU)... Expresses a 8x8 Hermitian matrix as a linear
+ sum of\n" }{MPLTEXT 1 0 85 "#                                        \+
+          sigma.i (X) sigma.j (X) sigma.k's\n" }{MPLTEXT 1 0 99 "# RPa
+uli3(rho) ... Expresses density operator rho as a formal sum of sigma.
+i(X)sigma.j(X)sigma.k's\n" }{MPLTEXT 1 0 76 "# Pauli4:=proc(LU)... Exp
+resses a 16x16 Hermitian matrix as a linear sum of\n" }{MPLTEXT 1 0 
+89 "#                                          sigma.i (X) sigma.j (X)
+ sigma.k (X) sigma.m's\n" }{MPLTEXT 1 0 70 "# RPauli4(rho) ... Express
+es density operator rho as a formal sum of \n" }{MPLTEXT 1 0 65 "#    \+
+                    sigma.i(X)sigma.j(X)sigma.k(X)sigma.m's\n" }
+{MPLTEXT 1 0 93 "# FLL4:=proc(LU) ... Expresses a skew symmetric 4x4 m
+atrix as a linear combination of LL.i's\n" }{MPLTEXT 1 0 85 "# Matrep:
+=proc(P, P_Deg) ... Converts the degree P_Deg permutation P (represent
+ed as\n" }{MPLTEXT 1 0 86 "#                            a list of list
+s) into a P_Deg x P_Deg permutation matrix\n" }{MPLTEXT 1 0 60 "# Remo
+veIPi:=proc(A) = A/(I*Pi), where A is a square matrix\n" }{MPLTEXT 1 
+0 78 "# f.0, f.1, f.2, f.3, f.4, f.5 are functions called by Trace1, T
+race2, Trace3\n" }{MPLTEXT 1 0 77 "# Trace1, Trace2, Trace3, Trace4, T
+race5, Trace6 are partial trace functions\n" }{MPLTEXT 1 0 73 "# PTrac
+e(n,rho) = partial trace of the n-th qubit = (Trace.(n+1))(rho)  \n" }
+{MPLTEXT 1 0 62 "#       Qubits are listed right to left, and labeled \+
+0,1, ...\n" }{MPLTEXT 1 0 24 "#       n = 0,1,2,3,4,5\n" }{MPLTEXT 1 
+0 74 "# sigma.0, sigma.1, sigma.2, sigma.3 are predefined as the Pauli
+ matrices\n" }{MPLTEXT 1 0 16 "# SSS.i=sigma.i\n" }{MPLTEXT 1 0 50 "# \+
+SS.(i+4*j) = kr(sigma.i,sigma.j) are predefined\n" }{MPLTEXT 1 0 54 "#
+ SSS.i.j=SS.i.j = kr(sigma.i,sigma.j) are predefined\n" }{MPLTEXT 1 0 
+56 "# SSS.i.j.k  = kr( SS.(i+4*j), sigma.k ) are predefined\n" }
+{MPLTEXT 1 0 60 "# SSS.i.j.k.m  = kr( SS.(i+4*j), SS(k+4*m) ) are pred
+efined\n" }{MPLTEXT 1 0 74 "# L3x3.j ... j=1..3 ... are predefined inf
+initesimal generators of SO(3) \n" }{MPLTEXT 1 0 71 "# LL.j ... j=1..6
+ ... are predefined infinitesimal generators of SO(4)\n" }{MPLTEXT 1 
+0 63 "# ket.0 = |0> = (1.0)^Transpose   ket.1 =|1> = (0,1)^Transpose\n
+" }{MPLTEXT 1 0 31 "# ket.i.j = ket.i (X) ket.j   \n" }{MPLTEXT 1 0 
+40 "# ket.i.j.k = ket.i (X) ket.j (X) ket.k\n" }{MPLTEXT 1 0 52 "# ket
+.i.j.k.m = ket.i (X) ket.j (X) ket.k (X) ket.m\n" }{MPLTEXT 1 0 58 "# \+
+Ket_To_Rho(ket) = density operator corresponding to ket\n" }{MPLTEXT 
+1 0 53 "# Bell.i.j ..... Bell basis kets, i = 0..1, j = 0..1\n" }
+{MPLTEXT 1 0 63 "# Bell.i.j.k ... Bell basis kets, i = 0..1, j = 0..1,
+ k = 0..1\n" }{MPLTEXT 1 0 75 "# Bell.i.j.k.m ... Bell basis kets, i =
+ 0..1, j = 0..1, k = 0..1, m = 0..1\n" }{MPLTEXT 1 0 81 "# Bell4(a,b,c
+,d) = ( ket.(1-a).(1-b).(1-c).(1-d) + ((-1)^a)*ket.a.b.c.d)/sqrt(2)\n"
+ }{MPLTEXT 1 0 79 "#                                              wher
+e a,b,c,d are elts of \{0,1\}\n" }{MPLTEXT 1 0 62 "# Sam.i.j.k .... Sa
+m basis kets, i = 0..1, j = 0..1, k = 0..1\n" }{MPLTEXT 1 0 89 "# Four
+ier:=proc(n) computes the nxn matrix ( omega^ij )/sqrt(n), where omega
+=exp(2PiI/n)\n" }{MPLTEXT 1 0 92 "# Vec:=proc(A) ... transforms an mxn
+ matrix A into an m*n column vector V, column by column\n" }{MPLTEXT 
+1 0 91 "# Ad:=proc(Q) ... Computes Ad_Q as a 16x16 matrix; Q is assume
+d to be a 4x4 unitary matrix\n" }{MPLTEXT 1 0 57 "# FCom(A,B)  is the \+
+commutator [A,B] of matrices A and B\n" }{MPLTEXT 1 0 88 "# (Small_ad:
+=proc(Q))(M) = Small_Ad_iQ(M), where Q is Hermitian and M is skew-Herm
+itian\n" }{MPLTEXT 1 0 46 "# TraceRL(A) = Sum(a=0..1, A[a+2*i1,j0+2*a]
+ )\n" }{MPLTEXT 1 0 46 "# TraceLR(A) = Sum(a=0..1, A[i0+2*a,a+2*j1] )
+\n" }{MPLTEXT 1 0 52 "# My_Conj(z) = the conjugate of the comple numbe
+r z\n" }{MPLTEXT 1 0 62 "# My_Adjoint(A) = the adjoint of the complex \+
+square matrix  A\n" }{MPLTEXT 1 0 54 "# Ket:=(a,b)->matrix(2,1,[cos(a)
+,(exp(I*b)*sin(a))]):\n" }{MPLTEXT 1 0 77 "# Vec:=proc(M), Vec(M) = Ma
+trix( Dim,1, [col1(M),col2(M), ... , col.CD(M)]),\n" }{MPLTEXT 1 0 77 
+"#                        where Dim = rowdim(M)*coldim(M), and CD = co
+ldim(M)\n" }{MPLTEXT 1 0 30 "# Id(n) = nxn identity matrix\n" }
+{MPLTEXT 1 0 59 "# CNOT12:= (i,j)->(i,i+j)   ....  CNOT(21):=(i,j)->(i
++j,j)\n" }{MPLTEXT 1 0 68 "# Hadamard(n) = (X)_(i=1..n) H, where H is \+
+the 2x2 Hadarmard matrix\n" }{MPLTEXT 1 0 78 "# Int_To_Bin(n) = postiv
+e integer n written as a binary number of length lgth\n" }{MPLTEXT 1 
+0 49 "# RKet(ket) = column vector in symbolic ket form\n" }{MPLTEXT 1 
+0 86 "# CNOT(T,C,W) = permutation (written as a product of disjoint cy
+les) which represents\n" }{MPLTEXT 1 0 83 "#       a CNOT wit target b
+it T, control bit C, and with W wires labeled 0..(W-1).\n" }{MPLTEXT 
+1 0 61 "#       Convention:  First=Bottom =Right  and  Last=Top=Left\n
+" }{MPLTEXT 1 0 52 "# norm2(X) = the square root of the spectral radiu
+s\n" }{MPLTEXT 1 0 63 "#            of   evalm( X &* map(conjugate, tr
+anspose(X)))    " }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 134 "Row :=
+ matrix(4, 4, [1/4, -I*1/12, 1/12, I*1/12, I*1/12, 1/4, -I*1/12, 1/12,
+ 1/12, I*1/12, 1/4, -I*1/12, -I*1/12, 1/12, I*1/12, 1/4]);" }}{PARA 11
+ "" 1 "" {XPPMATH 20 "=6\"6$;\"\"\"\"\"%F%E\\[l16$\"\"#F'#F&\"#76$F&F'
+^#F+6$F'\"\"$F.6$F&F*^##!\"\"F,6$F0F&F+6$F0F'F26$F0F*F.6$F'F&F26$F&F&#
+F&F'6$F&F0F+6$F*F&F.6$F*F*F:6$F'F'F:6$F*F0F26$F0F0F:6$F'F*F+" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 78 "Observable := matrix(4, 4, [
+0,0,1,-I, 0, 0, I, -1, 1, -I, 0, 0, I, -1, 0, 0]);" }}{PARA 11 "" 1 ""
+ {XPPMATH 20 "=6\"6$;\"\"\"\"\"%F%E\\[l16$\"\"#F'!\"\"6$F&F'^#F+6$F'\"
+\"$\"\"!6$F&F*F06$F/F&F&6$F/F'F06$F/F*F-6$F'F&^#F&6$F&F&F06$F&F/F&6$F*
+F&F06$F*F*F06$F'F'F06$F*F/F66$F/F/F06$F'F*F+" }}}{EXCHG {PARA 0 "> " 0
+ "" {XPPEDIT 19 1 "`:=`(List, [eigenvects(Observable)]);" "-I%mrowG6#/
+I+modulenameG6\"I,TypesettingGI(_syslibGF'6(-I#miGF$6%Q%ListF'/%'itali
+cGQ%trueF'/%,mathvariantGQ'italicF'-I#moGF$6-Q\"~F'/F3Q'normalF'/%&fen
+ceGQ&falseF'/%*separatorGF=/%)stretchyGF=/%*symmetricGF=/%(largeopGF=/
+%.movablelimitsGF=/%'accentGF=/%'lspaceGQ&0.0emF'/%'rspaceGFL-F66-Q*&c
+oloneq;F'F9F;F>F@FBFDFFFH/FKQ,0.2777778emF'/FNFSF5-I(mfencedGF$6&-F#6$
+-F,6%Q+eigenvectsF'F/F2-FV6$-F#6#-F,6%Q+ObservableF'F/F2F9F9/%%openGQ
+\"[F'/%&closeGQ\"]F'-F66-Q\";F'F9F;/F?F1F@FBFDFFFHFJFT" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "7$7%*$\"\"##\"\"\"F%F%<$=6\"6#;F'\"\"%E\\[l%F'F'F%^#
+F'\"\"$F$F-\"\"!=F*F+E\\[l%F'F1F%,$F$!\"\"F0F/F-F'7%F4F%<$=F*F+E\\[l%F
+'F1F%F$F0F/F-F'=F*F+E\\[l%F'F'F%F/F0F4F-F1" }}}{EXCHG {PARA 0 "> " 0 "
+" {XPPEDIT 19 1 "op(1, List);" "-I%mrowG6#/I+modulenameG6\"I,Typesetti
+ngGI(_syslibGF'6%-I#miGF$6%Q#opF'/%'italicGQ%trueF'/%,mathvariantGQ'it
+alicF'-I(mfencedGF$6$-F#6&-I#mnGF$6$Q\"1F'/F3Q'normalF'-I#moGF$6-Q\",F
+'F>/%&fenceGQ&falseF'/%*separatorGF1/%)stretchyGFF/%*symmetricGFF/%(la
+rgeopGFF/%.movablelimitsGFF/%'accentGFF/%'lspaceGQ&0.0emF'/%'rspaceGQ,
+0.3333333emF'-FA6-Q\"~F'F>FD/FHFFFIFKFMFOFQFS/FWFU-F,6%Q%ListF'F/F2F>-
+FA6-Q\";F'F>FDFGFIFKFMFOFQFS/FWQ,0.2777778emF'" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "7%*$\"\"##\"\"\"F$F$<$=6\"6#;F&\"\"%E\\[l%F&F&F$^#F&\"\"$
+F#F,\"\"!=F)F*E\\[l%F&F0F$,$F#!\"\"F/F.F,F&" }}}{EXCHG {PARA 0 "> " 0 
+"" {XPPEDIT 19 1 "op(2, List);" "-I%mrowG6#/I+modulenameG6\"I,Typesett
+ingGI(_syslibGF'6%-I#miGF$6%Q#opF'/%'italicGQ%trueF'/%,mathvariantGQ'i
+talicF'-I(mfencedGF$6$-F#6&-I#mnGF$6$Q\"2F'/F3Q'normalF'-I#moGF$6-Q\",
+F'F>/%&fenceGQ&falseF'/%*separatorGF1/%)stretchyGFF/%*symmetricGFF/%(l
+argeopGFF/%.movablelimitsGFF/%'accentGFF/%'lspaceGQ&0.0emF'/%'rspaceGQ
+,0.3333333emF'-FA6-Q\"~F'F>FD/FHFFFIFKFMFOFQFS/FWFU-F,6%Q%ListF'F/F2F>
+-FA6-Q\";F'F>FDFGFIFKFMFOFQFS/FWQ,0.2777778emF'" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "7%,$*$\"\"##\"\"\"F%!\"\"F%<$=6\"6#;F'\"\"%E\\[l%F'\"\"!F
+%F$\"\"$^#F'F.F'=F+F,E\\[l%F'F'F%F2F1F#F.F0" }}}{EXCHG {PARA 0 "> " 0 
+"" {XPPEDIT 19 1 "`:=`(a1, op(1, op(1, List)));" "-I%mrowG6#/I+modulen
+ameG6\"I,TypesettingGI(_syslibGF'6)-I#miGF$6%Q#a1F'/%'italicGQ%trueF'/
+%,mathvariantGQ'italicF'-I#moGF$6-Q\"~F'/F3Q'normalF'/%&fenceGQ&falseF
+'/%*separatorGF=/%)stretchyGF=/%*symmetricGF=/%(largeopGF=/%.movableli
+mitsGF=/%'accentGF=/%'lspaceGQ&0.0emF'/%'rspaceGFL-F66-Q*&coloneq;F'F9
+F;F>F@FBFDFFFH/FKQ,0.2777778emF'/FNFSF5-F,6%Q#opF'F/F2-I(mfencedGF$6$-
+F#6'-I#mnGF$6$Q\"1F'F9-F66-Q\",F'F9F;/F?F1F@FBFDFFFHFJ/FNQ,0.3333333em
+F'F5FU-FY6$-F#6&FgnF[oF5-F,6%Q%ListF'F/F2F9F9-F66-Q\";F'F9F;F^oF@FBFDF
+FFHFJFT" }}{PARA 11 "" 1 "" {XPPMATH 20 "*$\"\"##\"\"\"F#" }}}{EXCHG 
+{PARA 0 "> " 0 "" {XPPEDIT 19 1 "`:=`(a2, op(1, op(2, List)));" "-I%mr
+owG6#/I+modulenameG6\"I,TypesettingGI(_syslibGF'6)-I#miGF$6%Q#a2F'/%'i
+talicGQ%trueF'/%,mathvariantGQ'italicF'-I#moGF$6-Q\"~F'/F3Q'normalF'/%
+&fenceGQ&falseF'/%*separatorGF=/%)stretchyGF=/%*symmetricGF=/%(largeop
+GF=/%.movablelimitsGF=/%'accentGF=/%'lspaceGQ&0.0emF'/%'rspaceGFL-F66-
+Q*&coloneq;F'F9F;F>F@FBFDFFFH/FKQ,0.2777778emF'/FNFSF5-F,6%Q#opF'F/F2-
+I(mfencedGF$6$-F#6'-I#mnGF$6$Q\"1F'F9-F66-Q\",F'F9F;/F?F1F@FBFDFFFHFJ/
+FNQ,0.3333333emF'F5FU-FY6$-F#6&-Fhn6$Q\"2F'F9F[oF5-F,6%Q%ListF'F/F2F9F
+9-F66-Q\";F'F9F;F^oF@FBFDFFFHFJFT" }}{PARA 11 "" 1 "" {XPPMATH 20 ",$*
+$\"\"##\"\"\"F$!\"\"" }}}{EXCHG {PARA 0 "> " 0 "" {XPPEDIT 19 1 "op(3,
+ op(1, List));" "-I%mrowG6#/I+modulenameG6\"I,TypesettingGI(_syslibGF'
+6%-I#miGF$6%Q#opF'/%'italicGQ%trueF'/%,mathvariantGQ'italicF'-I(mfence
+dGF$6$-F#6'-I#mnGF$6$Q\"3F'/F3Q'normalF'-I#moGF$6-Q\",F'F>/%&fenceGQ&f
+alseF'/%*separatorGF1/%)stretchyGFF/%*symmetricGFF/%(largeopGFF/%.mova
+blelimitsGFF/%'accentGFF/%'lspaceGQ&0.0emF'/%'rspaceGQ,0.3333333emF'-F
+A6-Q\"~F'F>FD/FHFFFIFKFMFOFQFS/FWFUF+-F66$-F#6&-F;6$Q\"1F'F>F@FY-F,6%Q
+%ListF'F/F2F>F>-FA6-Q\";F'F>FDFGFIFKFMFOFQFS/FWQ,0.2777778emF'" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "<$=6\"6#;\"\"\"\"\"%E\\[l%F'F'\"\"#^#F'
+\"\"$*$F*#F'F*F(\"\"!=F$F%E\\[l%F'F/F*,$F-!\"\"F,F+F(F'" }}}{EXCHG 
+{PARA 0 "> " 0 "" {XPPEDIT 19 1 "`:=`(v1, op(1, op(3, op(1, List))));"
+ "-I%mrowG6#/I+modulenameG6\"I,TypesettingGI(_syslibGF'6)-I#miGF$6%Q#v
+1F'/%'italicGQ%trueF'/%,mathvariantGQ'italicF'-I#moGF$6-Q\"~F'/F3Q'nor
+malF'/%&fenceGQ&falseF'/%*separatorGF=/%)stretchyGF=/%*symmetricGF=/%(
+largeopGF=/%.movablelimitsGF=/%'accentGF=/%'lspaceGQ&0.0emF'/%'rspaceG
+FL-F66-Q*&coloneq;F'F9F;F>F@FBFDFFFH/FKQ,0.2777778emF'/FNFSF5-F,6%Q#op
+F'F/F2-I(mfencedGF$6$-F#6'-I#mnGF$6$Q\"1F'F9-F66-Q\",F'F9F;/F?F1F@FBFD
+FFFHFJ/FNQ,0.3333333emF'F5FU-FY6$-F#6'-Fhn6$Q\"3F'F9F[oF5FU-FY6$-F#6&F
+gnF[oF5-F,6%Q%ListF'F/F2F9F9F9-F66-Q\";F'F9F;F^oF@FBFDFFFHFJFT" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "=6\"6#;\"\"\"\"\"%E\\[l%F&F&\"\"#^#F&\"
+\"$*$F)#F&F)F'\"\"!" }}}{EXCHG {PARA 0 "> " 0 "" {XPPEDIT 19 1 "`:=`(v
+2, op(2, op(3, op(1, List))));" "-I%mrowG6#/I+modulenameG6\"I,Typesett
+ingGI(_syslibGF'6)-I#miGF$6%Q#v2F'/%'italicGQ%trueF'/%,mathvariantGQ'i
+talicF'-I#moGF$6-Q\"~F'/F3Q'normalF'/%&fenceGQ&falseF'/%*separatorGF=/
+%)stretchyGF=/%*symmetricGF=/%(largeopGF=/%.movablelimitsGF=/%'accentG
+F=/%'lspaceGQ&0.0emF'/%'rspaceGFL-F66-Q*&coloneq;F'F9F;F>F@FBFDFFFH/FK
+Q,0.2777778emF'/FNFSF5-F,6%Q#opF'F/F2-I(mfencedGF$6$-F#6'-I#mnGF$6$Q\"
+2F'F9-F66-Q\",F'F9F;/F?F1F@FBFDFFFHFJ/FNQ,0.3333333emF'F5FU-FY6$-F#6'-
+Fhn6$Q\"3F'F9F[oF5FU-FY6$-F#6&-Fhn6$Q\"1F'F9F[oF5-F,6%Q%ListF'F/F2F9F9
+F9-F66-Q\";F'F9F;F^oF@FBFDFFFHFJFT" }}{PARA 11 "" 1 "" {XPPMATH 20 "=6
+\"6#;\"\"\"\"\"%E\\[l%F&\"\"!\"\"#,$*$F*#F&F*!\"\"\"\"$^#F&F'F&" }}}
+{EXCHG {PARA 0 "> " 0 "" {XPPEDIT 19 1 "`:=`(v3, op(1, op(3, op(2, Lis
+t))));" "-I%mrowG6#/I+modulenameG6\"I,TypesettingGI(_syslibGF'6)-I#miG
+F$6%Q#v3F'/%'italicGQ%trueF'/%,mathvariantGQ'italicF'-I#moGF$6-Q\"~F'/
+F3Q'normalF'/%&fenceGQ&falseF'/%*separatorGF=/%)stretchyGF=/%*symmetri
+cGF=/%(largeopGF=/%.movablelimitsGF=/%'accentGF=/%'lspaceGQ&0.0emF'/%'
+rspaceGFL-F66-Q*&coloneq;F'F9F;F>F@FBFDFFFH/FKQ,0.2777778emF'/FNFSF5-F
+,6%Q#opF'F/F2-I(mfencedGF$6$-F#6'-I#mnGF$6$Q\"1F'F9-F66-Q\",F'F9F;/F?F
+1F@FBFDFFFHFJ/FNQ,0.3333333emF'F5FU-FY6$-F#6'-Fhn6$Q\"3F'F9F[oF5FU-FY6
+$-F#6&-Fhn6$Q\"2F'F9F[oF5-F,6%Q%ListF'F/F2F9F9F9-F66-Q\";F'F9F;F^oF@FB
+FDFFFHFJFT" }}{PARA 11 "" 1 "" {XPPMATH 20 "=6\"6#;\"\"\"\"\"%E\\[l%F&
+\"\"!\"\"#*$F*#F&F*\"\"$^#F&F'F&" }}}{EXCHG {PARA 0 "> " 0 "" 
+{XPPEDIT 19 1 "`:=`(v4, op(2, op(3, op(2, List))));" "-I%mrowG6#/I+mod
+ulenameG6\"I,TypesettingGI(_syslibGF'6)-I#miGF$6%Q#v4F'/%'italicGQ%tru
+eF'/%,mathvariantGQ'italicF'-I#moGF$6-Q\"~F'/F3Q'normalF'/%&fenceGQ&fa
+lseF'/%*separatorGF=/%)stretchyGF=/%*symmetricGF=/%(largeopGF=/%.movab
+lelimitsGF=/%'accentGF=/%'lspaceGQ&0.0emF'/%'rspaceGFL-F66-Q*&coloneq;
+F'F9F;F>F@FBFDFFFH/FKQ,0.2777778emF'/FNFSF5-F,6%Q#opF'F/F2-I(mfencedGF
+$6$-F#6'-I#mnGF$6$Q\"2F'F9-F66-Q\",F'F9F;/F?F1F@FBFDFFFHFJ/FNQ,0.33333
+33emF'F5FU-FY6$-F#6'-Fhn6$Q\"3F'F9F[oF5FU-FY6$-F#6&FgnF[oF5-F,6%Q%List
+F'F/F2F9F9F9-F66-Q\";F'F9F;F^oF@FBFDFFFHFJFT" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "=6\"6#;\"\"\"\"\"%E\\[l%F&F&\"\"#^#F&\"\"$,$*$F)#F&F)!\"
+\"F'\"\"!" }}}{EXCHG {PARA 0 "> " 0 "" {XPPEDIT 19 1 "`:=`(VectorSet1,
+ GramSchmidt(\{v1, v2\}));" "-I%mrowG6#/I+modulenameG6\"I,TypesettingG
+I(_syslibGF'6H-I#miGF$6%Q+VectorSet1F'/%'italicGQ%trueF'/%,mathvariant
+GQ'italicF'-I#moGF$6-Q*&coloneq;F'/F3Q'normalF'/%&fenceGQ&falseF'/%*se
+paratorGF=/%)stretchyGF=/%*symmetricGF=/%(largeopGF=/%.movablelimitsGF
+=/%'accentGF=/%'lspaceGQ,0.2777778emF'/%'rspaceGFL-F,6%Q,GramSchmidtF'
+F/F2-I(mfencedGF$6$-F#6#-FS6&-F#6%-F,6%Q#v1F'F/F2-F66-Q\",F'F9F;/F?F1F
+@FBFDFFFH/FKQ&0.0emF'/FNQ,0.3333333emF'-F,6%Q#v2F'F/F2F9/%%openGQ\"|fr
+F'/%&closeGQ\"|hrF'F9-F66-Q\";F'F9F;F[oF@FBFDFFFHF\\oFM-I'mspaceGF$6&/
+%'heightGQ&0.0exF'/%&widthGQ&0.0emF'/%&depthGFap/%*linebreakGQ(newline
+F'-F]p6&F_pFbpFep/FhpQ%autoF'-F,6%Q$ww1F'F/F2F5-F,6%Q#opF'F/F2-FS6$-F#
+6%-I#mnGF$6$Q\"1F'F9FhnF+F9Fio-F66-Q\"~F'F9F;F>F@FBFDFFFHF\\o/FNF]o-F,
+6%Q$ww2F'F/F2F5Faq-FS6$-F#6%-Fiq6$Q\"2F'F9FhnF+F9FioF\\pFjp-F,6%Q+Vect
+orSet2F'F/F2F5FO-FS6$-F#6#-FS6&-F#6%-F,6%Q#v3F'F/F2Fhn-F,6%Q#v4F'F/F2F
+9FcoFfoF9FioF\\pFjp-F,6%Q$ww3F'F/F2F5Faq-FS6$-F#6%FhqFhnFjrF9FioF\\r-F
+,6%Q$ww4F'F/F2F5Faq-FS6$-F#6%FgrFhnFjrF9Fio" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "<$7&*&^##!\"\"\"\"#\"\"\"F(#F)F(,$*$F(F*F&\"\"!F)7&F)^#F)
+F,F-" }}{PARA 11 "" 1 "" {XPPMATH 20 "7&*&^##!\"\"\"\"#\"\"\"F'#F(F',$
+*$F'F)F%\"\"!F(" }}{PARA 11 "" 1 "" {XPPMATH 20 "7&\"\"\"^#F#*$\"\"##F
+#F&\"\"!" }}{PARA 11 "" 1 "" {XPPMATH 20 "<$7&\"\"!*$\"\"##\"\"\"F&^#F
+(F(7&F(F$,$F%#!\"\"F&*&^#F,F(F&F'" }}{PARA 11 "" 1 "" {XPPMATH 20 "7&
+\"\"!*$\"\"##\"\"\"F%^#F'F'" }}{PARA 11 "" 1 "" {XPPMATH 20 "7&\"\"\"
+\"\"!,$*$\"\"##F#F'#!\"\"F'*&^#F)F#F'F(" }}}{EXCHG {PARA 0 "> " 0 "" 
+{XPPEDIT 19 1 "for i to 4 do `:=`(w || i, convert(evalm(`/`(`*`(ww || \+
+i), `*`(norm(ww || i, 2)))), matrix)) end do;" "-I%mrowG6#/I+modulenam
+eG6\"I,TypesettingGI(_syslibGF'6<-I#moGF$6/Q$forF'/%%boldGQ%trueF'/%,m
+athvariantGQ%boldF'/%+fontweightGF4/%&fenceGQ&falseF'/%*separatorGF9/%
+)stretchyGF9/%*symmetricGF9/%(largeopGF9/%.movablelimitsGF9/%'accentGF
+9/%'lspaceGQ&0.0emF'/%'rspaceGFH-F,6-Q\"~F'/F3Q'normalF'F7F:F<F>F@FBFD
+FFFI-I#miGF$6%Q\"iF'/%'italicGF1/F3Q'italicF'FK-F,6/Q%fromF'F/F2F5F7F:
+F<F>F@FBFDFFFIFK-I#mnGF$6$Q\"1F'FNFK-F,6/Q#toF'F/F2F5F7F:F<F>F@FBFDFFF
+IFK-Ffn6$Q\"4F'FNFK-F,6/Q#doF'F/F2F5F7F:F<F>F@FBFDFFFI-I'mspaceGF$6&/%
+'heightGQ&0.0exF'/%&widthGQ&0.0emF'/%&depthGFgo/%*linebreakGQ(newlineF
+'-Fco6&FeoFhoF[p/F^pQ%autoF'-FQ6%Q\"wF'FTFV-F,6-Q'&spar;F'FNF7F:F<F>F@
+FBFD/FGQ,0.2777778emF'/FJF[qFP-F,6-Q*&coloneq;F'FNF7F:F<F>F@FBFDFjpF
+\\q-FQ6%Q(convertF'FTFV-I(mfencedGF$6$-F#6'-FQ6%Q&evalmF'FTFV-Fdq6$-F#
+6+FK-Fdq6$-F#6&Fen-F,6-Q\"/F'FNF7F:/F=F1F>F@FBFD/FGQ,0.1666667emF'/FJF
+hr-FQ6%Q%normF'FTFV-Fdq6$-F#6(-FQ6%Q#wwF'FTFVFgpFP-F,6-Q\",F'FNF7/F;F1
+F<F>F@FBFDFF/FJQ,0.3333333emF'FK-Ffn6$Q\"2F'FNFNFNFK-F,6-Q\"*F'FNF7F:F
+<F>F@FBFDFgrFirFKFasFgpFPFKFNFdsFK-FQ6%Q'matrixF'FTFVFN-F,6-Q\":F'FNF7
+F:F<F>F@FBFDFjpF\\qFboF`p-F,6/Q#odF'F/F2F5F7F:F<F>F@FBFDFFFI-F,6-Q\";F
+'FNF7FgsF<F>F@FBFDFFF\\q" }}{PARA 11 "" 1 "" {XPPMATH 20 "=6\"6$;\"\"
+\"\"\"%;F&F&E\\[l%6$\"\"$F&\"\"!6$F'F&,$*$\"\"##F&F0F16$F&F&^##!\"\"F0
+6$F0F&F4" }}{PARA 11 "" 1 "" {XPPMATH 20 "=6\"6$;\"\"\"\"\"%;F&F&E\\[l
+%6$\"\"$F&,$*$\"\"##F&F.F/6$F'F&\"\"!6$F&F&F/6$F.F&^#F/" }}{PARA 11 ""
+ 1 "" {XPPMATH 20 "=6\"6$;\"\"\"\"\"%;F&F&E\\[l%6$\"\"$F&^##F&\"\"#6$F
+'F&F-6$F&F&\"\"!6$F.F&,$*$F.F-F-" }}{PARA 11 "" 1 "" {XPPMATH 20 "=6\"
+6$;\"\"\"\"\"%;F&F&E\\[l%6$\"\"$F&#!\"\"\"\"#6$F'F&^#F,6$F&F&,$*$F.#F&
+F.F46$F.F&\"\"!" }}}{EXCHG {PARA 0 "> " 0 "" {XPPEDIT 19 1 "`:=`(P1, s
+implify(evalm(`+`(evalm(`&*`(w1, htranspose(w1))), evalm(`&*`(w2, htra
+nspose(w2)))))));" "-I%mrowG6#/I+modulenameG6\"I,TypesettingGI(_syslib
+GF'6)-I#miGF$6%Q#P1F'/%'italicGQ%trueF'/%,mathvariantGQ'italicF'-I#moG
+F$6-Q\"~F'/F3Q'normalF'/%&fenceGQ&falseF'/%*separatorGF=/%)stretchyGF=
+/%*symmetricGF=/%(largeopGF=/%.movablelimitsGF=/%'accentGF=/%'lspaceGQ
+&0.0emF'/%'rspaceGFL-F66-Q*&coloneq;F'F9F;F>F@FBFDFFFH/FKQ,0.2777778em
+F'/FNFSF5-F,6%Q)simplifyF'F/F2-I(mfencedGF$6$-F#6$-F,6%Q&evalmF'F/F2-F
+Y6$-F#6)Fgn-FY6$-F#6(-F,6%Q#w1F'F/F2F5-F66-Q#&*F'F9F;F>F@FBFDFFFHFJFMF
+5-F,6%Q+htransposeF'F/F2-FY6$-F#6#FboF9F9F5-F66-Q\"+F'F9F;F>F@FBFDFFFH
+/FKQ,0.2222222emF'/FNFcpF5Fgn-FY6$-F#6(-F,6%Q#w2F'F/F2F5FeoF5Fho-FY6$-
+F#6#FipF9F9F9F9-F66-Q\";F'F9F;/F?F1F@FBFDFFFHFJFT" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "=6\"6$;\"\"\"\"\"%F%E\\[l16$\"\"#F',$*$F*#F&F*#!\"\"F'6$F
+&F'*&^#F.F&F*F-6$F'\"\"$\"\"!6$F&F*F56$F4F&,$F,#F&F'6$F4F'F56$F4F*F16$
+F'F&*&^#F9F&F*F-6$F&F&F-6$F&F4F86$F*F&F56$F*F*F-6$F'F'F-6$F*F4F=6$F4F4
+F-6$F'F*F+" }}}{EXCHG {PARA 0 "> " 0 "" {XPPEDIT 19 1 "`:=`(P2, simpli
+fy(evalm(`+`(evalm(`&*`(w3, htranspose(w3))), evalm(`&*`(w4, htranspos
+e(w4)))))));" "-I%mrowG6#/I+modulenameG6\"I,TypesettingGI(_syslibGF'6)
+-I#miGF$6%Q#P2F'/%'italicGQ%trueF'/%,mathvariantGQ'italicF'-I#moGF$6-Q
+\"~F'/F3Q'normalF'/%&fenceGQ&falseF'/%*separatorGF=/%)stretchyGF=/%*sy
+mmetricGF=/%(largeopGF=/%.movablelimitsGF=/%'accentGF=/%'lspaceGQ&0.0e
+mF'/%'rspaceGFL-F66-Q*&coloneq;F'F9F;F>F@FBFDFFFH/FKQ,0.2777778emF'/FN
+FSF5-F,6%Q)simplifyF'F/F2-I(mfencedGF$6$-F#6$-F,6%Q&evalmF'F/F2-FY6$-F
+#6)Fgn-FY6$-F#6(-F,6%Q#w3F'F/F2F5-F66-Q#&*F'F9F;F>F@FBFDFFFHFJFMF5-F,6
+%Q+htransposeF'F/F2-FY6$-F#6#FboF9F9F5-F66-Q\"+F'F9F;F>F@FBFDFFFH/FKQ,
+0.2222222emF'/FNFcpF5Fgn-FY6$-F#6(-F,6%Q#w4F'F/F2F5FeoF5Fho-FY6$-F#6#F
+ipF9F9F9F9-F66-Q\";F'F9F;/F?F1F@FBFDFFFHFJFT" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "=6\"6$;\"\"\"\"\"%F%E\\[l16$\"\"#F',$*$F*#F&F*#F&F'6$F&F'
+*&^#F.F&F*F-6$F'\"\"$\"\"!6$F&F*F46$F3F&,$F,#!\"\"F'6$F3F'F46$F3F*F06$
+F'F&*&^#F8F&F*F-6$F&F&F-6$F&F3F76$F*F&F46$F*F*F-6$F'F'F-6$F*F3F=6$F3F3
+F-6$F'F*F+" }}}{EXCHG {PARA 0 "> " 0 "" {XPPEDIT 19 1 "evalm(`+`(P1, P
+2));" "-I%mrowG6#/I+modulenameG6\"I,TypesettingGI(_syslibGF'6%-I#miGF$
+6%Q&evalmF'/%'italicGQ%trueF'/%,mathvariantGQ'italicF'-I(mfencedGF$6$-
+F#6'-F,6%Q#P1F'F/F2-I#moGF$6-Q\"~F'/F3Q'normalF'/%&fenceGQ&falseF'/%*s
+eparatorGFE/%)stretchyGFE/%*symmetricGFE/%(largeopGFE/%.movablelimitsG
+FE/%'accentGFE/%'lspaceGQ&0.0emF'/%'rspaceGFT-F>6-Q\"+F'FAFCFFFHFJFLFN
+FP/FSQ,0.2222222emF'/FVFenF=-F,6%Q#P2F'F/F2FA-F>6-Q\";F'FAFC/FGF1FHFJF
+LFNFPFR/FVQ,0.2777778emF'" }}{PARA 11 "" 1 "" {XPPMATH 20 "=6\"6$;\"\"
+\"\"\"%F%E\\[l16$\"\"#F'\"\"!6$F&F'F+6$F'\"\"$F+6$F&F*F+6$F.F&F+6$F.F'
+F+6$F.F*F+6$F'F&F+6$F&F&F&6$F&F.F+6$F*F&F+6$F*F*F&6$F'F'F&6$F*F.F+6$F.
+F.F&6$F'F*F+" }}}{EXCHG {PARA 0 "> " 0 "" {XPPEDIT 19 1 "eigenvalues(`
+&*`(P1, Row));" "-I%mrowG6#/I+modulenameG6\"I,TypesettingGI(_syslibGF'
+6%-I#miGF$6%Q,eigenvaluesF'/%'italicGQ%trueF'/%,mathvariantGQ'italicF'
+-I(mfencedGF$6$-F#6'-F,6%Q#P1F'F/F2-I#moGF$6-Q\"~F'/F3Q'normalF'/%&fen
+ceGQ&falseF'/%*separatorGFE/%)stretchyGFE/%*symmetricGFE/%(largeopGFE/
+%.movablelimitsGFE/%'accentGFE/%'lspaceGQ&0.0emF'/%'rspaceGFT-F>6-Q#&*
+F'FAFCFFFHFJFLFNFPFRFUF=-F,6%Q$RowF'F/F2FA-F>6-Q\";F'FAFC/FGF1FHFJFLFN
+FPFR/FVQ,0.2777778emF'" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&#\"\"\"\"\"$
+,&#F$\"\"'F$*$\"\"##F$F*#!\"\"\"#7\"\"!F/" }}}{EXCHG {PARA 0 "> " 0 ""
+ {XPPEDIT 19 1 "simplify(`+`(`/`(1, 3), `+`(`/`(1, 6), `-`(`*`(`/`(1, \+
+12), `*`(sqrt(2)))))));" "-I%mrowG6#/I+modulenameG6\"I,TypesettingGI(_
+syslibGF'6%-I#miGF$6%Q)simplifyF'/%'italicGQ%trueF'/%,mathvariantGQ'it
+alicF'-I(mfencedGF$6$-F#6'-F66$-F#6#-I&mfracGF$6(-I#mnGF$6$Q\"1F'/F3Q'
+normalF'-F#6#-FB6$Q\"3F'FE/%.linethicknessGQ\"1F'/%+denomalignGQ'cente
+rF'/%)numalignGFQ/%)bevelledGQ&falseF'FE-I#moGF$6-Q\"~F'FE/%&fenceGFV/
+%*separatorGFV/%)stretchyGFV/%*symmetricGFV/%(largeopGFV/%.movablelimi
+tsGFV/%'accentGFV/%'lspaceGQ&0.0emF'/%'rspaceGFeo-FX6-Q\"+F'FEFenFgnFi
+nF[oF]oF_oFao/FdoQ,0.2222222emF'/FgoF\\pFW-F66$-F#6'-F66$-F#6#-F?6(FA-
+F#6#-FB6$Q\"6F'FEFLFOFRFTFEFW-FX6-Q*&uminus0;F'FEFenFgnFinF[oF]oF_oFao
+F[pF]pFW-F66$-F#6#-F?6(-F#6$-F,6%Q%sqrtF'/F0FVFE-F66$-F#6#-FB6$Q\"2F'F
+EFE-F#6#-FB6$Q#12F'FEFLFOFRFTFEFEFE-FX6-Q\";F'FEFen/FhnF1FinF[oF]oF_oF
+aoFco/FgoQ,0.2777778emF'" }}{PARA 11 "" 1 "" {XPPMATH 20 ",&#\"\"\"\"
+\"#F$*$F%F##!\"\"\"#7" }}}{EXCHG {PARA 0 "> " 0 "" {XPPEDIT 19 1 "eige
+nvalues(`&*`(P2, Row));" "-I%mrowG6#/I+modulenameG6\"I,TypesettingGI(_
+syslibGF'6%-I#miGF$6%Q,eigenvaluesF'/%'italicGQ%trueF'/%,mathvariantGQ
+'italicF'-I(mfencedGF$6$-F#6'-F,6%Q#P2F'F/F2-I#moGF$6-Q\"~F'/F3Q'norma
+lF'/%&fenceGQ&falseF'/%*separatorGFE/%)stretchyGFE/%*symmetricGFE/%(la
+rgeopGFE/%.movablelimitsGFE/%'accentGFE/%'lspaceGQ&0.0emF'/%'rspaceGFT
+-F>6-Q#&*F'FAFCFFFHFJFLFNFPFRFUF=-F,6%Q$RowF'F/F2FA-F>6-Q\";F'FAFC/FGF
+1FHFJFLFNFPFR/FVQ,0.2777778emF'" }}{PARA 11 "" 1 "" {XPPMATH 20 "6&#\"
+\"\"\"\"$,&#F$\"\"'F$*$\"\"##F$F*#F$\"#7\"\"!F." }}}{EXCHG {PARA 0 "> 
+" 0 "" {XPPEDIT 19 1 "simplify(`+`(`/`(1, 3), `+`(`/`(1, 6), `*`(`/`(1
+, 12), `*`(sqrt(2))))));" "-I%mrowG6#/I+modulenameG6\"I,TypesettingGI(
+_syslibGF'6%-I#miGF$6%Q)simplifyF'/%'italicGQ%trueF'/%,mathvariantGQ'i
+talicF'-I(mfencedGF$6$-F#6'-F66$-F#6#-I&mfracGF$6(-I#mnGF$6$Q\"1F'/F3Q
+'normalF'-F#6#-FB6$Q\"3F'FE/%.linethicknessGQ\"1F'/%+denomalignGQ'cent
+erF'/%)numalignGFQ/%)bevelledGQ&falseF'FE-I#moGF$6-Q\"~F'FE/%&fenceGFV
+/%*separatorGFV/%)stretchyGFV/%*symmetricGFV/%(largeopGFV/%.movablelim
+itsGFV/%'accentGFV/%'lspaceGQ&0.0emF'/%'rspaceGFeo-FX6-Q\"+F'FEFenFgnF
+inF[oF]oF_oFao/FdoQ,0.2222222emF'/FgoF\\pFW-F66$-F#6'-F66$-F#6#-F?6(FA
+-F#6#-FB6$Q\"6F'FEFLFOFRFTFEFWFhoFW-F66$-F#6#-F?6(-F#6$-F,6%Q%sqrtF'/F
+0FVFE-F66$-F#6#-FB6$Q\"2F'FEFE-F#6#-FB6$Q#12F'FEFLFOFRFTFEFEFE-FX6-Q\"
+;F'FEFen/FhnF1FinF[oF]oF_oFaoFco/FgoQ,0.2777778emF'" }}{PARA 11 "" 1 "
+" {XPPMATH 20 ",&#\"\"\"\"\"#F$*$F%F##F$\"#7" }}}{EXCHG {PARA 0 "> " 0
+ "" {XPPEDIT 19 1 "simplify(evalm(`&*`(`&*`(P1, Row), P1)));" "-I%mrow
+G6#/I+modulenameG6\"I,TypesettingGI(_syslibGF'6%-I#miGF$6%Q)simplifyF'
+/%'italicGQ%trueF'/%,mathvariantGQ'italicF'-I(mfencedGF$6$-F#6$-F,6%Q&
+evalmF'F/F2-F66$-F#6+-F,6%Q#P1F'F/F2-I#moGF$6-Q\"~F'/F3Q'normalF'/%&fe
+nceGQ&falseF'/%*separatorGFL/%)stretchyGFL/%*symmetricGFL/%(largeopGFL
+/%.movablelimitsGFL/%'accentGFL/%'lspaceGQ&0.0emF'/%'rspaceGFen-FE6-Q#
+&*F'FHFJFMFOFQFSFUFWFYFfnFD-F,6%Q$RowF'F/F2FDFhnFDFAFHFH-FE6-Q\";F'FHF
+J/FNF1FOFQFSFUFWFY/FgnQ,0.2777778emF'" }}{PARA 11 "" 1 "" {XPPMATH 20 
+"=6\"6$;\"\"\"\"\"%F%E\\[l16$\"\"#F',&*$F*#F&F*#!\"\"\"#C#F&\"#;F&6$F&
+F'*&^##F/\"#[F&,&F,\"\"$F/F&F&6$F'F9*&^##F&F7F&,&F,F&F&F&F&6$F&F**&F5F
+&F>F&6$F9F&,&F,#F&\"#7F=F&6$F9F'F@6$F9F*F46$F'F&*&F<F&F8F&6$F&F&#\"\"(
+F76$F&F9FB6$F*F&F;6$F*F*,&#\"\"&F7F&F,F.6$F'F'FO6$F*F9FH6$F9F9FJ6$F'F*
+F+" }}}{EXCHG {PARA 0 "> " 0 "" {XPPEDIT 19 1 "simplify(evalm(`&*`(`&*
+`(P2, Row), P2)));" "-I%mrowG6#/I+modulenameG6\"I,TypesettingGI(_sysli
+bGF'6%-I#miGF$6%Q)simplifyF'/%'italicGQ%trueF'/%,mathvariantGQ'italicF
+'-I(mfencedGF$6$-F#6%-F,6#Q!F'-F#6$-F,6%Q&evalmF'F/F2-F66$-F#6+-F,6%Q#
+P2F'F/F2-I#moGF$6-Q\"~F'/F3Q'normalF'/%&fenceGQ&falseF'/%*separatorGFQ
+/%)stretchyGFQ/%*symmetricGFQ/%(largeopGFQ/%.movablelimitsGFQ/%'accent
+GFQ/%'lspaceGQ&0.0emF'/%'rspaceGFjn-FJ6-Q#&*F'FMFOFRFTFVFXFZFfnFhnF[oF
+I-F,6%Q$RowF'F/F2FIF]oFIFFFMF:FM-FJ6-Q\";F'FMFO/FSF1FTFVFXFZFfnFhn/F
+\\oQ,0.2777778emF'" }}{PARA 11 "" 1 "" {XPPMATH 20 "=6\"6$;\"\"\"\"\"%
+F%E\\[l16$\"\"#F',&*$F*#F&F*#F&\"#C#F&\"#;F&6$F&F'*&^##F&\"#[F&,&F,\"
+\"$F&F&F&6$F'F8*&^##!\"\"F6F&,&F,F&F=F&F&6$F&F**&F4F&F>F&6$F8F&,&F,#F=
+\"#7F5F&6$F8F'F@6$F8F*F36$F'F&*&F;F&F7F&6$F&F&#\"\"(F66$F&F8FB6$F*F&F:
+6$F*F*,&#\"\"&F6F&F,F.6$F'F'FO6$F*F8FH6$F8F8FJ6$F'F*F+" }}}{EXCHG 
+{PARA 0 "> " 0 "" {XPPEDIT 19 1 "" "%#%?G" }}}}
+{MARK "0 0 0" 0 }{VIEWOPTS 1 1 0 1 1 1803 1 1 1 1 }{PAGENUMBERS 0 1 2
+ 33 1 1 }

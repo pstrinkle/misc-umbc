@@ -1,0 +1,12 @@
+To Run execute the following commands
+Each row in the mpd.hosts file contains 2 processors 
+
+
+mpdboot -n 10 -f mpd.hosts
+make
+mpiexec -machinefile mpd.hosts -n 1 ./pca : -n 19 ./tokenizer
+
+
+Two files are outputed when the program is done.  
+rowpts.dat - contains row-point projections on the first three principal componets
+colpts.dat - contains the col-point projections on teh first three principal componets

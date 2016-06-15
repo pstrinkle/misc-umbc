@@ -1,0 +1,83 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"><title>CMSC 476/676 - IR - Spring 2009 - Homework 2</title>
+</head><body>
+<center>
+<h3>CMSC 476/676 - Information Retrieval<br>
+Homework 2 - work individually<br>
+Due: At the beginning of class, Tues. Feb. 24, 2009</h3>
+</center>
+<p>The objective of this assignment is to calculate the term weights for
+the tokens that occur in each document
+in your collection. To execute your program, it should be 
+sufficient 
+to type: 
+</p>
+<menu>calcwts input-directory output-directory </menu>
+where the input-directory contains the original files (unprocessed) and
+the output-directory contains all generated output files. Any temporary
+files created along the way should be deleted to save disk space. The
+calcwts command may be a lex/C/C++/Java program or a shell script that
+calls
+a series of programs written in C/C++/Java/UnixTools and/or
+lex/JavaCC/Perl/Python/Php/etc. It is permissible to
+create <em>at most</em> one set of temporary files. For example, you may tokenize and count
+frequencies within documents using Perl or php and output that
+information to one temporary file per input file.
+<p><b>Preprocessing</b> 
+You may choose to build on either preprocessor created 
+in your Homework 1. If you are not satisfied with your preprocessors, you may choose 
+to borrow a preprocessor from a classmate (but attribute the source). You must 
+<b>extend</b> the preprocessing as follows:
+remove stopwords, words that occur only once in the entire corpus, and words of length 1. Use this list of <a href="stoplist.txt">stopwords</a>.</p>
+<p><b>Term Weighting</b> You may use any of the tf * idf variants
+discussed
+in class and/or the textbook to weight your terms. Be sure to clearly
+describe
+the formula you chose to use in your report. You must normalize
+the term weights by the length of the documents. The easiest
+normalization is
+to use freq(wordi in documentj) / totalfreq(all tokens in documentj),
+but you may choose to do the proper sqrt of sum of squares vector
+normalization or any other normalization that takes some measure of
+document length into account. </p>
+<p><b>Output Files</b> The goal is to build one output file per
+input file.
+In the output file, there would be one line per token that survives
+preprocessing. That line would contain the token and the token weight. </p>
+<p><b>Algorithm</b> You may implement either a memory based or
+file based
+algorithm, i.e., you may create a hashtable in memory for each document
+to store the information about term frequencies, or a temporary file on
+disk
+to store the term frequencies. You will store the global information
+(numdocuments per term) in memory.
+You should time your term weight calculation program on a varying
+number of documents (10, 20, 40, 80, 100, 200, 300, 400, 500) and plot
+a graph of
+the indexing time as a function of the number of documents in your
+report.
+The timings should be done on the FULL process (starting with the
+raw documents). </p><p><b>Program Testing</b> <br>
+Use the same set of files as in Homework 1.</p>
+<p><b>Program Documentation.</b> <br>
+After your internal documentation 
+(comments) are complete, write a report which provides an approximately three page
+summary of your program. In particular, discuss how you 
+extended/improved the preprocessing from Homework 1, if you made any changes.  
+Show two examples of input documents and 
+the resulting (surviving) tokens and their weights.  
+Discuss  the 
+efficiency of your approach in terms of your timings 
+on a linux machine (use the time command) as a function of 
+number of documents indexed. The entire document should be
+four pages maximum. 
+I will primarily be grading 
+from the report, so make sure it clearly describes what you did and what your 
+program's output and efficiency. 
+</p><p><b>Hand In</b> <br>
+Hardcopy of your code (including shell scripts), the 
+report in pdf format, 
+and the two term weighted documents (before and after). You are also welcome to submit your code by email with attachments.
+</p>
+<p><b>Late Policy</b> <br>10% deduction per 24 hours. Assignments turned in 
+during or after the class will result in a 10% deduction. </p></body></html>

@@ -1,0 +1,24 @@
+/* this holds the token stuff */
+typedef struct
+{
+  char term[MAX_TOKEN_LENGTH];
+  int  count;
+} termContainer;
+
+/* this holds the terms for a user */
+typedef struct
+{
+  char user[MAX_PATH_LENGTH]; // username only please
+  termContainer userTerms[50];
+} userTerms;
+
+void
+process_user(const char *userfolder);
+
+void
+process_file(const char *filepath);
+
+/* global container for current user */
+userTerms user_terms;
+
+
