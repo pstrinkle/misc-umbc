@@ -5,4 +5,6 @@ BS in Computer Science and then as a PhD student who dropped out to move to Cali
 
 I've included various source materials from my coursework here as a personal reference in case I find it useful.  I doubt anyone else will.
 
+Also there is _no_ guarantee any of the code works.
+
 -Patrick
