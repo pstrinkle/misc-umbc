@@ -1,0 +1,36 @@
+\begin{thebibliography}{1}
+
+\bibitem{Deerwester90}
+Scott Deerwester, Susan~T. Dumais, George~W. Furnas, Thomas~K. Landauer, and
+  Richard Harshman.
+\newblock Indexing by latent semantic analysis.
+\newblock {\em JOURNAL OF THE AMERICAN SOCIETY FOR INFORMATION SCIENCE},
+  41(6):391--407, 1990.
+
+\bibitem{Yang1999}
+Yiming Yang.
+\newblock An evaluation of statistical approaches to text categorization.
+\newblock {\em Inf. Retr.}, 1:69--90, May 1999.
+
+\bibitem{Yin2005}
+Xiaoxin Yin, Jiawei Han, and Philip~S. Yu.
+\newblock Cross-relational clustering with user's guidance.
+\newblock In {\em Proceedings of the eleventh ACM SIGKDD international
+  conference on Knowledge discovery in data mining}, KDD '05, pages 344--353,
+  New York, NY, USA, 2005. ACM.
+
+\bibitem{Alonso2008}
+Omar Alonso and Justin Talbot.
+\newblock Structuring collections with scatter/gather extensions.
+\newblock In {\em Proceedings of the 31st annual international ACM SIGIR
+  conference on Research and development in information retrieval}, SIGIR '08,
+  pages 697--698, New York, NY, USA, 2008. ACM.
+
+\bibitem{desJardins2007}
+Marie desJardins, James MacGlashan, and Julia Ferraioli.
+\newblock Interactive visual clustering.
+\newblock In {\em Proceedings of the 12th international conference on
+  Intelligent user interfaces}, IUI '07, pages 361--364, New York, NY, USA,
+  2007. ACM.
+
+\end{thebibliography}

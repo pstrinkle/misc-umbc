@@ -1,0 +1,95 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb,amsmath}
+\usepackage{dsfont}
+\usepackage{times}
+\usepackage[left=1in, right=1in, top=1in, bottom=0.5in, includefoot]{geometry}
+\setlength\parindent{0.25in}
+\setlength\parskip{1mm}
+
+\title{CMSC601 Research Proposal Outline}
+\author{Patrick Trinkle\\
+Dept. of Computer Science and Electrical Engineering,\\
+University of Maryland Baltimore County,\\
+Baltimore, MD, 21250\\
+\texttt{tri1@umbc.edu}}
+\date{March 28th, 2010}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+\item Problem Statement - you've already written most of this
+\item Survey of Related work - from the 10+ papers you've read
+\item What could still be done? What would be new? What's your secret weapon?
+\item Why is your idea plausible? What evidence do you have, or could hope to get? 
+\begin{enumerate}
+\item You can describe evidence that you don't yet have or even know you can get
+\end{enumerate}
+\item What would need to be done to get from here to there?
+\end{enumerate}
+
+\section{Introduction}
+
+A primary problem with large data sets is accessing the information you specifically need to find.  More complex data sets have relational structuring linking certain data together.  To derive useful information from sometimes terabytes of data can require viewing and reviewing the whole picture.  An effective method for information retrieval against large data sets is the iterative process of querying and refining.
+
+Documents have many attributes of features.  These features can be contained as metadata for the document including its categories, its term space, its nearest neighbors, its tags, its cluster views.
+
+\section{Previous Work}
+
+Todo.
+
+\begin{itemize}
+\item Because of refocusing I need to dive back into the literature.
+\end{itemize}
+
+\subsection{Clustering}
+
+\begin{itemize}
+\item Recent cluster work (SVMs)
+\item Relational cluster work
+\item Temporal cluster work
+\item Refining clusters (semi-supervised)
+\item Need to Search for Papers on Metadata Clustering
+\item Need to Search for cluster on demand
+\item Need to Search for query clustering
+\end{itemize}
+
+To build initial metadata for the documents as well as making indexes for querying and clustering, I'll be using a modernized approach using Latent Semantic Analysis \cite{Deerwester90}.  Approaching certain parts of clustering with linear algebra is fairly straightforward.  However, because there is relational structure and items that need to be "linked," this may be insufficient.  Part of clustering will likely be done with k-Nearest Neighbor specifically, because it was shown to be a very effective somewhat quick method \cite{Yang1999}.  However, the proofs were done with considerably smaller data sets.  Also, I have to determine if we're working with fully unsupervised categorizations or semi-supervised text categorization.  The document category can easily be part of the metadata and is an attribute of the document.
+
+Yin et al \cite{Yin2005} approach the issue of relational clustering with help from the users.  Data sets with relational structures may not have obvious correlations.  These correlations may be easily noticed via human users.  It falls onto the issue of language processing, whereby a computer may not have the semantic information to fully link information.
+
+\subsection{User Interface}
+
+An appropriate user interface needs to be developed to support interactive querying and clustering.
+
+\begin{itemize}
+\item Need to look into other adaptations of Scatter/Gather.
+\end{itemize}
+
+Alonso et al \cite{Alonso2008} extended Scatter/Gather to support user interactions and adjustments to the clusters.  The prototype they built is effective, but has shortcomings if the data set is absurdly large.  The view is all in a tree, listing clusters.  It was important because we may be able to extend Scatter/Gather in a similar way, but more simiarly to the following paper by desJardins et al.
+
+DesJardins et al \cite{desJardins2007} built a prototype user interface wherein information was portrayed as clusters.  This system was defined as Interactive Visual Clustering and makes an attempt to cluster the data to address a user's goals.  The interface makes an update to operate on user interactions with the clusters in two dimensions.  The data is clustered based on its attributes, which is similar to what I'm approaching with my user interface.
+
+There may be other important papers on this matter.
+
+\section{Improvement}
+
+It's been shown that there is latent semantic information in text data.  Given a non-trivial large data set that has relational structure, we will build cluster information from metadata.  The metadata will be built automatically by parsing the data and storing this data.  Users of the system will also be able to provide metadata, via tagging.  Each query against the system will query both the data and then the corresponding metadata will be clustered.
+
+This clustering information will be protrayed to the user via an interactive user interface.  The user interface needs to allow the user to interact with the clusters, but less in an edit way.  The user needs to be able to rotate the view of the clusters, in 3 dimensions.  The points on the sphere need to be spaced and grouped as they are clustered.  The attributes associated with documents need to be editable, so that a user can add to or edit or remove features.  The basic initial features for a document stored as metadata will be basic and not be solved with an NLP-hard problem.  The view is superior to a list because you can browse and interact with a much larger data set without just scrolling through lists.
+
+It may also be useful to indicate to users previously investigated and saved cluster views.  Effectively if a user of the system tracks down and groups documents, and decides it's important it can be saved and easily indicated to other users of the system.
+
+\begin{itemize}
+\item Need to consider making images/graphics.
+\end{itemize}
+
+\section{Requirements}
+
+Lots of equipment.  Someone to work with me on the user interface.  And a couple years' time.
+
+\bibliographystyle{unsrt}
+\bibliography{proposaloutline}
+
+\end{document}
