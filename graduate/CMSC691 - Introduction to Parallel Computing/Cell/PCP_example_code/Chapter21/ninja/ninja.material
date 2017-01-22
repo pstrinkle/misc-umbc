@@ -1,0 +1,9 @@
+material ninja-material {
+   technique {
+      pass {
+         ambient  0.4 0.4 0.4
+         specular 1.0 1.0 1.0
+         emissive 0.0 0.1 0.0
+      }
+   }
+}

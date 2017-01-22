@@ -1,0 +1,163 @@
+                                                               	.file	"merge_spu_p1.c"
+                                                               .text
+                                                               	.align	3
+                                                               	.global	phase1
+                                                               	.type	phase1, @function
+                                                               phase1:
+                                                               # setup of subroutine
+1  012345                                                      	stqd	$sp,-192($sp)
+0   12                                                         	ai	$sp,$sp,-192
+1    -345678                                                   	lqd	$2,32($sp)
+1      4567                                                    	cwd	$5,0($sp)
+1       ----9012                                               	shufb	$2,$3,$2,$5
+1            ---345678                                         	stqd	$2,32($sp)
+1                456789                                        	lqd	$2,48($sp)
+1                 5678                                         	cwd	$3,0($sp)
+1                  ----0123                                    	shufb	$2,$4,$2,$3
+1                       ---456789                              	stqd	$2,48($sp)
+                                                               	
+                                                               #  j --> $10
+                                                               #  k --> $11
+                                                               
+                                                               #  k2 --> $12
+                                                               #  j1 --> $13
+                                                               #  j2 --> $14
+                                                               #  j3 --> $15
+                                                               
+                                                               #  bsize --> $16
+                                                               
+                                                               #  j+k   --> $17
+                                                               #  j+k2  --> $18
+                                                               
+                                                               #  array0 --> $19
+                                                               #  array1 --> $20
+                                                               #  array2 --> $21
+                                                               
+                                                               #  array0,j1 --> $22
+                                                               #  array0,j2 --> $23
+                                                               #  array1,j3 --> $24
+                                                               	
+                                                               #  [array0,j1] --> $25
+                                                               #  [array0,j2] --> $26
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               #				array0 = A0;  array1 = A1;
+1                           567890                             	lqd	$19,32($sp)
+                                                               #	stqr	$19,array0
+1                            678901                            	lqd	$20,48($sp)
+                                                               #	stqr	$20,array1
+0                             78                               	il	$16,4096	# bsize
+0                              89                              	il	$27,16
+                                                               
+                                                               #				for(k=2; k<=bsize; k<<=1 )
+0                               90                             	il	$11,2	# k
+0                                01                            	il	$12,1	# k2
+                                                               .L3:
+0d                                12                           	cgt	$2,$11,$16
+1d                                --3456                       	brnz	$2,.L4
+                                                               #					array2 = array0 ;  array0 = array1 ;  array1 = array2 ;
+0                                    45                        	ori	$21,$19,0
+0                                     56                       	ori	$19,$20,0
+0                                      67                      	ori	$20,$21,0
+                                                               	
+                                                               #					for(j=0; j<bsize; j+=k )
+0                                       78                     	il	$10,0
+                                                               .L5:
+0d                                       -90                   	cgt	$2,$16,$10
+1d                                        --1234               	brz	$2,.L6
+                                                               #						j1=j; j2=j+k2;  j3=j;
+0                                            23                	ori	$13,$10,0	# j1
+0                                             34               	a	$14,$10,$12	# j2 = j+k2
+0                                              45              	ori	$15,$10,0	# j3
+0                                               56             	a	$17,$10,$11	# j+k
+0                                                67            	ori	$18,$14,0	# j+k2
+                                                               	
+0  0123                                           789          	mpya	$22,$13,$27,$19	# array0,j1
+0  01234                                           89          	mpya	$23,$14,$27,$19	# array0,j1
+0  012345                                           9          	mpya	$24,$15,$27,$20	# array0,j1
+1  ----456789                                                  	lqd	$25,0($22)	# [array0,j1]
+1       567890                                                 	lqd	$26,0($23)	# [array0,j2]
+                                                               
+                                                               #						while ( j1<j+k2 && j2<j+k )
+                                                               .L7:
+0        67                                                    	cgt	$2,$18,$13
+0         78                                                   	cgt	$3,$17,$14
+0d         -90                                                 	and	$2,$3,$2
+1d          --1234                                             	brz	$2,.L8
+                                                               #							if ( (*array0)[j1].key > (*array0)[j2].key )
+0d             23                                              	cgt	$2,$25,$26
+1d             --4567                                          	brz	$2,.L9
+                                                               #								(*array1)[j3] = (*array0)[j1]; j3++; j1++;
+0                 56                                           	ai	$22,$22,16
+0                  67                                          	ai	$13,$13,1
+1                   789012                                     	stqd	$25,0($24)	# [array1,j3]
+0                    89                                        	ai	$24,$24,16
+0D                    90                                       	ai	$15,$15,1
+1D                    901234                                   	lqd	$25,0($22)	# [array0,j1]
+1                      0123                                    	br	.L10
+0                       1                                      	nop
+                                                               .L9:
+                                                               #								(*array1)[j3] = (*array0)[j2]; j3++; j2++;
+0                        23                                    	ai	$23,$23,16
+0                         34                                   	ai	$14,$14,1
+1                          456789                              	stqd	$26,0($24)	# [array1,j3]
+0                           56                                 	ai	$24,$24,16
+0D                           67                                	ai	$15,$15,1
+1D                           678901                            	lqd	$26,0($23)	# [array0,j2]
+                                                               .L10:
+1                             7890                             	br	.L7
+                                                               .L8:
+                                                               
+                                                               #						while ( j1<j+k2 )
+                                                               .L7a:
+0                              89                              	cgt	$2,$18,$13
+1                               -0123                          	brz	$2,.L8a
+                                                               #							(*array1)[j3] = (*array0)[j1]; j3++; j1++;
+0                                 12                           	ai	$22,$22,16
+0D                                 23                          	ai	$13,$13,1
+1D                                 234567                      	stqd	$25,0($24)	# [array1,j3]
+0                                   34                         	ai	$24,$24,16
+0                                    45                        	ai	$15,$15,1
+1                                     567890                   	lqd	$25,0($22)	# [array0,j1]
+                                                               	
+1                                      6789                    	br	.L7a
+                                                               .L8a:
+                                                               
+                                                               #						while ( j2<j+k  )
+                                                               .L7b:
+0d                                      78                     	cgt	$2,$17,$14
+1d                                      --9012                 	brz	$2,.L8b
+                                                               #							(*array1)[j3] = (*array0)[j2]; j3++; j2++;
+0                                          01                  	ai	$23,$23,16
+0                                           12                 	ai	$14,$14,1
+1                                            234567            	stqd	$26,0($24)	# [array1,j3]
+0                                             34               	ai	$24,$24,16
+0D                                             45              	ai	$15,$15,1
+1D                                             456789          	lqd	$26,0($23)	# [array0,j2]
+1                                               5678           	br	.L7b
+                                                               .L8b:
+                                                               	
+                                                               	
+0                                                67            	a	$10,$10,$11
+1  0                                              789          	br	.L5
+                                                               .L6:
+                                                               
+0                                                  89          	a	$11,$11,$11	# k<<=1
+0D 0                                                9          	a	$12,$12,$12	# k2<<=1
+1D 012                                              9          	br	.L3
+                                                               .L4:
+                                                               	
+                                                               
+                                                               # end of subroutine
+0  01                                                          	lr	$2,$20
+0   -23                                                        	ori	$3,$2,0
+0D    34                                                       	ai	$sp,$sp,192
+1D    3456                                                     	bi	$lr
+                                                               
+                                                               	.size	phase1, .-phase1
+                                                               	.comm	array0,4,128
+                                                               	.comm	array1,4,128
+                                                               	.comm	array2,4,128
+                                                               	.ident	"GCC: (GNU) 4.1.1"

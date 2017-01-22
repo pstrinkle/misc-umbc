@@ -1,0 +1,157 @@
+	.file	"merge_spu_p21C.c"
+.text
+	.align	3
+	.global	phase21
+	.type	phase21, @function
+phase21C:
+	stqd	$sp,-144($sp)
+	ai	$sp,$sp,-144
+
+	lqd	$2,64($sp)	# A0
+	hbrp	# 1
+	cwd	$8,0($sp)
+	shufb	$2,$3,$2,$8
+	stqd	$2,64($sp)	# A0
+	lqd	$2,80($sp)	# A2
+	cwd	$3,0($sp)
+	shufb	$2,$4,$2,$3
+	stqd	$2,80($sp)	# A2
+	lqd	$2,96($sp)	# *xj1
+	cwd	$3,0($sp)
+	shufb	$2,$5,$2,$3
+	stqd	$2,96($sp)	# *xj1
+	lqd	$2,112($sp)	# *xj3
+	hbrp	# 2
+	cwd	$3,0($sp)
+	shufb	$2,$6,$2,$3
+	stqd	$2,112($sp)	# *xj3
+	lqd	$2,128($sp)	# maxsz
+	cwd	$3,0($sp)
+	shufb	$2,$7,$2,$3
+	stqd	$2,128($sp)	# maxsz
+
+	lqd	$2,96($sp)	# *xj1
+	ori	$3,$2,0
+	lqd	$2,0($3)
+	rotqby	$2,$2,$3
+	ori	$4,$2,0
+	lqd	$2,48($sp)	# j1
+	cwd	$3,0($sp)
+	shufb	$2,$4,$2,$3
+	stqd	$2,48($sp)	# j1
+	lqd	$2,112($sp)	# *xj3
+	ori	$3,$2,0
+	lqd	$2,0($3)
+	rotqby	$2,$2,$3
+	ori	$4,$2,0
+	lqd	$2,32($sp)	# j3
+	cwd	$3,0($sp)
+	shufb	$2,$4,$2,$3
+	stqd	$2,32($sp)	# j3
+	
+	lqd	$2,64($sp)	# A0
+	stqr	$2,array0
+	lqd	$2,80($sp)	# A2
+	stqr	$2,array2
+	br	.L2
+.L3:
+	lqr	$8,array2
+	lqd	$2,32($sp)	# j3
+	ori	$3,$2,0
+	lqr	$9,array0
+	lqd	$2,48($sp)	# j1
+	shli	$7,$3,4
+	shli	$10,$2,4
+	a	$3,$10,$9
+	lqx	$2,$10,$9
+	rotqby	$2,$2,$3
+	ori	$4,$2,0
+	lqx	$2,$7,$8
+	cwx	$3,$7,$8
+	shufb	$2,$4,$2,$3
+	stqx	$2,$7,$8
+	a	$6,$7,$8
+	il	$5,4
+	a	$3,$10,$9
+	il	$2,4
+	a	$4,$3,$2
+	lqx	$2,$3,$2
+	rotqby	$2,$2,$4
+	ori	$4,$2,0
+	lqx	$2,$6,$5
+	cwx	$3,$6,$5
+	shufb	$2,$4,$2,$3
+	stqx	$2,$6,$5
+	a	$6,$7,$8
+	il	$5,8
+	a	$3,$10,$9
+	il	$2,8
+	a	$4,$3,$2
+	lqx	$2,$3,$2
+	rotqby	$2,$2,$4
+	ori	$4,$2,0
+	lqx	$2,$6,$5
+	cwx	$3,$6,$5
+	shufb	$2,$4,$2,$3
+	stqx	$2,$6,$5
+	a	$6,$7,$8
+	il	$5,12
+	a	$3,$10,$9
+	il	$2,12
+	a	$4,$3,$2
+	lqx	$2,$3,$2
+	rotqby	$2,$2,$4
+	ori	$4,$2,0
+	lqx	$2,$6,$5
+	cwx	$3,$6,$5
+	shufb	$2,$4,$2,$3
+	stqx	$2,$6,$5
+	lqd	$2,32($sp)	# j3
+	ai	$4,$2,1
+	lqd	$2,32($sp)	# j3
+	cwd	$3,0($sp)
+	shufb	$2,$4,$2,$3
+	stqd	$2,32($sp)	# j3
+	lqd	$2,48($sp)	# j1
+	ai	$4,$2,1
+	lqd	$2,48($sp)	# j1
+	cwd	$3,0($sp)
+	shufb	$2,$4,$2,$3
+	stqd	$2,48($sp)	# j1
+.L2:
+	lqd	$2,48($sp)	# j1
+	ori	$3,$2,0
+	lqd	$2,128($sp)	# maxsz
+	ceq	$2,$3,$2
+	brnz	$2,.L4
+	lqd	$2,32($sp)	# j3
+	ori	$3,$2,0
+	lqd	$2,128($sp)	# maxsz
+	ceq	$2,$3,$2
+	brz	$2,.L3
+
+.L4:
+	lqd	$2,96($sp)	# *xj1
+	ori	$4,$2,0
+	lqd	$2,48($sp)	# j1
+	ori	$5,$2,0
+	lqd	$2,0($4)
+	cwd	$3,0($4)
+	shufb	$2,$5,$2,$3
+	stqd	$2,0($4)	# *xj1
+	
+	lqd	$2,112($sp)	# *xj3
+	ori	$4,$2,0
+	lqd	$2,32($sp)	# j3
+	ori	$5,$2,0
+	lqd	$2,0($4)
+	cwd	$3,0($4)
+	shufb	$2,$5,$2,$3
+	stqd	$2,0($4)	# *xj3
+	
+	ai	$sp,$sp,144
+	bi	$lr
+	.size	phase21, .-phase21
+	.comm	array0,4,128
+	.comm	array2,4,128
+	.ident	"GCC: (GNU) 4.1.1"

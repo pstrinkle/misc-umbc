@@ -1,0 +1,55 @@
+Disregarding tsunami [umbc] as opn.
+Also note, only waiting about 5 minutes
+so as to asertain a glimpse of the networks
+not to find every single one
+Only need to find one opn network for proof
+of concept that there exists a problem in
+policy enforcement.
+
+Site 1:
+Erickson Courtyard [Erickson Dormitory]
+WEP: 8
+WPA: 0
+OPN: 3
+
+Site 2:
+Hillside Courtyward [Hillside Apartments]
+WEP: 16
+WPA: 0
+OPN: 5
+
+Site 3:
+Harbor Courtyard [Harbor Dormitory]
+WEP: 8
+WPA: 0
+OPN: 4
+
+Site 4:
+Potomac Courtyard [Potomac Dormitory]
+WEP: 11
+WPA: 0
+OPN: 7
+
+Site 5:
+Patapsco Courtyard [Patapsco Dormitory]
+WEP: 11
+WPA: 0
+OPN: 8
+
+Site 6:
+Susquehanna Entraceway [Susquehanna Dormitory]
+WEP: 3
+WPA: 
+OPN: 2
+
+Site 7:
+Hillcrest [Library Side]
+WEP: 6
+WPA: 
+OPN: 4
+
+Site 8:
+West Hill Parking Lot [West Hill Apartments]
+WEP: 6
+WPA: 
+OPN: 3

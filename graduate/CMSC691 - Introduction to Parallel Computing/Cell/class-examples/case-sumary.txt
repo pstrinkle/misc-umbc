@@ -1,0 +1,51 @@
+Transpose
+	Example 1
+		-- PPU version
+		-- Intel CPU version
+	Example 2
+		-- one block on One SPU
+	Example 31
+		-- use VECTORs
+	Example 4
+		-- Multiple SPUs w/o vectors
+	Example 5
+		-- One SPU (double buffer) w/o vectors
+	Example 6
+		-- Multiple SPUs (double buffer) w/o vectors
+	Example 81
+		-- Multiple SPUs (double buffer) with vectors
+	Example 91
+		-- Multiple SPUs (double buffer) with vectors
+		-- using list DMA
+Merge Sort
+	Example 1
+		-- PPU version
+		-- Intel CPU version
+	Example 2
+		-- one block on One SPU
+	Example 3
+		-- Four SPUs
+	Example 4
+		-- assembly language for phase 1 sort
+	Example 5
+		-- assembly language for phase 1 & 2 sort
+	Example 6
+		-- assembly language for phase 1 & 2 sort  (cleaned up)
+	Example 7
+		-- assembly language for phase 1 & 2 sort with double buffering
+	Example 7sim
+		-- example 7 set up to run on simulator with profiling.
+Multiply 
+	Example 1
+		-- PPU version
+		-- Intel CPU version
+	Example 2
+		-- one block on One SPU
+	Example 3
+		-- single buffering on one SPU
+	Example 4
+		-- double buffering on one SPU
+	Example 5
+		-- double buffering on multiple SPUs
+	Example 61
+		-- double buffering on multiple SPUs using vectors

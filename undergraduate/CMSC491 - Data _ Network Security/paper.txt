@@ -1,0 +1,54 @@
+Abstract	[draft]
+Introduction	[draft]
+
+-----Sections:
+
+WEP		[draft]
+Authentication	[done]
+Confidentiality	[done]
+Itegrity	[done]
+
+WPA/2
+Authentication	[done]
+Confidentiality [done]
+Itegrity	
+
+802.1X:EAP:LEAP:RADIUS:WPA2 Enterprise
+Authentication	[done]
+Confidentiality	[done]
+Itegrity	[done]
+
+Wardriving
+
+
+-----WEP Sources:
+
+
+Weaknesses in RC4: 		http://www.drizzle.com/%7Eaboba/IEEE/rc4_ksaproc.pdf
+
+-----WPA Sources:
+Article on hacking wireless: 	http://www.hsc.fr/ressources/articles/hakin9_wifi/index.html.en
+802.11 Security Beyond WEP:	http://www.wi-fiplanet.com/tutorials/article.php/1377171
+Wi-Fi Protected Access:		http://en.wikipedia.org/wiki/Wi-Fi_Protected_Access
+
+-----802.1X Sources:
+LEAPing Over Wireless LANs: 	http://www.wi-fiplanet.com/tutorials/article.php/3070071
+IEEE Wireless Standards Zone:	http://standards.ieee.org/wireless/
+CSD CSRC:			http://csrc.nist.gov/
+Cisco LEAP: 			http://www.cisco.com/en/US/netsol/ns339/ns395/ns176/ns178/netqa0900aecd801764f1.html
+RADIUS:			
+EAP:				http://www.ietf.org/rfc/rfc3748.txt
+
+
+
+Included in Bibliography:
+O'Reilly 802.11 Security. Bruce Potter & Bob Fleck. December 2002.
+AirSnort Homepage: 		http://airsnort.shmoo.com/
+WEPCrack Homepage: 		http://wepcrack.sourceforge.net/
+Aircrack Homepage:		http://www.aircrack-ng.org/doku.php
+Kismet   Homepage:		http://www.kismetwireless.net/
+NIST 800-48: 			http://csrc.nist.gov/publications/nistpubs/800-48/NIST_SP_800-48.pdf
+Cisco Wi-Fi Protected Access, WPA2 AND IEEE 802.11I: http://www.cisco.com/en/US/netsol/ns339/ns395/ns176/ns178/netqa0900aecd801e3e59.html
+802.1X Offers Authentication and Key Management: http://www.wi-fiplanet.com/tutorials/article.php/1041171
+802.11 Security Beyond WEP:	http://www.wi-fiplanet.com/tutorials/article.php/1377171
+

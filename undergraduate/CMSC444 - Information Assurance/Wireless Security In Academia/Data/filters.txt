@@ -1,0 +1,389 @@
+Notes:
+Currently only seeking plaintext usernames and passwords, not base64 encoded.
+
+Filters:
+
+>aim traffic
+tcp.port == 5190
+>ftp traffic
+tcp.port == 20 || tcp.port == 21
+>telnet traffic
+tcp.port == 23
+>smtp traffic
+tcp.port == 25
+>snmp traffic
+tcp.port == 161
+
+Channel-hopping Results:
+
+!-----------2006-10-16-----------!
+Packets: 227315
+Bytes: 49983131
+Time: 00:25:19
+
+>tcp.port == 20 || tcp.port == 21
+nothing
+
+>tcp.port == 23
+nothing
+
+>tcp.port == 25
+nothing
+
+>tcp.port == 80 || tcp.port == 443
+
+password=
+passwd=
+pass=
+
+>tcp.port == 161
+nothing
+
+>tcp.port == 5190
+screennames, buddylists, conversations
+!--------------------------------!
+
+!-----------2006-10-17-----------!
+Packets: 99413
+Bytes: 72204566
+Time: 01:08:43
+
+>tcp.port == 20 || tcp.port == 21
+nothing
+
+>tcp.port == 23
+a few telnet frames, no passwords
+
+>tcp.port == 25
+nothing
+
+>tcp.port == 80 || tcp.port == 443
+
+password=
+passwd=
+pass=
+
+>tcp.port == 161
+nothing
+
+>tcp.port == 5190
+screennames, buddylists, conversations
+!--------------------------------!
+
+!-----------2006-10-18-----------!
+Packets: 145435
+Bytes: 109269786
+Time: 01:09:12
+
+>tcp.port == 20 || tcp.port == 21
+some traffic, nothing splendid
+
+>tcp.port == 23
+some traffic, nothing splendid
+
+>tcp.port == 25
+nothing
+
+>tcp.port == 80 || tcp.port == 443
+
+password=
+
+http://thetigernet.com/chat/chatMain.jsp
+Cookie: TigerNetPassword=hoyasaxa; TigerNetUsername=HoyaTiger;
+
+web.tickle.com
+username: rduncan1@umbc.edu
+password: cheese7
+
+www.myspace.com
+username: alienated88@hotmail.com
+password: Apollo11
+
+passwd=
+pass=
+
+>tcp.port == 161
+nothing
+
+>tcp.port == 5190
+screennames, buddylists, conversations
+!--------------------------------!
+
+!-----------2006-10-19-----------!
+Packets: 574473
+Bytes: 129433225
+Time: 01:03:31
+
+>tcp.port == 20 || tcp.port == 21
+nothing
+
+>tcp.port == 23
+nothing
+
+>tcp.port == 25
+lots of traffic, captured people sending emails--etc
+
+>tcp.port == 80 || tcp.port == 443
+
+password=
+
+www.myspace.com
+username: pstrink@yahoo.com
+password: tschus%21
+
+passwd=
+pass=
+
+>tcp.port == 161
+nothing
+
+>tcp.port == 5190
+screennames, buddylists, conversations
+!--------------------------------!
+
+!-----------2006-10-20-----------!
+Packets: 278145
+Bytes: 43371240
+Time: 00:53:13
+
+>tcp.port == 20 || tcp.port == 21
+nothing
+
+>tcp.port == 23
+nothing
+
+>tcp.port == 25
+nothing
+
+>tcp.port == 80 || tcp.port == 443
+
+password=
+
+http://thetigernet.com/chat/chatMain.jsp
+Cookie: TigerNetPassword=hoyasaxa; TigerNetUsername=HoyaTiger;
+
+passwd=
+pass=
+
+>tcp.port == 161
+nothing
+
+>tcp.port == 5190
+screennames, buddylists, conversations
+!--------------------------------!
+
+
+
+Channel 11 Results:
+
+!-----------2006-10-23-----------!
+Packets: 1735612
+Bytes: 487555136
+Times: 01:19:23
+
+>tcp.port == 20 || tcp.port == 21
+discovered a couple anonymous ftp servers
+
+>tcp.port == 23
+nothing
+
+>tcp.port == 25
+nothing
+
+>tcp.port == 80 || tcp.port == 443
+
+password=
+
+http://thetigernet.com/chat/chatMain.jsp
+Cookie: TigerNetPassword=hoyasaxa; TigerNetUsername=HoyaTiger;
+
+http://aceorganic.pearsoncmg.com/lite/login.jsp&loginname=bamboochimp&password=489c688a4d2e03754d3a531f6afc7bae&encPassword=Y
+
+www.myspace.com
+email: jenna.erb@hotmail.com
+password: asdfasdf0
+
+passwd=
+
+seeker.dice.com
+username: ddinga@hotmail.com
+password: open4you
+
+seeker.dice.com
+username: ddginal@hotmail.com
+password: KAB4ddi2
+
+seeker.dice.com
+username:ddingal@hotmail.com
+password: openDice4Dog
+
+mail.yahoo.com
+email: chiyin711@yahoo.com
+password: 42bc7f8fd (encoded somehow)
+
+pass=
+
+hoyatalk2.proboards48.com
+username: tigerhoya
+password: v4Bo3G63hzfwM (encoded somehow)
+
+>tcp.port == 161
+nothing
+
+>tcp.port == 5190
+screennames, buddylists, conversations
+!--------------------------------!
+
+!-----------2006-10-24-----------!
+Packets: 1580972
+Bytes: 503356526
+Time: 01:07:32
+
+>tcp.port == 20 || tcp.port == 21
+nothing
+
+>tcp.port == 23
+nothing
+
+>tcp.port == 80 || tcp.port == 443
+
+password=
+
+http://thetigernet.com/chat/chatMain.jsp
+Cookie: TigerNetPassword=hoyasaxa; TigerNetUsername=HoyaTiger;
+
+www.blackplanet.com
+username: boricua-chulita
+password: ines5454
+
+www.myspace.com
+username: na8gordon@hotmail.com
+password: NEighty*8
+
+passwd=
+pass=
+
+>tcp.port == 161
+nothing
+
+>tcp.port == 5190
+screennames, buddylists, conversations
+!--------------------------------!
+
+!-----------2006-10-25-----------!
+Packets: 757340
+Bytes: 137317027
+Time: 01:05:14
+
+>tcp.port == 20 || tcp.port == 21
+symantec update stuff
+
+>tcp.port == 23
+some traffic, nothing important
+
+>tcp.port == 25
+nothing
+
+>tcp.port == 80 || tcp.port == 443
+
+password=
+
+www.myspace.com
+username: commiepwr@yahoo.com
+password: twixmix1
+
+www.myspace.com
+username: jenna.erb@hotmail.com
+password: asdfasdf0
+
+passwd=
+pass=
+
+>tcp.port == 161
+nothing
+
+>tcp.port == 5190
+screennames, buddylists, conversations
+!--------------------------------!
+
+!-----------2006-10-26-----------!
+Packets: 1861399
+Bytes: 563922518
+Time: 00:54:51
+
+>tcp.port == 20 || tcp.port == 21
+discovered a couple anonymous ftp servers
+
+>tcp.port == 23
+nothing
+
+>tcp.port == 25
+nothing
+
+>tcp.port == 80 || tcp.port == 443
+
+password=
+
+www.cbsnews.com
+username: ninja3030@yahoo.com
+password: gino123
+
+x
+username: isanti1@umbc.edu
+password: montanez1
+
+x
+username: kevinung
+password: ung701273
+
+www.migente.com
+username: boricua-chulita
+password: ines5454
+
+www.myspace.com
+username: akarathegreat@yahoo.com
+password: vegeta1
+
+passwd=
+pass=
+
+www.profilepic.com
+username: boricua_chulita
+password: ines5454
+
+>tcp.port == 161
+nothing
+
+>tcp.port == 5190
+screennames, buddylists, conversations
+!--------------------------------!
+
+!-----------2006-10-27-----------!
+Packets: 637865
+Bytes: 160863439
+Time: 00:52:41
+
+>tcp.port == 20 || tcp.port == 21
+discovered a couple anonymous ftp servers
+
+>tcp.port == 23
+nothing interesting
+
+>tcp.port == 25
+nothing
+
+>tcp.port == 80 || tcp.port == 443
+
+password=
+
+http://thetigernet.com/chat/chatMain.jsp
+Cookie: TigerNetPassword=hoyasaxa; TigerNetUsername=HoyaTiger;
+
+passwd=
+pass=
+
+>tcp.port == 161
+nothing
+
+>tcp.port == 5190
+screennames, buddylists, conversations

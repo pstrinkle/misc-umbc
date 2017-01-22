@@ -1,0 +1,5 @@
+C:\Users\patrick\Documents\Visual Studio 2008\Projects\TrinkleSearchEngine\TrinkleSearchEngine\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\patrick\Documents\Visual Studio 2008\Projects\TrinkleSearchEngine\TrinkleSearchEngine\bin\Debug\TrinkleSearchEngine.exe
+C:\Users\patrick\Documents\Visual Studio 2008\Projects\TrinkleSearchEngine\TrinkleSearchEngine\bin\Debug\TrinkleSearchEngine.pdb
+C:\Users\patrick\Documents\Visual Studio 2008\Projects\TrinkleSearchEngine\TrinkleSearchEngine\obj\Debug\TrinkleSearchEngine.exe
+C:\Users\patrick\Documents\Visual Studio 2008\Projects\TrinkleSearchEngine\TrinkleSearchEngine\obj\Debug\TrinkleSearchEngine.pdb
