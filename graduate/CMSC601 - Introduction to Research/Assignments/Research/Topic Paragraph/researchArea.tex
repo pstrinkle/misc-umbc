@@ -1,0 +1,35 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb,amsmath}
+\usepackage{dsfont}
+\usepackage{times}
+\usepackage[left=1in, right=1in, top=1in, bottom=0.5in, includefoot]{geometry}
+\setlength\parindent{0.25in}
+\setlength\parskip{1mm}
+
+\title{CMSC601 Research Area}
+\author{Patrick Trinkle\\
+Dept. of Computer Science and Electrical Engineering,\\
+University of Maryland Baltimore County,\\
+Baltimore, MD, 21250\\
+\texttt{tri1@umbc.edu}}
+\date{February 28th, 2010}
+
+\begin{document}
+
+\maketitle
+
+\section{Research Area}
+
+I have strong interests in interacting with VLDB that have the data clustered, or clustered indexes to provide interactive querying.  The interaction is not strictly through queries which take advantage of clustering, but run-time manipulation of results and restructuring of the temporary data to fit more closely to the intent of the query itself.
+
+\section{Background Documents}
+
+Berry et al's paper in 1994 \cite{berry94} appears to be the second paper published with the notion of using linear algebra to better enable query processing and document indexing.  Previous methods involved databases the documents with keywords and searching against these.  Berry et al identify the disparity in language for describing the same document contents.  This is a seminal paper in its role redefining information retrieval.  Much of document
+clustering and query processing formed its base on utilizing linear algebra and term vector spaces for comparing documents.  This paper was preceeded by Deerwester et al \cite{deerwester90} in 1990.  I'm under the impression the Berry paper is an extension of the original seminal paper released in 1990.
+
+CURE \cite{guha98} clusters data managed in a database.  The paper is highly cited and also references R*-trees, which Dr Kalpakis taught my databases course were efficient for querying databases under certain circumstances.  Because the CURE paper references R*-trees, I will be examaing the paper defining these.  To further my understanding of R-trees I'll read through Beckmann et al's ``The R*-tree: an efficient and robust access method for points and rectangles" \cite{beckmann90}.
+
+\bibliographystyle{unsrt}
+\bibliography{researchArea}
+
+\end{document}

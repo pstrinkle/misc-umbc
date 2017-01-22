@@ -1,0 +1,6 @@
+student@umbc.edu
+john.smith@umbc.edu
+nobody@cs.umbc.edu
+nobody@umbc.com
+tri1@umbc.eduf this shouldn't make it
+(tri1@umbc.edu) this should make it

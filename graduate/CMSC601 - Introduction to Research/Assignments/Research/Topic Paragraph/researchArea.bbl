@@ -1,0 +1,38 @@
+\begin{thebibliography}{1}
+
+\bibitem{berry94}
+Dumais S.~T. Berry, M.~W. and G.~W. O'Brien.
+\newblock Using linear algebra for intelligent information retrieval.
+\newblock {\em SIAM Rev.}, pages 573--595, 1994.
+\newblock {\em This paper appears to be the second published work on using
+  linear algebra for query processing. They describe the method as Latent
+  Semantic Analysis. Google Scholar reports it has over 1100 citations.}
+
+\bibitem{deerwester90}
+Dumais S. T. Landauer T. K. Furnas G.~W. Deerwester, S.~C. and R.~A. Harshman.
+\newblock Indexing by latent semantic analysis.
+\newblock {\em Journal of American Society for Information Science},
+  41:391--407, 1990.
+\newblock {\em This appears to be the first paper that uses latent semantic
+  analysis for indexing documents to support better querying. Google Scholar
+  lists the citations as nearly 5000.}
+
+\bibitem{guha98}
+Sudipto Guha, Rajeev Rastogi, and Kyuseok Shim.
+\newblock Cure: an efficient clustering algorithm for large databases.
+\newblock In {\em Proceedings of the 1998 ACM SIGMOD international conference
+  on Management of data}, 1998.
+\newblock {\em Interesting implementation of clustering with large databases. A
+  possible good starting point for examining data clustering of managed data.}
+
+\bibitem{beckmann90}
+Norbert Beckmann, Hans-Peter Kriegel, Ralf Schneider, and Bernhard Seeger.
+\newblock The r*-tree: an efficient and robust access method for points and
+  rectangles.
+\newblock In {\em Proceedings of the 1990 ACM SIGMOD international conference
+  on Management of data}, 1990.
+\newblock {\em Appears to be an important improvement over the state of the art
+  in searching through database data. I remember Dr Kalpakis mentioning R-trees
+  in graduate databases as interesting and it is cited over 650 times.}
+
+\end{thebibliography}

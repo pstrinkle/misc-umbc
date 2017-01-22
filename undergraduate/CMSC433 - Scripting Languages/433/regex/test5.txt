@@ -1,0 +1,7 @@
+#  # i.e. "foo foo baz foo" -> "foo baz foo"
+#  #      "foo bar foo" -> no change
+#  #      "now is          is the time" -> "now is the time"
+#  #      "foo foobar foobarbaz" -> no change 
+#  #      "Foo.  Foo Bar" -> no change 
+this is              is fun -> this is fun
+this is fun

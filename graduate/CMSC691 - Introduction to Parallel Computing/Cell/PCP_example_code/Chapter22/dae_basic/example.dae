@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA version="1.4.0" xmlns="http://www.collada.org/2005/11/COLLADASchema">
+	<asset>
+		<contributor>
+			<author>Illusoft Collada 1.4.0 plugin for Blender - http://colladablender.illusoft.com</author>
+			<authoring_tool>Blender v:241 - Illusoft Collada Exporter v:0.1</authoring_tool>
+			<comments></comments>
+			<copyright></copyright>
+			<source_data>file://D:/SHARE/scriptSetup.blend</source_data>
+		</contributor>
+		<created>2006-03-19T19:29:07.695000</created>
+		<modified>2006-03-19T19:29:07.695000</modified>
+		<up_axis>Z_UP</up_axis>
+		<unit meter="0.01" name="centimeter"/>
+	</asset>
+	<library_geometries>
+		<geometry id="Cube" name="Cube">
+			<mesh>
+				<source id="Cube-Position">
+					<float_array count="24" id="Cube-Position-array">1.0 1.0 -1.0 1.0 -1.0 -1.0 -1.0 -1.0 -1.0 -1.0 1.0 -1.0 1.0 1.0 1.0 1.0 -1.0 1.0 -1.0 -1.0 1.0 -1.0 1.0 1.0</float_array>
+					<technique_common>
+						<accessor count="8" source="#Cube-Position-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Cube-Vertex">
+					<input semantic="POSITION" source="#Cube-Position"/>
+				</vertices>
+				<polygons count="6">
+					<input offset="0" semantic="VERTEX" source="#Cube-Vertex"/>
+					<p>3 2 1 0</p>
+					<p>5 6 7 4</p>
+					<p>1 5 4 0</p>
+					<p>2 6 5 1</p>
+					<p>3 7 6 2</p>
+					<p>7 3 0 4</p>
+				</polygons>
+			</mesh>
+		</geometry>
+	</library_geometries>
+	<library_visual_scenes>
+		<visual_scene id="Scene" name="Scene">
+			<node id="Cube" name="Cube">
+				<instance_geometry url="#Cube"/>
+			</node>
+		</visual_scene>
+	</library_visual_scenes>
+	<scene>
+		<instance_visual_scene url="#Scene"/>
+	</scene>
+</COLLADA>
